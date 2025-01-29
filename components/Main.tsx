@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
+import { API_KEY } from '@/config/index'
 import { DATA } from '@/types/item-type'
 
 const Main = () => {
-	const API_KEY = '0gQkEto5PcsH862fqXlGWV3RQMj9XsyigMWUOswQbrc62PWSQGf3mels' // Замініть на свій ключ
+	// Замініть на свій ключ
 	const query1 = 'coffee'
 	const url1 = `https://api.pexels.com/v1/search?query=${query1}&per_page=10`
 	const query2 = 'cupcake'
