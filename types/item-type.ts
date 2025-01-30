@@ -1,10 +1,9 @@
 export interface DATA {
+	id: number
+	alt: string
 	src: {
 		medium: string
 		portrait: string
-		original: string
 		landscape: string
 	}
-	id: number
-	alt: string
 }
