@@ -1,60 +1,34 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import Card from './Card'
-import { API_KEY } from '@/config/index'
-import { DATA } from '@/types/item-type'
+import React from 'react'
+import { Button } from './Button'
 
 const Main = () => {
-	// Замініть на свій ключ
-	const query1 = 'coffee'
-	const url1 = `https://api.pexels.com/v1/search?query=${query1}&per_page=10`
-	const query2 = 'cupcake'
-	const url2 = `https://api.pexels.com/v1/search?query=${query2}&per_page=10`
-
-	const [coffees, setCoffees] = useState<DATA[]>()
-	const [cupcakes, setCupcakes] = useState<DATA[]>()
-
-	useEffect(() => {
-		fetch(url1, {
-			method: 'GET',
-			headers: {
-				Authorization: API_KEY
-			}
-		})
-			.then(res => res.json())
-			.then(data => {
-				console.log(data)
-				setCoffees(data.photos)
-			})
-			.catch(err => console.log(err))
-	}, [url1])
-
-	useEffect(() => {
-		fetch(url2, {
-			method: 'GET',
-			headers: {
-				Authorization: API_KEY
-			}
-		})
-			.then(res => res.json())
-			.then(data => {
-				console.log(data)
-				setCupcakes(data.photos)
-			})
-			.catch(err => console.log(err))
-	}, [url2])
-
 	return (
-		<div className="w-full flex flex-col gap-8 justify-center">
-			<div className="w-[80%] flex flex-col flex-wrap gap-4 justify-center items-center m-auto">
-				<h2>Coffee</h2>
-				{coffees && <Card items={coffees} />}
+		<div className="relative w-full h-screen flex flex-col justify-center font-[family-name:var(--font-playfair)]">
+			<div className="w-full max-w-[1200px] mx-auto text-white">
+				<div className="w-[60%] p-4">
+					<h1 className="text-6xl my-10">Coffee Town – A Taste of the City in Every Cup</h1>
+					<p className="my-10 text-xl">
+						Experience the perfect blend of coziness and inspiration at Coffee Town. We offer the freshest coffee
+						blends, aromatic pastries, and a warm welcome. Our café is the ideal spot for business meetings, friendly
+						gatherings, or a quiet moment with your favorite drink. Visit us and immerse yourself in the magic of
+						coffee!
+					</p>
+				</div>
+				<div className="w-[60%] flex justify-start gap-6 p-4">
+					<Button
+						text="Check menu"
+						className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900  transition-all duration-300"
+					/>
+					<Button
+						text="Book table"
+						className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900  transition-all duration-300"
+					/>
+				</div>
 			</div>
-			<div className="w-[80%] flex flex-col flex-wrap gap-4 justify-center items-center m-auto">
-				<h2>Cupcake</h2>
-				{cupcakes && <Card items={cupcakes} />}
-			</div>
+
+			<div className="basic absolute top-[-5rem] z-[-1] w-full h-[115%] bg-basic " />
 		</div>
 	)
 }
