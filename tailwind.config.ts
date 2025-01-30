@@ -67,15 +67,22 @@ export default {
 			lg: '1rem',
 			full: '9999px'
 		},
+		fontFamily: {
+			default: ['var(--font-geist-sans)', 'sans-serif'],
+			logo: ['var(--font-playwrite)', 'sans-serif'],
+			playfair: ['var(--font-playfair)', 'serif']
+		},
 		fontSize: {
 			sm: ['12px', '16px'],
 			md: ['14px', '20px'],
 			lg: ['16px', '24px'],
-			xl: ['20px', '24px'],
+			xl: ['20px', '28px'],
 			'2xl': ['24px', '28px'],
 			'3xl': ['30px', '36px'],
 			'4xl': ['36px', '40px'],
-			'5xl': ['48px', '48px']
+			'5xl': ['48px', '48px'],
+			'6xl': ['64px', '64px'],
+			'7xl': ['96px', '96px']
 		},
 		colors: {
 			transparent: 'var(--color-transparent)',
@@ -263,6 +270,9 @@ export default {
 			}
 		}),
 		extend: {
+			backgroundImage: {
+				basic: 'url("/assets/basic.jpg")'
+			},
 			keyframes: {
 				// SLIDE
 				'slide-in-right': {
