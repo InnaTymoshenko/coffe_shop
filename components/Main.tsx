@@ -5,7 +5,7 @@ import { Button } from './Button'
 
 const Main = () => {
 	return (
-		<div className="relative w-full h-screen flex flex-col justify-center font-[family-name:var(--font-playfair)]">
+		<div className="relative w-full h-screen bg-black/30 flex flex-col justify-center font-[family-name:var(--font-playfair)]">
 			<div className="w-full max-w-[1200px] mx-auto text-white">
 				<div className="w-[60%] p-4">
 					<h1 className="text-6xl my-10">Coffee Town – A Taste of the City in Every Cup</h1>

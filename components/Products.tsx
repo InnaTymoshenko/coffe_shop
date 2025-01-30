@@ -13,8 +13,19 @@ const Products = () => {
 	useEffect(() => {
 		getServerSideProps(URL_COFFEE)
 			.then(data => {
-				console.log(data)
-				setCoffees(data)
+				const updatedData: DATA[] = data.map((coffee: DATA) => ({
+					...coffee,
+					category: 'Coffee',
+					title: 'Cappuccino',
+					price: {
+						small: Math.floor(Math.random() * 8) + 5,
+						medium: Math.floor(Math.random() * 10) + 5,
+						large: Math.floor(Math.random() * 11) + 5
+					},
+					rating: (Math.random() * 5).toFixed(1)
+				}))
+
+				setCoffees(updatedData)
 			})
 			.catch(err => console.log(err))
 	}, [])
@@ -22,7 +33,18 @@ const Products = () => {
 	useEffect(() => {
 		getServerSideProps(URL_CUPCAKE)
 			.then(data => {
-				setCupcakes(data)
+				const updatedData: DATA[] = data.map((coffee: DATA) => ({
+					...coffee,
+					category: 'Cupcake',
+					title: 'Cupcake',
+					price: {
+						small: 0,
+						medium: Math.floor(Math.random() * 20) + 5,
+						large: 0
+					},
+					rating: (Math.random() * 5).toFixed(1)
+				}))
+				setCupcakes(updatedData)
 			})
 			.catch(err => console.log(err))
 	}, [])

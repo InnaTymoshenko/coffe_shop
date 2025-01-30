@@ -271,7 +271,8 @@ export default {
 		}),
 		extend: {
 			backgroundImage: {
-				basic: 'url("/assets/basic.jpg")'
+				basic: 'url("/assets/basic.jpg")',
+				banner: 'url("/assets/banner.jpg")'
 			},
 			keyframes: {
 				// SLIDE
