@@ -1,0 +1,65 @@
+[
+	{
+		"id": 1,
+		"name": "Emily Johnson",
+		"review": "The coffee here is simply amazing! The atmosphere is cozy and welcoming.",
+		"rating": 4.8,
+		"image": "https://randomuser.me/api/portraits/women/1.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Michael Smith",
+		"review": "Great selection of coffee and desserts. Friendly staff and quick service!",
+		"rating": 4.7,
+		"image": "https://randomuser.me/api/portraits/men/2.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Sophia Brown",
+		"review": "I love this place! Their cappuccino is the best in town. Highly recommend!",
+		"rating": 4.9,
+		"image": "https://randomuser.me/api/portraits/women/3.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Daniel Wilson",
+		"review": "Fantastic coffee and a peaceful ambiance. A great place to work or relax.",
+		"rating": 4.6,
+		"image": "https://randomuser.me/api/portraits/men/4.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Olivia Martinez",
+		"review": "I enjoyed the caramel latte! The place is clean and beautifully decorated.",
+		"rating": 4.8,
+		"image": "https://randomuser.me/api/portraits/women/5.jpg"
+	},
+	{
+		"id": 6,
+		"name": "James Anderson",
+		"review": "Amazing espresso shots! The baristas know their craft very well.",
+		"rating": 4.9,
+		"image": "https://randomuser.me/api/portraits/men/6.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Emma Davis",
+		"review": "A hidden gem! The croissants are delicious and the coffee is top-notch.",
+		"rating": 4.7,
+		"image": "https://randomuser.me/api/portraits/women/7.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Liam Thomas",
+		"review": "I always start my day here. The coffee is rich, smooth, and full of flavor.",
+		"rating": 4.8,
+		"image": "https://randomuser.me/api/portraits/men/8.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Ava Hernandez",
+		"review": "Lovely place with a warm atmosphere. The staff is friendly and helpful.",
+		"rating": 4.6,
+		"image": "https://randomuser.me/api/portraits/women/9.jpg"
+	}
+]

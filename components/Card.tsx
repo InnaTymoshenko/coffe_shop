@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { DATA } from '@/types/item-type'
+
 import React from 'react'
+import { FaStar } from 'react-icons/fa'
+import { DATA } from '@/types/item-type'
 import { Button } from './Button'
 
 type Props = {
@@ -19,6 +21,10 @@ const Card = ({ items }: Props) => {
 						<img src={item.src.medium} alt="" className="w-full h-full object-cover" />
 
 						<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
+							<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
+								<span className="font-thin text-md">{item.rating}</span>
+								<FaStar className="text-orange-300" />
+							</div>
 							<h3 className="text-2xl">{item.title}</h3>
 							<p className="my-6">{item.alt}</p>
 							<div className="w-full flex flex-col gap-2 justify-between items-center">
@@ -46,7 +52,7 @@ const Card = ({ items }: Props) => {
 								</div>
 								<div className="w-full flex justify-between items-center gap-2 r-4">
 									<div className="flex flex-col gap-2 items-center px-2">
-										Price:
+										<span className="text-gray-400">Price:</span>
 										<div className="flex gap-1 text-xl">
 											<strong className="text-orange-600">$</strong>
 											<strong>{item.price.medium.toFixed(2)}</strong>

@@ -100,6 +100,7 @@ export default {
 				800: 'rgba(var(--color-gray-800), <alpha-value>)',
 				900: 'rgba(var(--color-gray-900), <alpha-value>)'
 			},
+			yellow: 'rgba(252, 211, 77)',
 			red: {
 				50: 'rgba(var(--color-red-50), <alpha-value>)',
 				100: 'rgba(var(--color-red-100), <alpha-value>)',

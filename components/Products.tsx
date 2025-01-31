@@ -22,7 +22,7 @@ const Products = () => {
 						medium: Math.floor(Math.random() * 10) + 5,
 						large: Math.floor(Math.random() * 11) + 5
 					},
-					rating: (Math.random() * 5).toFixed(1)
+					rating: (Math.random() * 1 + 4).toFixed(1)
 				}))
 
 				setCoffees(updatedData)
@@ -42,7 +42,7 @@ const Products = () => {
 						medium: Math.floor(Math.random() * 20) + 5,
 						large: 0
 					},
-					rating: (Math.random() * 5).toFixed(1)
+					rating: (Math.random() * 1 + 4).toFixed(1)
 				}))
 				setCupcakes(updatedData)
 			})
