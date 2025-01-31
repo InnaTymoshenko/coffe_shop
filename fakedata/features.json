@@ -1,0 +1,22 @@
+[
+	{
+		"icon": "coffee",
+		"title": "Freshly Roasted Coffee",
+		"description": "We use only the finest beans, roasted right before brewing to ensure a rich aroma and fresh taste in every cup."
+	},
+	{
+		"icon": "atmosphere",
+		"title": "Cozy Atmosphere",
+		"description": "Our cafes are designed for ultimate comfort — cozy seating, stylish interiors, and relaxing music. Everyone can find their perfect spot."
+	},
+	{
+		"icon": "eco",
+		"title": "Eco-Friendly Approach",
+		"description": "We care about the environment: using reusable or biodegradable packaging and supporting sustainability initiatives."
+	},
+	{
+		"icon": "menu",
+		"title": "Diverse Menu",
+		"description": "Besides coffee, we offer a wide range of desserts, teas, and snacks. Whether you prefer classic drinks or seasonal specials, we have something for you."
+	}
+]
