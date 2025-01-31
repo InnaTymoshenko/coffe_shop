@@ -23,7 +23,7 @@ const Card = ({ items }: Props) => {
 						<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
 							<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
 								<span className="font-thin text-md">{item.rating}</span>
-								<FaStar className="text-orange-300" />
+								<FaStar className="text-yellow" />
 							</div>
 							<h3 className="text-2xl">{item.title}</h3>
 							<p className="my-6">{item.alt}</p>

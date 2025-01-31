@@ -1,5 +1,6 @@
 import About from '@/components/About'
 import Header from '@/components/Header'
+import Location from '@/components/Location'
 import Main from '@/components/Main'
 import Products from '@/components/Products'
 import Reviews from '@/components/Reviews'
@@ -15,6 +16,7 @@ export default function Home() {
 				<About />
 				<Products />
 				<Reviews />
+				<Location />
 			</main>
 			<footer className="w-full h-40 bg-black row-start-3 flex gap-6 flex-wrap items-center justify-center">
 				<h2 className="text-white text-3xl">Footer</h2>

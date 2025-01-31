@@ -18,13 +18,11 @@ const Reviews = () => {
 		setReviews(fakeReviews as IReview[])
 	}, [])
 
-	// Розбиваємо масив відгуків на підмасиви по 3
 	const chunkedReviews = []
 	for (let i = 0; i < reviews.length; i += reviewsPerPage) {
 		chunkedReviews.push(reviews.slice(i, i + reviewsPerPage))
 	}
 
-	// Функція для відображення зірок
 	const renderStars = (rating: number) => {
 		const stars = []
 		const fullStars = Math.floor(rating)
@@ -32,10 +30,10 @@ const Reviews = () => {
 		const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
 
 		for (let i = 0; i < fullStars; i++) {
-			stars.push(<FaStar key={i} className="text-yellow-400" />)
+			stars.push(<FaStar key={i} className="text-yellow" />)
 		}
 		if (hasHalfStar) {
-			stars.push(<FaStarHalfAlt key="half" className="text-yellow-400" />)
+			stars.push(<FaStarHalfAlt key="half" className="text-yellow" />)
 		}
 		for (let i = 0; i < emptyStars; i++) {
 			stars.push(<FaRegStar key={`empty-${i}`} className="text-gray-500" />)
@@ -44,28 +42,24 @@ const Reviews = () => {
 		return stars
 	}
 
-	// Автоматична зміна слайдів
 	useEffect(() => {
 		intervalRef.current = setInterval(() => {
 			setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
-		}, 5000) // Зміна кожні 5 секунд
+		}, 5000)
 
 		return () => {
 			if (intervalRef.current) clearInterval(intervalRef.current)
 		}
 	}, [chunkedReviews.length])
 
-	// Функції для ручної навігації
 	const nextSlide = () => setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
 	const prevSlide = () => setCurrentIndex(prev => (prev - 1 + chunkedReviews.length) % chunkedReviews.length)
 
 	return (
-		<div className="w-full flex flex-col gap-8 justify-start py-8">
-			<div className="w-[80%] flex flex-col flex-wrap gap-4 justify-center items-center mx-auto p-4">
+		<div className="w-full h-[80vh] flex flex-col gap-8 justify-start py-8">
+			<div className="w-[80%] flex flex-col flex-wrap gap-4 justify-center items-start mx-auto p-4">
 				<h2 className="text-white text-3xl my-6">Reviews</h2>
-
-				{/* Слайдер */}
-				<div className="relative w-full max-w-[960px] overflow-hidden">
+				<div className="relative w-full max-w-[960px] h-[250px] mx-auto overflow-hidden">
 					<div
 						className="flex transition-transform duration-500 ease-in-out"
 						style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -98,20 +92,14 @@ const Reviews = () => {
 							</div>
 						))}
 					</div>
-
-					{/* Кнопки навігації */}
-					<button
-						onClick={prevSlide}
-						className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
-					>
-						❮
-					</button>
-					<button
-						onClick={nextSlide}
-						className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
-					>
-						❯
-					</button>
+					<div className="absolute bottom-0 left-[40%] w-32 flex justify-between items-center gap-2">
+						<button onClick={prevSlide} className="w-16 bg-gray-800 text-white p-2 rounded-sm z-10">
+							❮
+						</button>
+						<button onClick={nextSlide} className="w-16 bg-gray-800 text-white p-2 rounded-sm z-10">
+							❯
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
