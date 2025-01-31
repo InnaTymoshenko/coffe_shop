@@ -1,12 +1,13 @@
 'use client'
 
 import React from 'react'
-import { Button } from './Button'
+import { Button } from './ui/Button'
+import Shell from './ui/Shell'
 
 const Main = () => {
 	return (
 		<div className="relative w-full h-screen bg-black/30 flex flex-col justify-center font-[family-name:var(--font-playfair)]">
-			<div className="w-full max-w-[1200px] mx-auto text-white">
+			<Shell className="container text-white">
 				<div className="w-[60%] p-4">
 					<h1 className="text-6xl my-10">Coffee Town – A Taste of the City in Every Cup</h1>
 					<p className="my-10 text-xl">
@@ -26,7 +27,7 @@ const Main = () => {
 						className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900  transition-all duration-300"
 					/>
 				</div>
-			</div>
+			</Shell>
 
 			<div className="basic absolute top-[-5rem] z-[-1] w-full h-[115%] bg-basic " />
 		</div>

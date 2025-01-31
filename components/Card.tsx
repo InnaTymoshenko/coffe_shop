@@ -3,7 +3,7 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
 import { DATA } from '@/types/item-type'
-import { Button } from './Button'
+import { Button } from './ui/Button'
 
 type Props = {
 	items: DATA[]
@@ -15,7 +15,7 @@ const Card = ({ items }: Props) => {
 			{items?.map((item, index) => (
 				<div
 					key={index}
-					className="w-[300px] h-[400px]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+					className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 				>
 					<div className="w-full h-full relative">
 						<img src={item.src.medium} alt="" className="w-full h-full object-cover" />

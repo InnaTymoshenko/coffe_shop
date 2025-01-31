@@ -7,6 +7,7 @@ import { ImQuotesRight } from 'react-icons/im'
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
 import fakeReviews from '@/fakedata/reviews.json'
 import { IReview } from '@/types/review-type'
+import Shell from './ui/Shell'
 
 const Reviews = () => {
 	const [reviews, setReviews] = useState<IReview[]>([])
@@ -57,7 +58,7 @@ const Reviews = () => {
 
 	return (
 		<div className="w-full h-[80vh] flex flex-col gap-8 justify-start py-8">
-			<div className="w-[80%] flex flex-col flex-wrap gap-4 justify-center items-start mx-auto p-4">
+			<Shell className="container flex flex-col flex-wrap gap-4 justify-center items-start">
 				<h2 className="text-white text-3xl my-6">Reviews</h2>
 				<div className="relative w-full max-w-[960px] h-[250px] mx-auto overflow-hidden">
 					<div
@@ -101,7 +102,7 @@ const Reviews = () => {
 						</button>
 					</div>
 				</div>
-			</div>
+			</Shell>
 		</div>
 	)
 }

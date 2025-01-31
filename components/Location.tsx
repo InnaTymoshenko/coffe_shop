@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
+import Shell from './ui/Shell'
 
 const customIcon = L.icon({
 	iconUrl: '/marker-icon.png',
@@ -61,7 +62,7 @@ const Location = () => {
 	return (
 		<>
 			<div className="w-full  flex bg-gray-900 flex-col gap-8 justify-start py-8">
-				<div className="w-[80%] flex flex-col gap-4 justify-between items-start mx-auto p-4">
+				<Shell className="container flex flex-col gap-4 justify-between items-start">
 					<h2 className="text-2xl text-white">Choose a Location</h2>
 					<div className="w-full flex justify-between items-center gap-4">
 						<div className="w-[45%] h-full flex flex-col justify-between items-center gap-4">
@@ -89,7 +90,7 @@ const Location = () => {
 							</MapContainer>
 						</div>
 
-						<div className="w-[45%] h-[600px] overflow-hidden px-4">
+						<div className="w-[45%] h-[600px] overflow-hidden">
 							<img
 								src={selectedCafe.img}
 								alt={selectedCafe.name}
@@ -97,7 +98,7 @@ const Location = () => {
 							/>
 						</div>
 					</div>
-				</div>
+				</Shell>
 			</div>
 		</>
 	)

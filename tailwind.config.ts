@@ -9,6 +9,7 @@ export default {
 	theme: {
 		screens: {
 			sm: '480px',
+			sx: '560px',
 			md: '640px',
 			md2: '768px',
 			lg: '976px',
@@ -62,7 +63,7 @@ export default {
 		},
 		borderRadius: {
 			none: '0',
-			sm: '.25rem',
+			sm: '8px',
 			DEFAULT: '.5rem',
 			lg: '1rem',
 			full: '9999px'
