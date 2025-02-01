@@ -1,0 +1,22 @@
+[
+	{
+		"icon": "smile",
+		"title": 1000,
+		"description": "Happy customers"
+	},
+	{
+		"icon": "coffee",
+		"title": 15000,
+		"description": "Cups of coffee per year"
+	},
+	{
+		"icon": "cupcake",
+		"title": 50,
+		"description": "Unique cupcake recipes"
+	},
+	{
+		"icon": "award",
+		"title": 10,
+		"description": "Years of experience."
+	}
+]

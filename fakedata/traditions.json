@@ -1,0 +1,27 @@
+[
+	{
+		"image": "/assets/tradition-coffee.jpg",
+		"title": "Coffee with Soul",
+		"description": "We don’t just make coffee – we put warmth into every cup. Our baristas know each guest and can recommend the perfect drink to match your mood."
+	},
+	{
+		"image": "/assets/tradition-cookie.jpg",
+		"title": "A Sweet Treat",
+		"description": "Mornings should start with little joys! Every guest who visits us for coffee before 10:00 AM receives a free cookie with their drink."
+	},
+	{
+		"image": "/assets/tradition-custom-drink.jpg",
+		"title": "Personalized Drinks",
+		"description": "Love experimenting? Tell our barista about your favorite flavors, and we’ll create a signature drink just for you! Our guests often discover unique taste combinations with us."
+	},
+	{
+		"image": "/assets/tradition-loyalty.jpg",
+		"title": "Loyalty Program",
+		"description": "We value every guest who returns to us again and again. That’s why we have a bonus and special discount system for regular customers. Your 10th coffee is free!"
+	},
+	{
+		"image": "/assets/tradition-seasonal.jpg",
+		"title": "Seasonal Specials",
+		"description": "Every season, we create new, exclusive drinks – warming in the cold and refreshing in the summer. We always have something special to bring comfort and joy to your day."
+	}
+]
