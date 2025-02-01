@@ -3,3 +3,15 @@ export interface IFeature {
 	title: string
 	description: string
 }
+
+export interface IAdvantage {
+	icon: string
+	title: number
+	description: string
+}
+
+export interface ITradition {
+	image: string
+	title: string
+	description: string
+}
