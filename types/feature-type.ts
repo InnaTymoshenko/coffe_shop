@@ -12,6 +12,7 @@ export interface IAdvantage {
 
 export interface ITradition {
 	image: string
+	icon: string
 	title: string
 	description: string
 }
