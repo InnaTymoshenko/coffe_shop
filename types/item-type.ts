@@ -1,10 +1,19 @@
-interface IPHOTO {
+interface IPhoto {
 	medium: string
 	portrait: string
 	landscape: string
+	tiny: string
 }
 
-interface ISIZE {
+export type Size = ['small', 'medium', 'large']
+
+export interface IPrice {
+	small: number
+	medium: number
+	large: number
+}
+
+export interface IQuantity {
 	small: number
 	medium: number
 	large: number
@@ -13,11 +22,14 @@ interface ISIZE {
 export interface DATA {
 	id: number
 	alt: string
-	src: IPHOTO
+	src: IPhoto
 	category: string
-	price: ISIZE
+	size: Size
+	price: IPrice
+	quantity: IQuantity
 	title: string
 	rating: number
+	totalPrice: number
 }
 
 // export interface CUPCAKE_DATA {
