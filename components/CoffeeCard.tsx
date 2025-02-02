@@ -3,23 +3,22 @@
 
 import React, { useState, useEffect } from 'react'
 import { FaStar } from 'react-icons/fa'
-import { DATA } from '@/types/item-type'
+import { CoffeeData } from '@/types/item-type'
 import { Button } from './ui/Button'
-// import { ICart } from '@/types/cart-type'
+import { ICart } from '@/types/cart-type'
 
 type Props = {
-	item: DATA
+	item: CoffeeData
 }
 
 type Size = 'small' | 'medium' | 'large'
 
-const Card = ({ item }: Props) => {
-	// const [cartProducts, setCartProducts] = useState<ICart[]>()
-	const [quantity, setQuantity] = useState<number>(1) // Кількість чашок
-	const [selected, setSelected] = useState<Size>('medium') // Вибраний розмір
-	const [totalPrice, setTotalPrice] = useState<number>(item.price.medium) // Початкова ціна
+const CoffeeCard = ({ item }: Props) => {
+	const [cartProducts, setCartProducts] = useState<ICart[]>([])
+	const [quantity, setQuantity] = useState<number>(1)
+	const [selected, setSelected] = useState<Size>('medium')
+	const [totalPrice, setTotalPrice] = useState<number>(item.price.medium)
 
-	// Оновлення загальної вартості при зміні кількості або розміру
 	useEffect(() => {
 		setTotalPrice(quantity * item.price[selected])
 	}, [quantity, selected, item.price])
@@ -32,8 +31,39 @@ const Card = ({ item }: Props) => {
 		setSelected(value)
 	}
 
-	const addToCart = (item: DATA) => {
-		console.log(item)
+	const addToCart = (item: CoffeeData) => {
+		const updatedCart = updateCart(cartProducts, item)
+		setCartProducts(updatedCart)
+	}
+
+	const updateCart = (cart: ICart[], item: CoffeeData): ICart[] => {
+		const existingProductIndex = cart.findIndex(p => p.name === item.title && p.size === selected)
+
+		if (existingProductIndex !== -1) {
+			return cart.map((p, index) =>
+				index === existingProductIndex
+					? {
+							...p,
+							quantity: p.quantity + quantity,
+							totalPrice: p.totalPrice + totalPrice
+					  }
+					: p
+			)
+		} else {
+			return [
+				...cart,
+				{
+					id: item.id,
+					category: item.category,
+					size: selected,
+					img: item.src.tiny,
+					name: item.title,
+					quantity: quantity,
+					price: item.price[selected],
+					totalPrice: totalPrice
+				}
+			]
+		}
 	}
 
 	return (
@@ -115,4 +145,4 @@ const Card = ({ item }: Props) => {
 	)
 }
 
-export default Card
+export default CoffeeCard

@@ -1,12 +1,10 @@
-import { IPrice, Size, IQuantity } from './item-type'
-
 export interface ICart {
 	id: number
 	category: string
-	size: Size
+	size: 'small' | 'medium' | 'large'
 	img: string
 	name: string
-	quantity: IQuantity
-	price: IPrice
+	quantity: number
+	price: number
 	totalPrice: number
 }

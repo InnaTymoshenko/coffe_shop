@@ -19,7 +19,7 @@ export interface IQuantity {
 	large: number
 }
 
-export interface DATA {
+export interface CoffeeData {
 	id: number
 	alt: string
 	src: IPhoto
@@ -32,12 +32,14 @@ export interface DATA {
 	totalPrice: number
 }
 
-// export interface CUPCAKE_DATA {
-// 	id: number
-// 	alt: string
-// 	src: IPHOTO
-// 	category: string
-// 	price: number
-// 	title: string
-// 	rating: number
-// }
+export interface CupcakeData {
+	id: number
+	alt: string
+	src: IPhoto
+	category: string
+	price: number
+	quantity: number
+	title: string
+	rating: number
+	totalPrice: number
+}
