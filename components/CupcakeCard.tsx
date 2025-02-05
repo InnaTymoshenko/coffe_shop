@@ -5,16 +5,18 @@ import React, { useState, useEffect } from 'react'
 import { FaStar } from 'react-icons/fa'
 import { CupcakeData } from '@/types/item-type'
 import { Button } from './ui/Button'
-// import { ICart } from '@/types/cart-type'
+// import { ICupCakeCart } from '@/types/cart-type'
+import { useProductCart } from '@/store'
 
 type Props = {
 	item: CupcakeData
 }
 
 const CupcakeCard = ({ item }: Props) => {
-	// const [cartProducts, setCartProducts] = useState<ICart[]>([])
+	// const [cartProducts, setCartProducts] = useState<ICupCakeCart[]>([])
 	const [quantity, setQuantity] = useState<number>(1)
 	const [totalPrice, setTotalPrice] = useState<number>(item.price)
+	const { addToCart, cartProducts } = useProductCart()
 
 	useEffect(() => {
 		setTotalPrice(quantity * item.price)
@@ -24,11 +26,17 @@ const CupcakeCard = ({ item }: Props) => {
 		setQuantity(prev => (type === 'increment' ? prev + 1 : Math.max(1, prev - 1)))
 	}
 
-	const addToCart = (item: CupcakeData) => {
-		console.log(item)
+	const addToCartHandle = (item: CupcakeData) => {
+		const newProductCart = {
+			...item,
+			quantity: quantity,
+			totalPrice: totalPrice
+		}
+		addToCart(newProductCart)
+		// console.log(newProductCart)
 	}
 
-	// console.log(item)
+	console.log(cartProducts)
 
 	return (
 		<div className="w-full h-full relative">
@@ -60,7 +68,7 @@ const CupcakeCard = ({ item }: Props) => {
 						<Button
 							text="Add to cart"
 							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200"
-							onClick={() => addToCart(item)}
+							onClick={() => addToCartHandle(item)}
 						/>
 					</div>
 				</div>

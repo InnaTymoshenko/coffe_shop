@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 import { URL_COFFEE, URL_CUPCAKE } from '@/method/type'
 import Shell from './ui/Shell'
 import { useProductCart } from '@/store'
-import CoffeeCard from './CoffeeCard'
-import CupcakeCard from './CupcakeCard'
+import PtoductCard from './ProductCard'
+// import CupcakeCard from './CupcakeCard'
 
 const Products = () => {
 	// const [cupcakes, setCupcakes] = useState<DATA[]>()
@@ -33,7 +33,7 @@ const Products = () => {
 									key={coffee.id}
 									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 								>
-									<CoffeeCard item={coffee} />
+									<PtoductCard item={coffee} />
 								</div>
 							))}
 						</div>
@@ -48,7 +48,7 @@ const Products = () => {
 									key={cupcake.id}
 									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 								>
-									<CupcakeCard item={cupcake} />
+									<PtoductCard item={cupcake} />
 								</div>
 							))}
 						</div>
