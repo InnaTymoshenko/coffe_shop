@@ -64,7 +64,7 @@ const Header = () => {
 				</div>
 			</Shell>
 			{isOpen && (
-				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-900/10'}`}>
+				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
 					<Shell className=" container h-full flex justify-center items-center">
 						<div className="flex items-center gap-12">
 							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>

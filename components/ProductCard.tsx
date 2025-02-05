@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
-import { ProductData, IPrice, Size } from '@/types/item-type'
+import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/Button'
 import { useProductCart } from '@/store'
 // import { ICart } from '@/types/cart-type'
@@ -13,27 +13,20 @@ type Props = {
 }
 
 const PtoductCard = ({ item }: Props) => {
-	// const [cartProducts, setCartProducts] = useState<ICart[]>([])
-	// const [quantity, setQuantity] = useState<number>(1)
 	const [selected, setSelected] = useState<Size>('medium')
-	const [totalPrice, setTotalPrice] = useState<number>(15)
-	const { updateQuantity, cartProducts } = useProductCart()
+	const { updateQuantity, cartProducts, addToCart } = useProductCart()
 
-	// useEffect(() => {
-	// 	const updatePrice = item.price.map(p => {
-	// 		return p.quantity * p.price
-	// 	})
-
-	// 	setTotalPrice(updatePrice)
-	// }, [quantity, selected, item.price])
-
-	const quantityHandle = (selected: Size) => {
+	const quantityHandler = (selected: Size) => {
 		const qt = item.price.find(q => q.size === selected)
 		return qt?.quantity
 	}
 
-	const selectedHandle = (value: Size) => {
+	const selectedHandler = (value: Size) => {
 		setSelected(value)
+	}
+
+	const updateQuantityHandler = (item: ProductData, type: QuantityType, size: Size) => {
+		updateQuantity(item, type, size)
 	}
 
 	const defaultPrice = (selected: Size) => {
@@ -41,8 +34,8 @@ const PtoductCard = ({ item }: Props) => {
 		return price?.price
 	}
 
-	const addToCart = (item: ProductData) => {
-		console.log(item)
+	const addToCartHandler = (item: ProductData, size: Size) => {
+		addToCart(item, size)
 	}
 
 	console.log(cartProducts)
@@ -69,7 +62,7 @@ const PtoductCard = ({ item }: Props) => {
 											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
 												selected === p.size ? 'border-gray-200' : 'border-gray-900'
 											}`}
-											onClick={() => selectedHandle(p.size)}
+											onClick={() => selectedHandler(p.size)}
 										/>
 									)}
 									{p.size === 'medium' && (
@@ -78,7 +71,7 @@ const PtoductCard = ({ item }: Props) => {
 											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
 												selected === p.size ? 'border-gray-200' : 'border-gray-900'
 											}`}
-											onClick={() => selectedHandle(p.size)}
+											onClick={() => selectedHandler(p.size)}
 										/>
 									)}
 									{p.size === 'large' && (
@@ -87,7 +80,7 @@ const PtoductCard = ({ item }: Props) => {
 											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
 												selected === p.size ? 'border-gray-200' : 'border-gray-900'
 											}`}
-											onClick={() => selectedHandle(p.size)}
+											onClick={() => selectedHandler(p.size)}
 										/>
 									)}
 								</div>
@@ -98,13 +91,13 @@ const PtoductCard = ({ item }: Props) => {
 						<Button
 							text="-"
 							className="button w-10 h-full"
-							onClick={() => updateQuantity(item, 'decrement', selected)}
+							onClick={() => updateQuantityHandler(item, 'decrement', selected)}
 						/>
-						<span>{quantityHandle(selected)}</span>
+						<span>{quantityHandler(selected)}</span>
 						<Button
 							text="+"
 							className="button w-10 h-full"
-							onClick={() => updateQuantity(item, 'increment', selected)}
+							onClick={() => updateQuantityHandler(item, 'increment', selected)}
 						/>
 					</div>
 
@@ -120,7 +113,7 @@ const PtoductCard = ({ item }: Props) => {
 						<Button
 							text="Add to cart"
 							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200"
-							onClick={() => addToCart(item)}
+							onClick={() => addToCartHandler(item, selected)}
 						/>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { generateRandomPrice, generateSpecialIngredient, getServerSideProps } from '@/method/fn'
-import { ProductData, CupcakeData } from '@/types/item-type'
+import { ProductData, QuantityType, Size } from '@/types/item-type'
 
 type CartItem = ProductData
 
@@ -10,14 +10,14 @@ interface ICartStore {
 	cartProducts: CartItem[]
 	fetchCoffe: (url: string) => void
 	fetchCupcake: (url: string) => void
-	addToCart: (item: CartItem) => void
-	updateQuantity: (item: ProductData, type: string, size: string) => void
+	addToCart: (item: ProductData, size: Size) => void
+	updateQuantity: (item: ProductData, type: QuantityType, size: Size) => void
 }
 
 export const useProductCart = create<ICartStore>()((set, get) => ({
 	coffeeData: [],
-	cartProducts: [],
 	cupcakeData: [],
+	cartProducts: [],
 	fetchCoffe: url => {
 		getServerSideProps(url)
 			.then(data => {
@@ -34,9 +34,9 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 					ingridients: generateSpecialIngredient('Coffee'),
 					title: 'Cappuccino',
 					price: [
-						{ size: 'small', price: generateRandomPrice('small', 'Coffee'), quantity: 1 },
-						{ size: 'medium', price: generateRandomPrice('medium', 'Coffee'), quantity: 1 },
-						{ size: 'large', price: generateRandomPrice('large', 'Coffee'), quantity: 1 }
+						{ size: 'small', price: generateRandomPrice('small', 'Coffee'), quantity: 1, isChecked: false },
+						{ size: 'medium', price: generateRandomPrice('medium', 'Coffee'), quantity: 1, isChecked: false },
+						{ size: 'large', price: generateRandomPrice('large', 'Coffee'), quantity: 1, isChecked: false }
 					],
 					rating: (Math.random() * 1 + 4).toFixed(1),
 					totalPrice: 0
@@ -62,7 +62,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 					category: 'Cupcake',
 					ingridients: generateSpecialIngredient('Cupcake'),
 					title: 'Cupcake',
-					price: [{ size: 'medium', price: generateRandomPrice('medium', 'Cake'), quantity: 1 }],
+					price: [{ size: 'medium', price: generateRandomPrice('medium', 'Cake'), quantity: 1, isChecked: false }],
 
 					rating: (Math.random() * 1 + 4).toFixed(1),
 					totalPrice: 0
@@ -73,32 +73,95 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 			})
 			.catch((err: string) => console.log(err))
 	},
-	addToCart: item => {
-		console.log(item)
+	addToCart: (item, size) => {
+		set(state => {
+			const cart = state.cartProducts
+			const isCoffee = item.category === 'Coffee'
+
+			// Знаходимо товар у coffeeData або cupcakeData
+			const productData = isCoffee
+				? state.coffeeData.find(p => p.id === item.id)
+				: state.cupcakeData.find(p => p.id === item.id)
+
+			if (!productData) {
+				console.error('Product not found in data')
+				return state
+			}
+
+			// 🔹 Оновлюємо isChecked для вибраного розміру
+			const updatedPrice = productData.price.map(priceObj =>
+				priceObj.size === size
+					? { ...priceObj, isChecked: true } // Робимо вибраний розмір активним
+					: priceObj
+			)
+
+			// 🔹 Оновлюємо totalPrice тільки для isChecked: true
+			const newTotalPrice = updatedPrice.reduce(
+				(sum, priceObj) => (priceObj.isChecked ? sum + priceObj.price * priceObj.quantity : sum),
+				0
+			)
+
+			// 🔹 Перевіряємо, чи товар вже є у кошику
+			const existingProductIndex = cart.findIndex(
+				p => p.id === item.id && (isCoffee ? p.price.some(s => s.size === size) : true)
+			)
+
+			if (existingProductIndex !== -1) {
+				const updatedCart = cart.map((p, index) => {
+					if (index === existingProductIndex) {
+						return {
+							...p,
+							price: p.price.map(priceObj =>
+								priceObj.size === size
+									? {
+											...priceObj,
+											quantity: priceObj.quantity + 1, // Збільшуємо кількість
+											isChecked: true // Вибраний розмір залишається активним
+									  }
+									: priceObj
+							),
+							totalPrice: newTotalPrice
+						}
+					}
+					return p
+				})
+
+				return { cartProducts: updatedCart }
+			} else {
+				const newProduct: ProductData = {
+					...productData,
+					price: updatedPrice,
+					totalPrice: newTotalPrice
+				}
+
+				return { cartProducts: [...cart, newProduct] }
+			}
+		})
 	},
 	updateQuantity: (item, type, size) => {
 		set(state => {
-			const cart = state.cartProducts
-
 			const isCoffee = (product: ProductData): product is ProductData => product.category === 'Coffee'
 
-			// 🔹 Функція оновлення `quantity` та `totalPrice`
+			// Функція для оновлення кількості та totalPrice
 			const updateProductData = (products: ProductData[]) =>
 				products.map(p => {
 					if (p.id === item.id) {
 						if (isCoffee(p) && size) {
-							// Оновлюємо кількість у конкретному розмірі кави
 							const updatedPrice = p.price.map(priceObj =>
 								priceObj.size === size
 									? {
 											...priceObj,
-											quantity: type === 'increment' ? priceObj.quantity + 1 : Math.max(1, priceObj.quantity - 1)
+											quantity: type === 'increment' ? priceObj.quantity + 1 : Math.max(1, priceObj.quantity - 1),
+											isChecked: true // Позначаємо, що розмір активний
 									  }
 									: priceObj
 							)
 
-							// 🔹 Перераховуємо totalPrice для всіх розмірів кави
-							const newTotalPrice = updatedPrice.reduce((sum, priceObj) => sum + priceObj.price * priceObj.quantity, 0)
+							// Перераховуємо totalPrice тільки для isChecked: true
+							const newTotalPrice = updatedPrice.reduce(
+								(sum, priceObj) => (priceObj.isChecked ? sum + priceObj.price * priceObj.quantity : sum),
+								0
+							)
 
 							return {
 								...p,
@@ -106,13 +169,12 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 								totalPrice: newTotalPrice // Оновлюємо totalPrice
 							}
 						} else {
-							// 🔹 Оновлюємо кейки
 							const newQuantity = type === 'increment' ? p.price[0].quantity + 1 : Math.max(1, p.price[0].quantity - 1)
 							const newTotalPrice = newQuantity * p.price[0].price
 
 							return {
 								...p,
-								price: [{ ...p.price[0], quantity: newQuantity }],
+								price: [{ ...p.price[0], quantity: newQuantity, isChecked: true }],
 								totalPrice: newTotalPrice // Оновлюємо totalPrice
 							}
 						}
@@ -120,44 +182,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 					return p
 				})
 
-			// 🔹 Оновлюємо cartProducts
-			const updatedCart = cart.map(p => {
-				if (p.id === item.id) {
-					if (isCoffee(p) && size) {
-						const updatedPrice = p.price.map(priceObj =>
-							priceObj.size === size
-								? {
-										...priceObj,
-										quantity: type === 'increment' ? priceObj.quantity + 1 : Math.max(1, priceObj.quantity - 1)
-								  }
-								: priceObj
-						)
-
-						// 🔹 Перераховуємо totalPrice
-						const newTotalPrice = updatedPrice.reduce((sum, priceObj) => sum + priceObj.price * priceObj.quantity, 0)
-
-						return {
-							...p,
-							price: updatedPrice,
-							totalPrice: newTotalPrice // Оновлюємо totalPrice
-						}
-					} else {
-						// 🔹 Оновлюємо кейки
-						const newQuantity = type === 'increment' ? p.price[0].quantity + 1 : Math.max(1, p.price[0].quantity - 1)
-						const newTotalPrice = newQuantity * p.price[0].price
-
-						return {
-							...p,
-							price: [{ ...p.price[0], quantity: newQuantity }],
-							totalPrice: newTotalPrice // Оновлюємо totalPrice
-						}
-					}
-				}
-				return p
-			})
-
 			return {
-				cartProducts: updatedCart,
 				coffeeData: updateProductData(state.coffeeData),
 				cupcakeData: updateProductData(state.cupcakeData)
 			}

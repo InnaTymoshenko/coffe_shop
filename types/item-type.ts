@@ -6,11 +6,13 @@ interface IPhoto {
 }
 
 export type Size = 'small' | 'medium' | 'large'
+export type QuantityType = 'increment' | 'decrement'
 
 export interface IPrice {
 	size: Size
 	price: number
 	quantity: number
+	isChecked: boolean // Додаємо відстеження активного розміру
 }
 
 export interface ProductData {
