@@ -14,7 +14,7 @@ type Props = {
 
 const PtoductCard = ({ item }: Props) => {
 	const [selected, setSelected] = useState<Size>('medium')
-	const { updateQuantity, cartProducts, addToCart } = useProductCart()
+	const { updateQuantity, addToCart } = useProductCart()
 
 	const quantityHandler = (selected: Size) => {
 		const qt = item.price.find(q => q.size === selected)
@@ -38,7 +38,7 @@ const PtoductCard = ({ item }: Props) => {
 		addToCart(item, size)
 	}
 
-	console.log(cartProducts)
+	// console.log(cartProducts)
 
 	return (
 		<div className="w-full h-full relative">
@@ -112,7 +112,7 @@ const PtoductCard = ({ item }: Props) => {
 
 						<Button
 							text="Add to cart"
-							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200"
+							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 							onClick={() => addToCartHandler(item, selected)}
 						/>
 					</div>

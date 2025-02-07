@@ -3,14 +3,22 @@
 import { useState, useEffect } from 'react'
 import { BsTelephoneForward } from 'react-icons/bs'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
+import { PiShoppingCartSimpleFill } from 'react-icons/pi'
 import { FaOpencart } from 'react-icons/fa'
 import Shell from './ui/Shell'
 import Link from 'next/link'
 import { Button } from './ui/Button'
+import { useProductCart } from '@/store'
+import { ProductData } from '@/types/item-type'
 
-const Header = () => {
+type Props = {
+	openCartHandler: () => void
+}
+
+const Header = ({ openCartHandler }: Props) => {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
+	const { cartProducts } = useProductCart()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -27,9 +35,15 @@ const Header = () => {
 		}
 	}, [])
 
+	const getTotalQuantity = (cartProducts: ProductData[]): number => {
+		return cartProducts.reduce((sum, item) => {
+			return sum + item.price.reduce((sizeSum, priceObj) => sizeSum + priceObj.quantity, 0)
+		}, 0)
+	}
+
 	return (
 		<header
-			className={`w-full h-[5rem] fixed top-0 z-50 transition-colors duration-300 ${
+			className={`w-full h-[5rem] fixed top-0 z-20 transition-colors duration-300 ${
 				isScrolled ? 'bg-gray-900' : 'transparent'
 			}`}
 		>
@@ -44,11 +58,31 @@ const Header = () => {
 					</div>
 				</div>
 				<div className={`logo  ${isScrolled ? 'text-gray-200' : 'text-black'}`}>Coffee Town</div>
-				<div className="p-2 flex items-center justify-between gap-4">
-					<FaOpencart className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`} />
+				<div className="relative p-2 flex items-center justify-between gap-4">
+					{cartProducts.length > 0 ? (
+						<>
+							<div
+								className={`absolute -top-1 left-3 z-[-1] px-2 py-[.15rem] bg-orange-600 text-gray-200 rounded-full flex justify-center items-center `}
+							>
+								{cartProducts.length > 0 && getTotalQuantity(cartProducts)}
+							</div>
+							<PiShoppingCartSimpleFill
+								size={28}
+								className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={openCartHandler}
+							/>
+						</>
+					) : (
+						<FaOpencart
+							size={24}
+							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+							onClick={openCartHandler}
+						/>
+					)}
+
 					<Button
 						text="Login"
-						className="bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 "
+						className="bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150 "
 					/>
 					{isOpen ? (
 						<RxCross1

@@ -122,7 +122,7 @@ const ReservationForm = () => {
 				{/* Submit Button */}
 				<button
 					type="submit"
-					className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold"
+					className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
 					disabled={isSubmitting}
 				>
 					{isSubmitting ? 'Submitting...' : 'Reserve Table'}

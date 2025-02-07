@@ -12,6 +12,7 @@ interface ICartStore {
 	fetchCupcake: (url: string) => void
 	addToCart: (item: ProductData, size: Size) => void
 	updateQuantity: (item: ProductData, type: QuantityType, size: Size) => void
+	updateCartQuantity: (itemId: number, size: Size, type: QuantityType) => void
 }
 
 export const useProductCart = create<ICartStore>()((set, get) => ({
@@ -73,7 +74,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 			})
 			.catch((err: string) => console.log(err))
 	},
-	addToCart: (item, size) => {
+	addToCart: (item: ProductData, size: Size) => {
 		set(state => {
 			const cart = state.cartProducts
 			const isCoffee = item.category === 'Coffee'
@@ -91,15 +92,20 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 			// 🔹 Оновлюємо isChecked для вибраного розміру
 			const updatedPrice = productData.price.map(priceObj =>
 				priceObj.size === size
-					? { ...priceObj, isChecked: true } // Робимо вибраний розмір активним
+					? { ...priceObj, isChecked: true } // Встановлюємо isChecked: true для вибраного розміру
 					: priceObj
 			)
 
+			// 🔹 Вибираємо тільки isChecked: true
+			const selectedPrices = updatedPrice.filter(p => p.isChecked)
+
+			if (selectedPrices.length === 0) {
+				console.error('No selected size found')
+				return state
+			}
+
 			// 🔹 Оновлюємо totalPrice тільки для isChecked: true
-			const newTotalPrice = updatedPrice.reduce(
-				(sum, priceObj) => (priceObj.isChecked ? sum + priceObj.price * priceObj.quantity : sum),
-				0
-			)
+			const newTotalPrice = selectedPrices.reduce((sum, priceObj) => sum + priceObj.price * priceObj.quantity, 0)
 
 			// 🔹 Перевіряємо, чи товар вже є у кошику
 			const existingProductIndex = cart.findIndex(
@@ -116,7 +122,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 									? {
 											...priceObj,
 											quantity: priceObj.quantity + 1, // Збільшуємо кількість
-											isChecked: true // Вибраний розмір залишається активним
+											isChecked: true
 									  }
 									: priceObj
 							),
@@ -130,12 +136,44 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 			} else {
 				const newProduct: ProductData = {
 					...productData,
-					price: updatedPrice,
+					price: selectedPrices, // Додаємо тільки ті price, де isChecked: true
 					totalPrice: newTotalPrice
 				}
 
 				return { cartProducts: [...cart, newProduct] }
 			}
+		})
+	},
+	updateCartQuantity: (itemId, size, type) => {
+		set(state => {
+			const updatedCart = state.cartProducts
+				.map(item => {
+					if (item.id === itemId) {
+						const updatedPrice = item.price
+							.map(priceObj =>
+								priceObj.size === size
+									? {
+											...priceObj,
+											quantity: type === 'increment' ? priceObj.quantity + 1 : Math.max(0, priceObj.quantity - 1) // Мінімальна кількість 0
+									  }
+									: priceObj
+							)
+							.filter(priceObj => priceObj.quantity > 0) // Видаляємо тільки розміри, де quantity = 0
+
+						// Якщо залишилися інші розміри, оновлюємо totalPrice
+						if (updatedPrice.length > 0) {
+							const newTotalPrice = updatedPrice.reduce((sum, priceObj) => sum + priceObj.price * priceObj.quantity, 0)
+
+							return { ...item, price: updatedPrice, totalPrice: newTotalPrice }
+						} else {
+							return null // Якщо всі розміри видалені, видаляємо товар повністю
+						}
+					}
+					return item
+				})
+				.filter((item): item is ProductData => item !== null) // Видаляємо `null` значення
+
+			return { cartProducts: updatedCart }
 		})
 	},
 	updateQuantity: (item, type, size) => {

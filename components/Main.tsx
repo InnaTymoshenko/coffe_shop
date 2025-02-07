@@ -20,11 +20,11 @@ const Main = () => {
 				<div className="w-[60%] flex justify-start gap-6 p-4">
 					<Button
 						text="Check menu"
-						className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900  transition-all duration-300"
+						className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150 "
 					/>
 					<Button
 						text="Book table"
-						className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900  transition-all duration-300"
+						className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
 					/>
 				</div>
 			</Shell>
