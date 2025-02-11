@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa'
 import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/Button'
 import { useProductCart } from '@/store'
-// import { ICart } from '@/types/cart-type'
+import { defaultPrice, quantityHandler } from '@/method/fn'
 
 type Props = {
 	item: ProductData
@@ -16,11 +16,6 @@ const PtoductCard = ({ item }: Props) => {
 	const [selected, setSelected] = useState<Size>('medium')
 	const { updateQuantity, addToCart } = useProductCart()
 
-	const quantityHandler = (selected: Size) => {
-		const qt = item.price.find(q => q.size === selected)
-		return qt?.quantity
-	}
-
 	const selectedHandler = (value: Size) => {
 		setSelected(value)
 	}
@@ -29,16 +24,9 @@ const PtoductCard = ({ item }: Props) => {
 		updateQuantity(item, type, size)
 	}
 
-	const defaultPrice = (selected: Size) => {
-		const price = item.price.find(p => p.size === selected)
-		return price?.price
-	}
-
 	const addToCartHandler = (item: ProductData, size: Size) => {
 		addToCart(item, size)
 	}
-
-	// console.log(cartProducts)
 
 	return (
 		<div className="w-full h-full relative">
@@ -93,7 +81,7 @@ const PtoductCard = ({ item }: Props) => {
 							className="button w-10 h-full"
 							onClick={() => updateQuantityHandler(item, 'decrement', selected)}
 						/>
-						<span>{quantityHandler(selected)}</span>
+						<span>{quantityHandler(item, selected)}</span>
 						<Button
 							text="+"
 							className="button w-10 h-full"
@@ -106,7 +94,7 @@ const PtoductCard = ({ item }: Props) => {
 							<span className="text-gray-400">Price:</span>
 							<div className="flex gap-1 text-xl">
 								<strong className="text-orange-600">$</strong>
-								<strong>{item.totalPrice === 0 ? defaultPrice(selected) : item.totalPrice.toFixed(2)}</strong>
+								<strong>{item.totalPrice === 0 ? defaultPrice(item, selected) : item.totalPrice.toFixed(2)}</strong>
 							</div>
 						</div>
 

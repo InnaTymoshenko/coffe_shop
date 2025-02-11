@@ -5,10 +5,8 @@ import { URL_COFFEE, URL_CUPCAKE } from '@/method/type'
 import Shell from './ui/Shell'
 import { useProductCart } from '@/store'
 import PtoductCard from './ProductCard'
-// import CupcakeCard from './CupcakeCard'
 
 const Products = () => {
-	// const [cupcakes, setCupcakes] = useState<DATA[]>()
 	const { fetchCoffe, fetchCupcake, cupcakeData, coffeeData } = useProductCart()
 
 	// console.log(cartProducts)
@@ -28,7 +26,7 @@ const Products = () => {
 					<h2 className="text-white text-3xl my-6">Coffee</h2>
 					{coffeeData && (
 						<div className="w-full flex flex-wrap gap-8 justify-center">
-							{coffeeData?.map(coffee => (
+							{coffeeData?.slice(0, 8).map(coffee => (
 								<div
 									key={coffee.id}
 									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
@@ -43,7 +41,7 @@ const Products = () => {
 					<h2 className="text-white text-3xl my-6">Cupcake</h2>
 					{cupcakeData && (
 						<div className="w-full flex flex-wrap gap-8 justify-center">
-							{cupcakeData?.map(cupcake => (
+							{cupcakeData?.slice(0, 8).map(cupcake => (
 								<div
 									key={cupcake.id}
 									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
