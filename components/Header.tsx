@@ -10,15 +10,17 @@ import Link from 'next/link'
 import { Button } from './ui/Button'
 import { useProductCart } from '@/store'
 import { ProductData } from '@/types/item-type'
+import Cart from './Cart'
 
-type Props = {
-	openCartHandler: () => void
-}
-
-const Header = ({ openCartHandler }: Props) => {
+const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
+	const [openCart, setOpenCart] = useState(false)
 	const { cartProducts } = useProductCart()
+
+	const openCartHandler = () => {
+		setOpenCart(!openCart)
+	}
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -47,6 +49,7 @@ const Header = ({ openCartHandler }: Props) => {
 				isScrolled ? 'bg-gray-900' : 'transparent'
 			}`}
 		>
+			{openCart && <Cart openCartHandler={openCartHandler} />}
 			<Shell className=" container h-full flex justify-between items-center">
 				<div className="flex items-center gap-4">
 					<BsTelephoneForward className={`text-xl ${isScrolled ? 'text-gray-200' : 'text-black'}`} />
@@ -76,7 +79,7 @@ const Header = ({ openCartHandler }: Props) => {
 						<FaOpencart
 							size={24}
 							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
-							onClick={openCartHandler}
+							// onClick={openCartHandler}
 						/>
 					)}
 
@@ -91,6 +94,7 @@ const Header = ({ openCartHandler }: Props) => {
 						/>
 					) : (
 						<RxHamburgerMenu
+							size={24}
 							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
 							onClick={() => setIsOpen(!isOpen)}
 						/>
@@ -101,10 +105,10 @@ const Header = ({ openCartHandler }: Props) => {
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
 					<Shell className=" container h-full flex justify-center items-center">
 						<div className="flex items-center gap-12">
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link href={'/'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
 								Home
 							</Link>
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link href={'/menu'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
 								Menu
 							</Link>
 							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
@@ -113,10 +117,10 @@ const Header = ({ openCartHandler }: Props) => {
 							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
 								Traditional
 							</Link>
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link href={'/#booking'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
 								Booking
 							</Link>
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link href={'/#location'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
 								Location
 							</Link>
 						</div>

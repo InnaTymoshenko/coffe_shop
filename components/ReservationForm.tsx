@@ -33,7 +33,7 @@ const ReservationForm = () => {
 	}
 
 	return (
-		<div className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
+		<div id="booking" className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className="w-full mx-auto bg-gray-900/80 p-6 rounded-sm shadow-md flex flex-col gap-4 items-center"

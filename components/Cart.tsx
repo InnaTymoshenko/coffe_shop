@@ -104,7 +104,7 @@ const Cart = ({ openCartHandler }: Props) => {
 					</div>
 					<Button
 						text="Pay"
-						className="w-[30%] h-full bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+						className="w-[30%] h-full text-xl bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 					/>
 				</div>
 			</div>

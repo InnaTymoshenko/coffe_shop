@@ -60,7 +60,7 @@ const Location = () => {
 	}
 
 	return (
-		<div className="w-full  flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
+		<div id="location" className="w-full  flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 			<Shell className="container flex flex-col gap-4 justify-between items-start">
 				<h2 className="text-2xl text-white">Choose a Location</h2>
 				<div className="w-full flex justify-between items-center gap-4">
