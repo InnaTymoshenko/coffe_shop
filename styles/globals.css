@@ -290,7 +290,7 @@
 	}
 
 	.logo {
-		@apply font-[family-name:var(--font-playwrite)] uppercase text-2xl font-semibold;
+		@apply font-[family-name:var(--font-playwrite)] uppercase font-semibold;
 	}
 
 	.basic {

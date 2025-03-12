@@ -47,3 +47,7 @@ export const defaultPrice = (item: ProductData, selected: Size) => {
 	const price = item.price.find(p => p.size === selected)
 	return price?.price
 }
+
+export const getCurrentYear = (): number => {
+	return new Date().getFullYear()
+}

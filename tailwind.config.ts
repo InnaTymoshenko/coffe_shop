@@ -274,7 +274,8 @@ export default {
 		extend: {
 			backgroundImage: {
 				basic: 'url("/assets/basic.jpg")',
-				banner: 'url("/assets/banner.jpg")'
+				banner: 'url("/assets/banner.jpg")',
+				stillife: 'url("/assets/still-life.jpg")'
 			},
 			keyframes: {
 				// SLIDE

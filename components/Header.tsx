@@ -60,7 +60,7 @@ const Header = () => {
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 					</div>
 				</div>
-				<div className={`logo  ${isScrolled ? 'text-gray-200' : 'text-black'}`}>Coffee Town</div>
+				<div className={`logo text-2xl ${isScrolled ? 'text-gray-200' : 'text-black'}`}>Coffee Town</div>
 				<div className="relative p-2 flex items-center justify-between gap-4">
 					{cartProducts.length > 0 ? (
 						<>
@@ -105,22 +105,46 @@ const Header = () => {
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
 					<Shell className=" container h-full flex justify-center items-center">
 						<div className="flex items-center gap-12">
-							<Link href={'/'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={'/'}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Home
 							</Link>
-							<Link href={'/menu'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={'/menu'}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Menu
 							</Link>
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={''}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Features
 							</Link>
-							<Link href={''} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={''}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Traditional
 							</Link>
-							<Link href={'/#booking'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={'/#booking'}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Booking
 							</Link>
-							<Link href={'/#location'} className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}>
+							<Link
+								href={'/#location'}
+								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								onClick={() => setIsOpen(!isOpen)}
+							>
 								Location
 							</Link>
 						</div>
