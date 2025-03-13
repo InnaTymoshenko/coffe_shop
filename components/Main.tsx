@@ -31,7 +31,7 @@ const Main = () => {
 				</div>
 			</Shell>
 
-			<div className="basic absolute top-[-5rem] z-[-1] w-full h-[115%] bg-basic " />
+			<div className="basic blur-sm absolute top-[-5rem] z-[-1] w-full h-[115%] bg-basic " />
 		</div>
 	)
 }

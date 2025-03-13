@@ -294,7 +294,7 @@
 	}
 
 	.basic {
-		@apply bg-no-repeat bg-center bg-cover  blur-sm;
+		@apply bg-no-repeat bg-center bg-cover;
 	}
 
 	.button {
