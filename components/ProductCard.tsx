@@ -31,7 +31,7 @@ const PtoductCard = ({ item }: Props) => {
 	}
 
 	return (
-		<div className="w-full h-full relative cursor-pointer" onClick={() => router.push(`/menu/${item.id}`)}>
+		<div className="w-full h-full relative">
 			<img src={item.src.medium} alt="" className="w-full h-full object-cover" />
 
 			<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
@@ -39,7 +39,9 @@ const PtoductCard = ({ item }: Props) => {
 					<span className="font-thin text-md">{item.rating}</span>
 					<FaStar className="text-yellow" />
 				</div>
-				<h3 className="text-2xl">{item.title}</h3>
+				<h3 className="text-2xl cursor-pointer" onClick={() => router.push(`/menu/${item.id}`)}>
+					{item.title}
+				</h3>
 				<p className="my-6">{item.alt}</p>
 				<div className="w-full flex flex-col gap-2 justify-between items-center">
 					{item.category === 'Coffee' && (
@@ -90,7 +92,6 @@ const PtoductCard = ({ item }: Props) => {
 							onClick={() => updateQuantityHandler(item, 'increment', selected)}
 						/>
 					</div>
-
 					<div className="w-full flex justify-between items-center gap-2 r-4">
 						<div className="flex flex-col gap-2 items-center px-2">
 							<span className="text-gray-400">Price:</span>

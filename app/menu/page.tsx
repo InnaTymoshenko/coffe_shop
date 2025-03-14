@@ -17,20 +17,47 @@ const MenuPage = () => {
 	return (
 		<>
 			<div className="fixed top-0 left-0 w-full h-screen bg-stillife basic z-[-2]" />
-			<div className="w-full h-[50vh] bg-gray-200">
-				<Shell className="w-full max-w-[1240px] mx-auto h-full">
+			<div className="w-full h-[60vh] bg-gray-200">
+				<Shell className="container h-full">
+					<div className="w-full h-[4rem]" />
 					<Image
-						src={'/assets/coffee-beans.jpg'}
+						src={'/assets/coffee-21.png'}
 						alt={'coffee beans'}
 						width={500}
 						height={300}
-						className="w-full h-full"
+						className="w-full h-[70%]"
 					/>
+					<div className="flex justify-start my-6 gap-4">
+						<Button
+							className={`py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
+            ${activeTab === 'coffee' ? 'underline text-gray-900' : 'no-underline text-gray-600'}`}
+							style={{ textUnderlineOffset: '6px' }}
+							onClick={() => setActiveTab('coffee')}
+						>
+							Coffee
+							<Coffee
+								size={18}
+								className={`transition-all text-gray-900 ${activeTab === 'coffee' ? 'opacity-100' : 'opacity-0'}`}
+							/>
+						</Button>
+						<Button
+							className={`px-4 py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
+            ${activeTab === 'desserts' ? 'underline text-gray-900' : 'no-underline text-gray-600'}`}
+							style={{ textUnderlineOffset: '6px' }}
+							onClick={() => setActiveTab('desserts')}
+						>
+							Cupcake
+							<Dessert
+								size={18}
+								className={`transition-all text-gray-900 ${activeTab === 'desserts' ? 'opacity-100' : 'opacity-0'}`}
+							/>
+						</Button>
+					</div>
 				</Shell>
 			</div>
 			<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container flex flex-col gap-6">
-					<div className="flex justify-start my-6 gap-4">
+					{/* <div className="flex justify-start my-6 gap-4">
 						<Button
 							className={`py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
             ${activeTab === 'coffee' ? 'underline text-gray-200' : 'no-underline text-gray-600'}`}
@@ -55,7 +82,7 @@ const MenuPage = () => {
 								className={`transition-all text-gray-200 ${activeTab === 'desserts' ? 'opacity-100' : 'opacity-0'}`}
 							/>
 						</Button>
-					</div>
+					</div> */}
 					<div>{activeTab === 'coffee' ? <CoffeeList /> : <CupcakeList />}</div>
 				</Shell>
 			</div>
