@@ -2,6 +2,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { FaStar } from 'react-icons/fa'
 import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/Button'
@@ -13,6 +14,7 @@ type Props = {
 }
 
 const PtoductCard = ({ item }: Props) => {
+	const router = useRouter()
 	const [selected, setSelected] = useState<Size>('medium')
 	const { updateQuantity, addToCart } = useProductCart()
 
@@ -29,7 +31,7 @@ const PtoductCard = ({ item }: Props) => {
 	}
 
 	return (
-		<div className="w-full h-full relative">
+		<div className="w-full h-full relative cursor-pointer" onClick={() => router.push(`/menu/${item.id}`)}>
 			<img src={item.src.medium} alt="" className="w-full h-full object-cover" />
 
 			<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
