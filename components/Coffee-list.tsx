@@ -9,6 +9,7 @@ const CoffeeList = () => {
 	const { fetchCoffe, coffeeData } = useProductCart()
 
 	// console.log(cartProducts)
+	// console.log(coffeeData)
 
 	useEffect(() => {
 		fetchCoffe(URL_COFFEE)

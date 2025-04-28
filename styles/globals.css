@@ -308,4 +308,15 @@
 	.advantages-container > div:last-child {
 		border-right: none;
 	}
+
+	.card_product::after {
+		background-color: rgba(238, 238, 238);
+		border-radius: 12px;
+		bottom: 0;
+		content: '';
+		height: 2px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+	}
 }

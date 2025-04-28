@@ -276,7 +276,7 @@ export default {
 				basic: 'url("/assets/basic.jpg")',
 				banner: 'url("/assets/banner.jpg")',
 				stillife: 'url("/assets/still-life.jpg")',
-				coffeebeans: 'url("/assets/coffee-beans.jpg")'
+				coffeebeans: 'url("/assets/coffee-beans-23.jpg")'
 			},
 			keyframes: {
 				// SLIDE

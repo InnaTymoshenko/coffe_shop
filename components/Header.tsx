@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { BsTelephoneForward } from 'react-icons/bs'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { PiShoppingCartSimpleFill } from 'react-icons/pi'
@@ -17,6 +18,8 @@ const Header = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [openCart, setOpenCart] = useState(false)
 	const { cartProducts } = useProductCart()
+	const pathname = usePathname()
+	const isHomePage = pathname === '/'
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)
@@ -107,42 +110,42 @@ const Header = () => {
 						<div className="flex items-center gap-12">
 							<Link
 								href={'/'}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Home
 							</Link>
 							<Link
 								href={'/menu'}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Menu
 							</Link>
 							<Link
 								href={''}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Features
 							</Link>
 							<Link
 								href={''}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Traditional
 							</Link>
 							<Link
 								href={'/#booking'}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Booking
 							</Link>
 							<Link
 								href={'/#location'}
-								className={`text-lg ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={() => setIsOpen(!isOpen)}
 							>
 								Location
