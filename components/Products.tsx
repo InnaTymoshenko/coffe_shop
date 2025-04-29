@@ -9,7 +9,7 @@ import PtoductCard from './ProductCard'
 const Products = () => {
 	const { fetchCoffe, fetchCupcake, cupcakeData, coffeeData } = useProductCart()
 
-	// console.log(cartProducts)
+	// console.log(cupcakeData)
 
 	useEffect(() => {
 		fetchCoffe(URL_COFFEE)
