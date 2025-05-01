@@ -8,6 +8,7 @@ import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/Button'
 import { useProductCart } from '@/store'
 import { defaultPrice, quantityHandler } from '@/method/fn'
+import ProductCardSize from './ProductCard-size'
 
 type Props = {
 	item: ProductData
@@ -33,13 +34,12 @@ const PtoductCard = ({ item }: Props) => {
 	return (
 		<div className="w-full h-full relative">
 			<img src={item.src.medium} alt="" className="w-full h-full object-cover" />
-
 			<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
 				<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
 					<span className="font-thin text-md">{item.rating}</span>
 					<FaStar className="text-yellow" />
 				</div>
-				<h3 className="text-2xl cursor-pointer" onClick={() => router.push(`/menu/${item.id}`)}>
+				<h3 className="text-2xl cursor-pointer hover:text-orange-500 " onClick={() => router.push(`/menu/${item.id}`)}>
 					{item.title}
 				</h3>
 				<p className="my-6">{item.alt}</p>
@@ -49,31 +49,13 @@ const PtoductCard = ({ item }: Props) => {
 							{item.price.map((p: IPrice) => (
 								<div key={`coffe-${p.size}`}>
 									{p.size === 'small' && (
-										<Button
-											text={'S'}
-											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
-												selected === p.size ? 'border-gray-200' : 'border-gray-900'
-											}`}
-											onClick={() => selectedHandler(p.size)}
-										/>
+										<ProductCardSize item={p} text={'S'} selected={selected} selectedHandler={selectedHandler} />
 									)}
 									{p.size === 'medium' && (
-										<Button
-											text={'M'}
-											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
-												selected === p.size ? 'border-gray-200' : 'border-gray-900'
-											}`}
-											onClick={() => selectedHandler(p.size)}
-										/>
+										<ProductCardSize item={p} text={'M'} selected={selected} selectedHandler={selectedHandler} />
 									)}
 									{p.size === 'large' && (
-										<Button
-											text={'L'}
-											className={`button w-[4.5rem] h-10 bg-gray-900 border-2  hover:bg-gray-900 hover:border-gray-200 ${
-												selected === p.size ? 'border-gray-200' : 'border-gray-900'
-											}`}
-											onClick={() => selectedHandler(p.size)}
-										/>
+										<ProductCardSize item={p} text={'L'} selected={selected} selectedHandler={selectedHandler} />
 									)}
 								</div>
 							))}
@@ -100,7 +82,6 @@ const PtoductCard = ({ item }: Props) => {
 								<strong>{item.totalPrice === 0 ? defaultPrice(item, selected) : item.totalPrice.toFixed(2)}</strong>
 							</div>
 						</div>
-
 						<Button
 							text="Add to cart"
 							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"

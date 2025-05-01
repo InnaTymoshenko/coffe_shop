@@ -7,6 +7,7 @@ interface IPhoto {
 
 export type Size = 'small' | 'medium' | 'large'
 export type QuantityType = 'increment' | 'decrement'
+export type Category = 'Coffee' | 'Cupcake'
 
 export interface IPrice {
 	size: Size
@@ -20,7 +21,7 @@ export interface ProductData {
 	alt: string
 	src: IPhoto
 	ingridients: string
-	category: string
+	category: Category
 	price: IPrice[]
 	title: string
 	rating: number

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Coffee, Dessert } from 'lucide-react'
 import ReservationForm from '@/components/ReservationForm'
 import Shell from '@/components/ui/Shell'
@@ -11,7 +11,7 @@ import { useProductCart } from '@/store'
 // type Props = {}
 
 const MenuPage = () => {
-	const [activeTab, setActiveTab] = useState<'coffee' | 'desserts'>('coffee')
+	const { activeTab, setActiveTab } = useProductCart()
 	const { cupcakeData, coffeeData } = useProductCart()
 
 	return (
@@ -35,14 +35,14 @@ const MenuPage = () => {
 						</Button>
 						<Button
 							className={`px-4 py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
-            ${activeTab === 'desserts' ? 'underline text-gray-200' : 'no-underline text-gray-600'}`}
+            ${activeTab === 'cupcake' ? 'underline text-gray-200' : 'no-underline text-gray-600'}`}
 							style={{ textUnderlineOffset: '6px' }}
-							onClick={() => setActiveTab('desserts')}
+							onClick={() => setActiveTab('cupcake')}
 						>
 							Cupcake
 							<Dessert
 								size={18}
-								className={`transition-all text-gray-200 ${activeTab === 'desserts' ? 'opacity-100' : 'opacity-0'}`}
+								className={`transition-all text-gray-200 ${activeTab === 'cupcake' ? 'opacity-100' : 'opacity-0'}`}
 							/>
 						</Button>
 					</div>

@@ -8,6 +8,8 @@ interface ICartStore {
 	coffeeData: ProductData[]
 	cupcakeData: ProductData[]
 	cartProducts: CartItem[]
+	activeTab: 'coffee' | 'cupcake'
+	setActiveTab: (value: 'coffee' | 'cupcake') => void
 	fetchCoffe: (url: string) => void
 	fetchCupcake: (url: string) => void
 	addToCart: (item: ProductData, size: Size) => void
@@ -19,6 +21,8 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 	coffeeData: [],
 	cupcakeData: [],
 	cartProducts: [],
+	activeTab: 'coffee',
+	setActiveTab: value => set({ activeTab: value }),
 	fetchCoffe: url => {
 		getServerSideProps(url)
 			.then(data => {

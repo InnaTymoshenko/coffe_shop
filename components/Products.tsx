@@ -1,15 +1,16 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { URL_COFFEE, URL_CUPCAKE } from '@/method/type'
 import Shell from './ui/Shell'
 import { useProductCart } from '@/store'
-import PtoductCard from './ProductCard'
+import { ProductData } from '@/types/item-type'
+import MenuList from './Menu-list'
 
 const Products = () => {
+	const [coffeeGroup, setCoffeeGroup] = useState<ProductData[] | null>(null)
+	const [cupcakeGroup, setCupcakeGroup] = useState<ProductData[] | null>(null)
 	const { fetchCoffe, fetchCupcake, cupcakeData, coffeeData } = useProductCart()
-
-	// console.log(cupcakeData)
 
 	useEffect(() => {
 		fetchCoffe(URL_COFFEE)
@@ -19,39 +20,23 @@ const Products = () => {
 		fetchCupcake(URL_CUPCAKE)
 	}, [fetchCupcake])
 
+	useEffect(() => {
+		if (!coffeeData) return
+		const group = coffeeData.slice(0, 4)
+		setCoffeeGroup(group)
+	}, [coffeeData])
+
+	useEffect(() => {
+		if (!cupcakeData) return
+		const group = cupcakeData.slice(0, 4)
+		setCupcakeGroup(group)
+	}, [cupcakeData])
+
 	return (
 		<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 			<Shell className="container flex flex-col gap-6">
-				<div className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
-					<h2 className="text-white text-3xl my-6">Coffee</h2>
-					{coffeeData && (
-						<div className="w-full flex flex-wrap gap-8 justify-center">
-							{coffeeData?.slice(0, 8).map(coffee => (
-								<div
-									key={coffee.id}
-									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
-								>
-									<PtoductCard item={coffee} />
-								</div>
-							))}
-						</div>
-					)}
-				</div>
-				<div className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
-					<h2 className="text-white text-3xl my-6">Cupcake</h2>
-					{cupcakeData && (
-						<div className="w-full flex flex-wrap gap-8 justify-center">
-							{cupcakeData?.slice(0, 8).map(cupcake => (
-								<div
-									key={cupcake.id}
-									className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
-								>
-									<PtoductCard item={cupcake} />
-								</div>
-							))}
-						</div>
-					)}
-				</div>
+				{coffeeGroup && <MenuList products={coffeeGroup} title={'Coffee'} tab={'coffee'} />}
+				{cupcakeGroup && <MenuList products={cupcakeGroup} title={'Cupcake'} tab={'cupcake'} />}
 			</Shell>
 		</div>
 	)

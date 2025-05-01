@@ -43,7 +43,6 @@ export default function RootLayout({
 			>
 				<div className="relative grid grid-rows-[0px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-playfair)]">
 					<Header />
-					{/* <div className="fixed top-0 left-0 w-full h-screen bg-banner basic z-[-2]" /> */}
 					<main className="relative w-full min-h-screen flex flex-col row-start-2 items-center sm:items-start mb-16 pb-16">
 						{children}
 					</main>
