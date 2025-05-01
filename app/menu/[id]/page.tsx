@@ -1,30 +1,38 @@
 'use client'
 
-import { useState } from 'react'
-import { useParams, usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import { CiCoffeeCup } from 'react-icons/ci'
 import { useProductCart } from '@/store'
 import Shell from '@/components/ui/Shell'
 import { Button } from '@/components/ui/Button'
 import { IPrice, ProductData, Size } from '@/types/item-type'
-import { defaultPrice } from '@/method/fn'
+import { defaultPrice, getRandomUniqueItems } from '@/method/fn'
 import { ButtonLink } from '@/components/ui/ButtonLink'
-import CoffeeList from '@/components/Coffee-list'
-import CupcakeList from '@/components/Cupcake-list'
 import ReservationForm from '@/components/ReservationForm'
+import MenuList from '@/components/Menu-list'
 
 export default function ProductPage() {
+	const [coffeePair, setCoffeePair] = useState<ProductData[] | null>(null)
+	const [cupcakePair, setCupcakePair] = useState<ProductData[] | null>(null)
+	const [selected, setSelected] = useState<Size>('medium')
 	const params = useParams()
-	const id = params?.id
-	const pathname = usePathname()
-
-	console.log(pathname)
-
+	const id = params?.id as string
 	const { cupcakeData, coffeeData } = useProductCart()
 	const product = [...coffeeData, ...cupcakeData].find(p => p.id === Number(id))
 
-	const [selected, setSelected] = useState<Size>('medium')
+	useEffect(() => {
+		if (!product) return
+		if (product?.category === 'Coffee') {
+			const pair = getRandomUniqueItems(cupcakeData, 4)
+			setCupcakePair(pair)
+		} else {
+			const pair = getRandomUniqueItems(coffeeData, 4)
+			setCoffeePair(pair)
+		}
+	}, [product])
+
 	const { addToCart } = useProductCart()
 
 	const selectedHandler = (value: Size) => {
@@ -40,7 +48,8 @@ export default function ProductPage() {
 	}
 
 	console.log(product)
-
+	console.log(coffeePair)
+	console.log(cupcakePair)
 	return (
 		<>
 			<div className="fixed top-0 left-0 w-full h-screen bg-coffeebeans basic z-[-2]" />
@@ -173,11 +182,14 @@ export default function ProductPage() {
 			<div className="w-full bg-gray-900">
 				<Shell className="container flex flex-col gap-12 py-8">
 					<h2 className="text-white text-3xl my-6">Pairs perfectly with:</h2>
-					<div>{product.category === 'Coffee' ? <CupcakeList /> : <CoffeeList />}</div>
+					<div>
+						{product.category === 'Coffee' && cupcakePair && <MenuList products={cupcakePair} title={'Cupcake'} />}
+						{product.category === 'Cupcake' && coffeePair && <MenuList products={coffeePair} title={'Coffee'} />}
+					</div>
 				</Shell>
 			</div>
 
-			<div className="w-full min-h-screen flex flex-col gap-8 justify-start py-8 mb-8">
+			<div className="w-full min-h-[70vh] flex flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container flex flex-col flex-wrap gap-4 justify-center items-start">
 					<h2 className="text-white text-3xl my-6 bg-gray-900/80 p-2 rounded-sm">Book a Table</h2>
 					<ReservationForm />

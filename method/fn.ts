@@ -51,3 +51,8 @@ export const defaultPrice = (item: ProductData, selected: Size) => {
 export const getCurrentYear = (): number => {
 	return new Date().getFullYear()
 }
+
+export function getRandomUniqueItems<T>(array: T[], count: number): T[] {
+	const shuffled = [...array].sort(() => 0.5 - Math.random()) // перемішуємо копію масиву
+	return shuffled.slice(0, count)
+}

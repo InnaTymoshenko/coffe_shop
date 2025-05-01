@@ -4,14 +4,15 @@ import React, { useState } from 'react'
 import { Coffee, Dessert } from 'lucide-react'
 import ReservationForm from '@/components/ReservationForm'
 import Shell from '@/components/ui/Shell'
-import CoffeeList from '@/components/Coffee-list'
-import CupcakeList from '@/components/Cupcake-list'
+import MenuList from '@/components/Menu-list'
 import { Button } from '@/components/ui/Button'
+import { useProductCart } from '@/store'
 
 // type Props = {}
 
 const MenuPage = () => {
 	const [activeTab, setActiveTab] = useState<'coffee' | 'desserts'>('coffee')
+	const { cupcakeData, coffeeData } = useProductCart()
 
 	return (
 		<>
@@ -45,10 +46,16 @@ const MenuPage = () => {
 							/>
 						</Button>
 					</div>
-					<div>{activeTab === 'coffee' ? <CoffeeList /> : <CupcakeList />}</div>
+					<div>
+						{activeTab === 'coffee' ? (
+							<MenuList products={coffeeData} title={'Coffee'} />
+						) : (
+							<MenuList products={cupcakeData} title={'Cupcake'} />
+						)}
+					</div>
 				</Shell>
 			</div>
-			<div className="w-full min-h-screen flex flex-col gap-8 justify-start py-8 mb-8">
+			<div className="w-full min-h-[70vh] flex flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container flex flex-col flex-wrap gap-4 justify-center items-start">
 					<h2 className="text-white text-3xl my-6 bg-gray-900/80 p-2 rounded-sm">Book a Table</h2>
 					<ReservationForm />

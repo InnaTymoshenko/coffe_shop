@@ -9,11 +9,11 @@ const CoffeeList = () => {
 	const { fetchCoffe, coffeeData } = useProductCart()
 
 	// console.log(cartProducts)
-	// console.log(coffeeData)
+	console.log(coffeeData)
 
-	useEffect(() => {
-		fetchCoffe(URL_COFFEE)
-	}, [fetchCoffe])
+	// useEffect(() => {
+	// 	fetchCoffe(URL_COFFEE)
+	// }, [fetchCoffe])
 
 	return (
 		<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
