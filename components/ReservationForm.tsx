@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Calendar, Clock } from 'lucide-react'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const reservationSchema = z.object({
 	name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -79,7 +80,10 @@ const ReservationForm = () => {
 							type="date"
 							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
 						/>
-						<Calendar size={20} className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-200" />
+						<Calendar
+							size={20}
+							className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-200 cursor-pointer"
+						/>
 						{errors.date && <p className="text-red-500 text-sm">{errors.date.message}</p>}
 					</div>
 
@@ -90,7 +94,10 @@ const ReservationForm = () => {
 							type="time"
 							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900 placeholder:text-gray-200"
 						/>
-						<Clock size={20} className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-200" />
+						<Clock
+							size={20}
+							className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-200 cursor-pointer"
+						/>
 						{errors.time && <p className="text-red-500 text-sm">{errors.time.message}</p>}
 					</div>
 

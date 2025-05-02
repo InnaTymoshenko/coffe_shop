@@ -4,6 +4,7 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { RxCross1 } from 'react-icons/rx'
+import { MdOutlineCoffeeMaker } from 'react-icons/md'
 import { useProductCart } from '@/store'
 import { Button } from './ui/Button'
 
@@ -30,8 +31,6 @@ const Cart = ({ openCartHandler }: Props) => {
 	}, [handleClickOutside])
 
 	const totalCartPrice = cartProducts.reduce((sum, item) => sum + item.totalPrice, 0)
-
-	console.log(cartProducts)
 
 	return (
 		<div className="fixed top-0 bottom-0 w-full nim-h-screen bg-gray-900/80 z-50 flex justify-end">
@@ -94,19 +93,29 @@ const Cart = ({ openCartHandler }: Props) => {
 						</div>
 					))}
 				</div>
-				<div className="w-full h-16 flex justify-end items-center gap-6">
-					<div className="w-[20%] flex flex-col  items-center gap-1 ">
-						<span className="text-gray-400">Total price</span>
-						<div className="flex gap-1 text-2xl">
-							<span className="text-orange-600">$</span>
-							<span>{totalCartPrice.toFixed(2)}</span>
+				{cartProducts.length !== 0 ? (
+					<div className="w-full h-16 flex justify-end items-center gap-6">
+						<div className="w-[20%] flex flex-col  items-center gap-1 ">
+							<span className="text-gray-400">Total price</span>
+							<div className="flex gap-1 text-2xl">
+								<span className="text-orange-600">$</span>
+								<span>{totalCartPrice.toFixed(2)}</span>
+							</div>
+						</div>
+						<Button
+							text="Pay"
+							className="w-[30%] h-full text-xl bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+						/>
+					</div>
+				) : (
+					<div className="w-full flex gap-12 items-center justify-between px-4 mt-8">
+						<MdOutlineCoffeeMaker size={96} color="" />
+						<div className="flex flex-col gap-2">
+							<h2 className="text-2xl">Your cart is currently empty...</h2>
+							<p>But aromatic coffee and fresh desserts are already waiting to be added</p>
 						</div>
 					</div>
-					<Button
-						text="Pay"
-						className="w-[30%] h-full text-xl bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
-					/>
-				</div>
+				)}
 			</div>
 		</div>
 	)

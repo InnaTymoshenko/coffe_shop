@@ -30,7 +30,6 @@ export default function ProductPage() {
 
 	return (
 		<>
-			<div className="fixed top-0 left-0 w-full h-screen bg-coffeebeans basic z-[-2]" />
 			<div className="w-full h-[25vh]" />
 			<ProductList product={product} />
 			<div className="w-full h-[2rem]" />
@@ -50,6 +49,7 @@ export default function ProductPage() {
 					<ReservationForm />
 				</Shell>
 			</div>
+			<div className="fixed top-0 left-0 w-full h-screen bg-coffeebeans basic z-[-2]" aria-hidden="true" />
 		</>
 	)
 }

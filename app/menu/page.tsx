@@ -16,7 +16,6 @@ const MenuPage = () => {
 
 	return (
 		<>
-			<div className="fixed top-0 left-0 w-full h-screen bg-coffeebeans basic z-[-2]" />
 			<div className="w-full h-[20vh] "></div>
 			<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container flex flex-col gap-6">
@@ -61,6 +60,7 @@ const MenuPage = () => {
 					<ReservationForm />
 				</Shell>
 			</div>
+			<div className="fixed top-0 left-0 w-full h-screen bg-coffeebeans basic z-[-2]" aria-hidden="true" />
 		</>
 	)
 }
