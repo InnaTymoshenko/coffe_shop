@@ -4,6 +4,7 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { RxCross1 } from 'react-icons/rx'
+import { FaRegSadTear } from 'react-icons/fa'
 import { MdOutlineCoffeeMaker } from 'react-icons/md'
 import { useProductCart } from '@/store'
 import { Button } from './ui/Button'
@@ -108,12 +109,13 @@ const Cart = ({ openCartHandler }: Props) => {
 						/>
 					</div>
 				) : (
-					<div className="w-full flex gap-12 items-center justify-between px-4 mt-8">
-						<MdOutlineCoffeeMaker size={96} color="" />
-						<div className="flex flex-col gap-2">
-							<h2 className="text-2xl">Your cart is currently empty...</h2>
-							<p>But aromatic coffee and fresh desserts are already waiting to be added</p>
+					<div className="w-full text-gray-200 flex flex-col gap-12 items-center justify-between px-4 mt-8">
+						<div className="flex justify-center items-end gap-6">
+							<MdOutlineCoffeeMaker size={96} />
+							<FaRegSadTear size={42} className="mb-2" />
 						</div>
+						<h2 className="text-2xl">Your cart is currently empty...</h2>
+						<p>But aromatic coffee and fresh desserts are already waiting to be added</p>
 					</div>
 				)}
 			</div>

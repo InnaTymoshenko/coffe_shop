@@ -27,7 +27,7 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 						<div onClick={() => setActiveTab(tab)}>
 							<ButtonLink
 								href={'/menu'}
-								text={'See more'}
+								text={`More ${title.toLowerCase()}...`}
 								className="border-b-2 border-b-gray-900 hover:border-b-gray-200 transition-all duration-200  "
 							/>
 						</div>
