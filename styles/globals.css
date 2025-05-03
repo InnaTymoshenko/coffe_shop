@@ -319,4 +319,75 @@
 		position: absolute;
 		width: 100%;
 	}
+
+	.custom-datepicker .react-date-picker__wrapper {
+		border: none !important;
+	}
+
+	.custom-datepicker button:disabled {
+		background-color: transparent !important;
+		color: #ccc;
+		cursor: not-allowed;
+	}
+
+	.custom-datepicker .react-date-picker__calendar {
+		width: 100%;
+	}
+
+	.custom-datepicker .react-calendar {
+		border: 1px solid rgba(66, 66, 66);
+		border-radius: 8px;
+	}
+
+	.custom-datepicker .react-calendar__navigation button:enabled:hover,
+	.custom-datepicker .react-calendar__navigation button:enabled:focus {
+		color: rgba(33, 33, 33);
+	}
+
+	.custom-datepicker .react-calendar__tile:enabled:hover,
+	.custom-datepicker .react-calendar__tile:enabled:focus {
+		background-color: #e6e6e6;
+		color: rgba(33, 33, 33);
+	}
+
+	.react-date-picker__inputGroup {
+		background: transparent;
+		border: thin solid transparent !important;
+	}
+
+	.react-date-picker__inputGroup__input {
+		color: white;
+		background: transparent;
+	}
+
+	.custom-datepicker .react-calendar,
+	.custom-datepicker .react-calendar__navigation {
+		background: rgba(33, 33, 33);
+	}
+
+	.react-date-picker__calendar {
+		background-color: #111;
+		color: white;
+		border: 1px solid #666;
+	}
+
+	.custom-timepicker .react-time-picker {
+		width: 100%;
+		font-family: inherit;
+	}
+
+	.custom-timepicker .react-time-picker__wrapper {
+		border: none !important;
+	}
+
+	.react-time-picker__inputGroup__input {
+		background: transparent;
+		color: white;
+		border: none;
+		outline: none;
+	}
+
+	.react-time-picker__inputGroup__divider {
+		color: #aaa;
+	}
 }

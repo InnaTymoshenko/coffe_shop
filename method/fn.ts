@@ -35,7 +35,7 @@ export const generateSpecialIngredient = (category: string): string => {
 	const cakeIngredients = ['Nuts', 'Candied Fruits', 'Fresh Berries', '']
 
 	const ingredientsList = category === 'Coffee' ? coffeeIngredients : cakeIngredients
-	return ingredientsList[Math.floor(Math.random() * ingredientsList.length)] // Випадковий вибір
+	return ingredientsList[Math.floor(Math.random() * ingredientsList.length)]
 }
 
 export const quantityHandler = (item: ProductData, selected: Size) => {
@@ -53,6 +53,6 @@ export const getCurrentYear = (): number => {
 }
 
 export function getRandomUniqueItems<T>(array: T[], count: number): T[] {
-	const shuffled = [...array].sort(() => 0.5 - Math.random()) // перемішуємо копію масиву
+	const shuffled = [...array].sort(() => 0.5 - Math.random())
 	return shuffled.slice(0, count)
 }
