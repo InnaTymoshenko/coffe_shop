@@ -280,7 +280,7 @@
 
 @layer base {
 	body {
-		@apply bg-primary text-primary text-md;
+		@apply bg-gray-50 text-gray-900 text-md;
 	}
 }
 

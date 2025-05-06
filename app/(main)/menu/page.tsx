@@ -11,12 +11,11 @@ import { useProductCart } from '@/store'
 // type Props = {}
 
 const MenuPage = () => {
-	const { activeTab, setActiveTab } = useProductCart()
-	const { cupcakeData, coffeeData } = useProductCart()
+	const { activeTab, setActiveTab, cupcakeData, coffeeData } = useProductCart()
 
 	return (
 		<>
-			<div className="w-full h-[20vh] "></div>
+			<div className="w-full h-[20vh] " />
 			<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container flex flex-col gap-6">
 					<div className="flex justify-start gap-4">
