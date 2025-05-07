@@ -1,0 +1,347 @@
+[
+	{
+		"id": 1,
+		"alt": "Light and fluffy vanilla cupcake with creamy frosting.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_1_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_1_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_1_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_1_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["vanilla", "milk"],
+		"title": "Vanilla Dream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.36,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 2,
+		"alt": "Rich chocolate cupcake topped with ganache.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_2_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_2_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_2_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_2_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["chocolate", "cream"],
+		"title": "Chocolate Bliss",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.61,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.0,
+		"totalPrice": 0
+	},
+	{
+		"id": 3,
+		"alt": "Classic red velvet with a hint of cocoa and cream cheese frosting.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_3_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_3_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_3_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_3_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["cocoa", "cream cheese"],
+		"title": "Red Velvet",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.72,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.5,
+		"totalPrice": 0
+	},
+	{
+		"id": 4,
+		"alt": "Tangy lemon cupcake with a zesty glaze.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_4_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_4_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_4_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_4_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["lemon", "glaze"],
+		"title": "Lemon Zest",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.73,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 5,
+		"alt": "Spiced carrot cake cupcake with walnut topping.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_5_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_5_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_5_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_5_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["carrot", "walnut"],
+		"title": "Carrot Cake",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.29,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 6,
+		"alt": "Fresh strawberry flavor with swirled icing.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_6_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_6_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_6_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_6_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["strawberry"],
+		"title": "Strawberry Swirl",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.44,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0
+	},
+	{
+		"id": 7,
+		"alt": "Soft coconut cupcake topped with whipped cream.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_7_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_7_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_7_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_7_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["coconut", "cream"],
+		"title": "Coconut Cloud",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.9,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 8,
+		"alt": "Coffee-infused chocolate cupcake with mocha frosting.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_8_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_8_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_8_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_8_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["double coffee", "chocolate"],
+		"title": "Mocha Delight",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.56,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0
+	},
+	{
+		"id": 9,
+		"alt": "Moist blueberry cupcake with fruity icing.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_9_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_9_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_9_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_9_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["blueberry", "icing"],
+		"title": "Blueberry Burst",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.51,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 10,
+		"alt": "Buttery cupcake with salted caramel core.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_10_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_10_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_10_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_10_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["caramel", "butter"],
+		"title": "Salted Caramel",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"totalPrice": 0
+	},
+	{
+		"id": 11,
+		"alt": "Decadent peanut butter cupcake with chocolate topping.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_11_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_11_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_11_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_11_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["peanut butter", "chocolate"],
+		"title": "Peanut Butter Cup",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.94,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 12,
+		"alt": "Floral raspberry cupcake with rosewater glaze.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_12_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_12_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_12_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_12_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["raspberry", "rosewater"],
+		"title": "Raspberry Rose",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.85,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 13,
+		"alt": "Banana cupcake with vanilla custard center.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_13_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_13_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_13_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_13_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["banana", "custard"],
+		"title": "Banana Cream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.6,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0
+	},
+	{
+		"id": 14,
+		"alt": "Minty chocolate cupcake with a crisp topping.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_14_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_14_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_14_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_14_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["mint", "chocolate"],
+		"title": "Mint Chocolate",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.74,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 15,
+		"alt": "Spiced pumpkin cupcake with cinnamon frosting.",
+		"src": {
+			"medium": "https://example.com/images/cupcake_15_medium.jpg",
+			"portrait": "https://example.com/images/cupcake_15_portrait.jpg",
+			"landscape": "https://example.com/images/cupcake_15_landscape.jpg",
+			"tiny": "https://example.com/images/cupcake_15_tiny.jpg"
+		},
+		"category": "Cupcake",
+		"ingridients": ["pumpkin", "cinnamon"],
+		"title": "Pumpkin Spice",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.61,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.0,
+		"totalPrice": 0
+	}
+]

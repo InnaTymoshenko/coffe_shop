@@ -2,16 +2,32 @@
 
 import React, { useState, useEffect } from 'react'
 import { ProductData } from '@/types/item-type'
-import { Button } from './Button'
+import { Button } from '../../ui/Button'
+import { useAdminStore } from '@/store/admin-store'
+import { EditProductForm } from '@/components/EditProductForm'
 
 type TableProps = {
 	data: ProductData[]
 }
 
-const Table = ({ data }: TableProps) => {
+const ProductTable = ({ data }: TableProps) => {
 	const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null)
+	const [isEditing, setIsEditing] = useState(false)
+	const { deleteProduct, editCardProduct } = useAdminStore()
 
-	// Заблокувати скрол сторінки
+	useEffect(() => {
+		const handelKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				setSelectedProduct(null)
+				setIsEditing(false)
+			}
+		}
+		document.addEventListener('keydown', handelKeyDown)
+		return () => {
+			document.removeEventListener('keydown', handelKeyDown)
+		}
+	}, [])
+
 	useEffect(() => {
 		if (selectedProduct) {
 			document.body.style.overflow = 'hidden'
@@ -19,6 +35,17 @@ const Table = ({ data }: TableProps) => {
 			document.body.style.overflow = 'auto'
 		}
 	}, [selectedProduct])
+
+	const handleDeleteProduct = (id: number) => {
+		deleteProduct(id)
+		setSelectedProduct(null)
+	}
+
+	const handleSave = (updated: ProductData) => {
+		editCardProduct(updated)
+		setIsEditing(false)
+		setSelectedProduct(null)
+	}
 
 	return (
 		<>
@@ -55,7 +82,7 @@ const Table = ({ data }: TableProps) => {
 				</table>
 			</div>
 			{selectedProduct && (
-				<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-50 overflow-y-auto">
+				<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
 					<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
 						<h3 className="text-lg font-semibold">Product Details</h3>
 						<Button
@@ -79,7 +106,11 @@ const Table = ({ data }: TableProps) => {
 							<li className="font-medium">Description:</li>
 							<li>{selectedProduct.alt}</li>
 							<li className="font-medium">Ingridients:</li>
-							<li>{selectedProduct.ingridients ? selectedProduct.ingridients : '-'}</li>
+							<ul>
+								{selectedProduct.ingridients.map(ing => (
+									<li key={ing}>{ing}</li>
+								))}
+							</ul>
 						</ul>
 						<ul>
 							{selectedProduct.price.map(p => (
@@ -87,7 +118,7 @@ const Table = ({ data }: TableProps) => {
 									<span className="font-medium">Size:</span>
 									{p.size}
 									<span className="font-medium">Price:</span>
-									{p.price}
+									{`${p.price}$`}
 								</li>
 							))}
 						</ul>
@@ -95,17 +126,24 @@ const Table = ({ data }: TableProps) => {
 							<Button
 								text="Edit Product"
 								className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
+								onClick={() => setIsEditing(true)}
 							/>
 							<Button
 								text="Delete Product"
 								className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
+								onClick={() => handleDeleteProduct(selectedProduct.id)}
 							/>
 						</div>
 					</div>
+				</div>
+			)}
+			{isEditing && selectedProduct && (
+				<div className="w-full h-screen fixed top-0 left-0 z-10 flex justify-center items-center bg-gray-900/60">
+					<EditProductForm product={selectedProduct} onSave={handleSave} setIsEditing={setIsEditing} />
 				</div>
 			)}
 		</>
 	)
 }
 
-export default Table
+export default ProductTable

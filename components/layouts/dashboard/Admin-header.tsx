@@ -8,7 +8,7 @@ export default function AdminHeader() {
 			<span className="text-2xl font-bold">Admin Panel</span>
 			<Button
 				text="Admin"
-				className="flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900"
+				className="flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
 			>
 				<BsPersonCheck />
 			</Button>

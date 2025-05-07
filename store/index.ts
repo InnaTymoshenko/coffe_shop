@@ -36,7 +36,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 						tiny: coffee.src.tiny
 					},
 					category: 'Coffee',
-					ingridients: generateSpecialIngredient('Coffee'),
+					ingridients: [generateSpecialIngredient('Coffee')],
 					title: 'Cappuccino',
 					price: [
 						{ size: 'small', price: generateRandomPrice('small', 'Coffee'), quantity: 1, isChecked: false },
@@ -65,7 +65,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 						tiny: cupcake.src.tiny
 					},
 					category: 'Cupcake',
-					ingridients: generateSpecialIngredient('Cupcake'),
+					ingridients: [generateSpecialIngredient('Cupcake')],
 					title: 'Cupcake',
 					price: [{ size: 'medium', price: generateRandomPrice('medium', 'Cake'), quantity: 1, isChecked: false }],
 

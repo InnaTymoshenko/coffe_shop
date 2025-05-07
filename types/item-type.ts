@@ -5,7 +5,7 @@ interface IPhoto {
 	tiny: string
 }
 
-export type Size = 'small' | 'medium' | 'large'
+export type Size = 'small' | 'medium' | 'large' | string
 export type QuantityType = 'increment' | 'decrement'
 export type Category = 'Coffee' | 'Cupcake'
 
@@ -13,14 +13,14 @@ export interface IPrice {
 	size: Size
 	price: number
 	quantity: number
-	isChecked: boolean // Додаємо відстеження активного розміру
+	isChecked: boolean
 }
 
 export interface ProductData {
 	id: number
 	alt: string
 	src: IPhoto
-	ingridients: string
+	ingridients: string[]
 	category: Category
 	price: IPrice[]
 	title: string

@@ -119,7 +119,11 @@ const ProductList = ({ product }: ProductListProps) => {
 						{product.ingridients.length !== 0 && (
 							<div className="w-full">
 								<h3 className="relative card_product w-full pb-4 mb-8 text-xl">{`What's included`}</h3>
-								<div className="w-full border border-gray-200 rounded-sm p-2">{product.ingridients}</div>
+								{product.ingridients.map(ing => (
+									<div key={ing} className="w-full border border-gray-200 rounded-sm p-2">
+										{product.ingridients}
+									</div>
+								))}
 							</div>
 						)}
 					</div>

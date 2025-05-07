@@ -1,0 +1,527 @@
+[
+	{
+		"id": 1,
+		"alt": "Rich and bold espresso shot.",
+		"src": {
+			"medium": "https://example.com/images/1_medium.jpg",
+			"portrait": "https://example.com/images/1_portrait.jpg",
+			"landscape": "https://example.com/images/1_landscape.jpg",
+			"tiny": "https://example.com/images/1_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["milk"],
+		"title": "Espresso",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.37,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.37,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.37,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.9,
+		"totalPrice": 0
+	},
+	{
+		"id": 2,
+		"alt": "Espresso with steamed milk foam.",
+		"src": {
+			"medium": "https://example.com/images/2_medium.jpg",
+			"portrait": "https://example.com/images/2_portrait.jpg",
+			"landscape": "https://example.com/images/2_landscape.jpg",
+			"tiny": "https://example.com/images/2_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["milk foam", "cinnamon"],
+		"title": "Cappuccino",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.56,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.56,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.56,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0
+	},
+	{
+		"id": 3,
+		"alt": "Smooth blend of espresso and steamed milk.",
+		"src": {
+			"medium": "https://example.com/images/3_medium.jpg",
+			"portrait": "https://example.com/images/3_portrait.jpg",
+			"landscape": "https://example.com/images/3_landscape.jpg",
+			"tiny": "https://example.com/images/3_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["steamed milk"],
+		"title": "Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 5.0,
+		"totalPrice": 0
+	},
+	{
+		"id": 4,
+		"alt": "Espresso with added hot water.",
+		"src": {
+			"medium": "https://example.com/images/4_medium.jpg",
+			"portrait": "https://example.com/images/4_portrait.jpg",
+			"landscape": "https://example.com/images/4_landscape.jpg",
+			"tiny": "https://example.com/images/4_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": [],
+		"title": "Americano",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.26,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.26,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.26,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0
+	},
+	{
+		"id": 5,
+		"alt": "Strong coffee with velvety microfoam.",
+		"src": {
+			"medium": "https://example.com/images/5_medium.jpg",
+			"portrait": "https://example.com/images/5_portrait.jpg",
+			"landscape": "https://example.com/images/5_landscape.jpg",
+			"tiny": "https://example.com/images/5_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["microfoam", "milk"],
+		"title": "Flat White",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.51,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.51,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.51,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0
+	},
+	{
+		"id": 6,
+		"alt": "Espresso mixed with chocolate and milk.",
+		"src": {
+			"medium": "https://example.com/images/6_medium.jpg",
+			"portrait": "https://example.com/images/6_portrait.jpg",
+			"landscape": "https://example.com/images/6_landscape.jpg",
+			"tiny": "https://example.com/images/6_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["chocolate", "milk"],
+		"title": "Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.33,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.33,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.33,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.1,
+		"totalPrice": 0
+	},
+	{
+		"id": 7,
+		"alt": "Espresso with a dash of frothy milk.",
+		"src": {
+			"medium": "https://example.com/images/7_medium.jpg",
+			"portrait": "https://example.com/images/7_portrait.jpg",
+			"landscape": "https://example.com/images/7_landscape.jpg",
+			"tiny": "https://example.com/images/7_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["milk froth"],
+		"title": "Macchiato",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.29,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.29,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.29,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	},
+	{
+		"id": 8,
+		"alt": "Coffee with Irish whiskey and cream.",
+		"src": {
+			"medium": "https://example.com/images/8_medium.jpg",
+			"portrait": "https://example.com/images/8_portrait.jpg",
+			"landscape": "https://example.com/images/8_landscape.jpg",
+			"tiny": "https://example.com/images/8_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["whiskey", "cream"],
+		"title": "Irish Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.73,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.73,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.73,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"totalPrice": 0
+	},
+	{
+		"id": 9,
+		"alt": "Espresso cut with a small amount of warm milk.",
+		"src": {
+			"medium": "https://example.com/images/9_medium.jpg",
+			"portrait": "https://example.com/images/9_portrait.jpg",
+			"landscape": "https://example.com/images/9_landscape.jpg",
+			"tiny": "https://example.com/images/9_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["milk"],
+		"title": "Cortado",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.62,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.62,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.62,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.1,
+		"totalPrice": 0
+	},
+	{
+		"id": 10,
+		"alt": "Shorter, more concentrated espresso.",
+		"src": {
+			"medium": "https://example.com/images/10_medium.jpg",
+			"portrait": "https://example.com/images/10_portrait.jpg",
+			"landscape": "https://example.com/images/10_landscape.jpg",
+			"tiny": "https://example.com/images/10_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": [],
+		"title": "Ristretto",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.78,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.78,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.78,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"totalPrice": 0
+	},
+	{
+		"id": 11,
+		"alt": "Vanilla ice cream topped with hot espresso.",
+		"src": {
+			"medium": "https://example.com/images/11_medium.jpg",
+			"portrait": "https://example.com/images/11_portrait.jpg",
+			"landscape": "https://example.com/images/11_landscape.jpg",
+			"tiny": "https://example.com/images/11_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["vanilla ice cream"],
+		"title": "Affogato",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.3,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.3,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.3,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0
+	},
+	{
+		"id": 12,
+		"alt": "Traditional strong coffee with foam.",
+		"src": {
+			"medium": "https://example.com/images/12_medium.jpg",
+			"portrait": "https://example.com/images/12_portrait.jpg",
+			"landscape": "https://example.com/images/12_landscape.jpg",
+			"tiny": "https://example.com/images/12_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["ground coffee", "cardamom"],
+		"title": "Turkish Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.7,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.7,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.7,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0
+	},
+	{
+		"id": 13,
+		"alt": "Chilled coffee served over ice.",
+		"src": {
+			"medium": "https://example.com/images/13_medium.jpg",
+			"portrait": "https://example.com/images/13_portrait.jpg",
+			"landscape": "https://example.com/images/13_landscape.jpg",
+			"tiny": "https://example.com/images/13_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["ice", "coffee"],
+		"title": "Iced Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.49,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.49,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.49,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0
+	},
+	{
+		"id": 14,
+		"alt": "Smooth, cold-brewed coffee flavor.",
+		"src": {
+			"medium": "https://example.com/images/14_medium.jpg",
+			"portrait": "https://example.com/images/14_portrait.jpg",
+			"landscape": "https://example.com/images/14_landscape.jpg",
+			"tiny": "https://example.com/images/14_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["cold brew", "ice"],
+		"title": "Cold Brew",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.3,
+		"totalPrice": 0
+	},
+	{
+		"id": 15,
+		"alt": "Cold brew infused with nitrogen for a creamy texture.",
+		"src": {
+			"medium": "https://example.com/images/15_medium.jpg",
+			"portrait": "https://example.com/images/15_portrait.jpg",
+			"landscape": "https://example.com/images/15_landscape.jpg",
+			"tiny": "https://example.com/images/15_tiny.jpg"
+		},
+		"category": "Coffee",
+		"ingridients": ["nitrogen", "cold brew"],
+		"title": "Nitro Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.35,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.35,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.35,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"totalPrice": 0
+	}
+]
