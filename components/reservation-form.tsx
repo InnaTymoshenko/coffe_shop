@@ -9,7 +9,7 @@ import TimePicker from './client-time-picker'
 import 'react-date-picker/dist/DatePicker.css'
 import 'react-calendar/dist/Calendar.css'
 import 'react-time-picker/dist/TimePicker.css'
-import { reservationSchema } from '@/method/shema'
+import { reservationSchema } from '@/method/validation/reservation-schema'
 
 type ReservationFormData = z.infer<typeof reservationSchema>
 

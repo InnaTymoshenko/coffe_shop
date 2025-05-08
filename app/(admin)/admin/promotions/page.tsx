@@ -1,20 +1,26 @@
 'use client'
 
+import React, { useState } from 'react'
 import { AddPromotionForm } from '@/components/add-promotion-form'
 import PromotionTable from '@/components/layouts/tables/promotion-table'
 import { Button } from '@/components/ui/button'
 import { Modal } from '@/components/ui/modal'
 import Shell from '@/components/ui/shell'
 import { useAdminStore } from '@/store/admin-store'
-import { PromotionStatus } from '@/types/promotion-type'
-import React, { useState } from 'react'
+import { PromotionData, PromotionStatus } from '@/types/promotion-type'
 
 // type Props = {}
 
 const PromotionsPage = () => {
 	const [isAddPromotion, setIsAddPromotion] = useState(false)
-	const [promotion, setPromotion] = useState<PromotionStatus>('active')
-	const { promotionsData } = useAdminStore()
+	const [promotion, setPromotion] = useState<PromotionStatus | ''>('')
+	const { promotionsData, addPromotions } = useAdminStore()
+	const filteredPromotions = promotion ? promotionsData.filter(p => p.status === promotion) : promotionsData
+
+	const handleAddPromotion = (item: PromotionData) => {
+		addPromotions(item)
+		setIsAddPromotion(false)
+	}
 
 	return (
 		<>
@@ -39,11 +45,11 @@ const PromotionsPage = () => {
 						<option value="moderation">Moderation</option>
 					</select>
 				</div>
-				{promotionsData.length > 0 && <PromotionTable data={promotionsData} />}
+				{filteredPromotions.length === 0 ? <p>No promotions found.</p> : <PromotionTable data={filteredPromotions} />}
 
 				{isAddPromotion && (
 					<Modal isOpen={isAddPromotion} onClose={() => setIsAddPromotion(false)}>
-						<AddPromotionForm onAdd={() => {}} setIsAddProduct={() => {}} />
+						<AddPromotionForm onAdd={handleAddPromotion} setIsAddPromotion={setIsAddPromotion} />
 					</Modal>
 				)}
 			</Shell>

@@ -17,7 +17,6 @@ const ProductPage = () => {
 	const handleAddProduct = (item: ProductData) => {
 		addProduct(item)
 		setIsAddProduct(false)
-		console.log(item)
 	}
 
 	return (

@@ -1,15 +1,5 @@
 import { z } from 'zod'
 
-export const reservationSchema = z.object({
-	name: z.string().min(2, 'Name must be at least 2 characters'),
-	email: z.string().email('Invalid email format'),
-	tel: z.string().regex(/^\+?\d{10,15}$/, 'Invalid phone number'),
-	date: z.date({ required_error: 'Date is required' }).refine(date => date > new Date(), 'Date must be in the future'),
-	time: z.string().min(1, 'Time is required'),
-	guests: z.number().min(1, 'At least 1 guest required').max(20, 'Maximum 20 guests'),
-	comment: z.string().max(500, 'Comment must be less than 500 characters').optional()
-})
-
 export const editProductSchema = z.object({
 	title: z.string().min(2, 'Title is too short'),
 	alt: z.string().min(5, 'Description is too short'),
@@ -48,14 +38,4 @@ export const addProductSchema = z.object({
 		landscape: z.string().url().optional().or(z.literal('')),
 		tiny: z.string().url().optional().or(z.literal(''))
 	})
-})
-
-export const promotionSchema = z.object({
-	title: z.string().min(2, 'Title is required'),
-	description: z.string().min(5, 'Description is required'),
-	start: z.string().min(1, 'Start date is required'),
-	end: z.string().min(1, 'End date is required'),
-	isActive: z.boolean(),
-	status: z.enum(['active', 'finished', 'moderation']),
-	type: z.string().min(1, 'Type is required')
 })

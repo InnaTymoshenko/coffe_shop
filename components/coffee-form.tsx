@@ -4,8 +4,8 @@ import * as z from 'zod'
 import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
 import { Button } from './ui/button'
-import { addProductSchema } from '@/method/shema'
 import { useAdminStore } from '@/store/admin-store'
+import { addProductSchema } from '@/method/validation/product-schema'
 
 type AddProductFormData = z.infer<typeof addProductSchema>
 
@@ -114,6 +114,7 @@ export function CoffeeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 							<input {...register(`price.${i}.size`)} placeholder="Size" className="border p-2 rounded" />
 							<input
 								type="number"
+								step="0.1"
 								{...register(`price.${i}.price`, { valueAsNumber: true })}
 								placeholder="Price"
 								className="border p-2 rounded"

@@ -4,8 +4,8 @@ import * as z from 'zod'
 import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
 import { Button } from './ui/button'
-import { addProductSchema } from '@/method/shema'
 import { useAdminStore } from '@/store/admin-store'
+import { addProductSchema } from '@/method/validation/product-schema'
 
 type AddProductFormData = z.infer<typeof addProductSchema>
 
@@ -118,6 +118,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 								<>
 									<input
 										type="number"
+										step="0.1"
 										{...register(`price.${i}.quantity`, { valueAsNumber: true })}
 										placeholder="Qty"
 										className="border p-2 rounded"

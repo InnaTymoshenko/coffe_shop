@@ -1,0 +1,82 @@
+[
+	{
+		"id": "f22ff7b9-86f4-410c-9431-5dda90b4ad17",
+		"title": "Birthday Discount",
+		"start": "",
+		"end": "",
+		"description": "Celebrate your birthday with a 20% discount on any drink or dessert during your birthday week.",
+		"isActive": true,
+		"status": "active",
+		"type": "event-based"
+	},
+	{
+		"id": "6bb76a39-92f9-4e89-9049-e48702c47333",
+		"title": "Seasonal Specials",
+		"start": "",
+		"end": "",
+		"description": "Try our seasonal favorites like Pumpkin Spice Latte and Gingerbread Cupcake \u2013 only this season!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "12be9f85-08a5-4e51-b106-9a885cf4ad8c",
+		"title": "Morning Coffee Combo",
+		"start": "01.05.2025",
+		"end": "01.09.2025",
+		"description": "Enjoy a coffee and a cupcake of your choice for just $5.99 \u2013 every morning until 11 AM.",
+		"isActive": true,
+		"status": "active",
+		"type": "combo"
+	},
+	{
+		"id": "56ebb955-1097-4f74-a217-28b8420d5c24",
+		"title": "Happy Hour",
+		"start": "01.01.2025",
+		"end": "31.12.2025",
+		"description": "20% off all drinks between 3 PM and 5 PM daily. Come chill with us!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "00d1e19e-1ae8-4ee4-9972-c79d576eab75",
+		"title": "Eco Cup Discount",
+		"start": "01.05.2024",
+		"end": "31.08.2024",
+		"description": "Bring your own cup and get $0.50 off your drink \u2013 let's help the planet together!",
+		"isActive": false,
+		"status": "finished",
+		"type": "discount"
+	},
+	{
+		"id": "3974c878-4bd9-4155-9c95-396243b336e6",
+		"title": "Bring a Friend",
+		"start": "01.01.2025",
+		"end": "31.12.2025",
+		"description": "Bring a friend and you both get 15% off your orders. Sharing is caring!",
+		"isActive": true,
+		"status": "active",
+		"type": "combo"
+	},
+	{
+		"id": "6f16557c-c069-4f88-be5a-87e12015eac9",
+		"title": "Weekend Treat",
+		"start": "01.01.2025",
+		"end": "31.12.2025",
+		"description": "Get every second cupcake at half price during weekends!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "fe69af96-a408-4ed8-89b4-49afddae79d1",
+		"title": "Student Discount",
+		"start": "01.09.2025",
+		"end": "31.05.2026",
+		"description": "10% off for students \u2013 just show your student ID at checkout.",
+		"isActive": false,
+		"status": "moderation",
+		"type": "discount"
+	}
+]
