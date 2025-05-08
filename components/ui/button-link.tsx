@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import Link, { LinkProps } from 'next/link'
-import { ButtonProps } from './Button'
-import { Button } from './Button'
+import { ButtonProps } from './button'
+import { Button } from './button'
 
 type ButtonLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & ButtonProps & LinkProps
 

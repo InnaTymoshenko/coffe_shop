@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { ProductData } from '@/types/item-type'
-import Shell from './ui/Shell'
-import { CoffeeForm } from './CoffeeForm'
-import { CupcakeForm } from './CupcakeForm'
+import { Category, ProductData } from '@/types/item-type'
+import Shell from './ui/shell'
+import { CoffeeForm } from './coffee-form'
+import { CupcakeForm } from './cupcake-form'
 
 type AddNewProduct = {
 	onAdd: (product: ProductData) => void
@@ -12,7 +12,7 @@ type AddNewProduct = {
 }
 
 export function AddProductForm({ onAdd, setIsAddProduct }: AddNewProduct) {
-	const [category, setCategory] = useState<'Coffee' | 'Cupcake' | ''>('')
+	const [category, setCategory] = useState<Category>('')
 
 	return (
 		<Shell className="container w-full max-w-2xl flex flex-col gap-6 bg-gray-50 p-8 rounded-lg">

@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
-import { Button } from './ui/Button'
+import { Button } from './ui/button'
 import { addProductSchema } from '@/method/shema'
 import { useAdminStore } from '@/store/admin-store'
 
@@ -13,7 +14,7 @@ type AddNewProduct = {
 	setIsAddProduct: (value: boolean) => void
 }
 
-export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
+export function CoffeeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 	const { isAdmin } = useAdminStore()
 
 	const {
@@ -27,8 +28,12 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 			alt: '',
 			rating: 4.5,
 			ingridients: [''],
-			category: 'Cupcake',
-			price: [{ size: 'medium', price: 0, quantity: 1, isChecked: false }],
+			category: 'Coffee',
+			price: [
+				{ size: 'small', price: 0, quantity: 1, isChecked: false },
+				{ size: 'medium', price: 0, quantity: 1, isChecked: false },
+				{ size: 'large', price: 0, quantity: 1, isChecked: false }
+			],
 			src: {
 				medium: '',
 				portrait: '',
@@ -54,7 +59,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 				tiny: data.src.tiny || ''
 			},
 			price: enrichedPrice,
-			id: Date.now(),
+			id: uuidv4(),
 			totalPrice: 0
 		}
 
@@ -86,7 +91,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 			</div>
 			<div className="w-full grid grid-cols-2 gap-y-2">
 				<label className="block text-sm font-medium">Category:</label>
-				<input {...register('category')} placeholder="Cupcake" className="w-full border p-2 rounded" />
+				<input {...register('category')} placeholder="Coffee" className="w-full border p-2 rounded" />
 			</div>
 			<div className="w-full grid grid-cols-2 gap-y-2">
 				<label className="block text-sm font-medium">Ingredients:</label>
@@ -104,7 +109,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 			<div className="w-full grid grid-cols-2 gap-y-2">
 				<label className="block text-sm font-medium">Price Options:</label>
 				<div className=" flex flex-col gap-2">
-					{[0].map(i => (
+					{[0, 1, 2].map(i => (
 						<div key={i} className="grid grid-cols-2 gap-2 mb-2">
 							<input {...register(`price.${i}.size`)} placeholder="Size" className="border p-2 rounded" />
 							<input

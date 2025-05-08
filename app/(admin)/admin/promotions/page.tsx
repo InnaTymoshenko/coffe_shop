@@ -1,9 +1,54 @@
-import React from 'react'
+'use client'
+
+import { AddPromotionForm } from '@/components/add-promotion-form'
+import PromotionTable from '@/components/layouts/tables/promotion-table'
+import { Button } from '@/components/ui/button'
+import { Modal } from '@/components/ui/modal'
+import Shell from '@/components/ui/shell'
+import { useAdminStore } from '@/store/admin-store'
+import { PromotionStatus } from '@/types/promotion-type'
+import React, { useState } from 'react'
 
 // type Props = {}
 
-const page = () => {
-	return <div>Promotions page</div>
+const PromotionsPage = () => {
+	const [isAddPromotion, setIsAddPromotion] = useState(false)
+	const [promotion, setPromotion] = useState<PromotionStatus>('active')
+	const { promotionsData } = useAdminStore()
+
+	return (
+		<>
+			<Shell className="container flex flex-col gap-4">
+				<div className="w-full py-4 flex justify-between items-center">
+					<h1 className="text-2xl font-bold">Promotions</h1>
+					<Button
+						text="Add promotion"
+						className="flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
+						onClick={() => setIsAddPromotion(true)}
+					/>
+				</div>
+				<div className="w-1/4 flex justify-end items-end gap-4">
+					<select
+						value={promotion}
+						onChange={e => setPromotion(e.target.value as PromotionStatus)}
+						className="w-full outline-none flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 bg-gray-50 hover:bg-gray-100"
+					>
+						<option value="">All promotions</option>
+						<option value="active">Active</option>
+						<option value="finished">Finished</option>
+						<option value="moderation">Moderation</option>
+					</select>
+				</div>
+				{promotionsData.length > 0 && <PromotionTable data={promotionsData} />}
+
+				{isAddPromotion && (
+					<Modal isOpen={isAddPromotion} onClose={() => setIsAddPromotion(false)}>
+						<AddPromotionForm onAdd={() => {}} setIsAddProduct={() => {}} />
+					</Modal>
+				)}
+			</Shell>
+		</>
+	)
 }
 
-export default page
+export default PromotionsPage

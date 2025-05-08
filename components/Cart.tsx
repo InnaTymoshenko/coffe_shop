@@ -7,7 +7,7 @@ import { RxCross1 } from 'react-icons/rx'
 import { FaRegSadTear } from 'react-icons/fa'
 import { MdOutlineCoffeeMaker } from 'react-icons/md'
 import { useProductCart } from '@/store'
-import { Button } from './ui/Button'
+import { Button } from './ui/button'
 
 type Props = {
 	openCartHandler: () => void

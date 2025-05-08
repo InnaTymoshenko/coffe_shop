@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsPersonCheck } from 'react-icons/bs'
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 
 export default function AdminHeader() {
 	return (

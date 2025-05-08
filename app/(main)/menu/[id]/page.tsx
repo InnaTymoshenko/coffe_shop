@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { useProductCart } from '@/store'
-import Shell from '@/components/ui/Shell'
+import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { getRandomUniqueItems } from '@/method/fn'
-import ReservationForm from '@/components/ReservationForm'
-import MenuList from '@/components/Menu-list'
-import ProductList from '@/components/Product-list'
+import ReservationForm from '@/components/reservation-form'
+import MenuList from '@/components/menu-list'
+import ProductList from '@/components/product-list'
 
 export default function ProductPage() {
 	const [pair, setPair] = useState<ProductData[] | null>(null)

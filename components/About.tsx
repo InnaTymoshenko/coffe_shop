@@ -5,8 +5,8 @@ import { Coffee, Armchair, Leaf, Utensils, ChefHat, Smile } from 'lucide-react'
 import { GiCoffeePot, GiCupcake } from 'react-icons/gi'
 import fakeFeatures from '@/fakedata/features.json'
 import fakeAdvantage from '@/fakedata/advantages.json'
-import Shell from './ui/Shell'
-import AnimatedNumber from './AnimatedNumber'
+import Shell from './ui/shell'
+import AnimatedNumber from './animated-number'
 import { IFeature, IAdvantage } from '@/types/feature-type'
 
 // type Props = {}

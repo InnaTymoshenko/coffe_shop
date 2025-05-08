@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import Shell from './ui/Shell'
+import Shell from './ui/shell'
 
 const customIcon = L.icon({
 	iconUrl: '/marker-icon.png',

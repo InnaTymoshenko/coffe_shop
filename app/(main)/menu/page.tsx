@@ -2,10 +2,10 @@
 
 import React from 'react'
 import { Coffee, Dessert } from 'lucide-react'
-import ReservationForm from '@/components/ReservationForm'
-import Shell from '@/components/ui/Shell'
-import MenuList from '@/components/Menu-list'
-import { Button } from '@/components/ui/Button'
+import ReservationForm from '@/components/reservation-form'
+import Shell from '@/components/ui/shell'
+import MenuList from '@/components/menu-list'
+import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
 
 // type Props = {}

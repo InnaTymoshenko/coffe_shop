@@ -1,7 +1,7 @@
 import React from 'react'
-import Shell from '@/components/ui/Shell'
+import Shell from '@/components/ui/shell'
 import { MdCoffeeMaker } from 'react-icons/md'
-import { ButtonLink } from '@/components/ui/ButtonLink'
+import { ButtonLink } from '@/components/ui/button-link'
 
 const NotFound = () => {
 	return (

@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import Shell from './ui/Shell'
-import { ButtonLink } from './ui/ButtonLink'
+import Shell from './ui/shell'
+import { ButtonLink } from './ui/button-link'
 
 const Main = () => {
 	return (

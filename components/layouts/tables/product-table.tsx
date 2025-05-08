@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react'
 import { ProductData } from '@/types/item-type'
-import { Button } from '../../ui/Button'
+import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
-import { EditProductForm } from '@/components/EditProductForm'
+import { EditProductForm } from '@/components/edit-product-form'
+import { Modal } from '@/components/ui/modal'
 
 type TableProps = {
 	data: ProductData[]
@@ -36,7 +37,7 @@ const ProductTable = ({ data }: TableProps) => {
 		}
 	}, [selectedProduct])
 
-	const handleDeleteProduct = (id: number) => {
+	const handleDeleteProduct = (id: string) => {
 		deleteProduct(id)
 		setSelectedProduct(null)
 	}
@@ -138,9 +139,9 @@ const ProductTable = ({ data }: TableProps) => {
 				</div>
 			)}
 			{isEditing && selectedProduct && (
-				<div className="w-full h-screen fixed top-0 left-0 z-10 flex justify-center items-center bg-gray-900/60">
+				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)}>
 					<EditProductForm product={selectedProduct} onSave={handleSave} setIsEditing={setIsEditing} />
-				</div>
+				</Modal>
 			)}
 		</>
 	)

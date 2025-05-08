@@ -4,7 +4,7 @@ import React from 'react'
 import { BsTelephoneForward } from 'react-icons/bs'
 import { RiTwitterXLine, RiTelegram2Fill, RiMailLine } from 'react-icons/ri'
 import { SlSocialLinkedin, SlSocialInstagram, SlSocialFacebook, SlSocialDribbble } from 'react-icons/sl'
-import Shell from './ui/Shell'
+import Shell from './ui/shell'
 import { getCurrentYear } from '@/method/fn'
 import Link from 'next/link'
 

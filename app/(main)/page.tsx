@@ -1,7 +1,7 @@
 'use client'
 
-import About from '@/components/About'
-import Bottom from '@/components/Bottom'
+import About from '@/components/about'
+import Bottom from '@/components/bottom'
 // import Location from '@/components/Location'
 import Main from '@/components/Main'
 import Map from '@/components/MapWrapper'

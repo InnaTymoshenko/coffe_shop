@@ -1,12 +1,13 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button } from '@/components/ui/Button'
-import Shell from '@/components/ui/Shell'
-import Table from '@/components/layouts/tables/product-table'
+import { Button } from '@/components/ui/button'
+import Shell from '@/components/ui/shell'
+import ProductTable from '@/components/layouts/tables/product-table'
 import { useAdminStore } from '@/store/admin-store'
-import { AddProductForm } from '@/components/AddProductForm'
+import { AddProductForm } from '@/components/add-product-form'
 import { ProductData } from '@/types/item-type'
+import { Modal } from '@/components/ui/modal'
 
 const ProductPage = () => {
 	const [selectTab, setSelectTab] = useState('coffee')
@@ -49,14 +50,14 @@ const ProductPage = () => {
 					</Button>
 				</div>
 				<div>
-					{selectTab === 'coffee' && coffeeData.length > 0 && <Table data={coffeeData} />}
-					{selectTab === 'cupcake' && cupcakeData.length > 0 && <Table data={cupcakeData} />}
+					{selectTab === 'coffee' && coffeeData.length > 0 && <ProductTable data={coffeeData} />}
+					{selectTab === 'cupcake' && cupcakeData.length > 0 && <ProductTable data={cupcakeData} />}
 				</div>
 			</Shell>
 			{isAddProduct && (
-				<div className="w-full h-screen fixed top-0 left-0 z-10 flex justify-center items-center bg-gray-900/60">
+				<Modal isOpen={isAddProduct} onClose={() => setIsAddProduct(false)}>
 					<AddProductForm onAdd={handleAddProduct} setIsAddProduct={setIsAddProduct} />
-				</div>
+				</Modal>
 			)}
 		</>
 	)

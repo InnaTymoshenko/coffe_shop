@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react'
 import { CiCoffeeCup, CiGift } from 'react-icons/ci'
 import { GiCoffeeBeans, GiCakeSlice, GiFlowers } from 'react-icons/gi'
-import Shell from './ui/Shell'
+import Shell from './ui/shell'
 import { ITradition } from '@/types/feature-type'
 import fakeTraditions from '@/fakedata/traditions.json'
 
