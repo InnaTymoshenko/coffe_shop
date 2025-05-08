@@ -14,10 +14,10 @@ interface ICartStore {
 	fetchCupcake: (url: string) => void
 	addToCart: (item: ProductData, size: Size) => void
 	updateQuantity: (item: ProductData, type: QuantityType, size: Size) => void
-	updateCartQuantity: (itemId: number, size: Size, type: QuantityType) => void
+	updateCartQuantity: (itemId: string, size: Size, type: QuantityType) => void
 }
 
-export const useProductCart = create<ICartStore>()((set, get) => ({
+export const useProductCart = create<ICartStore>()(set => ({
 	coffeeData: [],
 	cupcakeData: [],
 	cartProducts: [],
@@ -27,7 +27,7 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 		getServerSideProps(url)
 			.then(data => {
 				const updatedData: ProductData[] = data.map((coffee: ProductData) => ({
-					id: coffee.id,
+					id: coffee.id.toString(),
 					alt: coffee.alt,
 					src: {
 						medium: coffee.src.medium,

@@ -15,7 +15,7 @@ export default function ProductPage() {
 	const params = useParams()
 	const id = params?.id as string
 	const { cupcakeData, coffeeData } = useProductCart()
-	const product = [...coffeeData, ...cupcakeData].find(p => p.id === Number(id))
+	const product = [...coffeeData, ...cupcakeData].find(p => p.id === id)
 
 	useEffect(() => {
 		if (!product) return
