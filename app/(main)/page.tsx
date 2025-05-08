@@ -3,10 +3,10 @@
 import About from '@/components/about'
 import Bottom from '@/components/bottom'
 // import Location from '@/components/Location'
-import Main from '@/components/Main'
-import Map from '@/components/MapWrapper'
-import Products from '@/components/Products'
-import Traditions from '@/components/Traditions'
+import Main from '@/components/main'
+import Map from '@/components/map-wrapper'
+import Products from '@/components/products'
+import Traditions from '@/components/traditions'
 
 export default function Home() {
 	return (

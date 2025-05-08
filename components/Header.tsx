@@ -6,12 +6,12 @@ import { BsTelephoneForward } from 'react-icons/bs'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { PiShoppingCartSimpleFill } from 'react-icons/pi'
 import { FaOpencart } from 'react-icons/fa'
-import Shell from './ui/Shell'
+import Shell from './ui/shell'
 import Link from 'next/link'
-import { Button } from './ui/Button'
+import { Button } from './ui/button'
 import { useProductCart } from '@/store'
 import { ProductData } from '@/types/item-type'
-import Cart from './Cart'
+import Cart from './cart'
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)

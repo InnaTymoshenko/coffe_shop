@@ -8,7 +8,7 @@ import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/button'
 import { useProductCart } from '@/store'
 import { defaultPrice, quantityHandler } from '@/method/fn'
-import ProductCardSize from './ProductCard-size'
+import ProductCardSize from './product-card-size'
 
 type Props = {
 	item: ProductData

@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Category, IPrice, ProductData, Size } from '@/types/item-type'
 import { defaultPrice } from '@/method/fn'
 import { ButtonLink } from '@/components/ui/button-link'
-import ProductListSize from './ProductList-size'
+import ProductListSize from './product-list-size'
 
 type ProductListProps = {
 	product: ProductData

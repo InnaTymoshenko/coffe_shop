@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { usePathname } from 'next/navigation'
-import PtoductCard from './ProductCard'
+import PtoductCard from './product-card'
 import { ProductData } from '@/types/item-type'
 import { ButtonLink } from './ui/button-link'
 import { useProductCart } from '@/store'

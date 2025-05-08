@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from 'react'
 import { URL_COFFEE, URL_CUPCAKE } from '@/method/type'
-import Shell from './ui/Shell'
+import Shell from './ui/shell'
 import { useProductCart } from '@/store'
 import { ProductData } from '@/types/item-type'
-import MenuList from './Menu-list'
+import MenuList from './menu-list'
 
 const Products = () => {
 	const [coffeeGroup, setCoffeeGroup] = useState<ProductData[] | null>(null)
