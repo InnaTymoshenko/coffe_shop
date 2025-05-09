@@ -159,7 +159,7 @@ const ReservationForm = () => {
 						/>
 						{errors.time && <p className="text-red-500 text-sm">{errors.time.message}</p>}
 					</div>
-					<div className="">
+					<div className="w-full text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900 ">
 						{cafes.length > 0 && (
 							<Controller
 								name="cafe"
@@ -170,7 +170,7 @@ const ReservationForm = () => {
 										value={field.value}
 										onChange={field.onChange}
 										error={fieldState.error?.message}
-										className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
+										className="w-full p-3 text-gray-200 text-md rounded-sm bg-gray-900"
 									/>
 								)}
 							/>
