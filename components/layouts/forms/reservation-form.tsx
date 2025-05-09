@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import { v4 as uuidv4 } from 'uuid'
 import { Calendar, Clock } from 'lucide-react'
 import DatePicker from '../../client-date-picker'
 import TimePicker from '../../client-time-picker'
@@ -17,9 +18,14 @@ import Select from '@/components/ui/select'
 
 type ReservationFormData = z.infer<typeof reservationSchema>
 
+const cafeOptions = [
+	{ value: 'khreschatyk', label: 'Coffee Town - Khreschatyk' },
+	{ value: 'podil', label: 'Coffee Town - Podil' },
+	{ value: 'jbolon', label: 'Coffee Town - Obolon' }
+]
+
 const ReservationForm = () => {
 	const [cafes, setCafes] = useState<LocationData[]>([])
-	const [selectedCafe, setSelectedCafe] = useState(cafes[0])
 	const {
 		control,
 		register,
@@ -30,21 +36,18 @@ const ReservationForm = () => {
 		resolver: zodResolver(reservationSchema),
 		defaultValues: {
 			date: new Date(),
-			time: '12:00'
+			time: '12:00',
+			cafe: 'Coffee Town - Хрещатик'
 		}
 	})
 
-	const cafeOptions = cafes.map(cafe => ({
-		value: `${cafe.name}`,
-		label: `${cafe.name} - ${cafe.address}`
-	}))
 	useEffect(() => {
 		const cafes = fakeLocation as LocationData[]
 		setCafes(cafes)
-		setSelectedCafe(cafes[0])
 	}, [])
 
 	const onSubmit = async (data: ReservationFormData) => {
+		const cafe = cafes.find(cafe => cafe.name === data.cafe)
 		const formattedDate =
 			data.date instanceof Date
 				? data.date.toLocaleDateString('uk-UA')
@@ -52,6 +55,9 @@ const ReservationForm = () => {
 
 		const finalData = {
 			...data,
+			id: uuidv4(),
+			address: cafe?.address,
+			isReady: true,
 			date: formattedDate
 		}
 		console.log('Reservation Data:', finalData)
@@ -156,12 +162,12 @@ const ReservationForm = () => {
 					<div className="">
 						{cafes.length > 0 && (
 							<Controller
-								name="address"
+								name="cafe"
 								control={control}
 								render={({ field, fieldState }) => (
 									<Select
 										options={cafeOptions}
-										value={selectedCafe.id}
+										value={field.value}
 										onChange={field.onChange}
 										error={fieldState.error?.message}
 										className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"

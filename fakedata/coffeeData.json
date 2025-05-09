@@ -3,10 +3,10 @@
 		"id": "1",
 		"alt": "Rich and bold espresso shot.",
 		"src": {
-			"medium": "https://example.com/images/1_medium.jpg",
-			"portrait": "https://example.com/images/1_portrait.jpg",
-			"landscape": "https://example.com/images/1_landscape.jpg",
-			"tiny": "https://example.com/images/1_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["milk"],
@@ -38,10 +38,10 @@
 		"id": "2",
 		"alt": "Espresso with steamed milk foam.",
 		"src": {
-			"medium": "https://example.com/images/2_medium.jpg",
-			"portrait": "https://example.com/images/2_portrait.jpg",
-			"landscape": "https://example.com/images/2_landscape.jpg",
-			"tiny": "https://example.com/images/2_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["milk foam", "cinnamon"],
@@ -73,10 +73,10 @@
 		"id": "3",
 		"alt": "Smooth blend of espresso and steamed milk.",
 		"src": {
-			"medium": "https://example.com/images/3_medium.jpg",
-			"portrait": "https://example.com/images/3_portrait.jpg",
-			"landscape": "https://example.com/images/3_landscape.jpg",
-			"tiny": "https://example.com/images/3_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["steamed milk"],
@@ -108,10 +108,10 @@
 		"id": "4",
 		"alt": "Espresso with added hot water.",
 		"src": {
-			"medium": "https://example.com/images/4_medium.jpg",
-			"portrait": "https://example.com/images/4_portrait.jpg",
-			"landscape": "https://example.com/images/4_landscape.jpg",
-			"tiny": "https://example.com/images/4_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": [],
@@ -143,10 +143,10 @@
 		"id": "5",
 		"alt": "Strong coffee with velvety microfoam.",
 		"src": {
-			"medium": "https://example.com/images/5_medium.jpg",
-			"portrait": "https://example.com/images/5_portrait.jpg",
-			"landscape": "https://example.com/images/5_landscape.jpg",
-			"tiny": "https://example.com/images/5_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["microfoam", "milk"],
@@ -178,10 +178,10 @@
 		"id": "6",
 		"alt": "Espresso mixed with chocolate and milk.",
 		"src": {
-			"medium": "https://example.com/images/6_medium.jpg",
-			"portrait": "https://example.com/images/6_portrait.jpg",
-			"landscape": "https://example.com/images/6_landscape.jpg",
-			"tiny": "https://example.com/images/6_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["chocolate", "milk"],
@@ -213,10 +213,10 @@
 		"id": "7",
 		"alt": "Espresso with a dash of frothy milk.",
 		"src": {
-			"medium": "https://example.com/images/7_medium.jpg",
-			"portrait": "https://example.com/images/7_portrait.jpg",
-			"landscape": "https://example.com/images/7_landscape.jpg",
-			"tiny": "https://example.com/images/7_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["milk froth"],
@@ -248,10 +248,10 @@
 		"id": "8",
 		"alt": "Coffee with Irish whiskey and cream.",
 		"src": {
-			"medium": "https://example.com/images/8_medium.jpg",
-			"portrait": "https://example.com/images/8_portrait.jpg",
-			"landscape": "https://example.com/images/8_landscape.jpg",
-			"tiny": "https://example.com/images/8_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["whiskey", "cream"],
@@ -283,10 +283,10 @@
 		"id": "9",
 		"alt": "Espresso cut with a small amount of warm milk.",
 		"src": {
-			"medium": "https://example.com/images/9_medium.jpg",
-			"portrait": "https://example.com/images/9_portrait.jpg",
-			"landscape": "https://example.com/images/9_landscape.jpg",
-			"tiny": "https://example.com/images/9_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["milk"],
@@ -318,10 +318,10 @@
 		"id": "10",
 		"alt": "Shorter, more concentrated espresso.",
 		"src": {
-			"medium": "https://example.com/images/10_medium.jpg",
-			"portrait": "https://example.com/images/10_portrait.jpg",
-			"landscape": "https://example.com/images/10_landscape.jpg",
-			"tiny": "https://example.com/images/10_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": [],
@@ -353,10 +353,10 @@
 		"id": "11",
 		"alt": "Vanilla ice cream topped with hot espresso.",
 		"src": {
-			"medium": "https://example.com/images/11_medium.jpg",
-			"portrait": "https://example.com/images/11_portrait.jpg",
-			"landscape": "https://example.com/images/11_landscape.jpg",
-			"tiny": "https://example.com/images/11_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["vanilla ice cream"],
@@ -388,10 +388,10 @@
 		"id": "12",
 		"alt": "Traditional strong coffee with foam.",
 		"src": {
-			"medium": "https://example.com/images/12_medium.jpg",
-			"portrait": "https://example.com/images/12_portrait.jpg",
-			"landscape": "https://example.com/images/12_landscape.jpg",
-			"tiny": "https://example.com/images/12_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["ground coffee", "cardamom"],
@@ -423,10 +423,10 @@
 		"id": "13",
 		"alt": "Chilled coffee served over ice.",
 		"src": {
-			"medium": "https://example.com/images/13_medium.jpg",
-			"portrait": "https://example.com/images/13_portrait.jpg",
-			"landscape": "https://example.com/images/13_landscape.jpg",
-			"tiny": "https://example.com/images/13_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["ice", "coffee"],
@@ -458,10 +458,10 @@
 		"id": "14",
 		"alt": "Smooth, cold-brewed coffee flavor.",
 		"src": {
-			"medium": "https://example.com/images/14_medium.jpg",
-			"portrait": "https://example.com/images/14_portrait.jpg",
-			"landscape": "https://example.com/images/14_landscape.jpg",
-			"tiny": "https://example.com/images/14_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["cold brew", "ice"],
@@ -493,10 +493,10 @@
 		"id": "15",
 		"alt": "Cold brew infused with nitrogen for a creamy texture.",
 		"src": {
-			"medium": "https://example.com/images/15_medium.jpg",
-			"portrait": "https://example.com/images/15_portrait.jpg",
-			"landscape": "https://example.com/images/15_landscape.jpg",
-			"tiny": "https://example.com/images/15_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Coffee",
 		"ingridients": ["nitrogen", "cold brew"],

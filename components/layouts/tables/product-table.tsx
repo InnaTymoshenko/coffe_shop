@@ -6,6 +6,7 @@ import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
 import { EditProductForm } from '@/components/layouts/forms/edit-product-form'
 import { Modal } from '@/components/ui/modal'
+import Image from 'next/image'
 
 type TableProps = {
 	data: ProductData[]
@@ -52,8 +53,8 @@ const ProductTable = ({ data }: TableProps) => {
 		<>
 			<div className="overflow-x-auto mt-4">
 				<table className="min-w-full border-collapse">
-					<thead className="hover:bg-gray-50">
-						<tr className="border-b border-gray-300">
+					<thead>
+						<tr className="border-b border-gray-300 hover:bg-gray-100">
 							<th className="p-2">Product</th>
 							<th className="p-2">ID</th>
 							<th className="p-2">Category</th>
@@ -62,9 +63,22 @@ const ProductTable = ({ data }: TableProps) => {
 					</thead>
 					<tbody>
 						{data.map(d => (
-							<tr key={d.id} className="text-center border-b border-gray-300 hover:bg-gray-50">
+							<tr key={d.id} className="text-center border-b border-gray-300 hover:bg-gray-100">
 								<td className="p-4 flex justify-start items-center gap-4">
-									<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded" />
+									<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden">
+										<Image
+											src={
+												d.src.medium
+													? d.src.medium
+													: d.category === 'Coffee'
+													? '/assets/coffee-min.png'
+													: '/assets/cupcake-3-min.png'
+											}
+											alt={'coffee'}
+											width={100}
+											height={100}
+										/>
+									</div>
 									<div className="flex flex-col justify-between items-start gap-4">
 										<span className="text-xl font-semibold">{d.title}</span>
 										<Button
@@ -94,7 +108,20 @@ const ProductTable = ({ data }: TableProps) => {
 					</div>
 					<div className="flex flex-col gap-6 p-4">
 						<div className="flex items-center gap-6">
-							<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded"></div>
+							<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden">
+								<Image
+									src={
+										selectedProduct.src.medium
+											? selectedProduct.src.medium
+											: selectedProduct.category === 'Coffee'
+											? '/assets/coffee-min.png'
+											: '/assets/cupcake-3-min.png'
+									}
+									alt={'coffee'}
+									width={100}
+									height={100}
+								/>
+							</div>
 							<div className="flex flex-col gap-1">
 								<span className="font-medium">{selectedProduct.title}</span>
 								<span className="text-secondary">Rating: {selectedProduct.rating}</span>

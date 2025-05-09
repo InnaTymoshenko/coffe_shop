@@ -3,10 +3,10 @@
 		"id": "1",
 		"alt": "Light and fluffy vanilla cupcake with creamy frosting.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_1_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_1_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_1_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_1_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["vanilla", "milk"],
@@ -26,10 +26,10 @@
 		"id": "2",
 		"alt": "Rich chocolate cupcake topped with ganache.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_2_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_2_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_2_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_2_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["chocolate", "cream"],
@@ -49,10 +49,10 @@
 		"id": "3",
 		"alt": "Classic red velvet with a hint of cocoa and cream cheese frosting.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_3_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_3_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_3_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_3_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["cocoa", "cream cheese"],
@@ -72,10 +72,10 @@
 		"id": "4",
 		"alt": "Tangy lemon cupcake with a zesty glaze.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_4_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_4_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_4_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_4_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["lemon", "glaze"],
@@ -95,10 +95,10 @@
 		"id": "5",
 		"alt": "Spiced carrot cake cupcake with walnut topping.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_5_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_5_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_5_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_5_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["carrot", "walnut"],
@@ -118,10 +118,10 @@
 		"id": "6",
 		"alt": "Fresh strawberry flavor with swirled icing.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_6_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_6_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_6_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_6_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["strawberry"],
@@ -141,10 +141,10 @@
 		"id": "7",
 		"alt": "Soft coconut cupcake topped with whipped cream.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_7_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_7_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_7_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_7_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["coconut", "cream"],
@@ -164,10 +164,10 @@
 		"id": "8",
 		"alt": "Coffee-infused chocolate cupcake with mocha frosting.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_8_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_8_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_8_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_8_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["double coffee", "chocolate"],
@@ -187,10 +187,10 @@
 		"id": "9",
 		"alt": "Moist blueberry cupcake with fruity icing.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_9_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_9_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_9_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_9_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["blueberry", "icing"],
@@ -210,10 +210,10 @@
 		"id": "10",
 		"alt": "Buttery cupcake with salted caramel core.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_10_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_10_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_10_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_10_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["caramel", "butter"],
@@ -233,10 +233,10 @@
 		"id": "11",
 		"alt": "Decadent peanut butter cupcake with chocolate topping.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_11_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_11_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_11_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_11_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["peanut butter", "chocolate"],
@@ -256,10 +256,10 @@
 		"id": "12",
 		"alt": "Floral raspberry cupcake with rosewater glaze.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_12_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_12_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_12_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_12_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["raspberry", "rosewater"],
@@ -279,10 +279,10 @@
 		"id": "13",
 		"alt": "Banana cupcake with vanilla custard center.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_13_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_13_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_13_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_13_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["banana", "custard"],
@@ -302,10 +302,10 @@
 		"id": "14",
 		"alt": "Minty chocolate cupcake with a crisp topping.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_14_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_14_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_14_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_14_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["mint", "chocolate"],
@@ -325,10 +325,10 @@
 		"id": "15",
 		"alt": "Spiced pumpkin cupcake with cinnamon frosting.",
 		"src": {
-			"medium": "https://example.com/images/cupcake_15_medium.jpg",
-			"portrait": "https://example.com/images/cupcake_15_portrait.jpg",
-			"landscape": "https://example.com/images/cupcake_15_landscape.jpg",
-			"tiny": "https://example.com/images/cupcake_15_tiny.jpg"
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
 		},
 		"category": "Cupcake",
 		"ingridients": ["pumpkin", "cinnamon"],

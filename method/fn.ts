@@ -56,3 +56,16 @@ export function getRandomUniqueItems<T>(array: T[], count: number): T[] {
 	const shuffled = [...array].sort(() => 0.5 - Math.random())
 	return shuffled.slice(0, count)
 }
+
+export function sortByDateTime<T>(items: T[], dateKey: keyof T, timeKey: keyof T): T[] {
+	return [...items].sort((a, b) => {
+		const parseDateTime = (item: T): number => {
+			const dateStr = item[dateKey] as string
+			const timeStr = item[timeKey] as string
+			const [day, month, year] = dateStr.split('.').map(Number)
+			const [hours, minutes] = timeStr.split(':').map(Number)
+			return new Date(year, month - 1, day, hours, minutes).getTime()
+		}
+		return parseDateTime(b) - parseDateTime(a)
+	})
+}

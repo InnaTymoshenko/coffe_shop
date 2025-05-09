@@ -53,8 +53,8 @@ const PromotionTable = ({ data }: TableProps) => {
 		<>
 			<div className="overflow-x-auto mt-4">
 				<table className="min-w-full border-collapse">
-					<thead className="hover:bg-gray-50">
-						<tr className="border-b border-gray-300">
+					<thead>
+						<tr className="border-b border-gray-300 hover:bg-gray-100">
 							<th className="p-2">№</th>
 							<th className="p-2">Title</th>
 							<th className="p-2">Start/End</th>
@@ -65,7 +65,7 @@ const PromotionTable = ({ data }: TableProps) => {
 					</thead>
 					<tbody>
 						{data.map((d, ind) => (
-							<tr key={d.id} className="text-center border-b border-gray-300 hover:bg-gray-50">
+							<tr key={d.id} className="text-center border-b border-gray-300 hover:bg-gray-100">
 								<td className="p-4">{`#${ind + 1}`}</td>
 								<td className="p-4 text-xl font-semibold text-left">{d.title}</td>
 								<td className="p-4">
