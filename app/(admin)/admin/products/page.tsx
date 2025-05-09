@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import Shell from '@/components/ui/shell'
 import ProductTable from '@/components/layouts/tables/product-table'
 import { useAdminStore } from '@/store/admin-store'
-import { AddProductForm } from '@/components/add-product-form'
+import { AddProductForm } from '@/components/layouts/forms/add-product-form'
 import { ProductData } from '@/types/item-type'
 import { Modal } from '@/components/ui/modal'
 

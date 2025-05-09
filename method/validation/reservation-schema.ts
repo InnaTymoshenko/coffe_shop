@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 export const reservationSchema = z.object({
 	name: z.string().min(2, 'Name must be at least 2 characters'),
-	email: z.string().email('Invalid email format'),
+	address: z.string(),
 	tel: z.string().regex(/^\+?\d{10,15}$/, 'Invalid phone number'),
 	date: z.date({ required_error: 'Date is required' }).refine(date => date > new Date(), 'Date must be in the future'),
 	time: z.string().min(1, 'Time is required'),

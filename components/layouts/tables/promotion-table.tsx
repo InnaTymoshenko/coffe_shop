@@ -6,7 +6,7 @@ import { useAdminStore } from '@/store/admin-store'
 import { PromotionData } from '@/types/promotion-type'
 import { Modal } from '@/components/ui/modal'
 import { Badge } from '@/components/ui/badge'
-import { EditPromotionForm } from '@/components/edit-promotion-form'
+import { EditPromotionForm } from '@/components/layouts/forms/edit-promotion-form'
 
 type TableProps = {
 	data: PromotionData[]

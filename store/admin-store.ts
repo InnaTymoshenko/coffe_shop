@@ -27,9 +27,9 @@ export const useAdminStore = create<IAdminStore>()((set, get) => ({
 		const { coffeeData, cupcakeData } = get()
 
 		if (item.category === 'Coffee') {
-			set({ coffeeData: [...coffeeData, item] })
+			set({ coffeeData: [item, ...coffeeData] })
 		} else if (item.category === 'Cupcake') {
-			set({ cupcakeData: [...cupcakeData, item] })
+			set({ cupcakeData: [item, ...cupcakeData] })
 		}
 	},
 	editCardProduct: (item: ProductData) => {
@@ -56,7 +56,7 @@ export const useAdminStore = create<IAdminStore>()((set, get) => ({
 	addPromotions: item => {
 		const { promotionsData } = get()
 		set({
-			promotionsData: [...promotionsData, item]
+			promotionsData: [item, ...promotionsData]
 		})
 	},
 	editPromotions: item => {

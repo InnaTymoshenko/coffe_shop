@@ -1,98 +1,86 @@
-'use client'
-
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { v4 as uuidv4 } from 'uuid'
 import { promotionSchema } from '@/method/validation/promotions-schema'
-import Shell from './ui/shell'
+import Shell from '../../ui/shell'
+import { Button } from '../../ui/button'
 import { PromotionData } from '@/types/promotion-type'
-import { Button } from './ui/button'
 
 type PromotionFormData = z.infer<typeof promotionSchema>
 
-interface AddPromotionFormProps {
-	onAdd: (data: PromotionData) => void
-	setIsAddPromotion: (value: boolean) => void
+interface EditPromotionFormProps {
+	promotion: PromotionData
+	onSave: (updated: PromotionData) => void
+	setIsEditing: (value: boolean) => void
 }
 
-export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormProps) {
+export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromotionFormProps) {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors }
 	} = useForm<PromotionFormData>({
 		resolver: zodResolver(promotionSchema),
-		defaultValues: {
-			title: '',
-			description: '',
-			start: '',
-			end: '',
-			isActive: false,
-			status: 'moderation',
-			type: ''
-		}
+		defaultValues: promotion
 	})
 
 	const onSubmit = (data: PromotionFormData) => {
-		onAdd({ ...data, id: uuidv4() })
+		onSave({ ...promotion, ...data })
 	}
 
 	return (
-		<Shell className="container w-full max-w-2xl flex flex-col gap-6 bg-gray-50 p-8 rounded-lg">
+		<Shell>
 			<div className="w-full flex justify-between items-center">
-				<h2 className="text-2xl font-semibold">Add new promotion</h2>
+				<h2 className="text-2xl font-semibold">Edit promotions</h2>
 			</div>
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 max-w-xl mx-auto">
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">Title:</label>
+				<div>
+					<label className="block text-sm font-medium">Title</label>
 					<input {...register('title')} placeholder="Title" className="w-full border p-2 rounded" />
 					{errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">Description:</label>
+				<div>
+					<label className="block text-sm font-medium">Description</label>
 					<textarea {...register('description')} placeholder="Description" className="w-full border p-2 rounded" />
 					{errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">Start:</label>
+				<div>
+					<label className="block text-sm font-medium">Start</label>
 					<input type="date" {...register('start')} className="w-full border p-2 rounded" />
 					{errors.start && <p className="text-red-500 text-sm">{errors.start.message}</p>}
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">End:</label>
+				<div>
+					<label className="block text-sm font-medium">End</label>
 					<input type="date" {...register('end')} className="w-full border p-2 rounded" />
 					{errors.end && <p className="text-red-500 text-sm">{errors.end.message}</p>}
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">Status:</label>
+				<div>
+					<label className="block text-sm font-medium">Status</label>
 					<select {...register('status')} className="w-full border p-2 rounded">
-						<option value="moderation">Moderation</option>
 						<option value="active">Active</option>
 						<option value="finished">Finished</option>
+						<option value="moderation">Moderation</option>
 					</select>
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="block text-sm font-medium">Type:</label>
+				<div>
+					<label className="block text-sm font-medium">Type</label>
 					<input {...register('type')} placeholder="Type" className="w-full border p-2 rounded" />
 					{errors.type && <p className="text-red-500 text-sm">{errors.type.message}</p>}
 				</div>
-				<div className="w-full grid grid-cols-2 gap-y-2">
-					<label className="flex items-center space-x-2">
-						<input type="checkbox" {...register('isActive')} />
-						<span>Is Active</span>
-					</label>
+				<div>
+					<label className="mr-2">Is active?</label>
+					<input type="checkbox" {...register('isActive')} />
 				</div>
 				<div className="w-full flex justify-start items-center gap-6">
 					<Button
-						text="Add Promotion"
+						text="Save"
 						type="submit"
 						className="w-32 bg-green-500 text-white px-4 py-2 rounded-sm hover:bg-green-600"
 					/>
 					<Button
 						text="Close"
 						className="w-32 bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-600"
-						onClick={() => setIsAddPromotion(false)}
+						onClick={() => setIsEditing(false)}
 					/>
 				</div>
 			</form>

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Coffee, Dessert } from 'lucide-react'
-import ReservationForm from '@/components/reservation-form'
+import ReservationForm from '@/components/layouts/forms/reservation-form'
 import Shell from '@/components/ui/shell'
 import MenuList from '@/components/menu-list'
 import { Button } from '@/components/ui/button'

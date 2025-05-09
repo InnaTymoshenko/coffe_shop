@@ -6,7 +6,7 @@ import { useProductCart } from '@/store'
 import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { getRandomUniqueItems } from '@/method/fn'
-import ReservationForm from '@/components/reservation-form'
+import ReservationForm from '@/components/layouts/forms/reservation-form'
 import MenuList from '@/components/menu-list'
 import ProductList from '@/components/product-list'
 

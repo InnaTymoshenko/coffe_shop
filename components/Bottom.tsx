@@ -1,7 +1,7 @@
 import React from 'react'
 import Shell from './ui/shell'
 import Reviews from './reviews'
-import ReservationForm from './reservation-form'
+import ReservationForm from './layouts/forms/reservation-form'
 
 // type Props = {}
 

@@ -1,15 +1,23 @@
 'use client'
 
 import React, { useState } from 'react'
-import { AddPromotionForm } from '@/components/add-promotion-form'
+import { AddPromotionForm } from '@/components/layouts/forms/add-promotion-form'
 import PromotionTable from '@/components/layouts/tables/promotion-table'
 import { Button } from '@/components/ui/button'
 import { Modal } from '@/components/ui/modal'
 import Shell from '@/components/ui/shell'
 import { useAdminStore } from '@/store/admin-store'
 import { PromotionData, PromotionStatus } from '@/types/promotion-type'
+import Select, { Option } from '@/components/ui/select'
 
 // type Props = {}
+
+const promotionStatus: Option<'' | PromotionStatus>[] = [
+	{ value: '', label: 'All promotions' },
+	{ value: 'active', label: 'Active' },
+	{ value: 'finished', label: 'Finished' },
+	{ value: 'moderation', label: 'Moderation' }
+]
 
 const PromotionsPage = () => {
 	const [isAddPromotion, setIsAddPromotion] = useState(false)
@@ -33,17 +41,13 @@ const PromotionsPage = () => {
 						onClick={() => setIsAddPromotion(true)}
 					/>
 				</div>
-				<div className="w-1/4 flex justify-end items-end gap-4">
-					<select
+				<div className="w-1/4 flex justify-start items-end gap-4">
+					<Select<PromotionStatus | ''>
+						options={promotionStatus}
 						value={promotion}
-						onChange={e => setPromotion(e.target.value as PromotionStatus)}
+						onChange={setPromotion}
 						className="w-full outline-none flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 bg-gray-50 hover:bg-gray-100"
-					>
-						<option value="">All promotions</option>
-						<option value="active">Active</option>
-						<option value="finished">Finished</option>
-						<option value="moderation">Moderation</option>
-					</select>
+					/>
 				</div>
 				{filteredPromotions.length === 0 ? <p>No promotions found.</p> : <PromotionTable data={filteredPromotions} />}
 

@@ -3,8 +3,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { ProductData } from '@/types/item-type'
 import { useAdminStore } from '@/store/admin-store'
-import { Button } from './ui/button'
-import Shell from './ui/shell'
+import { Button } from '../../ui/button'
+import Shell from '../../ui/shell'
 import { editProductSchema } from '@/method/validation/product-schema'
 
 type EditProductFormData = z.infer<typeof editProductSchema>

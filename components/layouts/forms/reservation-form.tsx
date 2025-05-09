@@ -1,19 +1,25 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Calendar, Clock } from 'lucide-react'
-import DatePicker from './client-date-picker'
-import TimePicker from './client-time-picker'
+import DatePicker from '../../client-date-picker'
+import TimePicker from '../../client-time-picker'
 import 'react-date-picker/dist/DatePicker.css'
 import 'react-calendar/dist/Calendar.css'
 import 'react-time-picker/dist/TimePicker.css'
 import { reservationSchema } from '@/method/validation/reservation-schema'
+import { LocationData } from '@/types/location-type'
+import fakeLocation from '@/fakedata/location.json'
+import Select from '@/components/ui/select'
 
 type ReservationFormData = z.infer<typeof reservationSchema>
 
 const ReservationForm = () => {
+	const [cafes, setCafes] = useState<LocationData[]>([])
+	const [selectedCafe, setSelectedCafe] = useState(cafes[0])
 	const {
 		control,
 		register,
@@ -27,6 +33,16 @@ const ReservationForm = () => {
 			time: '12:00'
 		}
 	})
+
+	const cafeOptions = cafes.map(cafe => ({
+		value: `${cafe.name}`,
+		label: `${cafe.name} - ${cafe.address}`
+	}))
+	useEffect(() => {
+		const cafes = fakeLocation as LocationData[]
+		setCafes(cafes)
+		setSelectedCafe(cafes[0])
+	}, [])
 
 	const onSubmit = async (data: ReservationFormData) => {
 		const formattedDate =
@@ -62,21 +78,23 @@ const ReservationForm = () => {
 					</div>
 					<div className="">
 						<input
-							{...register('email')}
-							type="email"
-							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
-							placeholder="Your Email"
-						/>
-						{errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-					</div>
-					<div className="">
-						<input
 							{...register('tel')}
 							type="tel"
 							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
 							placeholder="Your Phone"
 						/>
 						{errors.tel && <p className="text-red-500 text-sm">{errors.tel.message}</p>}
+					</div>
+					<div>
+						<input
+							{...register('guests', { valueAsNumber: true })}
+							type="number"
+							min="1"
+							max="20"
+							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
+							placeholder="Number Of People"
+						/>
+						{errors.guests && <p className="text-red-500 text-sm">{errors.guests.message}</p>}
 					</div>
 					<div className="relative">
 						<Controller
@@ -123,7 +141,7 @@ const ReservationForm = () => {
 											clearIcon={null}
 											minTime="10:00"
 											maxTime="20:00"
-											className="w-full p-[0.6rem] text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900 placeholder:text-gray-200 cursor-pointer"
+											className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900 placeholder:text-gray-200 cursor-pointer"
 										/>
 									</div>
 								</>
@@ -135,16 +153,22 @@ const ReservationForm = () => {
 						/>
 						{errors.time && <p className="text-red-500 text-sm">{errors.time.message}</p>}
 					</div>
-					<div>
-						<input
-							{...register('guests', { valueAsNumber: true })}
-							type="number"
-							min="1"
-							max="20"
-							className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
-							placeholder="Number Of People"
-						/>
-						{errors.guests && <p className="text-red-500 text-sm">{errors.guests.message}</p>}
+					<div className="">
+						{cafes.length > 0 && (
+							<Controller
+								name="address"
+								control={control}
+								render={({ field, fieldState }) => (
+									<Select
+										options={cafeOptions}
+										value={selectedCafe.id}
+										onChange={field.onChange}
+										error={fieldState.error?.message}
+										className="w-full p-3 text-gray-200 text-md border-2 border-gray-800 rounded-sm bg-gray-900"
+									/>
+								)}
+							/>
+						)}
 					</div>
 				</div>
 				<div className="w-full">

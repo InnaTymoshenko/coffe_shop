@@ -1,0 +1,61 @@
+import React from 'react'
+
+export type Option<T> = {
+	value: T
+	label: string
+}
+
+type SelectProps<T> = {
+	label?: string
+	options: Option<T>[]
+	value: T
+	onChange: (value: T) => void
+	className?: string
+	id?: string
+	required?: boolean
+	disabled?: boolean
+	error?: string
+}
+
+function Select<T extends string | number>({
+	label,
+	options,
+	value,
+	onChange,
+	className = '',
+	id,
+	required = false,
+	disabled = false,
+	error
+}: SelectProps<T>) {
+	const selectId = id || `select-${Math.random().toString(36).slice(2, 11)}`
+
+	return (
+		<div className="flex justify-end items-end gap-4">
+			{label && (
+				<label htmlFor={selectId} className="text-sm font-medium text-gray-900">
+					{label} {required && <span className="text-red-500">*</span>}
+				</label>
+			)}
+			<select
+				id={selectId}
+				value={value}
+				onChange={e => onChange(e.target.value as T)}
+				disabled={disabled}
+				required={required}
+				className={`p-2 border rounded-lg focus:outline-none ${error ? 'border-red-500' : 'border-gray-900'} ${
+					disabled ? 'bg-gray-100 cursor-not-allowed' : ''
+				} ${className}`}
+			>
+				{options.map(option => (
+					<option key={option.value} value={option.value} className="">
+						{option.label}
+					</option>
+				))}
+			</select>
+			{error && <p className="text-red-500 text-sm">{error}</p>}
+		</div>
+	)
+}
+
+export default Select

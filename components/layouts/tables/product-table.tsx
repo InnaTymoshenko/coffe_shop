@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { ProductData } from '@/types/item-type'
 import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
-import { EditProductForm } from '@/components/edit-product-form'
+import { EditProductForm } from '@/components/layouts/forms/edit-product-form'
 import { Modal } from '@/components/ui/modal'
 
 type TableProps = {

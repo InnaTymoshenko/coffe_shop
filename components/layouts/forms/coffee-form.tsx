@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
-import { Button } from './ui/button'
+import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
 import { addProductSchema } from '@/method/validation/product-schema'
 
