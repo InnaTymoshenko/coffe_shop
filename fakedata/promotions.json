@@ -2,8 +2,8 @@
 	{
 		"id": "f22ff7b9-86f4-410c-9431-5dda90b4ad17",
 		"title": "Birthday Discount",
-		"start": "",
-		"end": "",
+		"start": "01.01.2025",
+		"end": "31.12.2030",
 		"description": "Celebrate your birthday with a 20% discount on any drink or dessert during your birthday week.",
 		"isActive": true,
 		"status": "active",
@@ -12,8 +12,8 @@
 	{
 		"id": "6bb76a39-92f9-4e89-9049-e48702c47333",
 		"title": "Seasonal Specials",
-		"start": "",
-		"end": "",
+		"start": "01.01.2025",
+		"end": "31.12.2030",
 		"description": "Try our seasonal favorites like Pumpkin Spice Latte and Gingerbread Cupcake \u2013 only this season!",
 		"isActive": true,
 		"status": "active",

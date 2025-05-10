@@ -9,6 +9,7 @@ import Shell from '@/components/ui/shell'
 import { PromotionData } from '@/types/promotion-type'
 import { Button } from '@/components/ui/button'
 import Select from '@/components/ui/select'
+import { formatDate } from '@/method/fn'
 
 type PromotionFormData = z.infer<typeof promotionSchema>
 
@@ -45,12 +46,12 @@ export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormP
 			end: '',
 			isActive: false,
 			status: 'moderation',
-			type: ''
+			type: 'event-based'
 		}
 	})
 
 	const onSubmit = (data: PromotionFormData) => {
-		onAdd({ ...data, id: uuidv4() })
+		onAdd({ ...data, id: uuidv4(), end: formatDate(data.end), start: formatDate(data.start) })
 	}
 
 	return (

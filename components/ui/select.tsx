@@ -28,17 +28,17 @@ function Select<T extends string | number>({
 	disabled = false,
 	error
 }: SelectProps<T>) {
-	const selectId = id || `select-${Math.random().toString(36).slice(2, 11)}`
+	// const selectId = id || `select-${Math.random().toString(36).slice(2, 11)}`
 
 	return (
 		<div className="flex justify-end items-end gap-4">
 			{label && (
-				<label htmlFor={selectId} className="text-sm font-medium text-gray-900">
+				<label htmlFor={id} className="text-sm font-medium text-gray-900">
 					{label} {required && <span className="text-red-500">*</span>}
 				</label>
 			)}
 			<select
-				id={selectId}
+				id={id}
 				value={value}
 				onChange={e => onChange(e.target.value as T)}
 				disabled={disabled}

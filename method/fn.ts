@@ -69,3 +69,8 @@ export function sortByDateTime<T>(items: T[], dateKey: keyof T, timeKey: keyof T
 		return parseDateTime(b) - parseDateTime(a)
 	})
 }
+
+export const formatDate = (isoDate: string): string => {
+	const [year, month, day] = isoDate.split('-')
+	return `${day}.${month}.${year}`
+}

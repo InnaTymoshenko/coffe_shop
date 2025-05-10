@@ -2,181 +2,181 @@
 	{
 		"id": "1",
 		"name": "Inna",
-		"tel": "0505555565",
+		"tel": "+1(050)5555565",
 		"cafe": "Coffee Town - Podil",
 		"address": "Сагайдачного, 25, Київ, Україна",
-		"date": "22.05.2025",
+		"date": "22.04.2025",
 		"time": "12:00",
 		"guests": 2,
 		"comment": "Small table",
-		"isReady": false
+		"isReady": true
 	},
 	{
 		"id": "2",
 		"name": "Mark",
-		"tel": "0501234567",
+		"tel": "+1(050)1234567",
 		"cafe": "Coffee Town - Khreschatyk",
 		"address": "Хрещатик, 22, Київ, Україна",
-		"date": "23.05.2025",
+		"date": "23.03.2025",
 		"time": "10:30",
 		"guests": 3,
 		"comment": "Please prepare a kids chair",
-		"isReady": false
+		"isReady": true
 	},
 	{
 		"id": "3",
 		"name": "Anna",
-		"tel": "0672345678",
+		"tel": "+1(067)2345678",
 		"cafe": "Coffee Town - Obolon",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"date": "24.05.2025",
 		"time": "15:00",
 		"guests": 2,
 		"comment": "Table near the window",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "4",
 		"name": "Dmytro",
-		"tel": "0633334444",
+		"tel": "+1(063)3334444",
 		"cafe": "Coffee Town - Podil",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"date": "25.05.2025",
 		"time": "14:15",
 		"guests": 4,
 		"comment": "Add an extra chair",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "5",
 		"name": "Olga",
-		"tel": "0957778899",
+		"tel": "+1(095)7778899",
 		"cafe": "Coffee Town - Khreschatyk",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"date": "26.05.2025",
 		"time": "11:45",
 		"guests": 1,
 		"comment": "Silent corner if possible",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "6",
 		"name": "Ihor",
-		"tel": "0661010101",
+		"tel": "+1(066)1010101",
 		"cafe": "Coffee Town - Obolon",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"date": "26.05.2025",
 		"time": "18:30",
 		"guests": 2,
 		"comment": "Surprise cake ready at 19:00",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "7",
 		"name": "Nina",
-		"tel": "0739090909",
+		"tel": "+1(073)9090909",
 		"cafe": "Coffee Town - Podil",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"date": "28.05.2025",
 		"time": "09:00",
 		"guests": 2,
 		"comment": "Bring water for a dog",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "8",
 		"name": "Serhii",
-		"tel": "0998887776",
+		"tel": "+1(099)8887776",
 		"cafe": "Coffee Town - Khreschatyk",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"date": "29.05.2025",
 		"time": "13:00",
 		"guests": 5,
 		"comment": "Please join two tables",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "9",
 		"name": "Yulia",
-		"tel": "0504567890",
+		"tel": "+1(050)4567890",
 		"cafe": "Coffee Town - Obolon",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"date": "30.05.2025",
 		"time": "17:00",
 		"guests": 3,
 		"comment": "Please decorate with balloons",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "10",
 		"name": "Oleh",
-		"tel": "0681122334",
+		"tel": "+1(068)1122334",
 		"cafe": "Coffee Town - Podil",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"date": "30.05.2025",
 		"time": "16:00",
 		"guests": 2,
 		"comment": "Power outlet nearby for laptop",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "11",
 		"name": "Daria",
-		"tel": "0932211000",
+		"tel": "+1(093)2211000",
 		"cafe": "Coffee Town - Khreschatyk",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"date": "01.06.2025",
 		"time": "08:30",
 		"guests": 1,
 		"comment": "Quiet place for reading",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "12",
 		"name": "Roman",
-		"tel": "0966677889",
+		"tel": "+1(096)6677889",
 		"cafe": "Coffee Town - Obolon",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"date": "02.06.2025",
 		"time": "20:00",
 		"guests": 6,
 		"comment": "Celebration table, birthday",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "13",
 		"name": "Alina",
-		"tel": "0971112223",
+		"tel": "+1(097)1112223",
 		"cafe": "Coffee Town - Podil",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"date": "03.06.2025",
 		"time": "19:30",
 		"guests": 2,
 		"comment": "Please prepare a high chair",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "14",
 		"name": "Viktor",
-		"tel": "0507778888",
+		"tel": "+1(050)7778888",
 		"cafe": "Coffee Town - Khreschatyk",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"date": "04.06.2025",
 		"time": "10:00",
 		"guests": 2,
 		"comment": "Table with good lighting",
-		"isReady": true
+		"isReady": false
 	},
 	{
 		"id": "15",
 		"name": "Elena",
-		"tel": "0631237890",
+		"tel": "+1(063)1237890",
 		"cafe": "Coffee Town - Obolon",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"date": "05.06.2025",
 		"time": "12:45",
 		"guests": 3,
 		"comment": "Please have coffee ready upon arrival",
-		"isReady": true
+		"isReady": false
 	}
 ]

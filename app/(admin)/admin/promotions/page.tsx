@@ -52,7 +52,11 @@ const PromotionsPage = () => {
 				{filteredPromotions.length === 0 ? <p>No promotions found.</p> : <PromotionTable data={filteredPromotions} />}
 
 				{isAddPromotion && (
-					<Modal isOpen={isAddPromotion} onClose={() => setIsAddPromotion(false)}>
+					<Modal
+						isOpen={isAddPromotion}
+						onClose={() => setIsAddPromotion(false)}
+						className={'justify-center items-center'}
+					>
 						<AddPromotionForm onAdd={handleAddPromotion} setIsAddPromotion={setIsAddPromotion} />
 					</Modal>
 				)}

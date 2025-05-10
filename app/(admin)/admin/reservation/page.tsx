@@ -20,13 +20,17 @@ const cafeOptions = [
 ]
 
 const ReservationPage = () => {
-	const reservationData = fakeReservationData as ReservationData[]
+	const [reservation, setReservation] = useState<ReservationData[]>(fakeReservationData)
 	const [cafes, setCafes] = useState<LocationData[]>([])
 	const [selectedCafe, setSelectedCafe] = useState('')
-	const sortedReservations = sortByDateTime(reservationData, 'date', 'time')
+	const sortedReservations = sortByDateTime(reservation, 'date', 'time')
 	const filteredReservation = selectedCafe
 		? sortedReservations.filter(r => r.cafe.toLowerCase().includes(selectedCafe.toLowerCase()))
 		: sortedReservations
+
+	const handleToggleReady = (id: string) => {
+		setReservation(prev => prev.map(r => (r.id === id ? { ...r, isReady: !r.isReady } : r)))
+	}
 
 	useEffect(() => {
 		const cafes = fakeLocation as LocationData[]
@@ -52,7 +56,7 @@ const ReservationPage = () => {
 				{filteredReservation.length === 0 ? (
 					<p>No reservationData found.</p>
 				) : (
-					<ReservationTable data={filteredReservation} />
+					<ReservationTable data={filteredReservation} changeReserve={handleToggleReady} />
 				)}
 			</Shell>
 		</>

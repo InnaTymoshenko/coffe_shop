@@ -54,7 +54,7 @@ const ProductPage = () => {
 				</div>
 			</Shell>
 			{isAddProduct && (
-				<Modal isOpen={isAddProduct} onClose={() => setIsAddProduct(false)}>
+				<Modal isOpen={isAddProduct} onClose={() => setIsAddProduct(false)} className={'justify-center items-center'}>
 					<AddProductForm onAdd={handleAddProduct} setIsAddProduct={setIsAddProduct} />
 				</Modal>
 			)}

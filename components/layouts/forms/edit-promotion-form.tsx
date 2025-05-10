@@ -1,3 +1,5 @@
+'use client'
+
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -5,6 +7,7 @@ import { promotionSchema } from '@/method/validation/promotions-schema'
 import Shell from '../../ui/shell'
 import { Button } from '../../ui/button'
 import { PromotionData } from '@/types/promotion-type'
+import { formatDate } from '@/method/fn'
 
 type PromotionFormData = z.infer<typeof promotionSchema>
 
@@ -25,7 +28,14 @@ export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromo
 	})
 
 	const onSubmit = (data: PromotionFormData) => {
-		onSave({ ...promotion, ...data })
+		const uptatedStatus = data.isActive ? 'active' : data.status === 'active' ? 'finished' : data.status
+		onSave({
+			...promotion,
+			...data,
+			status: uptatedStatus,
+			end: data.end || formatDate(data.end),
+			start: data.start || formatDate(data.start)
+		})
 	}
 
 	return (

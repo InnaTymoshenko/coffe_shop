@@ -15,6 +15,7 @@ type TableProps = {
 const PromotionTable = ({ data }: TableProps) => {
 	const [selectedPromotion, setSelectedPromotion] = useState<PromotionData | null>(null)
 	const [isEditing, setIsEditing] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
 	const { deletePromotions, editPromotions } = useAdminStore()
 
 	useEffect(() => {
@@ -41,12 +42,23 @@ const PromotionTable = ({ data }: TableProps) => {
 	const handleDeletePromotion = (id: string) => {
 		deletePromotions(id)
 		setSelectedPromotion(null)
+		setIsOpen(false)
 	}
 
 	const handleSavePromotion = (updated: PromotionData) => {
 		editPromotions(updated)
 		setIsEditing(false)
 		setSelectedPromotion(null)
+	}
+
+	const handleOpenModal = (item: PromotionData) => {
+		setSelectedPromotion(item)
+		setIsOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setSelectedPromotion(null)
+		setIsOpen(false)
 	}
 
 	return (
@@ -83,7 +95,7 @@ const PromotionTable = ({ data }: TableProps) => {
 								<td className="p-4">
 									<Button
 										text="See more"
-										onClick={() => setSelectedPromotion(d)}
+										onClick={() => handleOpenModal(d)}
 										className="border border-gray-50 rounded-sm px-2 py-1 hover:border-gray-300 hover:bg-gray-200 "
 									/>
 								</td>
@@ -92,64 +104,66 @@ const PromotionTable = ({ data }: TableProps) => {
 					</tbody>
 				</table>
 			</div>
-			{selectedPromotion && (
-				<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
-					<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
-						<h3 className="text-lg font-semibold">Promotion Details</h3>
-						<Button
-							text="✕"
-							onClick={() => setSelectedPromotion(null)}
-							className="py-1 px-2 border border-gray-400 rounded-full text-gray-600 text-xl hover:bg-gray-300 "
-						/>
-					</div>
-					<div className="flex flex-col gap-6 p-4">
-						<div className="flex items-center gap-6">
-							<h2 className="text-xl font-medium">{selectedPromotion.title}</h2>
+			{selectedPromotion && isOpen && (
+				<Modal isOpen={isOpen} onClose={handleCloseModal} className={'justify-end items-center'} variant="editing">
+					<div className="w-full h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
+						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
+							<h3 className="text-lg font-semibold">Promotion Details</h3>
+							<Button
+								text="✕"
+								onClick={handleCloseModal}
+								className="py-1 px-2 border border-gray-400 rounded-full text-gray-600 text-xl hover:bg-gray-300 "
+							/>
 						</div>
-						<ul className="grid grid-cols-2 gap-y-2">
-							<li className="font-medium">ID:</li>
-							<li>{selectedPromotion.id}</li>
-							<li className="font-medium">Status:</li>
-							<li>
-								<Badge
-									variant={
-										selectedPromotion.status === 'active'
-											? 'success'
-											: selectedPromotion.status === 'finished'
-											? 'outline'
-											: 'warning'
-									}
-								>
-									{selectedPromotion.status}
-								</Badge>
-							</li>
-							<li className="font-medium">Description:</li>
-							<li>{selectedPromotion.description}</li>
-							<li className="font-medium">Start:</li>
-							{selectedPromotion.start !== '' ? <li>{selectedPromotion.start}</li> : <li>{`current`}</li>}
+						<div className="flex flex-col gap-6 p-4">
+							<div className="flex items-center gap-6">
+								<h2 className="text-xl font-medium">{selectedPromotion.title}</h2>
+							</div>
+							<ul className="grid grid-cols-2 gap-y-2">
+								<li className="font-medium">ID:</li>
+								<li>{selectedPromotion.id}</li>
+								<li className="font-medium">Status:</li>
+								<li>
+									<Badge
+										variant={
+											selectedPromotion.status === 'active'
+												? 'success'
+												: selectedPromotion.status === 'finished'
+												? 'outline'
+												: 'warning'
+										}
+									>
+										{selectedPromotion.status}
+									</Badge>
+								</li>
+								<li className="font-medium">Description:</li>
+								<li>{selectedPromotion.description}</li>
+								<li className="font-medium">Start:</li>
+								{selectedPromotion.start !== '' ? <li>{selectedPromotion.start}</li> : <li>{`current`}</li>}
 
-							<li className="font-medium">End:</li>
-							<li>{selectedPromotion.end}</li>
-							<li className="font-medium">Type:</li>
-							<li>{selectedPromotion.type}</li>
-						</ul>
-						<div className="flex flex-col gap-4">
-							<Button
-								text="Edit Promotion"
-								className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
-								onClick={() => setIsEditing(true)}
-							/>
-							<Button
-								text="Delete Promotion"
-								className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
-								onClick={() => handleDeletePromotion(selectedPromotion.id)}
-							/>
+								<li className="font-medium">End:</li>
+								<li>{selectedPromotion.end}</li>
+								<li className="font-medium">Type:</li>
+								<li>{selectedPromotion.type}</li>
+							</ul>
+							<div className="flex flex-col gap-4">
+								<Button
+									text="Edit Promotion"
+									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
+									onClick={() => setIsEditing(true)}
+								/>
+								<Button
+									text="Delete Promotion"
+									className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
+									onClick={() => handleDeletePromotion(selectedPromotion.id)}
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
+				</Modal>
 			)}
 			{isEditing && selectedPromotion && (
-				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)}>
+				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className={'justify-center items-center'}>
 					<EditPromotionForm promotion={selectedPromotion} onSave={handleSavePromotion} setIsEditing={setIsEditing} />
 				</Modal>
 			)}
