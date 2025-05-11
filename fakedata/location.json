@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1",
+		"id": "Coffee Town - Хрещатик",
 		"name": "Coffee Town - Хрещатик",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"lat": 50.4471,
@@ -8,7 +8,7 @@
 		"img": "/assets/cafe1.jpg"
 	},
 	{
-		"id": "2",
+		"id": "Coffee Town - Поділ",
 		"name": "Coffee Town - Поділ",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"lat": 50.4637,
@@ -16,7 +16,7 @@
 		"img": "/assets/cafe2.jpg"
 	},
 	{
-		"id": "3",
+		"id": "Coffee Town - Оболонь",
 		"name": "Coffee Town - Оболонь",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"lat": 50.507,

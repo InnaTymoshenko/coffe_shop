@@ -1,0 +1,1166 @@
+[
+	{
+		"id": "1",
+		"numberInLine": 100,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "10:00:00",
+		"status": "processed",
+		"clientId": "3",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			}
+		],
+		"totalAmount": 26.72,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 10, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "2",
+		"numberInLine": 101,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "13:00:00",
+		"status": "pending",
+		"clientId": null,
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.87,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Хрещатик",
+			"address": "Хрещатик, 22, Київ, Україна"
+		}
+	},
+	{
+		"id": "3",
+		"numberInLine": 102,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "16:00:00",
+		"status": "processed",
+		"clientId": "2",
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 9.5,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Хрещатик",
+			"address": "Хрещатик, 22, Київ, Україна"
+		}
+	},
+	{
+		"id": "4",
+		"numberInLine": 103,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "19:00:00",
+		"status": "cancelled",
+		"clientId": "1",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 26.62,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Поділ",
+			"address": "Сагайдачного, 25, Київ, Україна"
+		}
+	},
+	{
+		"id": "5",
+		"numberInLine": 104,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "22:00:00",
+		"status": "processed",
+		"clientId": "4",
+		"items": [
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.97,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 14, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "6",
+		"numberInLine": 110,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "10:00:00",
+		"status": "processed",
+		"clientId": "3",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			}
+		],
+		"totalAmount": 26.72,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 10, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "7",
+		"numberInLine": 111,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "13:00:00",
+		"status": "pending",
+		"clientId": null,
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.87,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "8",
+		"numberInLine": 112,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "16:00:00",
+		"status": "processed",
+		"clientId": "2",
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 9.5,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "10",
+		"numberInLine": 113,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "19:00:00",
+		"status": "cancelled",
+		"clientId": "1",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 26.62,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Поділ",
+			"address": "Сагайдачного, 25, Київ, Україна"
+		}
+	},
+	{
+		"id": "9",
+		"numberInLine": 114,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "22:00:00",
+		"status": "processed",
+		"clientId": "4",
+		"items": [
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.97,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 14, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "11",
+		"numberInLine": 120,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "10:00:00",
+		"status": "processed",
+		"clientId": "3",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			}
+		],
+		"totalAmount": 26.72,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 10, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "12",
+		"numberInLine": 121,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "13:00:00",
+		"status": "pending",
+		"clientId": null,
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.87,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "13",
+		"numberInLine": 122,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "16:00:00",
+		"status": "processed",
+		"clientId": "2",
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 9.5,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "14",
+		"numberInLine": 123,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "19:00:00",
+		"status": "cancelled",
+		"clientId": "1",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 26.62,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Поділ",
+			"address": "Сагайдачного, 25, Київ, Україна"
+		}
+	},
+	{
+		"id": "15",
+		"numberInLine": 124,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "22:00:00",
+		"status": "processed",
+		"clientId": "4",
+		"items": [
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.97,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 14, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "16",
+		"numberInLine": 130,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "10:00:00",
+		"status": "processed",
+		"clientId": "3",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			}
+		],
+		"totalAmount": 26.72,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 10, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
+		"id": "17",
+		"numberInLine": 131,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "13:00:00",
+		"status": "pending",
+		"clientId": null,
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.87,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "18",
+		"numberInLine": 132,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "16:00:00",
+		"status": "processed",
+		"clientId": "2",
+		"items": [
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 9.5,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Оболонь",
+			"address": "Оболонський проспект, 20, Київ, Україна"
+		}
+	},
+	{
+		"id": "19",
+		"numberInLine": 133,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "19:00:00",
+		"status": "cancelled",
+		"clientId": "1",
+		"items": [
+			{
+				"id": "2",
+				"alt": "Cappuccino with milk foam.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk foam", "cinnamon"],
+				"title": "Cappuccino",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.56,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.7,
+				"totalPrice": 17.12
+			},
+			{
+				"id": "3",
+				"alt": "Sweet and creamy latte.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk", "vanilla syrup"],
+				"title": "Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 9.5,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.8,
+				"totalPrice": 9.5
+			}
+		],
+		"totalAmount": 26.62,
+		"type": "in-place",
+		"details": {
+			"placeName": "Coffee Town - Поділ",
+			"address": "Сагайдачного, 25, Київ, Україна"
+		}
+	},
+	{
+		"id": "20",
+		"numberInLine": 134,
+		"createdDateAt": "10.05.2025",
+		"createdTimeAt": "22:00:00",
+		"status": "processed",
+		"clientId": "4",
+		"items": [
+			{
+				"id": "4",
+				"alt": "Strawberry cupcake with cream.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Cupcake",
+				"ingridients": ["strawberry", "cream"],
+				"title": "Strawberry Delight",
+				"price": [
+					{
+						"size": "medium",
+						"price": 4.8,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.5,
+				"totalPrice": 9.6
+			},
+			{
+				"id": "1",
+				"alt": "Rich and bold espresso shot.",
+				"src": {
+					"medium": "",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["milk"],
+				"title": "Espresso",
+				"price": [
+					{
+						"size": "medium",
+						"price": 8.37,
+						"quantity": 1,
+						"isChecked": false
+					}
+				],
+				"rating": 4.9,
+				"totalPrice": 8.37
+			}
+		],
+		"totalAmount": 17.97,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 14, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	}
+]
