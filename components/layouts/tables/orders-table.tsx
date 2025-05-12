@@ -1,11 +1,28 @@
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { Modal } from '@/components/ui/modal'
 import { OrderData } from '@/types/order-type'
-import React from 'react'
+import React, { useState } from 'react'
 
 type OrdersProps = {
 	data: OrderData[]
 }
 
 const OrdersTable = ({ data }: OrdersProps) => {
+	const [selectedOrder, setSelectedOrder] = useState<OrderData | null>(null)
+	const [isOpen, setIsOpen] = useState(false)
+
+	const handleOpenModal = (item: OrderData) => {
+		setSelectedOrder(item)
+		setIsOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setSelectedOrder(null)
+		setIsOpen(false)
+	}
+
 	return (
 		<>
 			<div className="overflow-x-auto mt-4">
@@ -38,11 +55,57 @@ const OrdersTable = ({ data }: OrdersProps) => {
 								<td className="p-4">
 									<input type="checkbox" />
 								</td>
+								<td>
+									{' '}
+									<Button
+										text="See more"
+										onClick={() => handleOpenModal(d)}
+										className="border border-gray-50 rounded-sm px-2 py-1 hover:border-gray-300 hover:bg-gray-200 "
+									/>
+								</td>
 							</tr>
 						))}
 					</tbody>
 				</table>
 			</div>
+			{selectedOrder && isOpen && (
+				<Modal onClose={handleCloseModal} isOpen={isOpen} className={'justify-end items-center'} variant="editing">
+					<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
+						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
+							<h3 className="text-lg font-semibold">Product Details</h3>
+							<Button
+								text="✕"
+								onClick={handleCloseModal}
+								className="py-1 px-2 border border-gray-400 rounded-full text-gray-600 text-xl hover:bg-gray-300 "
+							/>
+						</div>
+						<div className="flex flex-col gap-6 p-4">
+							<div className="flex items-center gap-6">
+								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden"></div>
+								<div className="flex flex-col gap-1">
+									<span className="font-medium"></span>
+									<span className="text-secondary"></span>
+								</div>
+							</div>
+
+							<ul className="grid grid-cols-2 gap-y-2"></ul>
+							<ul></ul>
+							<div className="flex flex-col gap-4">
+								<Button
+									text="Edit Product"
+									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
+									onClick={() => {}}
+								/>
+								{/* <Button
+															text="Delete Product"
+															className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
+															onClick={() => handleDeleteProduct(selectedProduct.id)}
+														/> */}
+							</div>
+						</div>
+					</div>
+				</Modal>
+			)}
 		</>
 	)
 }

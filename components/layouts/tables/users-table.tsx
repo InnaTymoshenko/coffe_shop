@@ -1,16 +1,15 @@
 'use client'
 
 import React from 'react'
-import { ReservationData } from '@/types/reservation-type'
 import Link from 'next/link'
+import { UserProfile } from '@/types/users-type'
 import { normalizedPhone } from '@/method/fn'
 
-type ReservationProps = {
-	data: ReservationData[]
-	changeReserve: (id: string) => void
+type UsersAdminProps = {
+	data: UserProfile[]
 }
 
-const ReservationTable = ({ data, changeReserve }: ReservationProps) => {
+const UsersTable = ({ data }: UsersAdminProps) => {
 	return (
 		<>
 			<div className="overflow-x-auto mt-4">
@@ -30,29 +29,26 @@ const ReservationTable = ({ data, changeReserve }: ReservationProps) => {
 					</thead>
 					<tbody>
 						{data.map((d, ind) => (
-							<tr
-								key={d.id}
-								className={`text-center border-b border-gray-300 ${d.isReady ? 'bg-gray-200' : 'hover:bg-gray-100'}`}
-							>
+							<tr key={d.id} className={`text-center border-b border-gray-300 hover:bg-gray-100`}>
 								<td className="p-4">{`#${ind + 1}`}</td>
-								<td className="p-4 text-lg font-medium text-left">{d.cafe}</td>
-								<td className="p-4">{d.date}</td>
-								<td className="p-4">{d.time}</td>
-								<td className="p-4">{d.name}</td>
+								<td className="p-4 text-lg font-medium text-left"></td>
+								<td className="p-4"></td>
+								<td className="p-4"></td>
+								<td className="p-4"></td>
 								<td className="p-4">
-									<Link href={`tel:${normalizedPhone(d.tel)}`} className="text-blue-500 hover:underline">
-										{d.tel}
+									<Link href={`tel:${normalizedPhone(d.phone)}`} className="text-blue-500 hover:underline">
+										{d.phone}
 									</Link>
 								</td>
-								<td className="p-4">{d.guests}</td>
-								<td className="p-4">{d.comment}</td>
+								<td className="p-4"></td>
+								<td className="p-4"></td>
 								<td className="p-4">
-									<input
+									{/* <input
 										type="checkbox"
 										checked={d.isReady}
 										onChange={() => changeReserve(d.id)}
 										disabled={d.isReady}
-									/>
+									/> */}
 								</td>
 							</tr>
 						))}
@@ -63,4 +59,4 @@ const ReservationTable = ({ data, changeReserve }: ReservationProps) => {
 	)
 }
 
-export default ReservationTable
+export default UsersTable

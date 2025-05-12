@@ -74,3 +74,7 @@ export const formatDate = (isoDate: string): string => {
 	const [year, month, day] = isoDate.split('-')
 	return `${day}.${month}.${year}`
 }
+
+export const normalizedPhone = (phone: string) => {
+	return phone.replace(/[^+\d]/g, '')
+}
