@@ -1,9 +1,12 @@
 'use client'
 
+import React, { useEffect, useState } from 'react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Modal } from '@/components/ui/modal'
 import { OrderData } from '@/types/order-type'
-import React, { useState } from 'react'
+import { UserProfile } from '@/types/users-type'
+import fakeUsersData from '@/fakedata/users.json'
 
 type OrdersProps = {
 	data: OrderData[]
@@ -11,7 +14,28 @@ type OrdersProps = {
 
 const OrdersTable = ({ data }: OrdersProps) => {
 	const [selectedOrder, setSelectedOrder] = useState<OrderData | null>(null)
+	const [user, setUser] = useState<UserProfile | null>(null)
 	const [isOpen, setIsOpen] = useState(false)
+	const [users, setUsers] = useState<UserProfile[]>([])
+
+	useEffect(() => {
+		const users = fakeUsersData as UserProfile[]
+		setUsers(users)
+	}, [])
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const clientIdentity = (id: string) => {
+		if (!selectedOrder || !users.length) return
+
+		const user = users.find(u => u.id === id)
+		return setUser(user || null)
+	}
+
+	useEffect(() => {
+		if (selectedOrder && users.length && selectedOrder.clientId) {
+			clientIdentity(selectedOrder.clientId)
+		}
+	}, [clientIdentity, selectedOrder, users.length])
 
 	const handleOpenModal = (item: OrderData) => {
 		setSelectedOrder(item)
@@ -22,6 +46,8 @@ const OrdersTable = ({ data }: OrdersProps) => {
 		setSelectedOrder(null)
 		setIsOpen(false)
 	}
+
+	console.log(user)
 
 	return (
 		<>
@@ -51,12 +77,27 @@ const OrdersTable = ({ data }: OrdersProps) => {
 								</td>
 								<td className="p-4">{d.type}</td>
 								<td className="p-4">{d.type === 'in-place' && 'placeName' in d.details ? d.details.placeName : ''}</td>
-								<td className="p-4">{d.status}</td>
+								<td className="p-4">
+									<Badge
+										variant={
+											d.status === 'completed'
+												? 'success'
+												: d.status === 'pending'
+												? 'warning'
+												: d.status === 'processed'
+												? 'primary'
+												: d.status === 'cancelled'
+												? 'danger'
+												: 'default'
+										}
+									>
+										{d.status}
+									</Badge>
+								</td>
 								<td className="p-4">
 									<input type="checkbox" />
 								</td>
 								<td>
-									{' '}
 									<Button
 										text="See more"
 										onClick={() => handleOpenModal(d)}
@@ -72,7 +113,7 @@ const OrdersTable = ({ data }: OrdersProps) => {
 				<Modal onClose={handleCloseModal} isOpen={isOpen} className={'justify-end items-center'} variant="editing">
 					<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
 						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
-							<h3 className="text-lg font-semibold">Product Details</h3>
+							<h3 className="text-lg font-semibold">Order Details</h3>
 							<Button
 								text="✕"
 								onClick={handleCloseModal}
@@ -81,14 +122,24 @@ const OrdersTable = ({ data }: OrdersProps) => {
 						</div>
 						<div className="flex flex-col gap-6 p-4">
 							<div className="flex items-center gap-6">
-								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden"></div>
 								<div className="flex flex-col gap-1">
-									<span className="font-medium"></span>
-									<span className="text-secondary"></span>
+									<span className="font-medium">{`Order #${selectedOrder.numberInLine}`}</span>
+									<span className="text-secondary">{selectedOrder.createdDateAt}</span>
+									<span className="text-secondary">{selectedOrder.createdTimeAt}</span>
 								</div>
 							</div>
-
-							<ul className="grid grid-cols-2 gap-y-2"></ul>
+							<ul className="grid grid-cols-2 gap-y-2">
+								<li className="font-medium">Type:</li>
+								<li className="font-medium">{selectedOrder.type}</li>
+								<li className="font-medium">Client:</li>
+								<li className="font-medium">
+									{selectedOrder.clientId && user ? `${user?.firstName} ${user?.lastName}` : '-'}
+								</li>
+								<li className="font-medium"></li>
+								<li className="font-medium"></li>
+								<li className="font-medium"></li>
+								<li className="font-medium"></li>
+							</ul>
 							<ul></ul>
 							<div className="flex flex-col gap-4">
 								<Button
