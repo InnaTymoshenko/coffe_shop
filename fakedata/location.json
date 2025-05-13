@@ -5,7 +5,17 @@
 		"address": "Хрещатик, 22, Київ, Україна",
 		"lat": 50.4471,
 		"lng": 30.5225,
-		"img": "/assets/cafe1.jpg"
+		"img": "/assets/cafe1.jpg",
+		"createdAt": "2023-04-12",
+		"updatedAt": "2025-05-13",
+		"totalOrders": 1084,
+		"totalClients": 433,
+		"averageRating": 4.3,
+		"isActive": true,
+		"openingHours": "08:00 - 21:00",
+		"managerName": "Олег Іванов",
+		"managerEmail": "manager@example.com",
+		"notes": "Активна вранці, багато постійних клієнтів."
 	},
 	{
 		"id": "Coffee Town - Поділ",
@@ -13,7 +23,17 @@
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"lat": 50.4637,
 		"lng": 30.5166,
-		"img": "/assets/cafe2.jpg"
+		"img": "/assets/cafe2.jpg",
+		"createdAt": "2023-04-12",
+		"updatedAt": "2025-05-13",
+		"totalOrders": 2781,
+		"totalClients": 588,
+		"averageRating": 4.3,
+		"isActive": true,
+		"openingHours": "08:00 - 21:00",
+		"managerName": "Ірина Бондар",
+		"managerEmail": "manager@example.com",
+		"notes": "Популярна у вихідні, часто великі замовлення."
 	},
 	{
 		"id": "Coffee Town - Оболонь",
@@ -21,6 +41,16 @@
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"lat": 50.507,
 		"lng": 30.4982,
-		"img": "/assets/cafe3.jpg"
+		"img": "/assets/cafe3.jpg",
+		"createdAt": "2023-04-12",
+		"updatedAt": "2025-05-13",
+		"totalOrders": 2870,
+		"totalClients": 398,
+		"averageRating": 4.3,
+		"isActive": true,
+		"openingHours": "08:00 - 21:00",
+		"managerName": "Марія Коваль",
+		"managerEmail": "manager@example.com",
+		"notes": "Новий менеджер з квітня, покращена якість обслуговування."
 	}
 ]

@@ -18,6 +18,7 @@ const cafeOptions = [
 
 const ReservationPage = () => {
 	const [users, setUsers] = useState<UserProfile[]>([])
+	const filteredUsers = users.filter(u => u.role === 'user')
 
 	useEffect(() => {
 		const users = fakeUsersData as UserProfile[]
@@ -40,7 +41,7 @@ const ReservationPage = () => {
 						/>
 					)}
 				</div>
-				{users.length === 0 ? <p>No users found.</p> : <UsersTable data={users} />}
+				{users.length === 0 && filteredUsers ? <p>No users found.</p> : <UsersTable data={filteredUsers} />}
 			</Shell>
 		</>
 	)

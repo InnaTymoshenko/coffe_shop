@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import React, { useState } from 'react'
@@ -35,9 +36,13 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 						<tr className="border-b border-gray-300 hover:bg-gray-100">
 							<th className="p-2">ID</th>
 							<th className="p-2">Name</th>
-							<th className="p-2">Gender</th>
+							<th className="p-2">Email</th>
 							<th className="p-2">Phone</th>
+							<th className="p-2">Date created at</th>
+							<th className="p-2">Last login at</th>
 							<th className="p-2">Status</th>
+							<th className="p-2">Order count</th>
+							<th className="p-2">Total spent</th>
 							<th className="p-2"></th>
 						</tr>
 					</thead>
@@ -49,17 +54,25 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 									<span>{d.firstName}</span>
 									<span>{d.lastName}</span>
 								</td>
-								<td className="p-4">{d.gender}</td>
+								<td className="p-4">
+									<Link href={`mailto:${d.email}`} className="text-blue-500 hover:underline">
+										{d.email}
+									</Link>
+								</td>
 								<td className="p-4">
 									<Link href={`tel:${normalizedPhone(d.phone)}`} className="text-blue-500 hover:underline">
 										{d.phone}
 									</Link>
 								</td>
+								<td className="p-4">{d.createdAt}</td>
+								<td className="p-4">{d.lastLoginAt}</td>
 								<td className="p-4">
 									<Badge variant={d.status === 'active' ? 'success' : d.status === 'banned' ? 'danger' : 'outline'}>
 										{d.status}
 									</Badge>
 								</td>
+								<td className="p-4">{d.orderCount}</td>
+								<td className="p-4">{d.totalSpent}</td>
 								<td className="p-4">
 									<Button
 										text="See more"
@@ -76,7 +89,7 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 				<Modal onClose={handleCloseModal} isOpen={isOpen} className={'justify-end items-center'} variant="editing">
 					<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
 						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
-							<h3 className="text-lg font-semibold">Product Details</h3>
+							<h3 className="text-lg font-semibold">Users Details</h3>
 							<Button
 								text="✕"
 								onClick={handleCloseModal}
@@ -85,21 +98,92 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 						</div>
 						<div className="flex flex-col gap-6 p-4">
 							<div className="flex items-center gap-6">
-								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden"></div>
+								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden">
+									<img
+										src={selectedUser.avatarUrl ? selectedUser.avatarUrl : '/assets/person-min.png'}
+										alt={selectedUser.firstName}
+										width={100}
+										height={100}
+									/>
+								</div>
 								<div className="flex flex-col gap-1">
-									<span className="font-medium"></span>
-									<span className="text-secondary"></span>
+									<strong className="font-bold">{`${selectedUser.firstName} ${selectedUser.lastName}`}</strong>
+									<p className="text-secondary">
+										{`user from `}
+										<strong className="font-medium">{` ${selectedUser.createdAt}`}</strong>
+									</p>
 								</div>
 							</div>
 
-							<ul className="grid grid-cols-2 gap-y-2"></ul>
+							<ul className="grid grid-cols-2 gap-y-2">
+								<li className="font-medium">ID:</li>
+								<li>{selectedUser.id}</li>
+								<li className="font-medium">Birthday:</li>
+								<li>{selectedUser.birthday}</li>
+								<li className="font-medium">Email:</li>
+								<li>
+									<Link href={`mailto:${selectedUser.email}`} className="text-blue-500 hover:underline">
+										{selectedUser.email}
+									</Link>
+								</li>
+								<li className="font-medium">Phone:</li>
+								<li>
+									<Link href={`tel:${normalizedPhone(selectedUser.phone)}`} className="text-blue-500 hover:underline">
+										{selectedUser.phone}
+									</Link>
+								</li>
+								<li className="font-medium">Address selivery:</li>
+								<li>{selectedUser.address}</li>
+								<li className="font-medium">Status:</li>
+								<li>
+									<Badge
+										variant={
+											selectedUser.status === 'active'
+												? 'success'
+												: selectedUser.status === 'banned'
+												? 'danger'
+												: 'outline'
+										}
+									>
+										{selectedUser.status}
+									</Badge>
+								</li>
+								<li className="font-medium">Gerder:</li>
+								<li>{selectedUser.gender}</li>
+								<li className="font-medium">Language:</li>
+								<li>{selectedUser.language}</li>
+								<li className="font-medium">Updated:</li>
+								<li>{selectedUser.updatedAt}</li>
+								<li className="font-medium">Last login:</li>
+								<li>{selectedUser.lastLoginAt}</li>
+								<li className="font-medium">Order count:</li>
+								<li>{selectedUser.orderCount}</li>
+								<li className="font-medium">Total spent:</li>
+								<li>{`${selectedUser.totalSpent}$`}</li>
+								<li className="font-medium">Favorite cafe:</li>
+								<li>
+									<Link href={`/`} target="_blank" className="text-blue-500 hover:underline">
+										{selectedUser.favoriteCafeId}
+									</Link>
+								</li>
+								<li className="font-medium">Subscribed:</li>
+								<li>{selectedUser.newsletterSubscribed ? 'Yes' : 'No'}</li>
+								<li className="font-medium">Notes:</li>
+								<li>{selectedUser.notes}</li>
+							</ul>
 							<ul></ul>
 							<div className="flex flex-col gap-4">
 								<Button
-									text="View Order History"
+									text="Edit status"
 									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
 									onClick={() => {}}
 								/>
+								<Button
+									text="View Order History"
+									className="w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700"
+									onClick={() => {}}
+								/>
+
 								<Button
 									text="Blocked user"
 									className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"

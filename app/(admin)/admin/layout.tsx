@@ -13,7 +13,7 @@ function AdminLayout({
 	return (
 		<div className="flex min-h-screen flex-col">
 			<AdminHeader />
-			<div className="flex-1 md:grid md:grid-cols-[280px_minmax(0,1fr)]">
+			<div className="flex-1 md:grid md:grid-cols-[200px_minmax(0,1fr)]">
 				<aside className="top-20 hidden h-[calc(100vh-5rem)] w-full overflow-y-auto border-r border-r-gray-300 md:sticky md:block">
 					<NavSidebar items={dashboardConfig.adminSidebarNav} />
 				</aside>
