@@ -4,8 +4,10 @@ import fakeCoffeeData from '@/fakedata/coffeeData.json'
 import fakeCupcakeData from '@/fakedata/cupcakeData.json'
 import fakeCafesDate from '@/fakedata/location.json'
 import fakePromotions from '@/fakedata/promotions.json'
+import fakeUsersData from '@/fakedata/users.json'
 import { PromotionData } from '@/types/promotion-type'
 import { LocationData } from '@/types/location-type'
+import { UserProfile } from '@/types/users-type'
 
 interface IAdminStore {
 	isAdmin: boolean
@@ -13,6 +15,7 @@ interface IAdminStore {
 	cupcakeData: ProductData[]
 	promotionsData: PromotionData[]
 	cafesData: LocationData[]
+	usersData: UserProfile[]
 	editCafe: (item: LocationData) => void
 	addNewCafe: (item: LocationData) => void
 	addProduct: (item: ProductData) => void
@@ -29,6 +32,7 @@ export const useAdminStore = create<IAdminStore>()((set, get) => ({
 	cupcakeData: fakeCupcakeData as ProductData[],
 	promotionsData: fakePromotions as PromotionData[],
 	cafesData: fakeCafesDate as LocationData[],
+	usersData: fakeUsersData as UserProfile[],
 	editCafe: item => {
 		const { cafesData } = get()
 		const updatedCafes = cafesData.map(cafe => (cafe.id === item.id ? { ...cafe, ...item } : cafe))

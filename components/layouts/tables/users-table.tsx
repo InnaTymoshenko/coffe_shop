@@ -8,6 +8,7 @@ import { normalizedPhone } from '@/method/fn'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Modal } from '@/components/ui/modal'
+import { ButtonLink } from '@/components/ui/button-link'
 
 type UsersAdminProps = {
 	data: UserProfile[]
@@ -37,7 +38,6 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 							<th className="p-2">ID</th>
 							<th className="p-2">Name</th>
 							<th className="p-2">Email</th>
-							<th className="p-2">Phone</th>
 							<th className="p-2">Date created at</th>
 							<th className="p-2">Last login at</th>
 							<th className="p-2">Status</th>
@@ -57,11 +57,6 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 								<td className="p-4">
 									<Link href={`mailto:${d.email}`} className="text-blue-500 hover:underline">
 										{d.email}
-									</Link>
-								</td>
-								<td className="p-4">
-									<Link href={`tel:${normalizedPhone(d.phone)}`} className="text-blue-500 hover:underline">
-										{d.phone}
 									</Link>
 								</td>
 								<td className="p-4">{d.createdAt}</td>
@@ -132,7 +127,7 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 										{selectedUser.phone}
 									</Link>
 								</li>
-								<li className="font-medium">Address selivery:</li>
+								<li className="font-medium">Address delivery:</li>
 								<li>{selectedUser.address}</li>
 								<li className="font-medium">Status:</li>
 								<li>
@@ -148,18 +143,6 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 										{selectedUser.status}
 									</Badge>
 								</li>
-								<li className="font-medium">Gerder:</li>
-								<li>{selectedUser.gender}</li>
-								<li className="font-medium">Language:</li>
-								<li>{selectedUser.language}</li>
-								<li className="font-medium">Updated:</li>
-								<li>{selectedUser.updatedAt}</li>
-								<li className="font-medium">Last login:</li>
-								<li>{selectedUser.lastLoginAt}</li>
-								<li className="font-medium">Order count:</li>
-								<li>{selectedUser.orderCount}</li>
-								<li className="font-medium">Total spent:</li>
-								<li>{`${selectedUser.totalSpent}$`}</li>
 								<li className="font-medium">Favorite cafe:</li>
 								<li>
 									<Link
@@ -176,27 +159,23 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 											: null}
 									</Link>
 								</li>
-								<li className="font-medium">Subscribed:</li>
-								<li>{selectedUser.newsletterSubscribed ? 'Yes' : 'No'}</li>
 								<li className="font-medium">Notes:</li>
 								<li>{selectedUser.notes}</li>
 							</ul>
-							<ul></ul>
 							<div className="flex flex-col gap-4">
 								<Button
 									text="Edit status"
 									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
 									onClick={() => {}}
 								/>
+								<ButtonLink
+									text="View User Profile"
+									className="w-full border border-orange-400 bg-orange-400 hover:bg-orange-600 text-gray-200 font-semibold rounded-lg p-3"
+									href={`/admin/users/${selectedUser.id}`}
+								/>
 								<Button
 									text="View Order History"
 									className="w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700"
-									onClick={() => {}}
-								/>
-
-								<Button
-									text="Blocked user"
-									className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
 									onClick={() => {}}
 								/>
 							</div>

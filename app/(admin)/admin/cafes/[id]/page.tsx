@@ -14,8 +14,8 @@ import { Modal } from '@/components/ui/modal'
 import EditCafeForm from '@/components/layouts/forms/edit-cafe-form'
 import { useAdminStore } from '@/store/admin-store'
 
-export default function ProductPage() {
-	const [selectedCafe, setSelectedcafe] = useState<LocationData>()
+export default function CafeAdminPage() {
+	const [selectedCafe, setSelectedCafe] = useState<LocationData>()
 	const [isEditing, setIsEditing] = useState(false)
 	const params = useParams()
 	const id = params?.id as string
@@ -24,7 +24,7 @@ export default function ProductPage() {
 	useEffect(() => {
 		if (cafesData) {
 			const selectedCafe = cafesData.find(c => c.id === id)
-			setSelectedcafe(selectedCafe)
+			setSelectedCafe(selectedCafe)
 		}
 	}, [cafesData, id])
 

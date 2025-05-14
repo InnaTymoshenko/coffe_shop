@@ -93,7 +93,7 @@
 		"lastName": "Притула",
 		"createdAt": "22.03.2024",
 		"updatedAt": "28.12.2024",
-		"status": "banned",
+		"status": "active",
 		"birthday": "23.11.1987",
 		"email": "kyrylo53@skyba.net",
 		"phone": "+38 (062) 267-05-20",
@@ -194,7 +194,7 @@
 		"newsletterSubscribed": false,
 		"orderCount": 1,
 		"totalSpent": 1366.41,
-		"favoriteCafeId": "podil",
+		"favoriteCafeId": "Coffee Town - Поділ",
 		"notes": "Birthday discount used last year."
 	},
 	{
@@ -216,7 +216,7 @@
 		"newsletterSubscribed": false,
 		"orderCount": 34,
 		"totalSpent": 1092.1,
-		"favoriteCafeId": "podil",
+		"favoriteCafeId": "Coffee Town - Поділ",
 		"notes": "Enjoys seasonal cupcake offers."
 	},
 	{
@@ -238,7 +238,7 @@
 		"newsletterSubscribed": true,
 		"orderCount": 42,
 		"totalSpent": 622.89,
-		"favoriteCafeId": "podil",
+		"favoriteCafeId": "Coffee Town - Поділ",
 		"notes": "Left positive feedback in March."
 	},
 	{
@@ -304,7 +304,7 @@
 		"newsletterSubscribed": true,
 		"orderCount": 35,
 		"totalSpent": 1113.11,
-		"favoriteCafeId": "podil",
+		"favoriteCafeId": "Coffee Town - Поділ",
 		"notes": "Mentioned they travel a lot."
 	},
 	{
@@ -414,7 +414,7 @@
 		"newsletterSubscribed": false,
 		"orderCount": 10,
 		"totalSpent": 20.24,
-		"favoriteCafeId": "podil",
+		"favoriteCafeId": "Coffee Town - Поділ",
 		"notes": "Attends weekend promotions."
 	},
 	{
