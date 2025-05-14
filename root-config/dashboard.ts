@@ -30,6 +30,10 @@ export const dashboardConfig: DashboardConfig = {
 		{
 			title: 'Promotions',
 			href: '/admin/promotions'
+		},
+		{
+			title: 'Cafes',
+			href: '/admin/cafes'
 		}
 	],
 	userSidebarNav: [

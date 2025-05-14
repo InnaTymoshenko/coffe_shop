@@ -1,12 +1,3 @@
-// export interface LocationData {
-// 	id: string
-// 	name: string
-// 	address: string
-// 	lat: number
-// 	lng: number
-// 	img: string
-// }
-
 export interface LocationData {
 	id: string
 	name: string
@@ -14,6 +5,7 @@ export interface LocationData {
 	lat: number
 	lng: number
 	img: string
+	phone: string
 	createdAt: string
 	updatedAt?: string
 	totalOrders: number

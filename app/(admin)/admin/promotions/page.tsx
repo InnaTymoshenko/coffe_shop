@@ -50,7 +50,6 @@ const PromotionsPage = () => {
 					/>
 				</div>
 				{filteredPromotions.length === 0 ? <p>No promotions found.</p> : <PromotionTable data={filteredPromotions} />}
-
 				{isAddPromotion && (
 					<Modal
 						isOpen={isAddPromotion}

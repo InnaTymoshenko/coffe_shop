@@ -162,8 +162,18 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 								<li>{`${selectedUser.totalSpent}$`}</li>
 								<li className="font-medium">Favorite cafe:</li>
 								<li>
-									<Link href={`/`} target="_blank" className="text-blue-500 hover:underline">
-										{selectedUser.favoriteCafeId}
+									<Link
+										href={`/admin/cafes/${selectedUser.favoriteCafeId}`}
+										target="_blank"
+										className="text-blue-500 hover:underline"
+									>
+										{selectedUser.favoriteCafeId === 'khreschatyk'
+											? 'Coffee Town - Хрещатик'
+											: selectedUser.favoriteCafeId === 'podil'
+											? 'Coffee Town - Поділ'
+											: selectedUser.favoriteCafeId === 'obolon'
+											? 'Coffee Town - Оболонь'
+											: null}
 									</Link>
 								</li>
 								<li className="font-medium">Subscribed:</li>

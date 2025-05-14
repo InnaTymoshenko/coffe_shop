@@ -47,7 +47,7 @@ const OrdersTable = ({ data }: OrdersProps) => {
 		setIsOpen(false)
 	}
 
-	console.log(user)
+	// console.log(user)
 
 	return (
 		<>

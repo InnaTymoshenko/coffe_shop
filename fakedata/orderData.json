@@ -460,7 +460,7 @@
 		"numberInLine": 113,
 		"createdDateAt": "10.05.2025",
 		"createdTimeAt": "19:00:00",
-		"status": "cancelled",
+		"status": "completed",
 		"clientId": "1",
 		"items": [
 			{
@@ -522,7 +522,7 @@
 		"numberInLine": 114,
 		"createdDateAt": "10.05.2025",
 		"createdTimeAt": "22:00:00",
-		"status": "processed",
+		"status": "shipped",
 		"clientId": "4",
 		"items": [
 			{
@@ -586,7 +586,7 @@
 		"numberInLine": 120,
 		"createdDateAt": "10.05.2025",
 		"createdTimeAt": "10:00:00",
-		"status": "processed",
+		"status": "shipped",
 		"clientId": "3",
 		"items": [
 			{
@@ -712,7 +712,7 @@
 		"numberInLine": 122,
 		"createdDateAt": "10.05.2025",
 		"createdTimeAt": "16:00:00",
-		"status": "processed",
+		"status": "completed",
 		"clientId": "2",
 		"items": [
 			{
@@ -751,7 +751,7 @@
 		"numberInLine": 123,
 		"createdDateAt": "10.05.2025",
 		"createdTimeAt": "19:00:00",
-		"status": "cancelled",
+		"status": "completed",
 		"clientId": "1",
 		"items": [
 			{

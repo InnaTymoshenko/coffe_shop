@@ -20,9 +20,9 @@ const ordersOptions = [
 
 const cafeOptions = [
 	{ value: '', label: 'All cafes' },
-	{ value: 'Coffee Town - Хрещатик', label: 'Coffee Town - Хрещатик' },
-	{ value: 'Coffee Town - Поділ', label: 'Coffee Town - Поділ' },
-	{ value: 'Coffee Town - Оболонь', label: 'Coffee Town - Оболонь' }
+	{ value: 'khreschatyk', label: 'Coffee Town - Хрещатик' },
+	{ value: 'podil', label: 'Coffee Town - Поділ' },
+	{ value: 'obolon', label: 'Coffee Town - Оболонь' }
 ]
 
 const OrderPage = () => {
@@ -60,7 +60,7 @@ const OrderPage = () => {
 		<>
 			<Shell className="container flex flex-col gap-4">
 				<div className="w-full py-4 flex justify-between items-center">
-					<h1 className="text-2xl font-bold">Reservation</h1>
+					<h1 className="text-2xl font-bold">Orders</h1>
 				</div>
 				<div className="w-1/4 flex justify-start items-end gap-4">
 					<Select

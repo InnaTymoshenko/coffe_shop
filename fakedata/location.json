@@ -1,6 +1,6 @@
 [
 	{
-		"id": "Coffee Town - Хрещатик",
+		"id": "khreschatyk",
 		"name": "Coffee Town - Хрещатик",
 		"address": "Хрещатик, 22, Київ, Україна",
 		"lat": 50.4471,
@@ -8,6 +8,7 @@
 		"img": "/assets/cafe1.jpg",
 		"createdAt": "2023-04-12",
 		"updatedAt": "2025-05-13",
+		"phone": "+38 (222) 333 22 11",
 		"totalOrders": 1084,
 		"totalClients": 433,
 		"averageRating": 4.3,
@@ -18,7 +19,7 @@
 		"notes": "Активна вранці, багато постійних клієнтів."
 	},
 	{
-		"id": "Coffee Town - Поділ",
+		"id": "podil",
 		"name": "Coffee Town - Поділ",
 		"address": "Сагайдачного, 25, Київ, Україна",
 		"lat": 50.4637,
@@ -26,6 +27,7 @@
 		"img": "/assets/cafe2.jpg",
 		"createdAt": "2023-04-12",
 		"updatedAt": "2025-05-13",
+		"phone": "+38 (222) 333 22 22",
 		"totalOrders": 2781,
 		"totalClients": 588,
 		"averageRating": 4.3,
@@ -36,7 +38,7 @@
 		"notes": "Популярна у вихідні, часто великі замовлення."
 	},
 	{
-		"id": "Coffee Town - Оболонь",
+		"id": "obolon",
 		"name": "Coffee Town - Оболонь",
 		"address": "Оболонський проспект, 20, Київ, Україна",
 		"lat": 50.507,
@@ -44,6 +46,7 @@
 		"img": "/assets/cafe3.jpg",
 		"createdAt": "2023-04-12",
 		"updatedAt": "2025-05-13",
+		"phone": "+38 (222) 333 22 33",
 		"totalOrders": 2870,
 		"totalClients": 398,
 		"averageRating": 4.3,
