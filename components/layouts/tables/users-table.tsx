@@ -9,23 +9,35 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Modal } from '@/components/ui/modal'
 import { ButtonLink } from '@/components/ui/button-link'
+import { EditUserProfileForm } from '../forms/edit-user-form'
+import { useAdminStore } from '@/store/admin-store'
 
 type UsersAdminProps = {
 	data: UserProfile[]
 }
 
 const UsersTable = ({ data }: UsersAdminProps) => {
-	const [selectedUser, setSelectedUser] = useState<UserProfile | null>(null)
+	const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
 	const [isEditing, setIsEditing] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
+	const { editUser } = useAdminStore()
+
+	const user = useAdminStore(state =>
+		selectedUserId ? state.usersData.find(u => u.id === selectedUserId) ?? null : null
+	)
+
+	const handleEditUserProfile = (item: UserProfile) => {
+		editUser(item)
+		setIsEditing(false)
+	}
 
 	const handleOpenModal = (item: UserProfile) => {
-		setSelectedUser(item)
+		setSelectedUserId(item.id)
 		setIsOpen(true)
 	}
 
 	const handleCloseModal = () => {
-		setSelectedUser(null)
+		setSelectedUserId(null)
 		setIsOpen(false)
 	}
 
@@ -48,7 +60,7 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 					</thead>
 					<tbody>
 						{data.map(d => (
-							<tr key={d.id} className={`text-center border-b border-gray-300 hover:bg-gray-100`}>
+							<tr key={d.id} className="text-center border-b border-gray-300 hover:bg-gray-100">
 								<td className="p-4">{d.id}</td>
 								<td className="p-4 text-lg font-medium text-left flex flex-col gap-1">
 									<span>{d.firstName}</span>
@@ -72,7 +84,7 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 									<Button
 										text="See more"
 										onClick={() => handleOpenModal(d)}
-										className="border border-gray-50 rounded-sm px-2 py-1 hover:border-gray-300 hover:bg-gray-200 "
+										className="border border-gray-50 rounded-sm px-2 py-1 hover:border-gray-300 hover:bg-gray-200"
 									/>
 								</td>
 							</tr>
@@ -80,113 +92,99 @@ const UsersTable = ({ data }: UsersAdminProps) => {
 					</tbody>
 				</table>
 			</div>
-			{selectedUser && isOpen && (
-				<Modal onClose={handleCloseModal} isOpen={isOpen} className={'justify-end items-center'} variant="editing">
+			{user && isOpen && (
+				<Modal onClose={handleCloseModal} isOpen={isOpen} className="justify-end items-center" variant="editing">
 					<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
 						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
 							<h3 className="text-lg font-semibold">Users Details</h3>
 							<Button
 								text="✕"
 								onClick={handleCloseModal}
-								className="py-1 px-2 border border-gray-400 rounded-full text-gray-600 text-xl hover:bg-gray-300 "
+								className="py-1 px-2 border border-gray-400 rounded-full text-gray-600 text-xl hover:bg-gray-300"
 							/>
 						</div>
 						<div className="flex flex-col gap-6 p-4">
 							<div className="flex items-center gap-6">
 								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden">
-									<img
-										src={selectedUser.avatarUrl ? selectedUser.avatarUrl : '/assets/person-min.png'}
-										alt={selectedUser.firstName}
-										width={100}
-										height={100}
-									/>
+									<img src={user.avatarUrl || '/assets/person-min.png'} alt={user.firstName} width={100} height={100} />
 								</div>
 								<div className="flex flex-col gap-1">
-									<strong className="font-bold">{`${selectedUser.firstName} ${selectedUser.lastName}`}</strong>
+									<strong className="font-bold">{`${user.firstName} ${user.lastName}`}</strong>
 									<p className="text-secondary">
-										{`user from `}
-										<strong className="font-medium">{` ${selectedUser.createdAt}`}</strong>
+										user from <strong className="font-medium">{user.createdAt}</strong>
 									</p>
 								</div>
 							</div>
-
 							<ul className="grid grid-cols-2 gap-y-2">
 								<li className="font-medium">ID:</li>
-								<li>{selectedUser.id}</li>
+								<li>{user.id}</li>
 								<li className="font-medium">Birthday:</li>
-								<li>{selectedUser.birthday}</li>
+								<li>{user.birthday}</li>
 								<li className="font-medium">Email:</li>
 								<li>
-									<Link href={`mailto:${selectedUser.email}`} className="text-blue-500 hover:underline">
-										{selectedUser.email}
+									<Link href={`mailto:${user.email}`} className="text-blue-500 hover:underline">
+										{user.email}
 									</Link>
 								</li>
 								<li className="font-medium">Phone:</li>
 								<li>
-									<Link href={`tel:${normalizedPhone(selectedUser.phone)}`} className="text-blue-500 hover:underline">
-										{selectedUser.phone}
+									<Link href={`tel:${normalizedPhone(user.phone)}`} className="text-blue-500 hover:underline">
+										{user.phone}
 									</Link>
 								</li>
 								<li className="font-medium">Address delivery:</li>
-								<li>{selectedUser.address}</li>
+								<li>{user.address}</li>
 								<li className="font-medium">Status:</li>
 								<li>
 									<Badge
-										variant={
-											selectedUser.status === 'active'
-												? 'success'
-												: selectedUser.status === 'banned'
-												? 'danger'
-												: 'outline'
-										}
+										variant={user.status === 'active' ? 'success' : user.status === 'banned' ? 'danger' : 'outline'}
 									>
-										{selectedUser.status}
+										{user.status}
 									</Badge>
 								</li>
 								<li className="font-medium">Favorite cafe:</li>
 								<li>
 									<Link
-										href={`/admin/cafes/${selectedUser.favoriteCafeId}`}
+										href={`/admin/cafes/${user.favoriteCafeId}`}
 										target="_blank"
 										className="text-blue-500 hover:underline"
 									>
-										{selectedUser.favoriteCafeId === 'khreschatyk'
+										{user.favoriteCafeId === 'khreschatyk'
 											? 'Coffee Town - Хрещатик'
-											: selectedUser.favoriteCafeId === 'podil'
+											: user.favoriteCafeId === 'podil'
 											? 'Coffee Town - Поділ'
-											: selectedUser.favoriteCafeId === 'obolon'
+											: user.favoriteCafeId === 'obolon'
 											? 'Coffee Town - Оболонь'
 											: null}
 									</Link>
 								</li>
 								<li className="font-medium">Notes:</li>
-								<li>{selectedUser.notes}</li>
+								<li>{user.notes}</li>
 							</ul>
 							<div className="flex flex-col gap-4">
 								<Button
-									text="Edit status"
+									text="Edit User Profile"
 									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
-									onClick={() => {}}
+									onClick={() => setIsEditing(true)}
 								/>
 								<ButtonLink
 									text="View User Profile"
 									className="w-full border border-orange-400 bg-orange-400 hover:bg-orange-600 text-gray-200 font-semibold rounded-lg p-3"
-									href={`/admin/users/${selectedUser.id}`}
+									href={`/admin/users/${user.id}`}
 								/>
-								<Button
+								<ButtonLink
+									href={`/admin/users/${user.id}/orders-history`}
 									text="View Order History"
 									className="w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700"
-									onClick={() => {}}
 								/>
 							</div>
 						</div>
 					</div>
 				</Modal>
 			)}
-			{isEditing && selectedUser && (
-				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className={'justify-center items-center'}>
-					<div></div>
-					{/* <EditProductForm product={selectedProduct} onSave={handleSave} setIsEditing={setIsEditing} /> */}
+			{isEditing && user && (
+				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className="justify-center items-center">
+					<EditUserProfileForm item={user} onSave={handleEditUserProfile} setIsEditing={setIsEditing} />
 				</Modal>
 			)}
 		</>

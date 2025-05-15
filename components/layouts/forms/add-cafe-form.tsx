@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { v4 as uuidv4 } from 'uuid'
 import { LocationData } from '@/types/location-type'
 import { Button } from '@/components/ui/button'
-import { newCafeSchema } from '@/method/validation/cafes-shema'
+import { newCafeSchema } from '@/method/validation/cafes-schema'
 import Shell from '@/components/ui/shell'
 
 export type NewCafeFormValues = z.infer<typeof newCafeSchema>

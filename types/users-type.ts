@@ -1,3 +1,5 @@
+import { OrderData } from './order-type'
+
 export type UserRole = 'user' | 'admin'
 export type UserStatus = 'active' | 'inactive' | 'banned'
 
@@ -22,4 +24,8 @@ export interface UserProfile {
 	totalSpent: number
 	favoriteCafeId: string | null
 	notes?: string
+}
+
+export interface UserWithOrder extends UserProfile {
+	orders: OrderData[]
 }

@@ -7,7 +7,7 @@ type ButtonLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & ButtonPro
 
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(function ButtonLink({ href, ...props }, ref) {
 	return (
-		<Link ref={ref} href={href} passHref tabIndex={-1}>
+		<Link ref={ref} href={href} className="w-full" passHref tabIndex={-1}>
 			<Button {...props}>{props.children}</Button>
 		</Link>
 	)

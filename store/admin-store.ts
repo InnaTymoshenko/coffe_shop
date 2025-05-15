@@ -16,6 +16,7 @@ interface IAdminStore {
 	promotionsData: PromotionData[]
 	cafesData: LocationData[]
 	usersData: UserProfile[]
+	editUser: (item: UserProfile) => void
 	editCafe: (item: LocationData) => void
 	addNewCafe: (item: LocationData) => void
 	addProduct: (item: ProductData) => void
@@ -38,6 +39,13 @@ export const useAdminStore = create<IAdminStore>()((set, get) => ({
 		const updatedCafes = cafesData.map(cafe => (cafe.id === item.id ? { ...cafe, ...item } : cafe))
 		set({
 			cafesData: updatedCafes
+		})
+	},
+	editUser: item => {
+		const { usersData } = get()
+		const upratedUser = usersData.map(user => (user.id === item.id ? { ...user, ...item } : user))
+		set({
+			usersData: upratedUser
 		})
 	},
 	addNewCafe: item => {

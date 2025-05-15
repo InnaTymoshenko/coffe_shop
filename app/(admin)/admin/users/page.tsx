@@ -10,12 +10,15 @@ import { Button } from '@/components/ui/button'
 
 const UsersPage = () => {
 	const { usersData } = useAdminStore()
-
 	const [search, setSearch] = useState('')
 	const [roleFilter, setRoleFilter] = useState('')
+	const [statusFilter, setStatusFilter] = useState('')
+	const [minOrders, setMinOrders] = useState('')
+	const [createdAfter, setCreatedAfter] = useState('')
 
 	const filteredUsers = usersData
 		.filter(user => !roleFilter || user.role === roleFilter)
+		.filter(user => !statusFilter || user.status === statusFilter)
 		.filter(user => {
 			const query = search.toLowerCase()
 			return (
@@ -24,10 +27,23 @@ const UsersPage = () => {
 				user.email.toLowerCase().includes(query)
 			)
 		})
+		.filter(user => {
+			if (!minOrders) return true
+			return user.orderCount >= Number(minOrders)
+		})
+		.filter(user => {
+			if (!createdAfter) return true
+			const userDate = new Date(user.createdAt.split('.').reverse().join('-'))
+			const filterDate = new Date(createdAfter)
+			return userDate >= filterDate
+		})
 
 	const clearFilters = () => {
 		setSearch('')
 		setRoleFilter('')
+		setStatusFilter('')
+		setMinOrders('')
+		setCreatedAfter('')
 	}
 
 	return (
@@ -36,35 +52,66 @@ const UsersPage = () => {
 				<div className="w-full py-4 flex justify-between items-center">
 					<h1 className="text-2xl font-bold">Users</h1>
 				</div>
-				<div className="w-full flex justify-start items-end gap-4">
-					{usersData.length > 0 && (
-						<>
-							<div className="w-1/4 flex flex-col">
-								<label className="text-sm font-medium">Role</label>
-								<select value={roleFilter} onChange={e => setRoleFilter(e.target.value)} className="border p-2 rounded">
-									<option value="">All</option>
-									<option value="user">User</option>
-									<option value="admin">Admin</option>
-								</select>
-							</div>
-							<div className="w-1/4 flex flex-col">
-								<label className="text-sm font-medium">Search</label>
-								<input
-									type="text"
-									value={search}
-									onChange={e => setSearch(e.target.value)}
-									placeholder="Search by name or email"
-									className="border p-2 rounded"
-								/>
-							</div>
-							<Button
-								text="Clear Filters"
-								onClick={clearFilters}
-								className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded"
+				{usersData.length > 0 && (
+					<div className="w-full flex justify-start items-end gap-4">
+						<div className="w-[200px] flex flex-col">
+							<label className="text-sm font-medium">Search</label>
+							<input
+								type="text"
+								value={search}
+								onChange={e => setSearch(e.target.value)}
+								placeholder="Search by name or email"
+								className="border p-2 rounded"
 							/>
-						</>
-					)}
-				</div>
+						</div>
+						<div className="w-[100px] flex flex-col">
+							<label className="text-sm font-medium">Role</label>
+							<select value={roleFilter} onChange={e => setRoleFilter(e.target.value)} className="border p-2 rounded">
+								<option value="">All</option>
+								<option value="user">User</option>
+								<option value="admin">Admin</option>
+							</select>
+						</div>
+						<div className="w-[100px] flex flex-col">
+							<label className="text-sm font-medium">Status</label>
+							<select
+								value={statusFilter}
+								onChange={e => setStatusFilter(e.target.value)}
+								className="border p-2 rounded"
+							>
+								<option value="">All</option>
+								<option value="active">Active</option>
+								<option value="inactive">Inactive</option>
+								<option value="banned">Banned</option>
+							</select>
+						</div>
+						<div className="w-[100px] flex flex-col">
+							<label className="text-sm font-medium">Min Orders</label>
+							<input
+								type="number"
+								value={minOrders}
+								onChange={e => setMinOrders(e.target.value)}
+								placeholder="0"
+								className="border p-2 rounded"
+							/>
+						</div>
+						<div className="w-[150px] flex flex-col">
+							<label className="text-sm font-medium">Created After</label>
+							<input
+								type="date"
+								value={createdAfter}
+								onChange={e => setCreatedAfter(e.target.value)}
+								className="border p-2 rounded"
+							/>
+						</div>
+						<Button
+							text="Clear Filters"
+							onClick={clearFilters}
+							className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded"
+						/>
+					</div>
+				)}
+
 				{usersData.length === 0 && filteredUsers ? <p>No users found.</p> : <UsersTable data={filteredUsers} />}
 			</Shell>
 		</>

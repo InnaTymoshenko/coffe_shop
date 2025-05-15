@@ -13,13 +13,14 @@ import { Modal } from '@/components/ui/modal'
 import { useAdminStore } from '@/store/admin-store'
 import { UserProfile } from '@/types/users-type'
 import { Badge } from '@/components/ui/badge'
+import { EditUserProfileForm } from '@/components/layouts/forms/edit-user-form'
 
 export default function UserAdminPage() {
 	const [selectedUser, setSelectedUser] = useState<UserProfile>()
 	const [isEditing, setIsEditing] = useState(false)
 	const params = useParams()
 	const id = params?.id as string
-	const { usersData } = useAdminStore()
+	const { usersData, editUser } = useAdminStore()
 
 	useEffect(() => {
 		if (usersData) {
@@ -28,10 +29,19 @@ export default function UserAdminPage() {
 		}
 	}, [usersData, id])
 
-	// const handleEditCafe = (item: LocationData) => {
-	// 	editCafe(item)
-	// 	setIsEditing(false)
-	// }
+	const blockedUser = (id: string) => {
+		const user = usersData.find(user => user.id === id)
+		if (!user) return
+		const updatedUser: UserProfile = { ...user, status: 'banned' }
+		editUser(updatedUser)
+	}
+
+	if (!id) return <p>Not found User!</p>
+
+	const handleEditUserProfile = (item: UserProfile) => {
+		editUser(item)
+		setIsEditing(false)
+	}
 
 	return (
 		<Shell className="container flex flex-col gap-8">
@@ -42,12 +52,13 @@ export default function UserAdminPage() {
 			>
 				<FaArrowLeftLong />
 			</ButtonLink>
-			<div className="w-full flex gap-8 justify-start items-center">
-				<h1 className="text-2xl font-bold my-8">{`${selectedUser?.firstName} ${selectedUser?.lastName}`}</h1>
-				{selectedUser && (
+			{selectedUser && (
+				<div className="w-full flex gap-8 justify-start items-center">
 					<img src={selectedUser?.avatarUrl} alt={selectedUser?.lastName} className="w-[100px] h-auto" />
-				)}
-			</div>
+					<h1 className="text-2xl font-bold my-8">{`${selectedUser?.firstName} ${selectedUser?.lastName}`}</h1>
+				</div>
+			)}
+
 			<div className="w-full flex gap-12">
 				<div className="flex flex-col gap-2">
 					{selectedUser && (
@@ -126,26 +137,25 @@ export default function UserAdminPage() {
 			</div>
 			<div className="flex justify-start items-center gap-4">
 				<Button
-					text="Edit status"
+					text="Edit profile"
 					className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
-					onClick={() => {}}
+					onClick={() => setIsEditing(true)}
 				/>
-				<Button
+				<ButtonLink
+					href={`/admin/users/${id}/orders-history`}
 					text="View Order History"
 					className="w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700"
-					onClick={() => {}}
 				/>
 
 				<Button
 					text="Blocked user"
 					className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
-					onClick={() => {}}
+					onClick={() => blockedUser(id)}
 				/>
 			</div>
 			{isEditing && selectedUser && (
 				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className={'justify-center items-center'}>
-					<div></div>
-					{/* <EditCafeForm item={selectedUser} onSave={handleEditCafe} setIsEditing={setIsEditing} /> */}
+					<EditUserProfileForm item={selectedUser} onSave={handleEditUserProfile} setIsEditing={setIsEditing} />
 				</Modal>
 			)}
 		</Shell>

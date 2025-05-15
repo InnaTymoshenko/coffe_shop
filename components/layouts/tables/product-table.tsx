@@ -130,7 +130,7 @@ const ProductTable = ({ data }: TableProps) => {
 												? '/assets/coffee-min.png'
 												: '/assets/cupcake-3-min.png'
 										}
-										alt={'coffee'}
+										alt={selectedProduct.title}
 										width={100}
 										height={100}
 									/>

@@ -26,7 +26,7 @@ export default function NavSidebar({ items, className, ...props }: SidebarNavPro
 							key={index}
 							href={item.href}
 							className={`rounded-sm px-4 py-2 text-lg ${
-								selectedPath === item.href ? 'bg-gray-900 text-gray-200' : 'text-green-900 hover:bg-gray-300'
+								selectedPath.startsWith(item.href) ? 'bg-gray-900 text-gray-200' : 'text-green-900 hover:bg-gray-300'
 							}`}
 						>
 							{item.title}
