@@ -10,11 +10,13 @@ const NotFound = () => {
 				<MdCoffeeMaker size={96} className="text-gray-200" />
 				<p className="text-gray-200 text-3xl">Sorry... This page is not available</p>
 			</Shell>
-			<ButtonLink
-				href={'/'}
-				text="Go Back"
-				className="button w-32 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
-			/>
+			<div className="w-32">
+				<ButtonLink
+					href={'/'}
+					text="Go Back"
+					className="button w-32 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
+				/>
+			</div>
 		</div>
 	)
 }

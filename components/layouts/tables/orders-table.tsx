@@ -167,6 +167,7 @@ const OrdersTable = ({ data, changeStatusOrder }: OrdersProps) => {
 									{order.clientId && user ? (
 										<Link
 											href={`/admin/users/${order.clientId}`}
+											target="_blank"
 											className="text-blue-600 hover:underline cursor-pointer"
 										>
 											{`${user?.firstName} ${user?.lastName}`}
@@ -241,6 +242,7 @@ const OrdersTable = ({ data, changeStatusOrder }: OrdersProps) => {
 									handleEditStatusOrder(val)
 									setIsEditing(false)
 								}}
+								className="w-full"
 							/>
 						</div>
 					</Shell>

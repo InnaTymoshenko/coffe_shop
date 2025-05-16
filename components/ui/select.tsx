@@ -41,9 +41,9 @@ function Select<T extends string | number>({
 				onChange={e => onChange(e.target.value as T)}
 				disabled={disabled}
 				required={required}
-				className={`p-2 border rounded-lg focus:outline-none ${error ? 'border-red-500' : 'border-gray-900'} ${
-					disabled ? 'bg-gray-100 cursor-not-allowed' : ''
-				} ${className}`}
+				className={`p-2 border rounded-lg focus:outline-none cursor-pointer ${
+					error ? 'border-red-500' : 'border-gray-900'
+				} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''} ${className}`}
 			>
 				{options.map(option => (
 					<option key={option.value} value={option.value} className="">

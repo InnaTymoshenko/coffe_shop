@@ -36,7 +36,7 @@ const EditCafeForm = ({ item, onSave, setIsEditing }: EditCafeProps) => {
 	return (
 		<Shell>
 			<div className="w-full flex justify-between items-center">
-				<h2 className="text-2xl font-semibold">Edit Profile Cafe</h2>
+				<h2 className="text-2xl font-semibold">Edit Cafe Profile</h2>
 			</div>
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 max-w-xl mx-auto">
 				<div>

@@ -24,13 +24,13 @@ export function AddProductForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 	return (
 		<Shell className="container w-full max-w-2xl flex flex-col gap-6 bg-gray-50 p-8 rounded-lg">
 			<div className="w-full flex justify-between items-center">
-				<h2 className="text-2xl font-semibold">Add new product</h2>
+				<h2 className="text-2xl font-semibold w-full">Add new product</h2>
 				<Select
 					label="Select category:"
 					options={categoryOptions}
 					value={category}
 					onChange={setCategory}
-					className="w-full border rounded p-2"
+					className="w-32 border rounded p-2"
 				/>
 			</div>
 			{category === 'Coffee' && <CoffeeForm onAdd={onAdd} setIsAddProduct={setIsAddProduct} />}
