@@ -24,3 +24,7 @@ export const cafeSchema = z.object({
 	isActive: z.boolean(),
 	notes: z.string().optional()
 })
+
+export type NewCafeFormValues = z.infer<typeof newCafeSchema>
+
+export type CafeFormValues = z.infer<typeof cafeSchema>

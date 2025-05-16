@@ -51,7 +51,6 @@ const OrderHistoryItem = ({ order }: OrderHistoryProps) => {
 										className="h-full w-auto"
 									/>
 								</div>
-
 								<div className="font-semibold text-md">{item.title}</div>
 							</div>
 							<div className="mt-2">

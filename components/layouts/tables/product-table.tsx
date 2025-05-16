@@ -140,7 +140,6 @@ const ProductTable = ({ data }: TableProps) => {
 									<span className="text-secondary">Rating: {selectedProduct.rating}</span>
 								</div>
 							</div>
-
 							<ul className="grid grid-cols-2 gap-y-2">
 								<li className="font-medium">ID:</li>
 								<li>{selectedProduct.id}</li>

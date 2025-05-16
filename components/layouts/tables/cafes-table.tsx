@@ -115,7 +115,6 @@ const CafesTable = ({ data, changeStatusCafe }: CafesProps) => {
 									<span className="text-secondary">Rating: {selectedCafe.averageRating}</span>
 								</div>
 							</div>
-
 							<ul className="grid grid-cols-2 gap-y-2">
 								<li className="font-medium">ID:</li>
 								<li>{selectedCafe.id}</li>
