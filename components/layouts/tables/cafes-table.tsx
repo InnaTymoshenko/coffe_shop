@@ -13,7 +13,7 @@ import { useAdminStore } from '@/store/admin-store'
 
 type CafesProps = {
 	data: LocationData[]
-	changeStatusCafe: (id: string) => void
+	changeStatusCafe: (item: LocationData) => void
 }
 
 const CafesTable = ({ data, changeStatusCafe }: CafesProps) => {
@@ -73,7 +73,7 @@ const CafesTable = ({ data, changeStatusCafe }: CafesProps) => {
 									<input
 										type="checkbox"
 										checked={d.isActive}
-										onChange={() => changeStatusCafe(d.id)}
+										onChange={() => changeStatusCafe(d)}
 										disabled={!d.isActive}
 									/>
 								</td>

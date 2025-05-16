@@ -18,16 +18,18 @@ const Main = () => {
 					</p>
 				</div>
 				<div className="w-[60%] flex justify-start gap-6 p-4">
-					<ButtonLink
-						text="Check menu"
-						className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150 "
-						href={'/menu'}
-					/>
-					<ButtonLink
-						href={'/#booking'}
-						text="Book table"
-						className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
-					/>
+					<div className="w-[250px] flex justify-start items-center gap-6">
+						<ButtonLink
+							text="Check menu"
+							className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150 "
+							href={'/menu'}
+						/>
+						<ButtonLink
+							href={'/#booking'}
+							text="Book table"
+							className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
+						/>
+					</div>
 				</div>
 			</Shell>
 

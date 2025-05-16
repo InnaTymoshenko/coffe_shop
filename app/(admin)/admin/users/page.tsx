@@ -5,8 +5,22 @@ import Shell from '@/components/ui/shell'
 import UsersTable from '@/components/layouts/tables/users-table'
 import { useAdminStore } from '@/store/admin-store'
 import { Button } from '@/components/ui/button'
+import Select from '@/components/ui/select'
 
 // type Props = {}
+
+const roleOptions = [
+	{ value: '', label: 'All' },
+	{ value: 'user', label: 'User' },
+	{ value: 'admin', label: 'Admin' }
+]
+
+const userStatusOptions = [
+	{ value: '', label: 'All' },
+	{ value: 'active', label: 'Active' },
+	{ value: 'inactive', label: 'Inactive' },
+	{ value: 'banned', label: 'Banned' }
+]
 
 const UsersPage = () => {
 	const { usersData } = useAdminStore()
@@ -61,29 +75,16 @@ const UsersPage = () => {
 								value={search}
 								onChange={e => setSearch(e.target.value)}
 								placeholder="Search by name or email"
-								className="border p-2 rounded"
+								className="border p-2 rounded-lg"
 							/>
 						</div>
 						<div className="w-[100px] flex flex-col">
 							<label className="text-sm font-medium">Role</label>
-							<select value={roleFilter} onChange={e => setRoleFilter(e.target.value)} className="border p-2 rounded">
-								<option value="">All</option>
-								<option value="user">User</option>
-								<option value="admin">Admin</option>
-							</select>
+							<Select options={roleOptions} value={roleFilter} onChange={value => setRoleFilter(value)} />
 						</div>
 						<div className="w-[100px] flex flex-col">
 							<label className="text-sm font-medium">Status</label>
-							<select
-								value={statusFilter}
-								onChange={e => setStatusFilter(e.target.value)}
-								className="border p-2 rounded"
-							>
-								<option value="">All</option>
-								<option value="active">Active</option>
-								<option value="inactive">Inactive</option>
-								<option value="banned">Banned</option>
-							</select>
+							<Select options={userStatusOptions} value={statusFilter} onChange={value => setStatusFilter(value)} />
 						</div>
 						<div className="w-[100px] flex flex-col">
 							<label className="text-sm font-medium">Min Orders</label>
@@ -92,7 +93,7 @@ const UsersPage = () => {
 								value={minOrders}
 								onChange={e => setMinOrders(e.target.value)}
 								placeholder="0"
-								className="border p-2 rounded"
+								className="border p-2 rounded-lg"
 							/>
 						</div>
 						<div className="w-[150px] flex flex-col">
@@ -101,13 +102,13 @@ const UsersPage = () => {
 								type="date"
 								value={createdAfter}
 								onChange={e => setCreatedAfter(e.target.value)}
-								className="border p-2 rounded"
+								className="border p-2 rounded-lg"
 							/>
 						</div>
 						<Button
 							text="Clear Filters"
 							onClick={clearFilters}
-							className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded"
+							className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded-lg"
 						/>
 					</div>
 				)}

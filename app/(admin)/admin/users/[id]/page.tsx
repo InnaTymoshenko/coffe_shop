@@ -31,9 +31,7 @@ export default function UserAdminPage() {
 
 	const blockedUser = (id: string) => {
 		const user = usersData.find(user => user.id === id)
-		if (!user) return
-		const updatedUser: UserProfile = { ...user, status: 'banned' }
-		editUser(updatedUser)
+		if (user) editUser({ ...user, status: 'banned', updatedAt: new Date().toLocaleDateString('uk-UA') })
 	}
 
 	if (!id) return <p>Not found User!</p>

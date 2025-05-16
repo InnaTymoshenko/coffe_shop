@@ -2,7 +2,6 @@
 
 import About from '@/components/about'
 import Bottom from '@/components/bottom'
-// import Location from '@/components/Location'
 import Main from '@/components/main'
 import Map from '@/components/map-wrapper'
 import Products from '@/components/products'

@@ -21,13 +21,18 @@ const cafeOptions = [
 
 const CafesPage = () => {
 	const [isAddNewCafe, setIsAddNewCafe] = useState(false)
-	const { cafesData, addNewCafe } = useAdminStore()
+	const { cafesData, addNewCafe, editCafe } = useAdminStore()
 	const [selectedCafe, setSelectedCafe] = useState('')
 	const filteredCafes = cafesData.filter(c => c.id.toLowerCase().includes(selectedCafe.toLowerCase()))
 
 	const handleAddNewCafe = (item: LocationData) => {
 		addNewCafe(item)
 		setIsAddNewCafe(false)
+	}
+
+	const handleEditCafe = (item: LocationData) => {
+		const cafe = cafesData.find(c => c.id === item.id)
+		if (cafe) editCafe({ ...cafe, isActive: !cafe.isActive, updatedAt: new Date().toLocaleDateString('uk-UA') })
 	}
 
 	return (
@@ -54,7 +59,7 @@ const CafesPage = () => {
 				{cafesData.length === 0 ? (
 					<p>No cafesData found.</p>
 				) : (
-					<CafesTable data={filteredCafes} changeStatusCafe={() => {}} />
+					<CafesTable data={filteredCafes} changeStatusCafe={handleEditCafe} />
 				)}
 				{isAddNewCafe && (
 					<Modal isOpen={isAddNewCafe} onClose={() => setIsAddNewCafe(false)} className={'justify-center items-center'}>

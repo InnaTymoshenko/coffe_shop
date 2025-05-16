@@ -1,15 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Shell from '@/components/ui/shell'
 import Select from '@/components/ui/select'
-import { LocationData } from '@/types/location-type'
-import fakeLocation from '@/fakedata/location.json'
-import fakeOrdersData from '@/fakedata/orderData.json'
 import { sortByDateTime } from '@/method/fn'
-import { OrderData } from '@/types/order-type'
 import OrdersTable from '@/components/layouts/tables/orders-table'
 import { Button } from '@/components/ui/button'
+import { useAdminStore } from '@/store/admin-store'
+import { OrderData } from '@/types/order-type'
 
 // type Props = {}
 
@@ -26,15 +24,23 @@ const cafeOptions = [
 	{ value: 'obolon', label: 'Coffee Town - Оболонь' }
 ]
 
+const statusOptions = [
+	{ value: '', label: 'All' },
+	{ value: 'pending', label: 'Pending' },
+	{ value: 'cancelled', label: 'Cancelled' },
+	{ value: 'processed', label: 'Processed' },
+	{ value: 'shipped', label: 'Shipped' },
+	{ value: 'completed', label: 'Completed' }
+]
+
 const OrderPage = () => {
-	const [orders, setOrders] = useState<OrderData[]>([])
+	const { ordersData, cafesData, editOrder } = useAdminStore()
 	const [orderType, setOrderType] = useState('')
 	const [selectedCafe, setSelectedCafe] = useState('')
 	const [search, setSearch] = useState('')
 	const [statusFilter, setStatusFilter] = useState('')
 	const [createdAfter, setCreatedAfter] = useState('')
-	const [cafes, setCafes] = useState<LocationData[]>([])
-	const sortedOrders = sortByDateTime(orders, 'createdDateAt', 'createdTimeAt')
+	const sortedOrders = sortByDateTime(ordersData, 'createdDateAt', 'createdTimeAt')
 
 	const filteredOrders = sortedOrders
 		.filter(order => {
@@ -43,7 +49,7 @@ const OrderPage = () => {
 			if (orderType === 'in-place') {
 				if (order.type !== 'in-place') return false
 				if (!selectedCafe) return true
-				const selectedCafeName = cafes.find(c => c.id === selectedCafe)?.name
+				const selectedCafeName = cafesData.find(c => c.id === selectedCafe)?.name
 				return 'placeName' in order.details && order.details.placeName === selectedCafeName
 			}
 			return true
@@ -60,21 +66,16 @@ const OrderPage = () => {
 			return orderDate >= filterDate
 		})
 
-	useEffect(() => {
-		const orders = fakeOrdersData as OrderData[]
-		setOrders(orders)
-	}, [])
-
-	useEffect(() => {
-		const cafes = fakeLocation as LocationData[]
-		setCafes(cafes)
-	}, [])
-
 	const clearFilters = () => {
 		setSearch('')
 		setStatusFilter('')
 		setCreatedAfter('')
 		setOrderType('')
+	}
+
+	const handleChangeStatusOrder = (item: OrderData) => {
+		const order = ordersData.find(o => o.id === item.id)
+		if (order) editOrder({ ...order, status: 'completed' })
 	}
 
 	return (
@@ -104,19 +105,18 @@ const OrderPage = () => {
 							value={search}
 							onChange={e => setSearch(e.target.value)}
 							placeholder="Search by order ID"
-							className="border p-2 rounded"
+							className="border p-2 rounded-lg"
 						/>
 					</div>
 					<div className="w-[100px] flex flex-col">
 						<label className="text-sm font-medium">Status</label>
-						<select value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className="border p-2 rounded">
-							<option value="">All</option>
-							<option value="pending">Pending</option>
-							<option value="cancelled">Cancelled</option>
-							<option value="processed">Processed</option>
-							<option value="shipped">Shipped</option>
-							<option value="completed">Completed</option>
-						</select>
+						<Select
+							options={statusOptions}
+							value={statusFilter}
+							onChange={val => {
+								setStatusFilter(val)
+							}}
+						/>
 					</div>
 					<div className="w-[150px] flex flex-col">
 						<label className="text-sm font-medium">Created After</label>
@@ -124,16 +124,16 @@ const OrderPage = () => {
 							type="date"
 							value={createdAfter}
 							onChange={e => setCreatedAfter(e.target.value)}
-							className="border p-2 rounded"
+							className="border p-2 rounded-lg"
 						/>
 					</div>
 					<Button
 						text="Clear Filters"
 						onClick={clearFilters}
-						className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded"
+						className="w-[150px] mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded-lg"
 					/>
 				</div>
-				{orders.length > 0 && <OrdersTable data={filteredOrders} />}
+				{ordersData.length > 0 && <OrdersTable data={filteredOrders} changeStatusOrder={handleChangeStatusOrder} />}
 			</Shell>
 		</>
 	)

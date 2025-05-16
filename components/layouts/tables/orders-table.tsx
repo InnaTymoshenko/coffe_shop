@@ -1,43 +1,57 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Modal } from '@/components/ui/modal'
-import { OrderData } from '@/types/order-type'
+import { OrderData, OrderStatus } from '@/types/order-type'
 import { UserProfile } from '@/types/users-type'
-import fakeUsersData from '@/fakedata/users.json'
-import { ButtonLink } from '@/components/ui/button-link'
 import Link from 'next/link'
+import Shell from '@/components/ui/shell'
+import Select from '@/components/ui/select'
+import { useAdminStore } from '@/store/admin-store'
+import OrderItemTable from './order-item-table'
 
 type OrdersProps = {
 	data: OrderData[]
+	changeStatusOrder: (item: OrderData) => void
 }
 
-const OrdersTable = ({ data }: OrdersProps) => {
+const statusOptions = [
+	{ value: 'pending', label: 'Pending' },
+	{ value: 'cancelled', label: 'Cancelled' },
+	{ value: 'processed', label: 'Processed' },
+	{ value: 'shipped', label: 'Shipped' },
+	{ value: 'completed', label: 'Completed' }
+]
+
+const OrdersTable = ({ data, changeStatusOrder }: OrdersProps) => {
 	const [selectedOrder, setSelectedOrder] = useState<OrderData | null>(null)
 	const [user, setUser] = useState<UserProfile | null>(null)
 	const [isOpen, setIsOpen] = useState(false)
-	const [users, setUsers] = useState<UserProfile[]>([])
+	const [isEditing, setIsEditing] = useState(false)
+	// const [users, setUsers] = useState<UserProfile[]>([])
+	const [isOpenForm, setIsOpenForm] = useState(false)
+	const { ordersData, editOrder, usersData } = useAdminStore()
+
+	const order = useAdminStore(state =>
+		selectedOrder ? state.ordersData.find(o => o.id === selectedOrder.id) ?? null : null
+	)
+
+	const clientIdentity = useCallback(
+		(id: string) => {
+			if (!selectedOrder || !usersData.length) return
+			const user = usersData.find(u => u.id === id)
+			return setUser(user || null)
+		},
+		[selectedOrder, usersData]
+	)
 
 	useEffect(() => {
-		const users = fakeUsersData as UserProfile[]
-		setUsers(users)
-	}, [])
-
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	const clientIdentity = (id: string) => {
-		if (!selectedOrder || !users.length) return
-
-		const user = users.find(u => u.id === id)
-		return setUser(user || null)
-	}
-
-	useEffect(() => {
-		if (selectedOrder && users.length && selectedOrder.clientId) {
+		if (selectedOrder && usersData.length && selectedOrder.clientId) {
 			clientIdentity(selectedOrder.clientId)
 		}
-	}, [clientIdentity, selectedOrder, users.length])
+	}, [clientIdentity, selectedOrder, usersData.length])
 
 	const handleOpenModal = (item: OrderData) => {
 		setSelectedOrder(item)
@@ -47,6 +61,12 @@ const OrdersTable = ({ data }: OrdersProps) => {
 	const handleCloseModal = () => {
 		setSelectedOrder(null)
 		setIsOpen(false)
+	}
+
+	const handleEditStatusOrder = (val: string) => {
+		if (!selectedOrder) return
+		const order = ordersData.find(order => order.id === selectedOrder.id)
+		if (order) editOrder({ ...order, status: val as OrderStatus })
 	}
 
 	// console.log(user)
@@ -69,7 +89,12 @@ const OrdersTable = ({ data }: OrdersProps) => {
 					</thead>
 					<tbody>
 						{data.map((d, ind) => (
-							<tr key={d.id} className={`text-center border-b border-gray-300 hover:bg-gray-100`}>
+							<tr
+								key={d.id}
+								className={`text-center border-b border-gray-300  ${
+									d.status === 'cancelled' || d.status === 'completed' ? 'bg-gray-200' : 'hover:bg-gray-100'
+								}`}
+							>
 								<td className="p-4">{`#${ind + 1}`}</td>
 								<td className="p-4">{d.numberInLine}</td>
 								<td className="p-4 text-lg font-medium text-left">{d.id}</td>
@@ -97,7 +122,12 @@ const OrdersTable = ({ data }: OrdersProps) => {
 									</Badge>
 								</td>
 								<td className="p-4">
-									<input type="checkbox" />
+									<input
+										type="checkbox"
+										onChange={() => changeStatusOrder(d)}
+										disabled={d.status === 'cancelled' || d.status === 'completed'}
+										checked={d.status === 'cancelled' || d.status === 'completed'}
+									/>
 								</td>
 								<td>
 									<Button
@@ -111,7 +141,7 @@ const OrdersTable = ({ data }: OrdersProps) => {
 					</tbody>
 				</table>
 			</div>
-			{selectedOrder && isOpen && (
+			{order && isOpen && (
 				<Modal onClose={handleCloseModal} isOpen={isOpen} className={'justify-end items-center'} variant="editing">
 					<div className="fixed top-0 right-0 w-[600px] h-full bg-white border-l border-l-gray-300 shadow-2xl z-10 overflow-y-auto">
 						<div className="flex justify-between items-center h-20 p-4 mb-4 bg-gray-200 border-b border-b-gray-400">
@@ -125,21 +155,21 @@ const OrdersTable = ({ data }: OrdersProps) => {
 						<div className="flex flex-col gap-6 p-4">
 							<div className="flex items-center gap-6">
 								<div className="flex flex-col gap-1">
-									<span className="font-medium">{`Order #${selectedOrder.numberInLine}`}</span>
-									<span className="text-secondary">{selectedOrder.createdDateAt}</span>
-									<span className="text-secondary">{selectedOrder.createdTimeAt}</span>
+									<span className="font-medium">{`Order #${order.numberInLine}`}</span>
+									<span className="text-secondary">{order.createdDateAt}</span>
+									<span className="text-secondary">{order.createdTimeAt}</span>
 								</div>
 							</div>
 							<ul className="grid grid-cols-2 gap-y-2">
 								<li className="font-medium">ID:</li>
-								<li className="font-medium">{selectedOrder.id}</li>
+								<li className="font-medium">{order.id}</li>
 								<li className="font-medium">Type:</li>
-								<li className="font-medium">{selectedOrder.type}</li>
+								<li className="font-medium">{order.type}</li>
 								<li className="font-medium">Client:</li>
 								<li className={`font-medium `}>
-									{selectedOrder.clientId && user ? (
+									{order.clientId && user ? (
 										<Link
-											href={`/admin/users/${selectedOrder.clientId}`}
+											href={`/admin/users/${order.clientId}`}
 											className="text-blue-600 hover:underline cursor-pointer"
 										>
 											{`${user?.firstName} ${user?.lastName}`}
@@ -150,7 +180,7 @@ const OrdersTable = ({ data }: OrdersProps) => {
 								</li>
 								<li className="font-medium">Products:</li>
 								<li className="font-medium">
-									{selectedOrder.items.map(item => (
+									{order.items.map(item => (
 										<div key={item.id} className="grid grid-cols-2 gap-y-2">
 											<span className="font-thin">{item.title}</span>
 											<div className="font-thin">
@@ -164,31 +194,59 @@ const OrdersTable = ({ data }: OrdersProps) => {
 										</div>
 									))}
 								</li>
-								{selectedOrder.type === 'delivery' && (
+								{order.type === 'delivery' && (
 									<>
 										<li className="font-medium">Address delivery:</li>
-										<li className="font-medium">{selectedOrder.details.address}</li>
+										<li className="font-medium">{order.details.address}</li>
 										<li className="font-medium">Notes:</li>
-										<li className="font-medium">{selectedOrder.details.note}</li>
+										<li className="font-medium">{order.details.note}</li>
 									</>
 								)}
 							</ul>
-							<ul></ul>
 							<div className="flex flex-col gap-4">
 								<Button
 									text="Edit Order Status"
 									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
-									onClick={() => {}}
+									onClick={() => setIsEditing(true)}
 								/>
-								<ButtonLink
-									disabled={!selectedOrder.clientId}
-									href={`/admin/users/${selectedOrder?.clientId}/orders-history`}
-									text="View Order History"
+								<Button
+									text="View Order"
 									className={`w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700`}
+									onClick={() => setIsOpenForm(true)}
 								/>
 							</div>
 						</div>
 					</div>
+				</Modal>
+			)}
+			{isOpenForm && order && (
+				<Modal isOpen={isOpenForm} onClose={() => setIsOpenForm(false)} className="justify-center items-center">
+					<OrderItemTable
+						selectedOrder={order}
+						handleEditStatusOrder={handleEditStatusOrder}
+						setIsEditing={setIsEditing}
+						setIsOpenForm={setIsOpenForm}
+					/>
+				</Modal>
+			)}
+			{isEditing && order && (
+				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className="justify-center items-center">
+					<Shell>
+						<div className="w-full flex justify-between items-center">
+							<h2 className="text-2xl font-semibold">Edit Order Status</h2>
+						</div>
+						<div className="space-y-4 p-4 max-w-xl mx-auto">
+							<Select<string>
+								label="Order Status"
+								options={statusOptions}
+								value={order?.status ?? ''}
+								onChange={val => {
+									handleEditStatusOrder(val)
+									setIsEditing(false)
+								}}
+							/>
+						</div>
+					</Shell>
 				</Modal>
 			)}
 		</>
