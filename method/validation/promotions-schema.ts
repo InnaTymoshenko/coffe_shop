@@ -14,3 +14,5 @@ export const promotionSchema = z
 		message: 'End date must be after or equal to start date',
 		path: ['end']
 	})
+
+export type PromotionFormData = z.infer<typeof promotionSchema>

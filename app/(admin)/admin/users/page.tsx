@@ -7,8 +7,6 @@ import { useAdminStore } from '@/store/admin-store'
 import { Button } from '@/components/ui/button'
 import Select from '@/components/ui/select'
 
-// type Props = {}
-
 const roleOptions = [
 	{ value: '', label: 'All' },
 	{ value: 'user', label: 'User' },
@@ -61,61 +59,59 @@ const UsersPage = () => {
 	}
 
 	return (
-		<>
-			<Shell className="container flex flex-col gap-4">
-				<div className="w-full py-4 flex justify-between items-center">
-					<h1 className="text-2xl font-bold">Users</h1>
-				</div>
-				{usersData.length > 0 && (
-					<div className="w-full flex justify-start items-end gap-4">
-						<div className="w-[200px] flex flex-col">
-							<label className="text-sm font-medium">Search</label>
-							<input
-								type="text"
-								value={search}
-								onChange={e => setSearch(e.target.value)}
-								placeholder="Search by name or email"
-								className="border p-2 rounded-lg"
-							/>
-						</div>
-						<div className="w-[100px] flex flex-col">
-							<label className="text-sm font-medium">Role</label>
-							<Select options={roleOptions} value={roleFilter} onChange={value => setRoleFilter(value)} />
-						</div>
-						<div className="w-[100px] flex flex-col">
-							<label className="text-sm font-medium">Status</label>
-							<Select options={userStatusOptions} value={statusFilter} onChange={value => setStatusFilter(value)} />
-						</div>
-						<div className="w-[100px] flex flex-col">
-							<label className="text-sm font-medium">Min Orders</label>
-							<input
-								type="number"
-								value={minOrders}
-								onChange={e => setMinOrders(e.target.value)}
-								placeholder="0"
-								className="border p-2 rounded-lg"
-							/>
-						</div>
-						<div className="w-[150px] flex flex-col">
-							<label className="text-sm font-medium">Created After</label>
-							<input
-								type="date"
-								value={createdAfter}
-								onChange={e => setCreatedAfter(e.target.value)}
-								className="border p-2 rounded-lg"
-							/>
-						</div>
-						<Button
-							text="Clear Filters"
-							onClick={clearFilters}
-							className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded-lg"
+		<Shell className="container flex flex-col gap-4">
+			<div className="w-full py-4 flex justify-between items-center">
+				<h1 className="text-2xl font-bold">Users</h1>
+			</div>
+			{usersData.length > 0 && (
+				<div className="w-full flex justify-start items-end gap-4">
+					<div className="w-[200px] flex flex-col">
+						<label className="text-sm font-medium">Search</label>
+						<input
+							type="text"
+							value={search}
+							onChange={e => setSearch(e.target.value)}
+							placeholder="Search by name or email"
+							className="border p-2 rounded-lg"
 						/>
 					</div>
-				)}
+					<div className="w-[100px] flex flex-col">
+						<label className="text-sm font-medium">Role</label>
+						<Select options={roleOptions} value={roleFilter} onChange={value => setRoleFilter(value)} />
+					</div>
+					<div className="w-[100px] flex flex-col">
+						<label className="text-sm font-medium">Status</label>
+						<Select options={userStatusOptions} value={statusFilter} onChange={value => setStatusFilter(value)} />
+					</div>
+					<div className="w-[100px] flex flex-col">
+						<label className="text-sm font-medium">Min Orders</label>
+						<input
+							type="number"
+							value={minOrders}
+							onChange={e => setMinOrders(e.target.value)}
+							placeholder="0"
+							className="border p-2 rounded-lg"
+						/>
+					</div>
+					<div className="w-[150px] flex flex-col">
+						<label className="text-sm font-medium">Created After</label>
+						<input
+							type="date"
+							value={createdAfter}
+							onChange={e => setCreatedAfter(e.target.value)}
+							className="border p-2 rounded-lg"
+						/>
+					</div>
+					<Button
+						text="Clear Filters"
+						onClick={clearFilters}
+						className="mr-auto bg-gray-200 hover:bg-gray-300 text-sm px-3 py-2 rounded-lg"
+					/>
+				</div>
+			)}
 
-				{usersData.length === 0 && filteredUsers ? <p>No users found.</p> : <UsersTable data={filteredUsers} />}
-			</Shell>
-		</>
+			{usersData.length === 0 && filteredUsers ? <p>No users found.</p> : <UsersTable data={filteredUsers} />}
+		</Shell>
 	)
 }
 

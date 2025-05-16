@@ -9,3 +9,5 @@ export const reservationSchema = z.object({
 	guests: z.number().min(1, 'At least 1 guest required').max(20, 'Maximum 20 guests'),
 	comment: z.string().max(500, 'Comment must be less than 500 characters').optional()
 })
+
+export type ReservationFormData = z.infer<typeof reservationSchema>

@@ -10,8 +10,6 @@ import { Modal } from '@/components/ui/modal'
 import AddCafeForm from '@/components/layouts/forms/add-cafe-form'
 import { LocationData } from '@/types/location-type'
 
-// type Props = {}
-
 const cafeOptions = [
 	{ value: '', label: 'All cafes' },
 	{ value: 'khreschatyk', label: 'Coffee Town - Khreschatyk' },

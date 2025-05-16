@@ -30,7 +30,6 @@ const OrdersTable = ({ data, changeStatusOrder }: OrdersProps) => {
 	const [user, setUser] = useState<UserProfile | null>(null)
 	const [isOpen, setIsOpen] = useState(false)
 	const [isEditing, setIsEditing] = useState(false)
-	// const [users, setUsers] = useState<UserProfile[]>([])
 	const [isOpenForm, setIsOpenForm] = useState(false)
 	const { ordersData, editOrder, usersData } = useAdminStore()
 
@@ -68,8 +67,6 @@ const OrdersTable = ({ data, changeStatusOrder }: OrdersProps) => {
 		const order = ordersData.find(order => order.id === selectedOrder.id)
 		if (order) editOrder({ ...order, status: val as OrderStatus })
 	}
-
-	// console.log(user)
 
 	return (
 		<>

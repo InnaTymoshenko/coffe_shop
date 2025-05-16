@@ -12,8 +12,6 @@ import fakeOrderData from '@/fakedata/orderData.json'
 import OrderHistoryItem from '@/components/order-history-item'
 import { Button } from '@/components/ui/button'
 
-// type Props = {}
-
 const OrdersHistoryPage = () => {
 	const [ordersData, setOrdersData] = useState<OrderData[]>([])
 	const [selectedUser, setSelectedUser] = useState<UserProfile>()

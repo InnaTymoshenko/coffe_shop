@@ -1,15 +1,13 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-import { promotionSchema } from '@/method/validation/promotions-schema'
+import { PromotionFormData, promotionSchema } from '@/method/validation/promotions-schema'
 import Shell from '../../ui/shell'
 import { Button } from '../../ui/button'
 import { PromotionData } from '@/types/promotion-type'
 import { formatDate } from '@/method/fn'
-
-type PromotionFormData = z.infer<typeof promotionSchema>
+import Select from '@/components/ui/select'
 
 interface EditPromotionFormProps {
 	promotion: PromotionData
@@ -17,10 +15,17 @@ interface EditPromotionFormProps {
 	setIsEditing: (value: boolean) => void
 }
 
+const statusPromotionOptions = [
+	{ value: 'active', label: 'Active' },
+	{ value: 'finished', label: 'Finished' },
+	{ value: 'moderation', label: 'Moderation' }
+]
+
 export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromotionFormProps) {
 	const {
 		register,
 		handleSubmit,
+		control,
 		formState: { errors }
 	} = useForm<PromotionFormData>({
 		resolver: zodResolver(promotionSchema),
@@ -66,11 +71,19 @@ export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromo
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Status</label>
-					<select {...register('status')} className="w-full border p-2 rounded">
-						<option value="active">Active</option>
-						<option value="finished">Finished</option>
-						<option value="moderation">Moderation</option>
-					</select>
+					<Controller
+						name="status"
+						control={control}
+						render={({ field, fieldState }) => (
+							<Select
+								options={statusPromotionOptions}
+								value={field.value}
+								onChange={field.onChange}
+								error={fieldState.error?.message}
+								className="w-full border p-2 rounded-sm"
+							/>
+						)}
+					/>
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Type</label>

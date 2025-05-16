@@ -13,3 +13,5 @@ export const userProfileSchema = z.object({
 	avatarUrl: z.string().url('Некоректне посилання на аватар'),
 	notes: z.string().optional()
 })
+
+export type UserProfileFormData = z.infer<typeof userProfileSchema>

@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 import { v4 as uuidv4 } from 'uuid'
 import { Calendar, Clock } from 'lucide-react'
 import DatePicker from '../../client-date-picker'
@@ -11,12 +10,10 @@ import TimePicker from '../../client-time-picker'
 import 'react-date-picker/dist/DatePicker.css'
 import 'react-calendar/dist/Calendar.css'
 import 'react-time-picker/dist/TimePicker.css'
-import { reservationSchema } from '@/method/validation/reservation-schema'
+import { ReservationFormData, reservationSchema } from '@/method/validation/reservation-schema'
 import { LocationData } from '@/types/location-type'
 import fakeLocation from '@/fakedata/location.json'
 import Select from '@/components/ui/select'
-
-type ReservationFormData = z.infer<typeof reservationSchema>
 
 const cafeOptions = [
 	{ value: 'khreschatyk', label: 'Coffee Town - Khreschatyk' },

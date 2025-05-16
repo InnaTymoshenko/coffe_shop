@@ -39,3 +39,7 @@ export const addProductSchema = z.object({
 		tiny: z.string().url().optional().or(z.literal(''))
 	})
 })
+
+export type AddProductFormData = z.infer<typeof addProductSchema>
+
+export type EditProductFormData = z.infer<typeof editProductSchema>

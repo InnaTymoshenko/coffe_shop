@@ -1,16 +1,13 @@
 'use client'
 
 import React from 'react'
-import { z } from 'zod'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { userProfileSchema } from '@/method/validation/user-schema'
+import { UserProfileFormData, userProfileSchema } from '@/method/validation/user-schema'
 import { UserProfile } from '@/types/users-type'
 import { Button } from '@/components/ui/button'
 import Shell from '@/components/ui/shell'
 import Select from '@/components/ui/select'
-
-type UserProfileFormData = z.infer<typeof userProfileSchema>
 
 interface EditUserProps {
 	item: UserProfile
