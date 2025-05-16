@@ -7,6 +7,8 @@ import { Modal } from '@/components/ui/modal'
 import { OrderData } from '@/types/order-type'
 import { UserProfile } from '@/types/users-type'
 import fakeUsersData from '@/fakedata/users.json'
+import { ButtonLink } from '@/components/ui/button-link'
+import Link from 'next/link'
 
 type OrdersProps = {
 	data: OrderData[]
@@ -129,29 +131,61 @@ const OrdersTable = ({ data }: OrdersProps) => {
 								</div>
 							</div>
 							<ul className="grid grid-cols-2 gap-y-2">
+								<li className="font-medium">ID:</li>
+								<li className="font-medium">{selectedOrder.id}</li>
 								<li className="font-medium">Type:</li>
 								<li className="font-medium">{selectedOrder.type}</li>
 								<li className="font-medium">Client:</li>
-								<li className="font-medium">
-									{selectedOrder.clientId && user ? `${user?.firstName} ${user?.lastName}` : '-'}
+								<li className={`font-medium `}>
+									{selectedOrder.clientId && user ? (
+										<Link
+											href={`/admin/users/${selectedOrder.clientId}`}
+											className="text-blue-600 hover:underline cursor-pointer"
+										>
+											{`${user?.firstName} ${user?.lastName}`}
+										</Link>
+									) : (
+										<span>{`-`}</span>
+									)}
 								</li>
-								<li className="font-medium"></li>
-								<li className="font-medium"></li>
-								<li className="font-medium"></li>
-								<li className="font-medium"></li>
+								<li className="font-medium">Products:</li>
+								<li className="font-medium">
+									{selectedOrder.items.map(item => (
+										<div key={item.id} className="grid grid-cols-2 gap-y-2">
+											<span className="font-thin">{item.title}</span>
+											<div className="font-thin">
+												{item.price.map(p => (
+													<div key={p.size} className="flex items-center gap-2">
+														<span className="font-thin">{p.size}</span>
+														<span className="font-thin">{p.quantity}</span>
+													</div>
+												))}
+											</div>
+										</div>
+									))}
+								</li>
+								{selectedOrder.type === 'delivery' && (
+									<>
+										<li className="font-medium">Address delivery:</li>
+										<li className="font-medium">{selectedOrder.details.address}</li>
+										<li className="font-medium">Notes:</li>
+										<li className="font-medium">{selectedOrder.details.note}</li>
+									</>
+								)}
 							</ul>
 							<ul></ul>
 							<div className="flex flex-col gap-4">
 								<Button
-									text="Edit Product"
+									text="Edit Order Status"
 									className="w-full rounded-lg p-3 bg-gray-100 border border-gray-400 hover:bg-gray-300"
 									onClick={() => {}}
 								/>
-								{/* <Button
-															text="Delete Product"
-															className="w-full border border-red-400 bg-red-500 hover:bg-red-600 text-gray-200 font-semibold rounded-lg p-3"
-															onClick={() => handleDeleteProduct(selectedProduct.id)}
-														/> */}
+								<ButtonLink
+									disabled={!selectedOrder.clientId}
+									href={`/admin/users/${selectedOrder?.clientId}/orders-history`}
+									text="View Order History"
+									className={`w-full rounded-lg p-3 bg-green-600 text-gray-200 font-semibold border border-green-500 hover:bg-green-700`}
+								/>
 							</div>
 						</div>
 					</div>

@@ -12,6 +12,7 @@ export interface DeliveryDetails {
 export interface InPlaceDetails {
 	placeName: string // наприклад, назва кафе
 	address?: string // опціонально
+	note?: string // додаткові побажання
 }
 
 export interface OrderData {

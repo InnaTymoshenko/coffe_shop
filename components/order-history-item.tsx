@@ -38,17 +38,20 @@ const OrderHistoryItem = ({ order }: OrderHistoryProps) => {
 							className="flex justify-between items-center gap-2 border border-gray-400 rounded p-3 bg-gray-50"
 						>
 							<div className="w-1/2 h-12 flex justify-start items-center gap-4">
-								<img
-									src={
-										item.src.medium
-											? item.src.medium
-											: item.category === 'Coffee'
-											? '/assets/coffee-min.png'
-											: '/assets/cupcake-3-min.png'
-									}
-									alt={item.title}
-									className="h-full w-auto"
-								/>
+								<div className="bg-gray-100 border border-gray-300 w-16 h-16 rounded overflow-hidden">
+									<img
+										src={
+											item.src.medium
+												? item.src.medium
+												: item.category === 'Coffee'
+												? '/assets/coffee-min.png'
+												: '/assets/cupcake-3-min.png'
+										}
+										alt={item.title}
+										className="h-full w-auto"
+									/>
+								</div>
+
 								<div className="font-semibold text-md">{item.title}</div>
 							</div>
 							<div className="mt-2">
