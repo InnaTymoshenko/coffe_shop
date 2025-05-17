@@ -523,5 +523,646 @@
 		],
 		"rating": 4.2,
 		"totalPrice": 0
+	},
+
+	{
+		"id": "spring-1",
+		"alt": "Lavender Honey Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["lavender", "honey", "milk"],
+		"title": "Lavender Honey Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-2",
+		"alt": "Mint Matcha Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["matcha", "mint", "milk"],
+		"title": "Mint Matcha Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-3",
+		"alt": "Rose Espresso with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["rose", "milk", "espresso"],
+		"title": "Rose Espresso",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-4",
+		"alt": "Iced Vanilla Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["vanilla", "ice", "milk"],
+		"title": "Iced Vanilla Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "summer-1",
+		"alt": "Coconut Cold Brew with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["cold brew", "coconut", "vanilla"],
+		"title": "Coconut Cold Brew",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-2",
+		"alt": "Iced Caramel Macchiato with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["caramel", "espresso", "ice"],
+		"title": "Iced Caramel Macchiato",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-3",
+		"alt": "Espresso Tonic with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["espresso", "tonic", "lemon"],
+		"title": "Espresso Tonic",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-4",
+		"alt": "Mango Cream Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["mango", "milk", "ice"],
+		"title": "Mango Cream Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "autumn-1",
+		"alt": "Pumpkin Spice Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["pumpkin spice", "milk", "cinnamon"],
+		"title": "Pumpkin Spice Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-2",
+		"alt": "Salted Caramel Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["salted caramel", "chocolate", "milk"],
+		"title": "Salted Caramel Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-3",
+		"alt": "Apple Pie Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["apple", "cinnamon", "milk"],
+		"title": "Apple Pie Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-4",
+		"alt": "Maple Pecan Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["maple", "pecan", "milk"],
+		"title": "Maple Pecan Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "winter-1",
+		"alt": "Gingerbread Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["gingerbread", "spices", "milk"],
+		"title": "Gingerbread Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-2",
+		"alt": "White Chocolate Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["white chocolate", "espresso", "milk"],
+		"title": "White Chocolate Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-3",
+		"alt": "Peppermint Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["peppermint", "chocolate", "milk"],
+		"title": "Peppermint Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-4",
+		"alt": "Chocolate Snowflake Latte with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["chocolate", "marshmallow", "milk"],
+		"title": "Chocolate Snowflake Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
 	}
 ]

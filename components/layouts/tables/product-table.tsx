@@ -102,7 +102,7 @@ const ProductTable = ({ data }: TableProps) => {
 								</td>
 								<td className="p-4">{d.id}</td>
 								<td className="p-4">{d.category}</td>
-								<td className="p-4">-</td>
+								<td className="p-4">{d.promotion ? d.promotion.type : '-'}</td>
 							</tr>
 						))}
 					</tbody>

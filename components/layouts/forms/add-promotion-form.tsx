@@ -22,10 +22,12 @@ const statusOptions = [
 ]
 
 const typeOptions = [
-	{ value: 'event-based', label: 'event-based' },
-	{ value: 'combo', label: 'combo' },
-	{ value: 'time-limited', label: 'time-limited' },
-	{ value: 'discount', label: 'discount' }
+	{ value: 'event-based', label: 'Event-based' },
+	{ value: 'combo', label: 'Combo' },
+	{ value: 'time-limited', label: 'Time-limited' },
+	{ value: 'discount', label: 'Discount' },
+	{ value: 'seasonal', label: 'Seasonal' },
+	{ value: '2+1', label: '2+1' }
 ]
 
 export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormProps) {

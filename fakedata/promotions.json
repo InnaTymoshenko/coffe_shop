@@ -15,6 +15,46 @@
 		"start": "01.01.2025",
 		"end": "31.12.2030",
 		"description": "Try our seasonal favorites like Pumpkin Spice Latte and Gingerbread Cupcake \u2013 only this season!",
+		"isActive": false,
+		"status": "finished",
+		"type": "time-limited"
+	},
+	{
+		"id": "9e8d7c6b-5a4f-3210-b9a8-7c6d5e4f3a2b",
+		"title": "Winter Warmers",
+		"start": "01.12.2025",
+		"end": "28.02.2026",
+		"description": "Warm up with our Gingerbread Latte and Chocolate Snowflake Cupcake – available all winter long!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "0f1e2d3c-4b5a-6978-9f0a-b1c2d3e4f5a6",
+		"title": "Autumn Flavors",
+		"start": "01.09.2025",
+		"end": "30.11.2025",
+		"description": "Enjoy cozy classics like Pumpkin Spice Latte and Maple Pecan Cupcake – perfect for fall days!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "a7b8c9d0-e1f2-3a45-b6c7-d8e9f0123456",
+		"title": "Summer Refresh",
+		"start": "01.06.2025",
+		"end": "31.08.2025",
+		"description": "Cool down with our Iced Coconut Cold Brew and Mango Cream Cupcake – summer in every sip!",
+		"isActive": true,
+		"status": "active",
+		"type": "time-limited"
+	},
+	{
+		"id": "f1a2b3c4-d5e6-7f89-0a1b-2c3d4e5f6789",
+		"title": "Spring Delights",
+		"start": "01.03.2025",
+		"end": "31.05.2025",
+		"description": "Celebrate spring with our Floral Latte and Honey Almond Cupcake – light and refreshing!",
 		"isActive": true,
 		"status": "active",
 		"type": "time-limited"
@@ -55,8 +95,8 @@
 		"start": "01.01.2025",
 		"end": "31.12.2025",
 		"description": "Bring a friend and you both get 15% off your orders. Sharing is caring!",
-		"isActive": true,
-		"status": "active",
+		"isActive": false,
+		"status": "moderation",
 		"type": "combo"
 	},
 	{
@@ -65,8 +105,8 @@
 		"start": "01.01.2025",
 		"end": "31.12.2025",
 		"description": "Get every second cupcake at half price during weekends!",
-		"isActive": true,
-		"status": "active",
+		"isActive": false,
+		"status": "moderation",
 		"type": "time-limited"
 	},
 	{

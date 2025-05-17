@@ -12,7 +12,15 @@ export const editProductSchema = z.object({
 			quantity: z.number().int().min(0),
 			isChecked: z.boolean()
 		})
-	)
+	),
+	promotion: z
+		.object({
+			type: z
+				.union([z.literal(''), z.enum(['event-based', 'combo', 'time-limited', 'discount', 'seasonal', '2+1'])])
+				.optional(),
+			label: z.string().optional()
+		})
+		.optional()
 })
 
 export const addProductSchema = z.object({
@@ -37,7 +45,14 @@ export const addProductSchema = z.object({
 		portrait: z.string().url().optional().or(z.literal('')),
 		landscape: z.string().url().optional().or(z.literal('')),
 		tiny: z.string().url().optional().or(z.literal(''))
-	})
+	}),
+	promotion: z
+		.object({
+			id: z.string().optional(),
+			type: z.enum(['event-based', 'combo', 'time-limited', 'discount', 'seasonal', '2+1']).optional(),
+			label: z.string().optional()
+		})
+		.optional()
 })
 
 export type AddProductFormData = z.infer<typeof addProductSchema>

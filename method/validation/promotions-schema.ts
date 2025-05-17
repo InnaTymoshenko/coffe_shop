@@ -8,7 +8,7 @@ export const promotionSchema = z
 		end: z.string().min(1, 'End date is required'),
 		isActive: z.boolean(),
 		status: z.enum(['active', 'finished', 'moderation']),
-		type: z.string().min(1, 'Type is required')
+		type: z.enum(['event-based', 'combo', 'time-limited', 'discount', 'seasonal', '2+1'])
 	})
 	.refine(data => new Date(data.end) >= new Date(data.start), {
 		message: 'End date must be after or equal to start date',

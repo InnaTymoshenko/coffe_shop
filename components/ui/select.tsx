@@ -46,7 +46,7 @@ function Select<T extends string | number>({
 				} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''} ${className}`}
 			>
 				{options.map(option => (
-					<option key={option.value} value={option.value} className="">
+					<option key={option.value ?? 'none'} value={option.value ?? ''}>
 						{option.label}
 					</option>
 				))}

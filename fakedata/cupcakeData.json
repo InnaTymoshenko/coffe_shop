@@ -343,5 +343,646 @@
 		],
 		"rating": 4.0,
 		"totalPrice": 0
+	},
+
+	{
+		"id": "spring-cup-1",
+		"alt": "Cherry Blossom Cupcake with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cherry", "vanilla"],
+		"title": "Cherry Blossom Cupcake",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-cup-2",
+		"alt": "Lemon Poppy Seed with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["lemon", "poppy seed"],
+		"title": "Lemon Poppy Seed",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-cup-3",
+		"alt": "Vanilla Bloom with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["vanilla", "flower"],
+		"title": "Vanilla Bloom",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "spring-cup-4",
+		"alt": "Honey Lavender with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["honey", "lavender"],
+		"title": "Honey Lavender",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights"
+		}
+	},
+	{
+		"id": "summer-cup-1",
+		"alt": "Mango Coconut with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["mango", "coconut"],
+		"title": "Mango Coconut",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-cup-2",
+		"alt": "Strawberry Splash with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["strawberry", "cream"],
+		"title": "Strawberry Splash",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-cup-3",
+		"alt": "Tropical Breeze with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["pineapple", "vanilla"],
+		"title": "Tropical Breeze",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "summer-cup-4",
+		"alt": "Peach Paradise with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["peach", "whipped cream"],
+		"title": "Peach Paradise",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh"
+		}
+	},
+	{
+		"id": "autumn-cup-1",
+		"alt": "Pumpkin Cream with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["pumpkin", "cream"],
+		"title": "Pumpkin Cream",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-cup-2",
+		"alt": "Maple Walnut with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["maple", "walnut"],
+		"title": "Maple Walnut",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-cup-3",
+		"alt": "Apple Crumble with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["apple", "cinnamon"],
+		"title": "Apple Crumble",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "autumn-cup-4",
+		"alt": "Carrot Spice with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["carrot", "spices"],
+		"title": "Carrot Spice",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors"
+		}
+	},
+	{
+		"id": "winter-cup-1",
+		"alt": "Ginger Snow with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["ginger", "sugar"],
+		"title": "Ginger Snow",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-cup-2",
+		"alt": "Chocolate Mint with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["chocolate", "mint"],
+		"title": "Chocolate Mint",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-cup-3",
+		"alt": "Cranberry Dream with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cranberry", "cream"],
+		"title": "Cranberry Dream",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
+	},
+	{
+		"id": "winter-cup-4",
+		"alt": "Spiced Cocoa with seasonal ingredients.",
+		"src": {
+			"medium": "",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cocoa", "spices"],
+		"title": "Spiced Cocoa",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers"
+		}
 	}
 ]

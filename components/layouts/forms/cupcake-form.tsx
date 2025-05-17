@@ -1,16 +1,25 @@
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-
 import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
 import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
 import { AddProductFormData, addProductSchema } from '@/method/validation/product-schema'
+import Select from '@/components/ui/select'
 
 type AddNewProduct = {
 	onAdd: (product: ProductData) => void
 	setIsAddProduct: (value: boolean) => void
 }
+
+const typeOptions = [
+	{ value: 'event-based', label: 'Event-based' },
+	{ value: 'combo', label: 'Combo' },
+	{ value: 'time-limited', label: 'Time-limited' },
+	{ value: 'discount', label: 'Discount' },
+	{ value: 'seasonal', label: 'Seasonal' },
+	{ value: '2+1', label: '2+1' }
+]
 
 export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 	const { isAdmin } = useAdminStore()
@@ -18,6 +27,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 	const {
 		register,
 		handleSubmit,
+		control,
 		formState: { errors }
 	} = useForm<AddProductFormData>({
 		resolver: zodResolver(addProductSchema),
@@ -33,7 +43,8 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 				portrait: '',
 				landscape: '',
 				tiny: ''
-			}
+			},
+			promotion: undefined
 		}
 	})
 
@@ -47,14 +58,15 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 			...data,
 			ingridients: data.ingridients?.filter(i => i.trim() !== '') ?? [],
 			src: {
-				medium: data.src.medium || '',
-				portrait: data.src.portrait || '',
-				landscape: data.src.landscape || '',
-				tiny: data.src.tiny || ''
+				medium: data.src?.medium || '',
+				portrait: data.src?.portrait || '',
+				landscape: data.src?.landscape || '',
+				tiny: data.src?.tiny || ''
 			},
 			price: enrichedPrice,
 			id: uuidv4(),
-			totalPrice: 0
+			totalPrice: 0,
+			promotion: data.promotion?.type && data.promotion?.label?.trim() ? { ...data.promotion, id: uuidv4() } : undefined
 		}
 
 		onAdd(newProduct)
@@ -153,6 +165,28 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 							className="w-full border p-2 rounded col-span-2"
 						/>
 						{errors.rating && <p className="text-red-500 text-sm">{errors.rating.message}</p>}
+					</div>
+				</div>
+				<div className="grid grid-cols-2 gap-2">
+					<div>
+						<label className="block text-sm font-medium">Promotion type:</label>
+						<Controller
+							name="promotion.type"
+							control={control}
+							render={({ field, fieldState }) => (
+								<Select
+									options={typeOptions}
+									value={field.value ?? undefined}
+									onChange={field.onChange}
+									error={fieldState.error?.message}
+									className="w-full border p-2 rounded-sm"
+								/>
+							)}
+						/>
+					</div>
+					<div>
+						<label className="block text-sm font-medium">Promotion label:</label>
+						<input type="text" {...register('promotion.label')} className="border p-2 rounded" />
 					</div>
 				</div>
 			</div>

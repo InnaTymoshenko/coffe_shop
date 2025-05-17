@@ -38,8 +38,8 @@ export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromo
 			...promotion,
 			...data,
 			status: uptatedStatus,
-			end: data.end || formatDate(data.end),
-			start: data.start || formatDate(data.start)
+			end: promotion.end || formatDate(data.end),
+			start: promotion.start || formatDate(data.start)
 		})
 	}
 

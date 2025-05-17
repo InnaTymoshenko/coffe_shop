@@ -1,3 +1,5 @@
+import { PromotionType } from './promotion-type'
+
 interface IPhoto {
 	medium: string
 	portrait: string
@@ -26,4 +28,9 @@ export interface ProductData {
 	title: string
 	rating: number
 	totalPrice: number
+	promotion?: {
+		id?: string // посилання на акцію (наприклад, seasonal ID)
+		type?: PromotionType
+		label?: string
+	}
 }

@@ -1,10 +1,11 @@
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ProductData } from '@/types/item-type'
 import { useAdminStore } from '@/store/admin-store'
 import { Button } from '../../ui/button'
 import Shell from '../../ui/shell'
 import { EditProductFormData, editProductSchema } from '@/method/validation/product-schema'
+import Select from '@/components/ui/select'
 
 type EditForm = {
 	product: ProductData
@@ -12,12 +13,22 @@ type EditForm = {
 	setIsEditing: (value: boolean) => void
 }
 
+const typeOptions = [
+	{ value: 'event-based', label: 'Event-based' },
+	{ value: 'combo', label: 'Combo' },
+	{ value: 'time-limited', label: 'Time-limited' },
+	{ value: 'discount', label: 'Discount' },
+	{ value: 'seasonal', label: 'Seasonal' },
+	{ value: '2+1', label: '2+1' }
+]
+
 export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 	const { isAdmin } = useAdminStore()
 
 	const {
 		register,
 		handleSubmit,
+		control,
 		formState: { errors }
 	} = useForm<EditProductFormData>({
 		resolver: zodResolver(editProductSchema),
@@ -26,7 +37,8 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 			alt: product.alt,
 			rating: product.rating,
 			ingridients: product.ingridients,
-			price: product.price
+			price: product.price,
+			promotion: product.promotion || undefined
 		}
 	})
 
@@ -36,7 +48,26 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 			isChecked: isAdmin ? product.price[i]?.isChecked ?? false : p.isChecked
 		}))
 
-		onSave({ ...product, ...data, price: enrichedPrice })
+		const updatedPromotion = !data.promotion?.type ? undefined : data.promotion
+
+		console.log({
+			...product,
+			...data,
+			price: enrichedPrice,
+			promotion: updatedPromotion
+		})
+
+		onSave({
+			...product,
+			...data,
+			price: enrichedPrice,
+			promotion: data.promotion?.type
+				? {
+						type: data.promotion.type,
+						label: data.promotion.label?.trim() || ''
+				  }
+				: undefined
+		})
 	}
 
 	return (
@@ -75,7 +106,28 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 						<input key={i} {...register(`ingridients.${i}`)} className="w-full border rounded p-2 my-1" />
 					))}
 				</div>
-
+				<div className="grid grid-cols-2 gap-2">
+					<div>
+						<label className="block text-sm font-medium">Promotion type:</label>
+						<Controller
+							name="promotion.type"
+							control={control}
+							render={({ field, fieldState }) => (
+								<Select
+									options={[{ value: '', label: 'No promotion' }, ...typeOptions]}
+									value={field.value ?? ''}
+									onChange={field.onChange}
+									error={fieldState.error?.message}
+									className="w-full border p-2 rounded-sm"
+								/>
+							)}
+						/>
+					</div>
+					<div>
+						<label className="block text-sm font-medium">Promotion label:</label>
+						<input type="text" {...register('promotion.label')} className="border p-2 rounded" />
+					</div>
+				</div>
 				<div>
 					<label className="block text-sm font-medium">Prices</label>
 					{product.price.map((_, i) => (
