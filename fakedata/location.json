@@ -16,7 +16,8 @@
 		"openingHours": "08:00 - 21:00",
 		"managerName": "Олег Іванов",
 		"managerEmail": "manager@example.com",
-		"notes": "Активна вранці, багато постійних клієнтів."
+		"notes": "Активна вранці, багато постійних клієнтів.",
+		"income": 908
 	},
 	{
 		"id": "podil",
@@ -31,6 +32,7 @@
 		"totalOrders": 2781,
 		"totalClients": 588,
 		"averageRating": 4.3,
+		"income": 1908,
 		"isActive": true,
 		"openingHours": "08:00 - 21:00",
 		"managerName": "Ірина Бондар",
@@ -49,6 +51,7 @@
 		"phone": "+38 (222) 333 22 33",
 		"totalOrders": 2870,
 		"totalClients": 398,
+		"income": 2208,
 		"averageRating": 4.3,
 		"isActive": true,
 		"openingHours": "08:00 - 21:00",

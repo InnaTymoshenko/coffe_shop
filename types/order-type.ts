@@ -2,17 +2,12 @@ import { ProductData } from './item-type'
 
 export type OrderType = 'delivery' | 'in-place'
 export type OrderStatus = 'pending' | 'cancelled' | 'processed' | 'shipped' | 'completed'
-export interface DeliveryDetails {
+export interface OrderDetails {
 	address: string
 	requiredDate?: string // 'dd.mm.yyyy'
 	requiredTime?: string // 'hh:mm'
 	note?: string // додаткові побажання
-}
-
-export interface InPlaceDetails {
 	placeName: string // наприклад, назва кафе
-	address?: string // опціонально
-	note?: string // додаткові побажання
 }
 
 export interface OrderData {
@@ -25,5 +20,5 @@ export interface OrderData {
 	items: ProductData[]
 	totalAmount: number
 	type: OrderType
-	details: DeliveryDetails | InPlaceDetails
+	details: OrderDetails
 }

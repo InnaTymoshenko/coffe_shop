@@ -1,5 +1,27 @@
 [
 	{
+		"id": "111",
+		"firstName": "Денис",
+		"lastName": "Гуцало",
+		"createdAt": "18.05.2025",
+		"updatedAt": "18.05.2025",
+		"status": "active",
+		"birthday": "12.07.2000",
+		"email": "superlyp@email.ua",
+		"phone": "+38 (088) 333-44-33",
+		"address": "сквер Рівний, буд. 8 кв. 85, Київ, 02140",
+		"gender": "male",
+		"language": "uk-UA",
+		"avatarUrl": "https://randomuser.me/api/portraits/men/15.jpg",
+		"role": "user",
+		"lastLoginAt": "18.05.2025 11:48",
+		"newsletterSubscribed": false,
+		"orderCount": 1,
+		"totalSpent": 15,
+		"favoriteCafeId": "obolon",
+		"notes": "Prefers oat milk in coffee."
+	},
+	{
 		"id": "1",
 		"firstName": "Ілля",
 		"lastName": "Стець",

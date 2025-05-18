@@ -16,4 +16,5 @@ export interface LocationData {
 	managerName?: string
 	managerEmail?: string
 	notes?: string
+	income: number
 }

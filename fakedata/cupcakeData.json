@@ -359,20 +359,8 @@
 		"title": "Cherry Blossom Cupcake",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -399,20 +387,8 @@
 		"title": "Lemon Poppy Seed",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -439,20 +415,8 @@
 		"title": "Vanilla Bloom",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -479,20 +443,8 @@
 		"title": "Honey Lavender",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 6.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -519,20 +471,8 @@
 		"title": "Mango Coconut",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -559,20 +499,8 @@
 		"title": "Strawberry Splash",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -599,20 +527,8 @@
 		"title": "Tropical Breeze",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -639,20 +555,8 @@
 		"title": "Peach Paradise",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 6.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -679,20 +583,8 @@
 		"title": "Pumpkin Cream",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -719,20 +611,8 @@
 		"title": "Maple Walnut",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -759,20 +639,8 @@
 		"title": "Apple Crumble",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -799,20 +667,8 @@
 		"title": "Carrot Spice",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 6.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -839,20 +695,8 @@
 		"title": "Ginger Snow",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -879,20 +723,8 @@
 		"title": "Chocolate Mint",
 		"price": [
 			{
-				"size": "small",
-				"price": 3.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 6.5,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -919,20 +751,8 @@
 		"title": "Cranberry Dream",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 5.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.0,
 				"quantity": 1,
 				"isChecked": false
 			}
@@ -959,20 +779,8 @@
 		"title": "Spiced Cocoa",
 		"price": [
 			{
-				"size": "small",
-				"price": 4.5,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
 				"size": "medium",
 				"price": 6.0,
-				"quantity": 1,
-				"isChecked": false
-			},
-			{
-				"size": "large",
-				"price": 7.5,
 				"quantity": 1,
 				"isChecked": false
 			}
