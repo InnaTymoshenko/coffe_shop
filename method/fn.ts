@@ -1,6 +1,8 @@
 import { API_KEY } from '@/config'
 import { ProductData, Size } from '@/types/item-type'
 
+export type DateRange = 'all' | 'week' | 'month' | 'year'
+
 export async function getServerSideProps(url: string) {
 	const res = await fetch(url, {
 		method: 'GET',
@@ -77,4 +79,19 @@ export const formatDate = (isoDate: string): string => {
 
 export const normalizedPhone = (phone: string) => {
 	return phone.replace(/[^+\d]/g, '')
+}
+
+export function filterByDateRange<T>(data: T[], range: DateRange, dateField: keyof T): T[] {
+	if (range === 'all') return data
+	const now = new Date()
+	const threshold = new Date()
+
+	if (range === 'week') threshold.setDate(now.getDate() - 7)
+	if (range === 'month') threshold.setMonth(now.getMonth() - 1)
+	if (range === 'year') threshold.setFullYear(now.getFullYear() - 1)
+
+	return data.filter(d => {
+		const date = new Date((d[dateField] as string).split('.').reverse().join('-'))
+		return date >= threshold
+	})
 }

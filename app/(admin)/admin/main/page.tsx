@@ -5,6 +5,7 @@ import Select from '@/components/ui/select'
 import Shell from '@/components/ui/shell'
 import { DashboardStatBox } from '@/components/ui/stat-box'
 import { useAdminStore } from '@/store/admin-store'
+import { DateRange, filterByDateRange } from '@/method/fn'
 
 const dateRangeOptions = [
 	{ label: 'All time', value: 'all' },
@@ -13,23 +14,8 @@ const dateRangeOptions = [
 	{ label: 'Last year', value: 'year' }
 ]
 
-function filterByDateRange<T>(data: T[], range: 'all' | 'week' | 'month' | 'year', dateField: keyof T): T[] {
-	if (range === 'all') return data
-	const now = new Date()
-	const threshold = new Date()
-
-	if (range === 'week') threshold.setDate(now.getDate() - 7)
-	if (range === 'month') threshold.setMonth(now.getMonth() - 1)
-	if (range === 'year') threshold.setFullYear(now.getFullYear() - 1)
-
-	return data.filter(d => {
-		const date = new Date((d[dateField] as string).split('.').reverse().join('-'))
-		return date >= threshold
-	})
-}
-
 const MainAdmin = () => {
-	const [dateRange, setDateRange] = useState<'all' | 'week' | 'month' | 'year'>('all')
+	const [dateRange, setDateRange] = useState<DateRange>('all')
 
 	const { usersData, ordersData, promotionsData, cafesData } = useAdminStore()
 
@@ -53,7 +39,7 @@ const MainAdmin = () => {
 				<Select
 					options={dateRangeOptions}
 					value={dateRange}
-					onChange={val => setDateRange(val as 'all' | 'week' | 'month' | 'year')}
+					onChange={val => setDateRange(val as DateRange)}
 					className="w-1/3 outline-none flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 bg-gray-50 hover:bg-gray-100"
 				/>
 			</div>
