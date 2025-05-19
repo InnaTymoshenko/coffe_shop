@@ -1,4 +1,6 @@
 import { create } from 'zustand'
+import fakeCoffeeData from '@/fakedata/coffeeData.json'
+import fakeCupcakeData from '@/fakedata/cupcakeData.json'
 import { generateRandomPrice, generateSpecialIngredient, getServerSideProps } from '@/method/fn'
 import { ProductData, QuantityType, Size } from '@/types/item-type'
 
@@ -18,8 +20,8 @@ interface ICartStore {
 }
 
 export const useProductCart = create<ICartStore>()(set => ({
-	coffeeData: [],
-	cupcakeData: [],
+	coffeeData: fakeCoffeeData as ProductData[],
+	cupcakeData: fakeCupcakeData as ProductData[],
 	cartProducts: [],
 	activeTab: 'coffee',
 	setActiveTab: value => set({ activeTab: value }),

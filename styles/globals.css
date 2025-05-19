@@ -320,6 +320,21 @@
 		width: 100%;
 	}
 
+	.label {
+		width: 8rem;
+		text-align: center;
+		padding-block-start: 0.6rem;
+		padding-block-end: 0.25rem;
+		padding-inline: 1rem;
+		background-color: rgba(42, 134, 66);
+		color: rgba(238, 238, 238);
+		position: absolute;
+		top: 0;
+		left: -2.5rem;
+		z-index: 50;
+		transform: rotate(-45deg);
+	}
+
 	.custom-datepicker {
 		overflow: visible;
 	}

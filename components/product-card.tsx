@@ -33,16 +33,31 @@ const PtoductCard = ({ item }: Props) => {
 
 	return (
 		<div className="w-full h-full relative">
-			<img src={item.src.medium} alt="" className="w-full h-full object-cover" />
-			<div className="card_hover absolute bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-2 items-start justify-between text-white text-left p-4 ">
+			<img
+				src={
+					item.src.medium
+						? item.src.medium
+						: item.category === 'Coffee'
+						? '/assets/drink-min.png'
+						: '/assets/cupcake-3-min.png'
+				}
+				alt={item.title}
+				className="w-full h-full object-contain "
+			/>
+			{item.promotion && <div className="label ">{item.promotion?.label}</div>}
+
+			<h3
+				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-30"
+				onClick={() => router.push(`/menu/${item.id}`)}
+			>
+				{item.title}
+			</h3>
+			<div className="card_hover absolute z-10 bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-4 items-start justify-end text-white text-left p-4 ">
 				<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
 					<span className="font-thin text-md">{item.rating}</span>
 					<FaStar className="text-yellow" />
 				</div>
-				<h3 className="text-2xl cursor-pointer hover:text-orange-500 " onClick={() => router.push(`/menu/${item.id}`)}>
-					{item.title}
-				</h3>
-				<p className="my-6">{item.alt}</p>
+				<p className="my-4">{item.alt}</p>
 				<div className="w-full flex flex-col gap-2 justify-between items-center">
 					{item.category === 'Coffee' && (
 						<div className="w-full flex justify-between items-center gap-2 text-lg">

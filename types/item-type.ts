@@ -32,5 +32,7 @@ export interface ProductData {
 		id?: string // посилання на акцію (наприклад, seasonal ID)
 		type?: PromotionType
 		label?: string
+		isActive: boolean
+		season: string
 	}
 }

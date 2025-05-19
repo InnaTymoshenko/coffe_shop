@@ -7,11 +7,54 @@ import Shell from '@/components/ui/shell'
 import MenuList from '@/components/menu-list'
 import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
+import { getSeason } from '@/method/fn'
 
 // type Props = {}
 
 const MenuPage = () => {
 	const { activeTab, setActiveTab, cupcakeData, coffeeData } = useProductCart()
+
+	const currentSeason = getSeason()
+
+	const updatedCoffeeData = coffeeData.map(coffee => {
+		if (coffee.promotion?.type === 'seasonal' && coffee.promotion.season === currentSeason) {
+			return {
+				...coffee,
+				promotion: {
+					...coffee.promotion,
+					isActive: true
+				}
+			}
+		}
+		return coffee
+	})
+
+	const finalCoffeeList = updatedCoffeeData.filter(coffee => {
+		const promo = coffee.promotion
+		if (!promo) return true
+		if (promo.type !== 'seasonal') return true
+		return promo.isActive && promo.season === currentSeason
+	})
+
+	const updatedCupcakeData = cupcakeData.map(cupcake => {
+		if (cupcake.promotion?.type === 'seasonal' && cupcake.promotion.season === currentSeason) {
+			return {
+				...cupcake,
+				promotion: {
+					...cupcake.promotion,
+					isActive: true
+				}
+			}
+		}
+		return cupcake
+	})
+
+	const cupcake = updatedCupcakeData.filter(cupcake => {
+		const promo = cupcake.promotion
+		if (!promo) return true
+		if (promo.type !== 'seasonal') return true
+		return promo.isActive && promo.season === currentSeason
+	})
 
 	return (
 		<>
@@ -46,9 +89,9 @@ const MenuPage = () => {
 					</div>
 					<div>
 						{activeTab === 'coffee' ? (
-							<MenuList products={coffeeData} title={'Coffee'} />
+							<MenuList products={finalCoffeeList} title={'Coffee'} />
 						) : (
-							<MenuList products={cupcakeData} title={'Cupcake'} />
+							<MenuList products={cupcake} title={'Cupcake'} />
 						)}
 					</div>
 				</Shell>

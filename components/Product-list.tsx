@@ -36,9 +36,11 @@ const ProductList = ({ product }: ProductListProps) => {
 		<div className="w-full bg-gray-900">
 			<Shell className="container flex flex-col gap-12 py-8">
 				<div className="relative card_product w-1/4 pb-4 mb-8 flex justify-start gap-1 text-gray-200 text-lg">
-					<ButtonLink href={'/'} className="text-gray-500 cursor-pointer">
-						Home
-					</ButtonLink>
+					<div className="w-[50px]">
+						<ButtonLink href={'/'} className="text-gray-500 cursor-pointer">
+							Home
+						</ButtonLink>
+					</div>
 					<span>/</span>
 					<div onClick={() => setActiveTab(normalizeCategory(product.category))}>
 						<ButtonLink href={'/menu'} className="text-gray-500 cursor-pointer">
@@ -52,12 +54,18 @@ const ProductList = ({ product }: ProductListProps) => {
 				<div className="w-full flex justify-start items-center gap-12">
 					<div className="w-1/3">
 						<Image
-							src={product.src.portrait}
+							src={
+								product.src.medium
+									? product.src.medium
+									: product.category === 'Coffee'
+									? '/assets/drink-min.png'
+									: '/assets/cupcake-3-min.png'
+							}
 							alt={product.title}
 							width={100}
 							height={150}
 							priority
-							className="w-[200px] h-[250px] rounded-sm"
+							className="w-[200px] h-[200px] rounded-sm"
 						/>
 					</div>
 					<div className="w-1/2  text-gray-200 flex flex-col justify-between gap-6">
@@ -117,11 +125,11 @@ const ProductList = ({ product }: ProductListProps) => {
 					</div>
 					<div className="w-1/3 flex justify-between items-center gap-2 text-gray-200 text-lg my-4">
 						{product.ingridients.length !== 0 && (
-							<div className="w-full">
+							<div className="w-full flex flex-col gap-2">
 								<h3 className="relative card_product w-full pb-4 mb-8 text-xl">{`What's included`}</h3>
 								{product.ingridients.map(ing => (
 									<div key={ing} className="w-full border border-gray-200 rounded-sm p-2">
-										{product.ingridients}
+										{ing}
 									</div>
 								))}
 							</div>

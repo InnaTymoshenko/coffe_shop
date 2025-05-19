@@ -524,7 +524,6 @@
 		"rating": 4.2,
 		"totalPrice": 0
 	},
-
 	{
 		"id": "spring-1",
 		"alt": "Lavender Honey Latte with seasonal ingredients.",
@@ -562,7 +561,9 @@
 		"promotion": {
 			"id": "season-spring-2025",
 			"type": "seasonal",
-			"label": "Spring Delights"
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
 		}
 	},
 	{
@@ -602,7 +603,9 @@
 		"promotion": {
 			"id": "season-spring-2025",
 			"type": "seasonal",
-			"label": "Spring Delights"
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
 		}
 	},
 	{
@@ -642,7 +645,9 @@
 		"promotion": {
 			"id": "season-spring-2025",
 			"type": "seasonal",
-			"label": "Spring Delights"
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
 		}
 	},
 	{
@@ -682,7 +687,9 @@
 		"promotion": {
 			"id": "season-spring-2025",
 			"type": "seasonal",
-			"label": "Spring Delights"
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
 		}
 	},
 	{
@@ -722,7 +729,9 @@
 		"promotion": {
 			"id": "season-summer-2025",
 			"type": "seasonal",
-			"label": "Summer Refresh"
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
 		}
 	},
 	{
@@ -762,7 +771,9 @@
 		"promotion": {
 			"id": "season-summer-2025",
 			"type": "seasonal",
-			"label": "Summer Refresh"
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
 		}
 	},
 	{
@@ -802,7 +813,9 @@
 		"promotion": {
 			"id": "season-summer-2025",
 			"type": "seasonal",
-			"label": "Summer Refresh"
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
 		}
 	},
 	{
@@ -842,7 +855,9 @@
 		"promotion": {
 			"id": "season-summer-2025",
 			"type": "seasonal",
-			"label": "Summer Refresh"
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
 		}
 	},
 	{
@@ -882,7 +897,9 @@
 		"promotion": {
 			"id": "season-autumn-2025",
 			"type": "seasonal",
-			"label": "Autumn Flavors"
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
 		}
 	},
 	{
@@ -922,7 +939,9 @@
 		"promotion": {
 			"id": "season-autumn-2025",
 			"type": "seasonal",
-			"label": "Autumn Flavors"
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
 		}
 	},
 	{
@@ -962,7 +981,9 @@
 		"promotion": {
 			"id": "season-autumn-2025",
 			"type": "seasonal",
-			"label": "Autumn Flavors"
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
 		}
 	},
 	{
@@ -1002,7 +1023,9 @@
 		"promotion": {
 			"id": "season-autumn-2025",
 			"type": "seasonal",
-			"label": "Autumn Flavors"
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
 		}
 	},
 	{
@@ -1042,7 +1065,9 @@
 		"promotion": {
 			"id": "season-winter-2025",
 			"type": "seasonal",
-			"label": "Winter Warmers"
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
 		}
 	},
 	{
@@ -1082,7 +1107,9 @@
 		"promotion": {
 			"id": "season-winter-2025",
 			"type": "seasonal",
-			"label": "Winter Warmers"
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
 		}
 	},
 	{
@@ -1122,7 +1149,9 @@
 		"promotion": {
 			"id": "season-winter-2025",
 			"type": "seasonal",
-			"label": "Winter Warmers"
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
 		}
 	},
 	{
@@ -1162,7 +1191,9 @@
 		"promotion": {
 			"id": "season-winter-2025",
 			"type": "seasonal",
-			"label": "Winter Warmers"
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
 		}
 	}
 ]

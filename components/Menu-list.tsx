@@ -38,7 +38,7 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 						{products?.map(product => (
 							<div
 								key={product.id}
-								className="w-[16rem] h-[22rem]  border-transparent rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+								className="w-[16rem] h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
 								<PtoductCard item={product} />
 							</div>
