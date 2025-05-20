@@ -8,7 +8,7 @@ import MenuList from '@/components/menu-list'
 import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
 import { getSeason } from '@/utils/fn'
-import { useSeasonalProducts } from '@/utils/hook/usrSeasonalProducts'
+import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 // type Props = {}
 

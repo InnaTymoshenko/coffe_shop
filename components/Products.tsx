@@ -5,7 +5,7 @@ import Shell from './ui/shell'
 import { useProductCart } from '@/store'
 import MenuList from './menu-list'
 import { getSeason } from '@/utils/fn'
-import { useSeasonalProducts } from '@/utils/hook/usrSeasonalProducts'
+import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 const Products = () => {
 	const { cupcakeData, coffeeData } = useProductCart()
