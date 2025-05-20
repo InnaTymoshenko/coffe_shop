@@ -3,12 +3,12 @@
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { v4 as uuidv4 } from 'uuid'
-import { PromotionFormData, promotionSchema } from '@/method/validation/promotions-schema'
+import { PromotionFormData, promotionSchema } from '@/utils/validation/promotions-schema'
 import Shell from '@/components/ui/shell'
 import { PromotionData } from '@/types/promotion-type'
 import { Button } from '@/components/ui/button'
 import Select from '@/components/ui/select'
-import { formatDate } from '@/method/fn'
+import { formatDate } from '@/utils/fn'
 
 interface AddPromotionFormProps {
 	onAdd: (data: PromotionData) => void

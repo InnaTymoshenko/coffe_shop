@@ -4,10 +4,14 @@ import React from 'react'
 import Shell from './ui/shell'
 import { useProductCart } from '@/store'
 import MenuList from './menu-list'
-import { getSeason } from '@/method/fn'
+import { getSeason } from '@/utils/fn'
+import { useSeasonalProducts } from '@/utils/hook/usrSeasonalProducts'
 
 const Products = () => {
 	const { cupcakeData, coffeeData } = useProductCart()
+	const coffeeUpdated = useSeasonalProducts(coffeeData)
+
+	console.log(coffeeUpdated)
 
 	const currentSeason = getSeason()
 

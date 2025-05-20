@@ -4,7 +4,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { UserProfile } from '@/types/users-type'
-import { normalizedPhone } from '@/method/fn'
+import { normalizedPhone } from '@/utils/fn'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Modal } from '@/components/ui/modal'

@@ -47,7 +47,7 @@ export const quantityHandler = (item: ProductData, selected: Size) => {
 
 export const defaultPrice = (item: ProductData, selected: Size) => {
 	const price = item.price.find(p => p.size === selected)
-	return price?.price
+	return price?.price.toFixed(2)
 }
 
 export const getCurrentYear = (): number => {

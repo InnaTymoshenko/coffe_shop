@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import fakeCoffeeData from '@/fakedata/coffeeData.json'
 import fakeCupcakeData from '@/fakedata/cupcakeData.json'
-import { generateRandomPrice, generateSpecialIngredient, getServerSideProps } from '@/method/fn'
+import { generateRandomPrice, generateSpecialIngredient, getServerSideProps } from '@/utils/fn'
 import { ProductData, QuantityType, Size } from '@/types/item-type'
 
 type CartItem = ProductData

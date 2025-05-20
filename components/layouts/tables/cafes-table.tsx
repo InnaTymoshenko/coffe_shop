@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { normalizedPhone } from '@/method/fn'
+import { normalizedPhone } from '@/utils/fn'
 import { LocationData } from '@/types/location-type'
 import { Button } from '@/components/ui/button'
 import { Modal } from '@/components/ui/modal'

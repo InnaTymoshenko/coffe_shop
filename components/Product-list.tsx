@@ -7,7 +7,7 @@ import { useProductCart } from '@/store'
 import Shell from '@/components/ui/shell'
 import { Button } from '@/components/ui/button'
 import { Category, IPrice, ProductData, Size } from '@/types/item-type'
-import { defaultPrice } from '@/method/fn'
+import { defaultPrice } from '@/utils/fn'
 import { ButtonLink } from '@/components/ui/button-link'
 import ProductListSize from './product-list-size'
 

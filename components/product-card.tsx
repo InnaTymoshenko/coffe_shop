@@ -7,7 +7,7 @@ import { FaStar } from 'react-icons/fa'
 import { ProductData, IPrice, Size, QuantityType } from '@/types/item-type'
 import { Button } from './ui/button'
 import { useProductCart } from '@/store'
-import { defaultPrice, quantityHandler } from '@/method/fn'
+import { defaultPrice, quantityHandler } from '@/utils/fn'
 import ProductCardSize from './product-card-size'
 
 type Props = {

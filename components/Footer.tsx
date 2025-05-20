@@ -5,7 +5,7 @@ import { BsTelephoneForward } from 'react-icons/bs'
 import { RiTwitterXLine, RiTelegram2Fill, RiMailLine } from 'react-icons/ri'
 import { SlSocialLinkedin, SlSocialInstagram, SlSocialFacebook, SlSocialDribbble } from 'react-icons/sl'
 import Shell from './ui/shell'
-import { getCurrentYear } from '@/method/fn'
+import { getCurrentYear } from '@/utils/fn'
 import Link from 'next/link'
 
 // type Props = {}

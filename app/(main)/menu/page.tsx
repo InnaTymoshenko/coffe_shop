@@ -7,12 +7,16 @@ import Shell from '@/components/ui/shell'
 import MenuList from '@/components/menu-list'
 import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
-import { getSeason } from '@/method/fn'
+import { getSeason } from '@/utils/fn'
+import { useSeasonalProducts } from '@/utils/hook/usrSeasonalProducts'
 
 // type Props = {}
 
 const MenuPage = () => {
 	const { activeTab, setActiveTab, cupcakeData, coffeeData } = useProductCart()
+	const coffeeUpdated = useSeasonalProducts(coffeeData)
+
+	console.log(coffeeUpdated)
 
 	const currentSeason = getSeason()
 

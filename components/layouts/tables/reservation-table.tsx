@@ -3,7 +3,7 @@
 import React from 'react'
 import { ReservationData } from '@/types/reservation-type'
 import Link from 'next/link'
-import { normalizedPhone } from '@/method/fn'
+import { normalizedPhone } from '@/utils/fn'
 
 type ReservationProps = {
 	data: ReservationData[]

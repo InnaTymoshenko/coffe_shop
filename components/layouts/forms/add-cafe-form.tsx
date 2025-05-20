@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { v4 as uuidv4 } from 'uuid'
 import { LocationData } from '@/types/location-type'
 import { Button } from '@/components/ui/button'
-import { NewCafeFormValues, newCafeSchema } from '@/method/validation/cafes-schema'
+import { NewCafeFormValues, newCafeSchema } from '@/utils/validation/cafes-schema'
 import Shell from '@/components/ui/shell'
 
 type AddNewCafeProps = {

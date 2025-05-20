@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Shell from '@/components/ui/shell'
 import Select from '@/components/ui/select'
-import { sortByDateTime } from '@/method/fn'
+import { sortByDateTime } from '@/utils/fn'
 import OrdersTable from '@/components/layouts/tables/orders-table'
 import { Button } from '@/components/ui/button'
 import { useAdminStore } from '@/store/admin-store'

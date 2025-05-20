@@ -3,7 +3,7 @@
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { UserProfileFormData, userProfileSchema } from '@/method/validation/user-schema'
+import { UserProfileFormData, userProfileSchema } from '@/utils/validation/user-schema'
 import { UserProfile } from '@/types/users-type'
 import { Button } from '@/components/ui/button'
 import Shell from '@/components/ui/shell'

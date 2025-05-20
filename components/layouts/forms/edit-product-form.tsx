@@ -4,7 +4,7 @@ import { ProductData } from '@/types/item-type'
 import { useAdminStore } from '@/store/admin-store'
 import { Button } from '../../ui/button'
 import Shell from '../../ui/shell'
-import { EditProductFormData, editProductSchema } from '@/method/validation/product-schema'
+import { EditProductFormData, editProductSchema } from '@/utils/validation/product-schema'
 import Select from '@/components/ui/select'
 
 type EditForm = {

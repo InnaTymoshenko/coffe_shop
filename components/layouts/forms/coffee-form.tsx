@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { ProductData } from '@/types/item-type'
 import { Button } from '../../ui/button'
 import { useAdminStore } from '@/store/admin-store'
-import { AddProductFormData, addProductSchema } from '@/method/validation/product-schema'
+import { AddProductFormData, addProductSchema } from '@/utils/validation/product-schema'
 import Select from '@/components/ui/select'
 
 type AddNewProduct = {

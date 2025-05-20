@@ -5,7 +5,7 @@ import Select from '@/components/ui/select'
 import Shell from '@/components/ui/shell'
 import { DashboardStatBox } from '@/components/ui/stat-box'
 import { useAdminStore } from '@/store/admin-store'
-import { DateRange, filterByDateRange } from '@/method/fn'
+import { DateRange, filterByDateRange } from '@/utils/fn'
 
 const dateRangeOptions = [
 	{ label: 'All time', value: 'all' },

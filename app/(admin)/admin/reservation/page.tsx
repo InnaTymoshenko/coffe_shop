@@ -8,7 +8,7 @@ import fakeLocation from '@/fakedata/location.json'
 import fakeReservationData from '@/fakedata/reservation.json'
 import { ReservationData } from '@/types/reservation-type'
 import ReservationTable from '@/components/layouts/tables/reservation-table'
-import { sortByDateTime } from '@/method/fn'
+import { sortByDateTime } from '@/utils/fn'
 
 const cafeOptions = [
 	{ value: '', label: 'All cafes' },

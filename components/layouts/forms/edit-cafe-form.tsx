@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LocationData } from '@/types/location-type'
 import { Button } from '@/components/ui/button'
-import { CafeFormValues, cafeSchema } from '@/method/validation/cafes-schema'
+import { CafeFormValues, cafeSchema } from '@/utils/validation/cafes-schema'
 import Shell from '@/components/ui/shell'
 
 type EditCafeProps = {
