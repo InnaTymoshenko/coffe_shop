@@ -1,9 +1,9 @@
 [
 	{
-		"id": "1",
+		"id": "cup-1",
 		"alt": "Light and fluffy vanilla cupcake with creamy frosting.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-1.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -23,10 +23,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "2",
+		"id": "cup-2",
 		"alt": "Rich chocolate cupcake topped with ganache.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-2.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -46,10 +46,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "3",
+		"id": "cup-3",
 		"alt": "Classic red velvet with a hint of cocoa and cream cheese frosting.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-3.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -69,10 +69,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "4",
+		"id": "cup-4",
 		"alt": "Tangy lemon cupcake with a zesty glaze.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-4.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -92,10 +92,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "5",
+		"id": "cup-5",
 		"alt": "Spiced carrot cake cupcake with walnut topping.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-5.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -115,10 +115,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "6",
+		"id": "cup-6",
 		"alt": "Fresh strawberry flavor with swirled icing.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-6.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -138,10 +138,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "7",
+		"id": "cup-7",
 		"alt": "Soft coconut cupcake topped with whipped cream.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-7.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -161,10 +161,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "8",
+		"id": "cup-8",
 		"alt": "Coffee-infused chocolate cupcake with mocha frosting.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-8.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -184,10 +184,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "9",
+		"id": "cup-9",
 		"alt": "Moist blueberry cupcake with fruity icing.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-9.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -207,10 +207,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "10",
+		"id": "cup-10",
 		"alt": "Buttery cupcake with salted caramel core.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-10.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -230,10 +230,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "11",
+		"id": "cup-11",
 		"alt": "Decadent peanut butter cupcake with chocolate topping.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-11.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -253,10 +253,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "12",
+		"id": "cup-12",
 		"alt": "Floral raspberry cupcake with rosewater glaze.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-12.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -276,10 +276,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "13",
+		"id": "cup-13",
 		"alt": "Banana cupcake with vanilla custard center.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-13.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -299,10 +299,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "14",
+		"id": "cup-14",
 		"alt": "Minty chocolate cupcake with a crisp topping.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-14.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -322,10 +322,10 @@
 		"totalPrice": 0
 	},
 	{
-		"id": "15",
+		"id": "cup-15",
 		"alt": "Spiced pumpkin cupcake with cinnamon frosting.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-15.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -348,7 +348,7 @@
 		"id": "spring-cup-1",
 		"alt": "Cherry Blossom Cupcake with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-spring-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -378,7 +378,7 @@
 		"id": "spring-cup-2",
 		"alt": "Lemon Poppy Seed with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-spring-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -408,7 +408,7 @@
 		"id": "spring-cup-3",
 		"alt": "Vanilla Bloom with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-spring-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -438,7 +438,7 @@
 		"id": "spring-cup-4",
 		"alt": "Honey Lavender with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-spring-4.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -468,7 +468,7 @@
 		"id": "summer-cup-1",
 		"alt": "Mango Coconut with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-summer-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -498,7 +498,7 @@
 		"id": "summer-cup-2",
 		"alt": "Strawberry Splash with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-summer-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -528,7 +528,7 @@
 		"id": "summer-cup-3",
 		"alt": "Tropical Breeze with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-summer-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -558,7 +558,7 @@
 		"id": "summer-cup-4",
 		"alt": "Peach Paradise with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-summer-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -588,7 +588,7 @@
 		"id": "autumn-cup-1",
 		"alt": "Pumpkin Cream with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-autumn-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -618,7 +618,7 @@
 		"id": "autumn-cup-2",
 		"alt": "Maple Walnut with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-autumn-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -648,7 +648,7 @@
 		"id": "autumn-cup-3",
 		"alt": "Apple Crumble with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-autumn-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -678,7 +678,7 @@
 		"id": "autumn-cup-4",
 		"alt": "Carrot Spice with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-autumn-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -708,7 +708,7 @@
 		"id": "winter-cup-1",
 		"alt": "Ginger Snow with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-winter-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -738,7 +738,7 @@
 		"id": "winter-cup-2",
 		"alt": "Chocolate Mint with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-winter-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -768,7 +768,7 @@
 		"id": "winter-cup-3",
 		"alt": "Cranberry Dream with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-winter-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -798,7 +798,7 @@
 		"id": "winter-cup-4",
 		"alt": "Spiced Cocoa with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/cupcake/cupcake-winter-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""

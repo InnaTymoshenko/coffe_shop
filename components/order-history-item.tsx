@@ -44,11 +44,11 @@ const OrderHistoryItem = ({ order }: OrderHistoryProps) => {
 											item.src.medium
 												? item.src.medium
 												: item.category === 'Coffee'
-												? '/assets/coffee-min.png'
-												: '/assets/cupcake-3-min.png'
+												? '/assets/coffee-2.png'
+												: '/assets/cake-1.png'
 										}
 										alt={item.title}
-										className="h-full w-auto"
+										className="h-full w-full object-cover object-center"
 									/>
 								</div>
 								<div className="font-semibold text-md">{item.title}</div>

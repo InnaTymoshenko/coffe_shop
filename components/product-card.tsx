@@ -35,17 +35,12 @@ const PtoductCard = ({ item }: Props) => {
 		<div className="w-full h-full relative">
 			<img
 				src={
-					item.src.medium
-						? item.src.medium
-						: item.category === 'Coffee'
-						? '/assets/drink-min.png'
-						: '/assets/cupcake-3-min.png'
+					item.src.medium ? item.src.medium : item.category === 'Coffee' ? '/assets/coffee-2.png' : '/assets/cake-1.png'
 				}
 				alt={item.title}
-				className="w-full h-full object-contain "
+				className="w-full h-full object-cover object-center"
 			/>
 			{item.promotion && <div className="label ">{item.promotion?.label}</div>}
-
 			<h3
 				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-30"
 				onClick={() => router.push(`/menu/${item.id}`)}

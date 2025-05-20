@@ -51,7 +51,7 @@ const Location = () => {
 			<Shell className="container flex flex-col gap-4 justify-between items-start">
 				<h2 className="text-2xl text-white">Choose a Location</h2>
 				<div className="w-full flex justify-between items-center gap-4">
-					<div className="w-[45%] h-full flex flex-col justify-between items-center gap-4">
+					<div className="w-[45%] h-full flex flex-col justify-between items-start gap-4 pl-8">
 						{cafes.length > 0 && (
 							<Select
 								options={cafeOptions}

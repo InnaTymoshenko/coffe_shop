@@ -9,20 +9,23 @@ import { getRandomUniqueItems } from '@/utils/fn'
 import ReservationForm from '@/components/layouts/forms/reservation-form'
 import MenuList from '@/components/menu-list'
 import ProductList from '@/components/product-list'
+import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 export default function ProductPage() {
 	const [pair, setPair] = useState<ProductData[] | null>(null)
 	const params = useParams()
 	const id = params?.id as string
 	const { cupcakeData, coffeeData } = useProductCart()
-	const product = [...coffeeData, ...cupcakeData].find(p => p.id === id)
+	const coffeeUpdated = useSeasonalProducts(coffeeData)
+	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
+	const product = [...cupcakeUpdated.allWithPromo, ...coffeeUpdated.allWithPromo].find(p => p.id === id)
 
 	useEffect(() => {
 		if (!product) return
-		const source = product.category === 'Coffee' ? cupcakeData : coffeeData
+		const source = product.category === 'Coffee' ? cupcakeUpdated.allWithPromo : coffeeUpdated.allWithPromo
 		const selectedPair = getRandomUniqueItems(source, 4)
 		setPair(selectedPair)
-	}, [coffeeData, cupcakeData, product])
+	}, [coffeeUpdated.allWithPromo, cupcakeUpdated.allWithPromo, product])
 
 	if (!product) {
 		return <p className="text-center text-red-500">Продукт не знайдено</p>

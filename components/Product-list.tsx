@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { CiCoffeeCup } from 'react-icons/ci'
 import { useProductCart } from '@/store'
 import Shell from '@/components/ui/shell'
@@ -53,20 +53,20 @@ const ProductList = ({ product }: ProductListProps) => {
 				</div>
 				<div className="w-full flex justify-start items-center gap-12">
 					<div className="w-1/3">
-						<Image
-							src={
-								product.src.medium
-									? product.src.medium
-									: product.category === 'Coffee'
-									? '/assets/drink-min.png'
-									: '/assets/cupcake-3-min.png'
-							}
-							alt={product.title}
-							width={100}
-							height={150}
-							priority
-							className="w-[200px] h-[200px] rounded-sm"
-						/>
+						<div className="relative w-[250px] h-[300px] rounded-sm overflow-hidden border border-gray-800">
+							<img
+								src={
+									product.src.medium
+										? product.src.medium
+										: product.category === 'Coffee'
+										? '/assets/coffee-2.png'
+										: '/assets/cake-1.png'
+								}
+								alt={product.title}
+								className="w-full h-full object-cover object-center"
+							/>
+							{product.promotion && <div className="label ">{product.promotion?.label}</div>}
+						</div>
 					</div>
 					<div className="w-1/2  text-gray-200 flex flex-col justify-between gap-6">
 						<h1 className="text-3xl mb-8">{product.title}</h1>

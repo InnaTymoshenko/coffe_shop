@@ -83,12 +83,13 @@ const ProductTable = ({ data }: TableProps) => {
 												d.src.medium
 													? d.src.medium
 													: d.category === 'Coffee'
-													? '/assets/coffee-min.png'
-													: '/assets/cupcake-3-min.png'
+													? '/assets/coffee-2.png'
+													: '/assets/cake-1.png'
 											}
 											alt={'coffee'}
 											width={100}
 											height={100}
+											className="w-full h-full object-cover object-center"
 										/>
 									</div>
 									<div className="flex flex-col justify-between items-start gap-4">

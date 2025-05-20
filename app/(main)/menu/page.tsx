@@ -7,7 +7,6 @@ import Shell from '@/components/ui/shell'
 import MenuList from '@/components/menu-list'
 import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
-import { getSeason } from '@/utils/fn'
 import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 // type Props = {}
@@ -15,50 +14,7 @@ import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 const MenuPage = () => {
 	const { activeTab, setActiveTab, cupcakeData, coffeeData } = useProductCart()
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
-
-	console.log(coffeeUpdated)
-
-	const currentSeason = getSeason()
-
-	const updatedCoffeeData = coffeeData.map(coffee => {
-		if (coffee.promotion?.type === 'seasonal' && coffee.promotion.season === currentSeason) {
-			return {
-				...coffee,
-				promotion: {
-					...coffee.promotion,
-					isActive: true
-				}
-			}
-		}
-		return coffee
-	})
-
-	const finalCoffeeList = updatedCoffeeData.filter(coffee => {
-		const promo = coffee.promotion
-		if (!promo) return true
-		if (promo.type !== 'seasonal') return true
-		return promo.isActive && promo.season === currentSeason
-	})
-
-	const updatedCupcakeData = cupcakeData.map(cupcake => {
-		if (cupcake.promotion?.type === 'seasonal' && cupcake.promotion.season === currentSeason) {
-			return {
-				...cupcake,
-				promotion: {
-					...cupcake.promotion,
-					isActive: true
-				}
-			}
-		}
-		return cupcake
-	})
-
-	const cupcake = updatedCupcakeData.filter(cupcake => {
-		const promo = cupcake.promotion
-		if (!promo) return true
-		if (promo.type !== 'seasonal') return true
-		return promo.isActive && promo.season === currentSeason
-	})
+	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 
 	return (
 		<>
@@ -93,9 +49,9 @@ const MenuPage = () => {
 					</div>
 					<div>
 						{activeTab === 'coffee' ? (
-							<MenuList products={finalCoffeeList} title={'Coffee'} />
+							<MenuList products={coffeeUpdated.allWithPromo} title={'Coffee'} />
 						) : (
-							<MenuList products={cupcake} title={'Cupcake'} />
+							<MenuList products={cupcakeUpdated.allWithPromo} title={'Cupcake'} />
 						)}
 					</div>
 				</Shell>
