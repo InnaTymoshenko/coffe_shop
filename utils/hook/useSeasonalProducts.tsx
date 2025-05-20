@@ -9,12 +9,14 @@ export const useSeasonalProducts = (data: ProductData[]) => {
 
 	const updatedData = useMemo(() => {
 		return data.map(item => {
-			if (item.promotion?.type === 'seasonal' && item.promotion.season === currentSeason) {
+			const promo = item.promotion
+			if (!promo) return item
+			if (promo.type === 'seasonal') {
 				return {
 					...item,
 					promotion: {
-						...item.promotion,
-						isActive: true
+						...promo,
+						isActive: promo.season === currentSeason
 					}
 				}
 			}
@@ -29,8 +31,8 @@ export const useSeasonalProducts = (data: ProductData[]) => {
 	const allWithPromo = useMemo(() => {
 		return updatedData.filter(item => {
 			const promo = item.promotion
-			if (!promo) return true // без акцій
-			return promo.isActive // показуємо все активне — seasonal, special, etc.
+			if (!promo) return true
+			return promo.isActive
 		})
 	}, [updatedData])
 

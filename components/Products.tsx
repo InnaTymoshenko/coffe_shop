@@ -11,6 +11,8 @@ const Products = () => {
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
 	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 
+	console.log(coffeeUpdated)
+
 	return (
 		<div className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-8">
 			<Shell className="container flex flex-col gap-6">
