@@ -3,7 +3,7 @@
 		"id": "1",
 		"alt": "Rich and bold espresso shot.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -38,7 +38,7 @@
 		"id": "2",
 		"alt": "Espresso with steamed milk foam.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -73,7 +73,7 @@
 		"id": "3",
 		"alt": "Smooth blend of espresso and steamed milk.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -108,7 +108,7 @@
 		"id": "4",
 		"alt": "Espresso with added hot water.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -143,7 +143,7 @@
 		"id": "5",
 		"alt": "Strong coffee with velvety microfoam.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-5-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -178,7 +178,7 @@
 		"id": "6",
 		"alt": "Espresso mixed with chocolate and milk.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-6-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -213,7 +213,7 @@
 		"id": "7",
 		"alt": "Espresso with a dash of frothy milk.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-7-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -248,7 +248,7 @@
 		"id": "8",
 		"alt": "Coffee with Irish whiskey and cream.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-8-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -283,7 +283,7 @@
 		"id": "9",
 		"alt": "Espresso cut with a small amount of warm milk.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-9-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -318,7 +318,7 @@
 		"id": "10",
 		"alt": "Shorter, more concentrated espresso.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-10-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -353,7 +353,7 @@
 		"id": "11",
 		"alt": "Vanilla ice cream topped with hot espresso.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-11-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -388,7 +388,7 @@
 		"id": "12",
 		"alt": "Traditional strong coffee with foam.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-12-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -423,7 +423,7 @@
 		"id": "13",
 		"alt": "Chilled coffee served over ice.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-13-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -458,7 +458,7 @@
 		"id": "14",
 		"alt": "Smooth, cold-brewed coffee flavor.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-14-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -493,7 +493,7 @@
 		"id": "15",
 		"alt": "Cold brew infused with nitrogen for a creamy texture.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/coffee-15-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -528,7 +528,7 @@
 		"id": "spring-1",
 		"alt": "Lavender Honey Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/spring-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -570,7 +570,7 @@
 		"id": "spring-2",
 		"alt": "Mint Matcha Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/spring-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -612,7 +612,7 @@
 		"id": "spring-3",
 		"alt": "Rose Espresso with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/spring-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -654,7 +654,7 @@
 		"id": "spring-4",
 		"alt": "Iced Vanilla Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/spring-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -696,7 +696,7 @@
 		"id": "summer-1",
 		"alt": "Coconut Cold Brew with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/summer-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -738,7 +738,7 @@
 		"id": "summer-2",
 		"alt": "Iced Caramel Macchiato with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/summer-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -780,7 +780,7 @@
 		"id": "summer-3",
 		"alt": "Espresso Tonic with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/summer-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -822,7 +822,7 @@
 		"id": "summer-4",
 		"alt": "Mango Cream Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/summer-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -864,7 +864,7 @@
 		"id": "autumn-1",
 		"alt": "Pumpkin Spice Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/autumn-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -906,7 +906,7 @@
 		"id": "autumn-2",
 		"alt": "Salted Caramel Mocha with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/autumn-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -948,7 +948,7 @@
 		"id": "autumn-3",
 		"alt": "Apple Pie Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/autumn-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -990,7 +990,7 @@
 		"id": "autumn-4",
 		"alt": "Maple Pecan Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/autumn-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -1032,7 +1032,7 @@
 		"id": "winter-1",
 		"alt": "Gingerbread Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/winter-1-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -1074,7 +1074,7 @@
 		"id": "winter-2",
 		"alt": "White Chocolate Mocha with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/winter-2-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -1116,7 +1116,7 @@
 		"id": "winter-3",
 		"alt": "Peppermint Mocha with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/winter-3-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
@@ -1158,7 +1158,7 @@
 		"id": "winter-4",
 		"alt": "Chocolate Snowflake Latte with seasonal ingredients.",
 		"src": {
-			"medium": "",
+			"medium": "/assets/coffee/winter-4-min.jpg",
 			"portrait": "",
 			"landscape": "",
 			"tiny": ""
