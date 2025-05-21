@@ -42,7 +42,7 @@ const PtoductCard = ({ item }: Props) => {
 			/>
 			{item.promotion && <div className="label ">{item.promotion?.label}</div>}
 			<h3
-				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-30"
+				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-10"
 				onClick={() => router.push(`/menu/${item.id}`)}
 			>
 				{item.title}

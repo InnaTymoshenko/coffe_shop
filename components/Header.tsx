@@ -12,6 +12,7 @@ import { Button } from './ui/button'
 import { useProductCart } from '@/store'
 import { ProductData } from '@/types/item-type'
 import Cart from './cart'
+import { mainMenuConfig } from '@/root-config/main-menu'
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -79,13 +80,8 @@ const Header = () => {
 							/>
 						</>
 					) : (
-						<FaOpencart
-							size={24}
-							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
-							// onClick={openCartHandler}
-						/>
+						<FaOpencart size={24} className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`} />
 					)}
-
 					<Button
 						text="Login"
 						className="bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150 "
@@ -108,48 +104,16 @@ const Header = () => {
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
 					<Shell className=" container h-full flex justify-center items-center">
 						<div className="flex items-center gap-12">
-							<Link
-								href={'/'}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Home
-							</Link>
-							<Link
-								href={'/menu'}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Menu
-							</Link>
-							<Link
-								href={''}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Features
-							</Link>
-							<Link
-								href={''}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Traditional
-							</Link>
-							<Link
-								href={'/#booking'}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Booking
-							</Link>
-							<Link
-								href={'/#location'}
-								className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
-								onClick={() => setIsOpen(!isOpen)}
-							>
-								Location
-							</Link>
+							{mainMenuConfig.mainMenu.map((item, ind) => (
+								<Link
+									key={`${item.title}-${ind}`}
+									href={item.href}
+									className={`text-lg ${isHomePage && !isScrolled ? 'text-black' : 'text-gray-200'}`}
+									onClick={() => setIsOpen(!isOpen)}
+								>
+									{item.title}
+								</Link>
+							))}
 						</div>
 					</Shell>
 				</div>

@@ -10,4 +10,5 @@ export interface PromotionData {
 	isActive: boolean
 	status: PromotionStatus
 	type: PromotionType
+	image?: string
 }

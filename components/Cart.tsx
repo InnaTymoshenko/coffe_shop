@@ -38,7 +38,7 @@ const Cart = ({ openCartHandler }: Props) => {
 	return (
 		<div className="fixed top-0 bottom-0 w-full nim-h-screen bg-gray-900/80 z-50 flex justify-end">
 			<div
-				className="w-[45%] z-10 min-h-full bg-gray-900 border-l-2 border-l-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto"
+				className="w-[45%] min-h-full bg-gray-900 border-l-2 border-l-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto"
 				ref={cartRef}
 			>
 				<div className="w-full flex justify-between items-center">
@@ -49,10 +49,20 @@ const Cart = ({ openCartHandler }: Props) => {
 					{cartProducts.map(item => (
 						<div
 							key={item.id}
-							className="w-full h-30 rounded-sm border border-gray-400 flex gap-4 justify-between items-center overflow-hidden pr-2"
+							className="w-full h-32 rounded-sm border border-gray-400 flex gap-4 justify-between items-center overflow-hidden pr-2"
 						>
-							<div className="w-[20%] h-full">
-								<img src={item.src.tiny} alt={item.title} className="w-full h-full object-cover object-center" />
+							<div className="w-[20%]">
+								<img
+									src={
+										item.src.medium
+											? item.src.medium
+											: item.category === 'Coffee'
+											? '/assets/coffee-2.png'
+											: '/assets/cake-1.png'
+									}
+									alt={item.title}
+									className="w-full h-32 object-cover object-center"
+								/>
 							</div>
 							<h3 className="w-[40%] text-left px-4">{item.title}</h3>
 							<div className="w-[35%] py-1 flex flex-col gap-1 items-center justify-center">

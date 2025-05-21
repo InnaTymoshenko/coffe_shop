@@ -24,7 +24,7 @@ const About = () => {
 	}, [])
 
 	return (
-		<div className="w-full min-h-[70vh] mb-8">
+		<div id="features" className="w-full min-h-[70vh] mb-8">
 			<Shell className="container">
 				<div className="w-full flex flex-col items-start gap-8 py-8">
 					<h2 className="text-white text-3xl my-6">Our Features</h2>

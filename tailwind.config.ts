@@ -277,7 +277,10 @@ export default {
 				banner: 'url("/assets/banner.jpg")',
 				stillife: 'url("/assets/still-life.jpg")',
 				coffeebeans: 'url("/assets/coffee-beans-23.jpg")',
-				privat: 'url("/assets/coffee-beans.jpg")'
+				privat: 'url("/assets/coffee-beans.jpg")',
+				barista: 'url("/assets/barista.jpg")',
+				traditional: 'url("/assets/cafe-56.jpg")',
+				cup: 'url("/assets/cup-42.jpg")'
 			},
 			keyframes: {
 				// SLIDE
