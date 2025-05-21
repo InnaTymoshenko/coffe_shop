@@ -68,7 +68,7 @@ const MainAdmin = () => {
 							.filter(o => o.items.some(i => i.promotion))
 							.reduce((sum, o) => sum + o.totalAmount, 0)
 							.toFixed(2)}$`}
-						value={promotionsData.filter(p => p.status === 'active').length}
+						value={promotionsData.filter(p => p.status === 'active' && p.image).length}
 						hint={`${promotionsData.filter(p => p.status === 'moderation').length} in moderation`}
 						color="red"
 					/>

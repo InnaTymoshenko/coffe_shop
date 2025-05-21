@@ -45,7 +45,8 @@ export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormP
 			end: '',
 			isActive: false,
 			status: 'moderation',
-			type: 'event-based'
+			type: 'event-based',
+			image: ''
 		}
 	})
 
@@ -110,6 +111,11 @@ export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormP
 							/>
 						)}
 					/>
+				</div>
+				<div className="w-full grid grid-cols-2 gap-y-2">
+					<label className="block text-sm font-medium">Image:</label>
+					<input {...register('image')} placeholder="Image URL" className="w-full border p-2 rounded" />
+					{errors.end && <p className="text-red-500 text-sm">{errors.end.message}</p>}
 				</div>
 				<div className="w-full grid grid-cols-2 gap-y-2">
 					<label className="flex items-center space-x-2">
