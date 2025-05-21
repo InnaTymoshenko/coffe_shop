@@ -17,7 +17,7 @@ const PromotionsList = () => {
 				filteredPromotions.map(pr => (
 					<div
 						key={pr.id}
-						className="w-full h-[45rem] relative border border-gray-700 overflow-hidden rounded-sm text-gray-200 text-transparent transition-all duration-500 hover:text-gray-200"
+						className="w-full h-[45rem] relative border border-gray-800 overflow-hidden rounded-sm text-gray-200 text-transparent transition-all duration-500 hover:text-gray-200"
 					>
 						<h2 className="text-3xl text-gray-200 font-semibold absolute top-8 left-16 z-10">{pr.title}</h2>
 						<p className=" w-[80%] text-xl text-center absolute top-56 left-8 z-10">{pr.description}</p>

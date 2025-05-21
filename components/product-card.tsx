@@ -47,7 +47,7 @@ const PtoductCard = ({ item }: Props) => {
 			>
 				{item.title}
 			</h3>
-			<div className="card_hover absolute z-10 bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-4 items-start justify-end text-white text-left p-4 ">
+			<div className="card_hover absolute z-5 bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-4 items-start justify-end text-white text-left p-4 ">
 				<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
 					<span className="font-thin text-md">{item.rating}</span>
 					<FaStar className="text-yellow" />

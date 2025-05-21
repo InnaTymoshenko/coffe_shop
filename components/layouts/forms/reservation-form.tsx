@@ -14,6 +14,7 @@ import { ReservationFormData, reservationSchema } from '@/utils/validation/reser
 import { LocationData } from '@/types/location-type'
 import fakeLocation from '@/fakedata/location.json'
 import Select from '@/components/ui/select'
+import { Button } from '@/components/ui/button'
 
 const cafeOptions = [
 	{ value: 'khreschatyk', label: 'Coffee Town - Khreschatyk' },
@@ -183,13 +184,12 @@ const ReservationForm = () => {
 					></textarea>
 					{errors.comment && <p className="text-red-500 text-sm">{errors.comment.message}</p>}
 				</div>
-				<button
+				<Button
+					text={isSubmitting ? 'Submitting...' : 'Reserve Table'}
 					type="submit"
 					className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
 					disabled={isSubmitting}
-				>
-					{isSubmitting ? 'Submitting...' : 'Reserve Table'}
-				</button>
+				/>
 			</form>
 		</div>
 	)

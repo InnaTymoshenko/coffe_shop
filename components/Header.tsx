@@ -21,6 +21,7 @@ const Header = () => {
 	const { cartProducts } = useProductCart()
 	const pathname = usePathname()
 	const isHomePage = pathname === '/'
+	const isContact = pathname === '/contacts'
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)
@@ -56,15 +57,17 @@ const Header = () => {
 			{openCart && <Cart openCartHandler={openCartHandler} />}
 			<Shell className=" container h-full flex justify-between items-center">
 				<div className="flex items-center gap-4">
-					<BsTelephoneForward className={`text-xl ${isScrolled ? 'text-gray-200' : 'text-black'}`} />
+					<BsTelephoneForward className={`text-xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`} />
 					<div
-						className={`flex flex-col gap-1 items-start justify-center ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+						className={`flex flex-col gap-1 items-start justify-center ${
+							!isContact && !isScrolled ? 'text-black' : 'text-gray-200'
+						}`}
 					>
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 					</div>
 				</div>
-				<div className={`logo text-2xl ${isScrolled ? 'text-gray-200' : 'text-black'}`}>Coffee Town</div>
+				<div className={`logo text-2xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}>Coffee Town</div>
 				<div className="relative p-2 flex items-center justify-between gap-4">
 					{cartProducts.length > 0 ? (
 						<>
@@ -75,12 +78,15 @@ const Header = () => {
 							</div>
 							<PiShoppingCartSimpleFill
 								size={28}
-								className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+								className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 								onClick={openCartHandler}
 							/>
 						</>
 					) : (
-						<FaOpencart size={24} className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`} />
+						<FaOpencart
+							size={24}
+							className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
+						/>
 					)}
 					<Button
 						text="Login"
@@ -88,13 +94,13 @@ const Header = () => {
 					/>
 					{isOpen ? (
 						<RxCross1
-							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+							className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					) : (
 						<RxHamburgerMenu
 							size={24}
-							className={`text-xl cursor-pointer ${isScrolled ? 'text-gray-200' : 'text-black'}`}
+							className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					)}

@@ -11,6 +11,7 @@ export const mainMenuConfig: MainMenuConfig = {
 		{ href: '/#features', title: 'Features' },
 		{ href: '/traditional', title: 'Traditional' },
 		{ href: '/#booking', title: 'Booking' },
-		{ href: '/#location', title: 'Location' }
+		{ href: '/#location', title: 'Location' },
+		{ href: '/contacts', title: 'Contact' }
 	]
 }
