@@ -71,7 +71,7 @@ const PtoductCard = ({ item }: Props) => {
 							))}
 						</div>
 					)}
-					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-900 rounded-sm bg-gray-900 hover:border-gray-200">
+					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200">
 						<Button
 							text="-"
 							className="button w-10 h-full"

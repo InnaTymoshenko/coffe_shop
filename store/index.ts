@@ -11,6 +11,8 @@ interface ICartStore {
 	cupcakeData: ProductData[]
 	cartProducts: CartItem[]
 	activeTab: 'coffee' | 'cupcake'
+	isShow: boolean
+	setIsShow: (value: boolean) => void
 	setActiveTab: (value: 'coffee' | 'cupcake') => void
 	fetchCoffe: (url: string) => void
 	fetchCupcake: (url: string) => void
@@ -24,6 +26,8 @@ export const useProductCart = create<ICartStore>()(set => ({
 	cupcakeData: fakeCupcakeData as ProductData[],
 	cartProducts: [],
 	activeTab: 'coffee',
+	isShow: false,
+	setIsShow: value => set({ isShow: value }),
 	setActiveTab: value => set({ activeTab: value }),
 	fetchCoffe: url => {
 		getServerSideProps(url)

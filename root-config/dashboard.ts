@@ -2,7 +2,7 @@ import { NavSidebarItem } from '@/types/nav-sidebar'
 
 export interface DashboardConfig {
 	adminSidebarNav: NavSidebarItem[]
-	userSidebarNav: NavSidebarItem[]
+	accountSidebarNav: NavSidebarItem[]
 }
 
 export const dashboardConfig: DashboardConfig = {
@@ -36,18 +36,18 @@ export const dashboardConfig: DashboardConfig = {
 			href: '/admin/cafes'
 		}
 	],
-	userSidebarNav: [
+	accountSidebarNav: [
 		{
-			title: 'Головна',
-			href: '/partner/main'
+			title: 'My favorites',
+			href: '/account/favorites'
 		},
 		{
-			title: 'Товари',
-			href: '/partner/products'
+			title: 'My orders',
+			href: '/account/orders'
 		},
 		{
-			title: 'Замовлення',
-			href: '/partner/orders'
+			title: 'Personal information',
+			href: '/account/personal'
 		}
 	]
 }

@@ -33,7 +33,7 @@ const Cart = ({ openCartHandler }: Props) => {
 
 	const totalCartPrice = cartProducts.reduce((sum, item) => sum + item.totalPrice, 0)
 
-	console.log(cartProducts)
+	// console.log(cartProducts)
 
 	return (
 		<div className="fixed top-0 bottom-0 w-full nim-h-screen bg-gray-900/80 z-50 flex justify-end">

@@ -286,7 +286,7 @@
 
 @layer components {
 	.container {
-		@apply lg:px-8 lg:py-4 sx:p-4 w-full max-w-[1440px] mx-auto;
+		@apply lg:px-8 lg:pt-4 lg:pb-10 sx:p-4 w-full max-w-[1440px] mx-auto;
 	}
 
 	.logo {
