@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ContactFormData, contactSchema } from '@/utils/validation/contact-schema'
 import { Button } from '@/components/ui/button'
 import { useEffect, useState } from 'react'
+import AnimatedButton from '@/components/ui/animated-button'
 
 export const ContactForm = () => {
 	const [showSuccess, setShowSuccess] = useState(false)
@@ -77,11 +78,12 @@ export const ContactForm = () => {
 				{errors.message && <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>}
 			</div>
 			<Button
-				text={isSubmitting ? 'Sending...' : 'Send'}
 				type="submit"
 				disabled={isSubmitting}
-				className="button w-32  bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
-			/>
+				className="button w-32 h-10 relative overflow-hidden bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
+			>
+				<AnimatedButton className="w-32 py-2 hover:-top-9" text={isSubmitting ? 'Sending...' : 'Send'} />
+			</Button>
 			{showSuccess && <p className="text-green-600 text-lg mt-2">{`Thank you! We'll get back to you soon.`}</p>}
 		</form>
 	)

@@ -8,6 +8,7 @@ import { FaRegSadTear } from 'react-icons/fa'
 import { MdOutlineCoffeeMaker } from 'react-icons/md'
 import { useProductCart } from '@/store'
 import { Button } from './ui/button'
+import AnimatedButton from './ui/animated-button'
 
 type Props = {
 	openCartHandler: () => void
@@ -49,7 +50,7 @@ const Cart = ({ openCartHandler }: Props) => {
 					{cartProducts.map(item => (
 						<div
 							key={item.id}
-							className="w-full h-32 rounded-sm border border-gray-400 flex gap-4 justify-between items-center overflow-hidden pr-2"
+							className="w-full h-28 rounded-sm border border-gray-400 flex gap-4 justify-between items-center overflow-hidden pr-2"
 						>
 							<div className="w-[20%]">
 								<img
@@ -64,19 +65,19 @@ const Cart = ({ openCartHandler }: Props) => {
 									className="w-full h-32 object-cover object-center"
 								/>
 							</div>
-							<h3 className="w-[40%] text-left px-4">{item.title}</h3>
+							<h3 className="w-[40%] text-left text-xl px-4">{item.title}</h3>
 							<div className="w-[35%] py-1 flex flex-col gap-1 items-center justify-center">
 								{item.price.map(pr => (
 									<div
 										key={`${item.title}-${item.id}-${pr.size}`}
-										className=" grid grid-cols-5 grid-rows-1 justify-center gap-4"
+										className=" grid grid-cols-5 grid-rows-1 items-center content-normal gap-4"
 									>
 										{item.category === 'Coffee' && (
-											<div className="w-8 col-span-1 text-center text-md font-semibold py-1 border border-gray-300 rounded-sm">{`${
+											<div className="w-8 col-span-1 text-center text-md font-semibold py-1 border border-gray-800 rounded-sm">{`${
 												pr.size === 'small' ? 'S' : pr.size === 'medium' ? 'M' : 'L'
 											}`}</div>
 										)}
-										<div className="w-20 col-span-2 col-start-2 p-1 flex justify-between items-center border border-gray-300 rounded-sm ">
+										<div className="w-20 col-span-2 col-start-2 px-1 flex justify-between items-center border border-gray-800 hover:border-gray-200 rounded-sm ">
 											<span>
 												<Minus
 													size={14}
@@ -115,10 +116,9 @@ const Cart = ({ openCartHandler }: Props) => {
 								<span>{totalCartPrice.toFixed(2)}</span>
 							</div>
 						</div>
-						<Button
-							text="Pay"
-							className="w-[30%] h-full text-xl bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
-						/>
+						<Button className="button relative overflow-hidden w-28 h-10 text-lg bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150">
+							<AnimatedButton className="w-28 py-1 hover:-top-10" text={'Pay now'} />
+						</Button>
 					</div>
 				) : (
 					<div className="w-full text-gray-200 flex flex-col gap-12 items-center justify-between px-4 mt-8">

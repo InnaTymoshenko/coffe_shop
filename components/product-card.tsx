@@ -9,6 +9,7 @@ import { Button } from './ui/button'
 import { useProductCart } from '@/store'
 import { defaultPrice, quantityHandler } from '@/utils/fn'
 import ProductCardSize from './product-card-size'
+import AnimatedButton from './ui/animated-button'
 
 type Props = {
 	item: ProductData
@@ -96,10 +97,7 @@ const PtoductCard = ({ item }: Props) => {
 							className="button relative overflow-hidden w-32 h-10 bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 							onClick={() => addToCartHandler(item, selected)}
 						>
-							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-9">
-								<div className="w-full text-center">Add to cart</div>
-								<div className="w-full text-center">Add to cart</div>
-							</div>
+							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
 						</Button>
 					</div>
 				</div>

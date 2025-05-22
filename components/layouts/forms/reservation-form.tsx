@@ -15,6 +15,7 @@ import { LocationData } from '@/types/location-type'
 import fakeLocation from '@/fakedata/location.json'
 import Select from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
+import AnimatedButton from '@/components/ui/animated-button'
 
 const cafeOptions = [
 	{ value: 'khreschatyk', label: 'Coffee Town - Khreschatyk' },
@@ -196,11 +197,12 @@ const ReservationForm = () => {
 					{errors.comment && <p className="text-red-500 text-sm">{errors.comment.message}</p>}
 				</div>
 				<Button
-					text={isSubmitting ? 'Sending...' : 'Reserve Table'}
 					type="submit"
-					className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
+					className="button relative overflow-hidden w-32 h-10 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
 					disabled={isSubmitting}
-				/>
+				>
+					<AnimatedButton className="w-32 py-2 hover:-top-9" text={isSubmitting ? 'Sending...' : 'Reserve Table'} />
+				</Button>
 				{showSuccess && <p className="text-green-600 text-lg mt-2">{`Thank you! We've reserved your table.`}</p>}
 			</form>
 		</div>

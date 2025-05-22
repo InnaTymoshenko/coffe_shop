@@ -2,6 +2,7 @@ import React from 'react'
 import Shell from '@/components/ui/shell'
 import { MdCoffeeMaker } from 'react-icons/md'
 import { ButtonLink } from '@/components/ui/button-link'
+import AnimatedButton from '@/components/ui/animated-button'
 
 const NotFound = () => {
 	return (
@@ -13,9 +14,10 @@ const NotFound = () => {
 			<div className="w-32">
 				<ButtonLink
 					href={'/'}
-					text="Go Back"
-					className="button w-32 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
-				/>
+					className="button relative w-32 h-10 overflow-hidden bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
+				>
+					<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Go Back'} />
+				</ButtonLink>
 			</div>
 		</div>
 	)

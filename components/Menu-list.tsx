@@ -28,25 +28,17 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 					<div className="w-40 h-8 flex justify-between items-center border border-gray-800 rounded-lg p-1">
 						<Button
 							text="Card"
-							className={`${
-								isShow
-									? 'w-20 h-full bg-gray-900 text-gray-200 font-semibold flex justify-center items-center rounded-lg'
-									: 'w-20 h-full bg-gray-200 text-gray-900 font-semibold flex justify-center items-center rounded-lg'
-							}  `}
+							className={`toggle ${!isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
 							onClick={() => setIsShow(!isShow)}
 						/>
 						<Button
 							text="List"
-							className={`${
-								isShow
-									? 'w-20 h-full bg-gray-200 text-gray-900 font-semibold flex justify-center items-center rounded-lg'
-									: 'w-20 h-full bg-gray-900 text-gray-200 font-semibold flex justify-center items-center rounded-lg'
-							}  `}
+							className={`toggle ${isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
 							onClick={() => setIsShow(!isShow)}
 						/>
 					</div>
 				</div>
-				{products.length > 0 && !isShow ? (
+				{products.length > 0 && isShow ? (
 					<div className="w-full flex flex-wrap gap-8 justify-center">
 						{products?.map(product => (
 							<div

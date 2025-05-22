@@ -9,8 +9,6 @@ import { Button } from '@/components/ui/button'
 import { useProductCart } from '@/store'
 import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
-// type Props = {}
-
 const MenuPage = () => {
 	const { activeTab, setActiveTab, cupcakeData, coffeeData } = useProductCart()
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
@@ -23,7 +21,7 @@ const MenuPage = () => {
 				<Shell className="container flex flex-col gap-6">
 					<div className="flex justify-start gap-4">
 						<Button
-							className={`py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
+							className={`py-2 text-lg flex items-center gap-1 font-semibold transition-all duration-300 text-decoration-2
             ${activeTab === 'coffee' ? 'underline text-gray-200' : 'no-underline text-gray-600'}`}
 							style={{ textUnderlineOffset: '6px' }}
 							onClick={() => setActiveTab('coffee')}
@@ -31,11 +29,13 @@ const MenuPage = () => {
 							Coffee
 							<Coffee
 								size={18}
-								className={`transition-all text-gray-200 ${activeTab === 'coffee' ? 'opacity-100' : 'opacity-0'}`}
+								className={`transition-all duration-300 text-gray-200 ${
+									activeTab === 'coffee' ? 'opacity-100' : 'opacity-0'
+								}`}
 							/>
 						</Button>
 						<Button
-							className={`px-4 py-2 text-lg flex items-center gap-1 font-semibold transition-all text-decoration-2
+							className={`px-4 py-2 text-lg flex items-center gap-1 font-semibold transition-all duration-300 text-decoration-2
             ${activeTab === 'cupcake' ? 'underline text-gray-200' : 'no-underline text-gray-600'}`}
 							style={{ textUnderlineOffset: '6px' }}
 							onClick={() => setActiveTab('cupcake')}
@@ -43,7 +43,9 @@ const MenuPage = () => {
 							Cupcake
 							<Dessert
 								size={18}
-								className={`transition-all text-gray-200 ${activeTab === 'cupcake' ? 'opacity-100' : 'opacity-0'}`}
+								className={`transition-all duration-300 text-gray-200 ${
+									activeTab === 'cupcake' ? 'opacity-100' : 'opacity-0'
+								}`}
 							/>
 						</Button>
 					</div>

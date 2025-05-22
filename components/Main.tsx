@@ -3,6 +3,7 @@
 import React from 'react'
 import Shell from './ui/shell'
 import { ButtonLink } from './ui/button-link'
+import AnimatedButton from './ui/animated-button'
 
 const Main = () => {
 	return (
@@ -24,20 +25,14 @@ const Main = () => {
 							aria-label="Check menu"
 							className="button relative w-32 h-12 overflow-hidden bg-transparent text-lg text-gray-200 px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150"
 						>
-							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-10">
-								<div className="w-full text-center">Check menu</div>
-								<div className="w-full text-center">Check menu</div>
-							</div>
+							<AnimatedButton className="w-32 py-2 hover:-top-10" text="Check menu" />
 						</ButtonLink>
 						<ButtonLink
 							href="/#booking"
 							aria-label="Book table"
 							className="button relative w-32 h-12 overflow-hidden bg-gray-900 text-lg text-gray-200 px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
 						>
-							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-10">
-								<div className="w-full text-center">Book table</div>
-								<div className="w-full text-center">Book table</div>
-							</div>
+							<AnimatedButton className="w-32 py-2 hover:-top-10" text="Book table" />
 						</ButtonLink>
 					</div>
 				</div>

@@ -10,6 +10,7 @@ import { Category, IPrice, ProductData, Size } from '@/types/item-type'
 import { defaultPrice } from '@/utils/fn'
 import { ButtonLink } from '@/components/ui/button-link'
 import ProductListSize from './product-list-size'
+import AnimatedButton from './ui/animated-button'
 
 type ProductListProps = {
 	product: ProductData
@@ -147,10 +148,11 @@ const ProductList = ({ product }: ProductListProps) => {
 						</div>
 
 						<Button
-							text="Add to cart"
-							className="button w-32 h-[15%] text-gray-200 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+							className="button relative overflow-hidden w-32 h-[15%] text-gray-200 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 							onClick={() => addToCartHandler(product, selected)}
-						/>
+						>
+							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
+						</Button>
 					</div>
 				</div>
 			</Shell>

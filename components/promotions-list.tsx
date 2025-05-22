@@ -4,6 +4,7 @@
 import React from 'react'
 import { ButtonLink } from './ui/button-link'
 import { useAdminStore } from '@/store/admin-store'
+import AnimatedButton from './ui/animated-button'
 
 // type Props = {}
 
@@ -26,10 +27,7 @@ const PromotionsList = () => {
 							aria-label="View Menu"
 							className="absolute bottom-8 right-8 z-10 w-32 h-10 rounded-lg overflow-hidden border border-orange-600 bg-orange-600 px-8 py-2 text-gray-200 transition-all duration-500 hover:border-gray-200"
 						>
-							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-9">
-								<div className="w-full text-center">View Menu</div>
-								<div className="w-full text-center">View Menu</div>
-							</div>
+							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'View Menu'} />
 						</ButtonLink>
 						<div className="relative group w-full overflow-hidden rounded-xl">
 							<img

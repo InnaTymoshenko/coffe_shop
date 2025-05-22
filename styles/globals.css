@@ -335,6 +335,10 @@
 		transform: rotate(-45deg);
 	}
 
+	.toggle {
+		@apply w-20 h-full font-semibold flex justify-center items-center rounded-lg transition-all duration-300;
+	}
+
 	.custom-datepicker {
 		overflow: visible;
 	}
