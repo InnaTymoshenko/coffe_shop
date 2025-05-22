@@ -71,7 +71,7 @@ const PtoductCard = ({ item }: Props) => {
 							))}
 						</div>
 					)}
-					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200">
+					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-00 rounded-sm bg-gray-900 hover:border-gray-200">
 						<Button
 							text="-"
 							className="button w-10 h-full"
@@ -93,10 +93,14 @@ const PtoductCard = ({ item }: Props) => {
 							</div>
 						</div>
 						<Button
-							text="Add to cart"
-							className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+							className="button relative overflow-hidden w-32 h-10 bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 							onClick={() => addToCartHandler(item, selected)}
-						/>
+						>
+							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-9">
+								<div className="w-full text-center">Add to cart</div>
+								<div className="w-full text-center">Add to cart</div>
+							</div>
+						</Button>
 					</div>
 				</div>
 			</div>

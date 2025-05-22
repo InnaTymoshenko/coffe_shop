@@ -20,15 +20,25 @@ const Main = () => {
 				<div className="w-[60%] flex justify-start gap-6 p-4">
 					<div className="w-[250px] flex justify-start items-center gap-6">
 						<ButtonLink
-							text="Check menu"
-							className="button w-32 bg-transparent text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150 "
-							href={'/menu'}
-						/>
+							href="/menu"
+							aria-label="Check menu"
+							className="button relative w-32 h-12 overflow-hidden bg-transparent text-lg text-gray-200 px-4 py-3 border-2 border-gray-900 hover:bg-gray-900 active:bg-gray-900/80 active:scale-95 transition-all duration-150"
+						>
+							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-10">
+								<div className="w-full text-center">Check menu</div>
+								<div className="w-full text-center">Check menu</div>
+							</div>
+						</ButtonLink>
 						<ButtonLink
-							href={'/#booking'}
-							text="Book table"
-							className="button w-32 bg-gray-900 text-lg  px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
-						/>
+							href="/#booking"
+							aria-label="Book table"
+							className="button relative w-32 h-12 overflow-hidden bg-gray-900 text-lg text-gray-200 px-4 py-3 border-2 border-gray-900 hover:bg-transparent hover:border-gray-900 active:bg-gray-900/40 active:scale-95 transition-all duration-150 "
+						>
+							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-10">
+								<div className="w-full text-center">Book table</div>
+								<div className="w-full text-center">Book table</div>
+							</div>
+						</ButtonLink>
 					</div>
 				</div>
 			</Shell>

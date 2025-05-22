@@ -24,12 +24,13 @@ const cafeOptions = [
 
 const ReservationForm = () => {
 	const [cafes, setCafes] = useState<LocationData[]>([])
+	const [showSuccess, setShowSuccess] = useState(false)
 	const {
 		control,
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors, isSubmitting }
+		formState: { errors, isSubmitting, isSubmitSuccessful }
 	} = useForm<ReservationFormData>({
 		resolver: zodResolver(reservationSchema),
 		defaultValues: {
@@ -43,6 +44,17 @@ const ReservationForm = () => {
 		const cafes = fakeLocation as LocationData[]
 		setCafes(cafes)
 	}, [])
+
+	useEffect(() => {
+		if (isSubmitSuccessful) {
+			setShowSuccess(true)
+			const timer = setTimeout(() => {
+				setShowSuccess(false)
+			}, 3000)
+
+			return () => clearTimeout(timer)
+		}
+	}, [isSubmitSuccessful])
 
 	const onSubmit = async (data: ReservationFormData) => {
 		const cafe = cafes.find(cafe => cafe.name === data.cafe)
@@ -60,7 +72,6 @@ const ReservationForm = () => {
 		}
 		console.log('Reservation Data:', finalData)
 		await new Promise(resolve => setTimeout(resolve, 1000))
-		alert('Table reserved successfully!')
 		reset()
 	}
 
@@ -185,11 +196,12 @@ const ReservationForm = () => {
 					{errors.comment && <p className="text-red-500 text-sm">{errors.comment.message}</p>}
 				</div>
 				<Button
-					text={isSubmitting ? 'Submitting...' : 'Reserve Table'}
+					text={isSubmitting ? 'Sending...' : 'Reserve Table'}
 					type="submit"
 					className="button w-32 h-[80%] bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 text-gray-200 font-semibold active:scale-95 transition-all duration-150"
 					disabled={isSubmitting}
 				/>
+				{showSuccess && <p className="text-green-600 text-lg mt-2">{`Thank you! We've reserved your table.`}</p>}
 			</form>
 		</div>
 	)

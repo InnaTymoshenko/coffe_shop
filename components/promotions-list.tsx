@@ -22,10 +22,15 @@ const PromotionsList = () => {
 						<h2 className="text-3xl text-gray-200 font-semibold absolute top-8 left-16 z-10">{pr.title}</h2>
 						<p className=" w-[80%] text-xl text-center absolute top-56 left-8 z-10">{pr.description}</p>
 						<ButtonLink
-							href={'/menu'}
-							text="View Menu"
-							className="absolute bottom-8 right-8 z-10 text-gray-200 border border-orange-600 bg-orange-600 px-8 py-2 rounded-lg transition-all duration-500 hover:border-gray-200 "
-						/>
+							href="/menu"
+							aria-label="View Menu"
+							className="absolute bottom-8 right-8 z-10 w-32 h-10 rounded-lg overflow-hidden border border-orange-600 bg-orange-600 px-8 py-2 text-gray-200 transition-all duration-500 hover:border-gray-200"
+						>
+							<div className="absolute top-0 left-0 z-20 flex h-[200%] w-32 flex-col items-center justify-start gap-4 py-2 transition-all duration-500 hover:-top-9">
+								<div className="w-full text-center">View Menu</div>
+								<div className="w-full text-center">View Menu</div>
+							</div>
+						</ButtonLink>
 						<div className="relative group w-full overflow-hidden rounded-xl">
 							<img
 								src={pr.image}
