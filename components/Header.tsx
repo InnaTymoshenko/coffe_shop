@@ -21,8 +21,12 @@ const Header = () => {
 	const [openCart, setOpenCart] = useState(false)
 	const { cartProducts } = useProductCart()
 	const pathname = usePathname()
+	const segments = pathname.split('/').filter(Boolean)
+	const rootSection = segments[0]
 	const isHomePage = pathname === '/'
-	const isContact = pathname === '/contacts'
+	const isContact = pathname === '/contacts' || rootSection === 'cabinet'
+
+	// console.log(pathname)
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)
@@ -108,7 +112,7 @@ const Header = () => {
 			</Shell>
 			{isOpen && (
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
-					<Shell className=" container h-full flex justify-center items-center">
+					<Shell className=" w-full p-4 h-full flex justify-center items-center">
 						<div className="flex items-center gap-12">
 							{mainMenuConfig.mainMenu.map((item, ind) => (
 								<Link
