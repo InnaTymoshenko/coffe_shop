@@ -33,14 +33,18 @@ const ProductCardList = ({ item }: Props) => {
 	}
 
 	return (
-		<>
+		<div className="w-full text-gray-200 h-24 grid grid-cols-10 pr-2 content-normal items-center gap-2 relative z-10">
 			<img src={item.src.medium} alt={item.title} className="w-24 h-24 object-cover object-center" />
-			<h3
-				className="text-2xl  pl-5 col-span-3 text-gray-200 cursor-pointer hover:text-orange-500 transition-all duration-300"
-				onClick={() => router.push(`/menu/${item.id}`)}
-			>
-				{item.title}
-			</h3>
+			<div className="w-full pl-2 col-span-3 text-gray-200 flex flex-col gap-3">
+				<h3
+					className="text-2xl cursor-pointer hover:text-orange-500 transition-all duration-300"
+					onClick={() => router.push(`/menu/${item.id}`)}
+				>
+					{item.title}
+				</h3>
+				<p className="text-gray-400">{item.alt}</p>
+			</div>
+
 			{item.promotion ? (
 				<Badge variant="success" className="justify-self-center">
 					{item.promotion?.label}
@@ -67,7 +71,7 @@ const ProductCardList = ({ item }: Props) => {
 					</div>
 				)}
 			</div>
-			<div className="w-[50%] h-8 p-1 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200">
+			<div className="w-[50%] h-8 p-1 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
 				<Button
 					text="-"
 					className="button w-10 h-full"
@@ -93,7 +97,7 @@ const ProductCardList = ({ item }: Props) => {
 			>
 				<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
 			</Button>
-		</>
+		</div>
 	)
 }
 

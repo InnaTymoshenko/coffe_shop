@@ -82,6 +82,18 @@ const ProductList = ({ product }: ProductListProps) => {
 								<div className="w-full flex justify-between items-center gap-4">
 									{product.price.map((p: IPrice) => (
 										<div key={`coffe-${p.size}`} className="text-gray-200 flex flex-col items-center gap-2">
+											{/* {
+												<ProductListSize
+													item={p}
+													text={p.size === 'small' ? 'Small' : p.size === 'medium' ? 'Medium' : 'Large'}
+													ml={p.size === 'small' ? '240 ml' : p.size === 'medium' ? '355 ml' : '475 ml'}
+													flOz={p.size === 'small' ? '8 fl oz' : p.size === 'medium' ? '12 fl oz' : '16 fl oz'}
+													selected={selected}
+													selectedHandler={selectedHandler}
+												>
+													<CiCoffeeCup size={p.size === 'small' ? 26 : p.size === 'medium' ? 30 : 38} color="white" />
+												</ProductListSize>
+											} */}
 											{p.size === 'small' && (
 												<ProductListSize
 													item={p}

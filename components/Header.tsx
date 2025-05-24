@@ -89,7 +89,7 @@ const Header = () => {
 							className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
 						/>
 					)}
-					<Button className="relative overflow-hidden w-12 h-6 bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150 ">
+					<Button className="relative overflow-hidden w-14 h-7 bg-orange-600 px-4 py-1 rounded-sm text-gray-200 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150 ">
 						<AnimatedButton className="w-12 hover:-top-9" text={'Login'} />
 					</Button>
 					{isOpen ? (

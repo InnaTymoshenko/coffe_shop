@@ -43,7 +43,7 @@ const PtoductCard = ({ item }: Props) => {
 			/>
 			{item.promotion && <div className="label ">{item.promotion?.label}</div>}
 			<h3
-				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-10"
+				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-10 transition-all duration-300"
 				onClick={() => router.push(`/menu/${item.id}`)}
 			>
 				{item.title}
@@ -59,6 +59,14 @@ const PtoductCard = ({ item }: Props) => {
 						<div className="w-full flex justify-between items-center gap-2 text-lg">
 							{item.price.map((p: IPrice) => (
 								<div key={`coffe-${p.size}`}>
+									{/* {
+										<ProductCardSize
+											item={p}
+											text={p.size === 'small' ? 'S' : p.size === 'medium' ? 'M' : 'L'}
+											selected={selected}
+											selectedHandler={selectedHandler}
+										/>
+									} */}
 									{p.size === 'small' && (
 										<ProductCardSize item={p} text={'S'} selected={selected} selectedHandler={selectedHandler} />
 									)}
@@ -72,7 +80,7 @@ const PtoductCard = ({ item }: Props) => {
 							))}
 						</div>
 					)}
-					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-00 rounded-sm bg-gray-900 hover:border-gray-200">
+					<div className="w-[50%] h-8 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
 						<Button
 							text="-"
 							className="button w-10 h-full"

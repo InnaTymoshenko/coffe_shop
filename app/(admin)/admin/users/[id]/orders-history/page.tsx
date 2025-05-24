@@ -40,8 +40,8 @@ const OrdersHistoryPage = () => {
 		}
 	}, [ordersData, selectedUser])
 
-	const filteredOrders = ordersData
-		.filter(order => {
+	const filteredOrders = selectedOrder
+		?.filter(order => {
 			const query = search.toLowerCase()
 			return order.id.toLowerCase().includes(query)
 		})
@@ -56,6 +56,8 @@ const OrdersHistoryPage = () => {
 		setSearch('')
 		setCreatedAfter('')
 	}
+
+	console.log(selectedOrder)
 
 	if (!id) return <p>Not found User History!</p>
 
@@ -103,7 +105,7 @@ const OrdersHistoryPage = () => {
 						/>
 					</div>
 				)}
-				{selectedOrder && selectedUser && (
+				{selectedOrder && selectedUser && filteredOrders && (
 					<ul className="w-full">
 						{filteredOrders.length > 0 &&
 							filteredOrders.map(order => (

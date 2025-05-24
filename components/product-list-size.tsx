@@ -16,7 +16,7 @@ const ProductListSize = ({ item, text, ml, flOz, children, selected, selectedHan
 	return (
 		<>
 			<Button
-				className={`button w-[3.5rem] h-[3.5rem] rounded-full bg-gray-900 border-2 transition-all duration-200
+				className={`button w-[3.5rem] h-[3.5rem] rounded-full bg-gray-900 border-2 transition-all duration-300
 				hover:bg-gray-900 hover:border-gray-200 ${selected === item.size ? 'border-gray-200' : 'border-gray-900'}`}
 				onClick={() => selectedHandler(item.size)}
 			>

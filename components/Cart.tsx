@@ -65,8 +65,8 @@ const Cart = ({ openCartHandler }: Props) => {
 									className="w-full h-32 object-cover object-center"
 								/>
 							</div>
-							<h3 className="w-[40%] text-left text-xl px-4">{item.title}</h3>
-							<div className="w-[35%] py-1 flex flex-col gap-1 items-center justify-center">
+							<h3 className="w-[35%] text-left text-xl px-4">{item.title}</h3>
+							<div className="w-[40%] py-1 flex flex-col gap-1 items-center justify-center">
 								{item.price.map(pr => (
 									<div
 										key={`${item.title}-${item.id}-${pr.size}`}
@@ -77,7 +77,7 @@ const Cart = ({ openCartHandler }: Props) => {
 												pr.size === 'small' ? 'S' : pr.size === 'medium' ? 'M' : 'L'
 											}`}</div>
 										)}
-										<div className="w-20 col-span-2 col-start-2 px-1 flex justify-between items-center border border-gray-800 hover:border-gray-200 rounded-sm ">
+										<div className="w-20 col-span-2 col-start-2 px-1 flex justify-between items-center border border-gray-800 hover:border-gray-200 rounded-sm transition-all duration-300">
 											<span>
 												<Minus
 													size={14}

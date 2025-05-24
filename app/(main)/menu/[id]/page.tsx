@@ -12,7 +12,7 @@ import ProductList from '@/components/product-list'
 import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 export default function ProductPage() {
-	const [pair, setPair] = useState<ProductData[] | null>(null)
+	const [pairIds, setPairIds] = useState<string[] | null>(null)
 	const params = useParams()
 	const id = params?.id as string
 	const { cupcakeData, coffeeData } = useProductCart()
@@ -21,11 +21,19 @@ export default function ProductPage() {
 	const product = [...cupcakeUpdated.allWithPromo, ...coffeeUpdated.allWithPromo].find(p => p.id === id)
 
 	useEffect(() => {
-		if (!product) return
+		if (!product || pairIds) return
+
 		const source = product.category === 'Coffee' ? cupcakeUpdated.allWithPromo : coffeeUpdated.allWithPromo
-		const selectedPair = getRandomUniqueItems(source, 4)
-		setPair(selectedPair)
-	}, [coffeeUpdated.allWithPromo, cupcakeUpdated.allWithPromo, product])
+
+		const selectedIds = getRandomUniqueItems(source, 4).map(p => p.id)
+		setPairIds(selectedIds)
+	}, [coffeeUpdated.allWithPromo, cupcakeUpdated.allWithPromo, pairIds, product])
+
+	const sourceProducts = product?.category === 'Coffee' ? cupcakeUpdated.allWithPromo : coffeeUpdated.allWithPromo
+
+	const pairProducts = pairIds
+		? (pairIds.map(id => sourceProducts.find(p => p.id === id)).filter(Boolean) as ProductData[])
+		: []
 
 	if (!product) {
 		return <p className="text-center text-red-500">Продукт не знайдено</p>
@@ -40,8 +48,9 @@ export default function ProductPage() {
 				<Shell className="container flex flex-col gap-12 py-8">
 					<h2 className="text-white text-3xl my-6">Pairs perfectly with:</h2>
 					<div>
-						{product.category === 'Coffee' && pair && <MenuList products={pair} title={'Cupcake'} />}
-						{product.category === 'Cupcake' && pair && <MenuList products={pair} title={'Coffee'} />}
+						{pairProducts.length > 0 && (
+							<MenuList products={pairProducts} title={product.category === 'Coffee' ? 'Cupcake' : 'Coffee'} />
+						)}
 					</div>
 				</Shell>
 			</div>

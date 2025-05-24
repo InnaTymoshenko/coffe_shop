@@ -1,5 +1,51 @@
 [
 	{
+		"id": "123",
+		"numberInLine": 187,
+		"createdDateAt": "18.05.2025",
+		"createdTimeAt": "10:00:00",
+		"status": "processed",
+		"clientId": "111",
+		"items": [
+			{
+				"id": "spring-4",
+				"alt": "Iced Vanilla Latte with seasonal ingredients.",
+				"src": {
+					"medium": "/assets/coffee/spring-4-min.jpg",
+					"portrait": "",
+					"landscape": "",
+					"tiny": ""
+				},
+				"category": "Coffee",
+				"ingridients": ["vanilla", "ice", "milk"],
+				"title": "Iced Vanilla Latte",
+				"price": [
+					{
+						"size": "large",
+						"price": 7.5,
+						"quantity": 2,
+						"isChecked": false
+					}
+				],
+				"rating": 4.6,
+				"totalPrice": 15,
+				"promotion": {
+					"id": "season-spring-2025",
+					"type": "seasonal",
+					"label": "Spring Delights"
+				}
+			}
+		],
+		"totalAmount": 15,
+		"type": "delivery",
+		"details": {
+			"address": "вул. Примерна, 10, Київ, Україна",
+			"requiredDate": "11.05.2025",
+			"requiredTime": "14:00",
+			"note": "Доставка до дверей, зателефонуйте перед приїздом"
+		}
+	},
+	{
 		"id": "111",
 		"numberInLine": 150,
 		"createdDateAt": "18.05.2025",
@@ -11,7 +57,7 @@
 				"id": "spring-4",
 				"alt": "Iced Vanilla Latte with seasonal ingredients.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/spring-4-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -39,7 +85,7 @@
 				"id": "spring-cup-4",
 				"alt": "Honey Lavender with seasonal ingredients.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/cupcake/cupcake-spring-4.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -85,7 +131,7 @@
 				"id": "2",
 				"alt": "Cappuccino with milk foam.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-2-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""

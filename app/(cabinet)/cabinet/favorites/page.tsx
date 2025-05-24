@@ -2,8 +2,8 @@ import React from 'react'
 
 // type Props = {}
 
-const AccountOrdersPage = () => {
+const page = () => {
 	return <div>page</div>
 }
 
-export default AccountOrdersPage
+export default page

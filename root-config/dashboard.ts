@@ -39,15 +39,15 @@ export const dashboardConfig: DashboardConfig = {
 	accountSidebarNav: [
 		{
 			title: 'My favorites',
-			href: '/account/favorites'
+			href: '/cabinet/favorites'
 		},
 		{
 			title: 'My orders',
-			href: '/account/orders'
+			href: '/cabinet/orders'
 		},
 		{
 			title: 'Personal information',
-			href: '/account/personal'
+			href: '/cabinet/personal'
 		}
 	]
 }

@@ -28,17 +28,17 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 					<div className="w-40 h-8 flex justify-between items-center border border-gray-800 rounded-lg p-1">
 						<Button
 							text="Card"
-							className={`toggle ${!isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
+							className={`toggle ${isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
 							onClick={() => setIsShow(!isShow)}
 						/>
 						<Button
 							text="List"
-							className={`toggle ${isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
+							className={`toggle ${!isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
 							onClick={() => setIsShow(!isShow)}
 						/>
 					</div>
 				</div>
-				{products.length > 0 && isShow ? (
+				{products.length > 0 && !isShow ? (
 					<div className="w-full flex flex-wrap gap-8 justify-center">
 						{products?.map(product => (
 							<div
@@ -52,11 +52,9 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 				) : (
 					<div className="w-full flex flex-col gap-2 justify-start items-start">
 						{products.map(product => (
-							<div
-								key={product.id}
-								className="w-full text-gray-200 h-24 grid grid-cols-10 pr-2 content-normal items-center gap-2 border border-gray-800 rounded-sm overflow-hidden"
-							>
+							<div key={product.id} className="w-full border border-gray-800 rounded-sm relative overflow-hidden group">
 								<ProductCardList item={product} />
+								<div className="absolute inset-0 bg-gray-800/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0" />
 							</div>
 						))}
 					</div>
