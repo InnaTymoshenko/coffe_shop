@@ -1,9 +1,39 @@
+'use client'
+
 import React from 'react'
+import { Mosk_User } from '@/utils/moskUser'
+import Shell from '@/components/ui/shell'
+import { ProductData } from '@/types/item-type'
+import { useProductCart } from '@/store'
+import PtoductCard from '@/components/product-card'
 
-// type Props = {}
+const AccountFavoritePage = () => {
+	const { coffeeData, cupcakeData } = useProductCart()
+	const favoriteProducts: ProductData[] = [...coffeeData, ...cupcakeData].filter(product =>
+		Mosk_User?.favoritesProductsIds.includes(product.id)
+	)
 
-const page = () => {
-	return <div>page</div>
+	console.log(favoriteProducts)
+
+	return (
+		<Shell className="container flex flex-col gap-8">
+			<div className="w-full flex flex-col gap-4 justify-start items-start">
+				<h1 className="text-2xl font-bold">My Favorites Products</h1>
+				{favoriteProducts && Mosk_User && (
+					<div className="w-full flex flex-wrap gap-8 justify-center">
+						{favoriteProducts?.map(product => (
+							<div
+								key={product.id}
+								className="w-[16rem] h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+							>
+								<PtoductCard item={product} />
+							</div>
+						))}
+					</div>
+				)}
+			</div>
+		</Shell>
+	)
 }
 
-export default page
+export default AccountFavoritePage

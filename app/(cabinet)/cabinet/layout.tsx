@@ -19,7 +19,7 @@ function AdminLayout({
 				</aside>
 				<main className="relative flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto  bg-private basic">
 					{children}
-					<div className="absolute inset-0 bg-gray-900/50 z-0" />
+					{/* <div className="absolute inset-0 bg-gray-900/50 -z-10" /> */}
 				</main>
 			</div>
 		</div>
