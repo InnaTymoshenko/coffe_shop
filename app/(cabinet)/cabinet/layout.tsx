@@ -10,18 +10,16 @@ function AdminLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<div className="flex min-h-screen flex-col">
-			<div className="bg-gray-900 flex items-center h-20 justify-between border-b border-gray-800 px-6 sticky top-0" />
+		<div className="flex min-h-screen flex-col bg-private basic">
+			<div className="flex items-center h-20 justify-between border-b border-gray-800 px-6 sticky top-0 bg-gray-900/95" />
 			<Header />
 			<div className="flex-1 md:grid md:grid-cols-[200px_minmax(0,1fr)]">
-				<aside className="top-20 hidden h-[calc(100vh-5rem)] w-full overflow-y-auto bg-gray-900 border-r border-r-gray-800 md:sticky md:block">
-					<NavSidebar items={dashboardConfig.accountSidebarNav} />
+				<aside className="top-20 hidden h-[calc(100vh-5rem)] w-full overflow-y-auto border-r border-r-gray-800 md:sticky md:block bg-gray-900/95">
+					<NavSidebar items={dashboardConfig.accountSidebarNav} variant="user" />
 				</aside>
-				<main className="relative flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto  bg-private basic">
-					{children}
-					{/* <div className="absolute inset-0 bg-gray-900/50 -z-10" /> */}
-				</main>
+				<main className="flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto bg-gray-900/80">{children}</main>
 			</div>
+			{/* <div className="absolute inset-0 bg-gray-900/50 -z-10" /> */}
 		</div>
 	)
 }

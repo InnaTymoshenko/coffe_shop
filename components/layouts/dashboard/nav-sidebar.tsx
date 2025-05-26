@@ -7,11 +7,19 @@ import { NavSidebarItem } from '@/types/nav-sidebar'
 
 export interface SidebarNavProps extends React.HTMLAttributes<HTMLDivElement> {
 	items: NavSidebarItem[]
+	variant?: 'admin' | 'user' | 'default'
 }
 
-export default function NavSidebar({ items, className, ...props }: SidebarNavProps) {
+const variantClasses = {
+	default: 'bg-gray-900 text-gray-200',
+	admin: 'text-green-900 hover:bg-gray-300',
+	user: 'text-gray-200 hover:bg-gray-700'
+}
+
+export default function NavSidebar({ items, className, variant = 'default', ...props }: SidebarNavProps) {
 	const [selectedPath, setSelectedPath] = useState('/admin/main')
 	const pathname = usePathname()
+	const style = variantClasses[variant] || variantClasses.default
 
 	useEffect(() => {
 		setSelectedPath(pathname)
@@ -26,7 +34,7 @@ export default function NavSidebar({ items, className, ...props }: SidebarNavPro
 							key={index}
 							href={item.href}
 							className={`rounded-sm px-4 py-2 text-lg ${
-								selectedPath.startsWith(item.href) ? 'bg-gray-900 text-gray-200' : 'text-green-900 hover:bg-gray-300'
+								selectedPath.startsWith(item.href) ? 'bg-gray-800 text-gray-200' : style
 							}`}
 						>
 							{item.title}

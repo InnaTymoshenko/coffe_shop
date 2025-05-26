@@ -5,7 +5,7 @@ import { Mosk_User } from '@/utils/moskUser'
 import Shell from '@/components/ui/shell'
 import { OrderData } from '@/types/order-type'
 import fakeOrderData from '@/fakedata/orderData.json'
-import OrderHistoryItem from '@/components/order-history-item'
+import AccountOrderHistoryItem from '@/components/account-order-history-item'
 
 const AccountOrdersPage = () => {
 	const [ordersData, setOrdersData] = useState<OrderData[]>([])
@@ -24,23 +24,18 @@ const AccountOrdersPage = () => {
 
 	// console.log(ordersData)
 
-	console.log(selectedOrder)
+	// console.log(selectedOrder)
 
 	return (
 		<Shell className="container flex flex-col gap-8">
-			<div className="w-full flex flex-col gap-4 justify-start items-start">
-				<h1 className="text-2xl font-bold">My Orders History</h1>
-				{/* <p className="text-xl font-medium">{`${Mosk_User?.firstName} ${Mosk_User?.lastName}`}</p>
-				<div className="flex flex-col justify-start items-start gap-1 ">
-					<span>{`ID: ${Mosk_User?.id}`}</span>
-					<span>{`User from: ${Mosk_User?.createdAt}`}</span>
-				</div> */}
+			<div className="w-full flex flex-col gap-4 justify-start items-start text-gray-200">
+				<h1 className="text-3xl font-bold my-8">My Orders History</h1>
 				{selectedOrder && Mosk_User && (
-					<ul className="w-full">
+					<ul className="w-full ">
 						{selectedOrder.length > 0 &&
 							selectedOrder.map(order => (
-								<li key={order.id}>
-									<OrderHistoryItem order={order} />
+								<li key={order.id} className="">
+									<AccountOrderHistoryItem order={order} />
 								</li>
 							))}
 					</ul>

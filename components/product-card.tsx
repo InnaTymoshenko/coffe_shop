@@ -32,6 +32,8 @@ const PtoductCard = ({ item }: Props) => {
 		addToCart(item, size)
 	}
 
+	console.log(item)
+
 	return (
 		<div className="w-full h-full relative">
 			<img
@@ -41,15 +43,20 @@ const PtoductCard = ({ item }: Props) => {
 				alt={item.title}
 				className="w-full h-full object-cover object-center"
 			/>
-			{item.promotion && <div className="label ">{item.promotion?.label}</div>}
+			{item.promotion?.type === 'seasonal' && item.promotion.isActive && (
+				<div className="label bg-green-600 ">{item.promotion?.label}</div>
+			)}
+			{item.promotion?.type === 'seasonal' && !item.promotion.isActive && (
+				<div className="label bg-red-600 px-6">{`Out of season`}</div>
+			)}
 			<h3
-				className="text-2xl pl-5 text-gray-200 cursor-pointer hover:text-orange-500 absolute top-10 left-4 z-10 transition-all duration-300"
+				className="text-2xl font-medium pl-5 text-gray-200 cursor-pointer hover:text-orange-400 absolute top-10 left-4 z-10 transition-all duration-300"
 				onClick={() => router.push(`/menu/${item.id}`)}
 			>
 				{item.title}
 			</h3>
 			<div className="card_hover absolute z-5 bottom-0 left-0 w-full h-full bg-black/50 flex flex-col gap-4 items-start justify-end text-white text-left p-4 ">
-				<div className="absolute top-0 right-0 bg-gray-900/70 p-2 rounded-bl-lg flex gap-1 items-center">
+				<div className="absolute top-0 right-0 bg-gray-900/80 p-2 rounded-bl-lg flex gap-1 items-center">
 					<span className="font-thin text-md">{item.rating}</span>
 					<FaStar className="text-yellow" />
 				</div>
@@ -59,14 +66,6 @@ const PtoductCard = ({ item }: Props) => {
 						<div className="w-full flex justify-between items-center gap-2 text-lg">
 							{item.price.map((p: IPrice) => (
 								<div key={`coffe-${p.size}`}>
-									{/* {
-										<ProductCardSize
-											item={p}
-											text={p.size === 'small' ? 'S' : p.size === 'medium' ? 'M' : 'L'}
-											selected={selected}
-											selectedHandler={selectedHandler}
-										/>
-									} */}
 									{p.size === 'small' && (
 										<ProductCardSize item={p} text={'S'} selected={selected} selectedHandler={selectedHandler} />
 									)}
@@ -102,8 +101,13 @@ const PtoductCard = ({ item }: Props) => {
 							</div>
 						</div>
 						<Button
-							className="button relative overflow-hidden w-32 h-10 bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+							className={`button relative overflow-hidden w-32 h-10 py-2 px-4 border-2 transition-all duration-150 ${
+								item.promotion?.type === 'seasonal' && !item.promotion.isActive
+									? 'bg-gray-400 border-gray-400 text-gray-700 cursor-not-allowed pointer-events-none'
+									: 'bg-orange-600 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95'
+							}`}
 							onClick={() => addToCartHandler(item, selected)}
+							disabled={item.promotion?.type === 'seasonal' && !item.promotion.isActive}
 						>
 							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
 						</Button>
