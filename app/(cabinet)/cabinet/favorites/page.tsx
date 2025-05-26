@@ -6,18 +6,12 @@ import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { useProductCart } from '@/store'
 import PtoductCard from '@/components/product-card'
-// import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 const AccountFavoritePage = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
 	const favoriteProducts: ProductData[] = [...coffeeData, ...cupcakeData].filter(product =>
 		Mosk_User?.favoritesProductsIds.includes(product.id)
 	)
-
-	// const coffeeUpdated = useSeasonalProducts(coffeeData)
-	// const cupcakeUpdated = useSeasonalProducts(cupcakeData)
-
-	// console.log(coffeeUpdated.);
 
 	return (
 		<Shell className="container flex flex-col gap-8">

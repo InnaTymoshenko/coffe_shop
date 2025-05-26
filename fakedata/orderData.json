@@ -296,7 +296,7 @@
 				"id": "2",
 				"alt": "Cappuccino with milk foam.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-2-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -319,7 +319,7 @@
 				"id": "3",
 				"alt": "Sweet and creamy latte.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-3-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -587,7 +587,7 @@
 				"id": "2",
 				"alt": "Cappuccino with milk foam.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-2-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -610,7 +610,7 @@
 				"id": "3",
 				"alt": "Sweet and creamy latte.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-3-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -878,7 +878,7 @@
 				"id": "2",
 				"alt": "Cappuccino with milk foam.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-2-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -901,7 +901,7 @@
 				"id": "3",
 				"alt": "Sweet and creamy latte.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-3-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -1169,7 +1169,7 @@
 				"id": "2",
 				"alt": "Cappuccino with milk foam.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-2-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""
@@ -1192,7 +1192,7 @@
 				"id": "3",
 				"alt": "Sweet and creamy latte.",
 				"src": {
-					"medium": "",
+					"medium": "/assets/coffee/coffee-3-min.jpg",
 					"portrait": "",
 					"landscape": "",
 					"tiny": ""

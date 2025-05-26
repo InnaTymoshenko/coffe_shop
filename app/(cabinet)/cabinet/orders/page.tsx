@@ -22,10 +22,6 @@ const AccountOrdersPage = () => {
 		}
 	}, [ordersData])
 
-	// console.log(ordersData)
-
-	// console.log(selectedOrder)
-
 	return (
 		<Shell className="container flex flex-col gap-8">
 			<div className="w-full flex flex-col gap-4 justify-start items-start text-gray-200">
