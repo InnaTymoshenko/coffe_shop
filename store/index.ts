@@ -12,6 +12,8 @@ interface ICartStore {
 	cartProducts: CartItem[]
 	activeTab: 'coffee' | 'cupcake'
 	isShow: boolean
+	openCart: boolean
+	setOpenCart: (value: boolean) => void
 	setIsShow: (value: boolean) => void
 	setActiveTab: (value: 'coffee' | 'cupcake') => void
 	// fetchCoffe: (url: string) => void
@@ -27,6 +29,8 @@ export const useProductCart = create<ICartStore>()(set => ({
 	cartProducts: [],
 	activeTab: 'coffee',
 	isShow: false,
+	openCart: false,
+	setOpenCart: value => set({ openCart: value }),
 	setIsShow: value => set({ isShow: value }),
 	setActiveTab: value => set({ activeTab: value }),
 	// fetchCoffe: url => {

@@ -81,6 +81,41 @@ export const normalizedPhone = (phone: string) => {
 	return phone.replace(/[^+\d]/g, '')
 }
 
+export function formatDateTime(createdDateAt: string, createdTimeAt: string): string {
+	const [dayStr, monthStr, yearStr] = createdDateAt.split('.')
+	const day = Number(dayStr)
+	const month = Number(monthStr) - 1
+	const year = Number(yearStr)
+
+	const [hours, minutes] = createdTimeAt.split(':')
+	const date = new Date(year, month, day, Number(hours), Number(minutes))
+
+	const months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+	]
+
+	const getOrdinal = (n: number): string => {
+		const s = ['th', 'st', 'nd', 'rd']
+		const v = n % 100
+		return n + (s[(v - 20) % 10] || s[v] || s[0])
+	}
+
+	return `${getOrdinal(date.getDate())} ${months[date.getMonth()]} ${date.getFullYear()} ${String(
+		date.getHours()
+	).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
+}
+
 export function filterByDateRange<T>(data: T[], range: DateRange, dateField: keyof T): T[] {
 	if (range === 'all') return data
 	const now = new Date()

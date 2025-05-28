@@ -38,12 +38,21 @@ export const dashboardConfig: DashboardConfig = {
 	],
 	accountSidebarNav: [
 		{
+			title: 'Main',
+			href: '/cabinet'
+		},
+		{
 			title: 'My favorites',
 			href: '/cabinet/favorites'
 		},
 		{
 			title: 'My orders',
 			href: '/cabinet/orders'
+		},
+		{
+			title: 'My cart',
+			href: '',
+			action: 'openCart'
 		},
 		{
 			title: 'Personal information',

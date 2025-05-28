@@ -10,7 +10,7 @@ function AdminLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<div className="flex min-h-screen flex-col bg-private basic">
+		<div className="flex min-h-screen flex-col">
 			<div className="flex items-center h-20 justify-between border-b border-gray-800 px-6 sticky top-0 bg-gray-900/95" />
 			<Header />
 			<div className="flex-1 md:grid md:grid-cols-[200px_minmax(0,1fr)]">
@@ -19,7 +19,6 @@ function AdminLayout({
 				</aside>
 				<main className="flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto bg-gray-900/80">{children}</main>
 			</div>
-			{/* <div className="absolute inset-0 bg-gray-900/50 -z-10" /> */}
 		</div>
 	)
 }

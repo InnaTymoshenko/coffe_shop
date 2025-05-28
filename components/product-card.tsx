@@ -32,7 +32,7 @@ const PtoductCard = ({ item }: Props) => {
 		addToCart(item, size)
 	}
 
-	console.log(item)
+	// console.log(item)
 
 	return (
 		<div className="w-full h-full relative">

@@ -37,7 +37,7 @@ const Cart = ({ openCartHandler }: Props) => {
 	// console.log(cartProducts)
 
 	return (
-		<div className="fixed top-0 bottom-0 w-full nim-h-screen bg-gray-900/80 z-50 flex justify-end">
+		<div id="main_cart" className="fixed top-0 bottom-0 w-full nim-h-screen bg-gray-900/80 z-50 flex justify-end">
 			<div
 				className="w-[45%] min-h-full bg-gray-900 border-l-2 border-l-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto"
 				ref={cartRef}

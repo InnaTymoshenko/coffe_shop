@@ -18,8 +18,8 @@ import AnimatedButton from './ui/animated-button'
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
-	const [openCart, setOpenCart] = useState(false)
-	const { cartProducts } = useProductCart()
+	// const [openCart, setOpenCart] = useState(false)
+	const { cartProducts, openCart, setOpenCart } = useProductCart()
 	const pathname = usePathname()
 	const segments = pathname.split('/').filter(Boolean)
 	const rootSection = segments[0]
