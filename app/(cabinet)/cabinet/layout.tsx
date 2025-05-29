@@ -1,10 +1,9 @@
+import React from 'react'
 import Header from '@/components/header'
-// import AdminHeader from '@/components/layouts/dashboard/Admin-header'
 import NavSidebar from '@/components/layouts/dashboard/nav-sidebar'
 import { dashboardConfig } from '@/root-config/dashboard'
-import React from 'react'
 
-function AdminLayout({
+function AccountLayout({
 	children
 }: Readonly<{
 	children: React.ReactNode
@@ -23,4 +22,4 @@ function AdminLayout({
 	)
 }
 
-export default AdminLayout
+export default AccountLayout

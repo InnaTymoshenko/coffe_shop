@@ -11,8 +11,6 @@ import { UserProfile } from '@/types/users-type'
 import AnimatedButton from '@/components/ui/animated-button'
 import AvatarEditor from '@/components/avatar-editor'
 
-// type Props = {}
-
 const AccountPersonalPage = () => {
 	const { cafesData, moskUser, editMoskUser } = useAdminStore()
 	const [isEditing, setIsEditing] = useState(false)

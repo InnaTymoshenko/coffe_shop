@@ -1,23 +1,25 @@
 'use client'
 
 import React from 'react'
-import { Mosk_User } from '@/utils/moskUser'
 import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { useProductCart } from '@/store'
 import PtoductCard from '@/components/product-card'
+import { useAdminStore } from '@/store/admin-store'
 
 const AccountFavoritePage = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
+	const { moskUser } = useAdminStore()
+
 	const favoriteProducts: ProductData[] = [...coffeeData, ...cupcakeData].filter(product =>
-		Mosk_User?.favoritesProductsIds.includes(product.id)
+		moskUser?.favoritesProductsIds?.includes(product.id)
 	)
 
 	return (
 		<Shell className="container flex flex-col gap-8">
 			<div className="w-full flex flex-col gap-4 justify-start items-start text-gray-200">
 				<h1 className="text-3xl font-bold my-8">My Favorites Products</h1>
-				{favoriteProducts && Mosk_User && (
+				{favoriteProducts && moskUser && (
 					<div className="w-full flex flex-wrap gap-8 justify-center">
 						{favoriteProducts?.map(product => (
 							<div
