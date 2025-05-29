@@ -78,12 +78,20 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 				<div className="flex flex-col gap-2">
 					<div className="w-full grid grid-cols-3 gap-y-2">
 						<label className="block text-sm font-medium">Title:</label>
-						<input {...register('title')} placeholder="Title" className="w-full border p-2 rounded col-span-2" />
+						<input
+							{...register('title')}
+							placeholder="Title"
+							className="w-full border border-gray-400 p-2 rounded col-span-2"
+						/>
 						{errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 					</div>
 					<div className="w-full grid grid-cols-3 gap-y-2">
 						<label className="block text-sm font-medium">Description:</label>
-						<textarea {...register('alt')} placeholder="Description" className="w-full border p-2 rounded col-span-2" />
+						<textarea
+							{...register('alt')}
+							placeholder="Description"
+							className="w-full border border-gray-400 p-2 rounded col-span-2"
+						/>
 						{errors.alt && <p className="text-red-500 text-sm">{errors.alt.message}</p>}
 					</div>
 					<div className="w-full grid grid-cols-3 gap-y-2">
@@ -91,7 +99,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 						<input
 							{...register('category')}
 							placeholder="Cupcake"
-							className="w-full border p-2 rounded col-span-2"
+							className="w-full border border-gray-400 p-2 rounded col-span-2"
 							disabled
 						/>
 					</div>
@@ -103,7 +111,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 									key={i}
 									{...register(`ingridients.${i}`)}
 									placeholder={`Ingredient ${i + 1}`}
-									className="w-full border p-2 rounded mb-1"
+									className="w-full border border-gray-400 p-2 rounded mb-1"
 								/>
 							))}
 						</div>
@@ -115,12 +123,16 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 						<div className=" flex flex-col gap-2 col-span-2">
 							{[0].map(i => (
 								<div key={i} className="grid grid-cols-2 gap-2 mb-2">
-									<input {...register(`price.${i}.size`)} placeholder="Size" className="border p-2 rounded" />
+									<input
+										{...register(`price.${i}.size`)}
+										placeholder="Size"
+										className="border border-gray-400 p-2 rounded"
+									/>
 									<input
 										type="number"
 										{...register(`price.${i}.price`, { valueAsNumber: true })}
 										placeholder="Price"
-										className="border p-2 rounded"
+										className="border border-gray-400 p-2 rounded"
 									/>
 									{!isAdmin && (
 										<>
@@ -129,7 +141,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 												step="0.1"
 												{...register(`price.${i}.quantity`, { valueAsNumber: true })}
 												placeholder="Qty"
-												className="border p-2 rounded"
+												className="border border-gray-400 p-2 rounded"
 											/>
 											<input type="checkbox" {...register(`price.${i}.isChecked`)} className="mt-2" />
 										</>
@@ -141,18 +153,26 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 					<div className="w-full grid grid-cols-3 gap-y-2">
 						<label className="block text-sm font-medium">Image URLs:</label>
 						<div className=" flex flex-col gap-2 col-span-2">
-							<input {...register('src.medium')} placeholder="Medium Image URL" className="w-full border p-2 rounded" />
+							<input
+								{...register('src.medium')}
+								placeholder="Medium Image URL"
+								className="w-full border border-gray-400 p-2 rounded"
+							/>
 							<input
 								{...register('src.portrait')}
 								placeholder="Portrait Image URL"
-								className="w-full border p-2 rounded"
+								className="w-full border border-gray-400 p-2 rounded"
 							/>
 							<input
 								{...register('src.landscape')}
 								placeholder="Landscape Image URL"
-								className="w-full border p-2 rounded"
+								className="w-full border border-gray-400 p-2 rounded"
 							/>
-							<input {...register('src.tiny')} placeholder="Tiny Image URL" className="w-full border p-2 rounded" />
+							<input
+								{...register('src.tiny')}
+								placeholder="Tiny Image URL"
+								className="w-full border border-gray-400 p-2 rounded"
+							/>
 						</div>
 					</div>
 					<div className="w-full grid grid-cols-3 gap-y-2">
@@ -162,7 +182,7 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 							step="0.1"
 							{...register('rating', { valueAsNumber: true })}
 							placeholder="Rating"
-							className="w-full border p-2 rounded col-span-2"
+							className="w-full border border-gray-400 p-2 rounded col-span-2"
 						/>
 						{errors.rating && <p className="text-red-500 text-sm">{errors.rating.message}</p>}
 					</div>
@@ -179,14 +199,14 @@ export function CupcakeForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 									value={field.value ?? undefined}
 									onChange={field.onChange}
 									error={fieldState.error?.message}
-									className="w-full border p-2 rounded-sm"
+									className="w-full p-2 rounded-sm"
 								/>
 							)}
 						/>
 					</div>
 					<div>
 						<label className="block text-sm font-medium">Promotion label:</label>
-						<input type="text" {...register('promotion.label')} className="border p-2 rounded" />
+						<input type="text" {...register('promotion.label')} className="border border-gray-400 p-2 rounded" />
 					</div>
 				</div>
 			</div>

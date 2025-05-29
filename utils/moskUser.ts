@@ -1,7 +1,10 @@
-export const Mosk_User = {
+import { UserProfile } from '@/types/users-type'
+
+export const Mosk_User: UserProfile = {
 	id: '1',
 	firstName: 'Ілля',
 	lastName: 'Стець',
+	secondName: 'Максим',
 	createdAt: '31.07.2024',
 	updatedAt: '01.05.2025',
 	status: 'active',

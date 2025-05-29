@@ -30,7 +30,7 @@ export function AddProductForm({ onAdd, setIsAddProduct }: AddNewProduct) {
 					options={categoryOptions}
 					value={category}
 					onChange={setCategory}
-					className="w-32 border rounded p-2"
+					className="w-32 p-2"
 				/>
 			</div>
 			{category === 'Coffee' && <CoffeeForm onAdd={onAdd} setIsAddProduct={setIsAddProduct} />}

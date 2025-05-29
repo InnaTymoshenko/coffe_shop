@@ -82,13 +82,17 @@ export const normalizedPhone = (phone: string) => {
 }
 
 export function formatDateTime(createdDateAt: string, createdTimeAt: string): string {
-	const [dayStr, monthStr, yearStr] = createdDateAt.split('.')
+	const dateSeparator = createdDateAt.includes('.') ? '.' : '/'
+
+	const [dayStr, monthStr, yearStr] = createdDateAt.split(dateSeparator)
 	const day = Number(dayStr)
 	const month = Number(monthStr) - 1
 	const year = Number(yearStr)
 
 	const [hours, minutes] = createdTimeAt.split(':')
 	const date = new Date(year, month, day, Number(hours), Number(minutes))
+
+	if (isNaN(date.getTime())) return 'Invalid date'
 
 	const months = [
 		'January',

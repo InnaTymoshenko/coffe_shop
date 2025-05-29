@@ -42,7 +42,7 @@ function Select<T extends string | number>({
 				disabled={disabled}
 				required={required}
 				className={`p-2 border rounded-lg focus:outline-none cursor-pointer ${
-					error ? 'border-red-500' : 'border-gray-900'
+					error ? 'border-red-500' : 'border-gray-400'
 				} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''} ${className}`}
 			>
 				{options.map(option => (

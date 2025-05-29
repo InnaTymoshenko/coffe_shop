@@ -40,7 +40,7 @@ const MainAdmin = () => {
 					options={dateRangeOptions}
 					value={dateRange}
 					onChange={val => setDateRange(val as DateRange)}
-					className="w-1/3 outline-none flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 bg-gray-50 hover:bg-gray-100"
+					className="w-1/3 outline-none flex items-center justify-between gap-1 text-gray-900 bg-gray-50 hover:bg-gray-100"
 				/>
 			</div>
 			<div className="flex flex-col gap-6">

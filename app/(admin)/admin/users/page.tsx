@@ -72,7 +72,7 @@ const UsersPage = () => {
 							value={search}
 							onChange={e => setSearch(e.target.value)}
 							placeholder="Search by name or email"
-							className="border p-2 rounded-lg"
+							className="border border-gray-400 p-2 rounded-lg"
 						/>
 					</div>
 					<div className="w-[100px] flex flex-col">
@@ -90,7 +90,7 @@ const UsersPage = () => {
 							value={minOrders}
 							onChange={e => setMinOrders(e.target.value)}
 							placeholder="0"
-							className="border p-2 rounded-lg"
+							className="border border-gray-400 p-2 rounded-lg"
 						/>
 					</div>
 					<div className="w-[150px] flex flex-col">
@@ -99,7 +99,7 @@ const UsersPage = () => {
 							type="date"
 							value={createdAfter}
 							onChange={e => setCreatedAfter(e.target.value)}
-							className="border p-2 rounded-lg"
+							className="border border-gray-400 p-2 rounded-lg"
 						/>
 					</div>
 					<Button

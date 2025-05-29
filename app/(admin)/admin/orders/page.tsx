@@ -102,7 +102,7 @@ const OrderPage = () => {
 						value={search}
 						onChange={e => setSearch(e.target.value)}
 						placeholder="Search by order ID"
-						className="border p-2 rounded-lg"
+						className="border border-gray-400 p-2 rounded-lg"
 					/>
 				</div>
 				<div className="w-[100px] flex flex-col">
@@ -121,7 +121,7 @@ const OrderPage = () => {
 						type="date"
 						value={createdAfter}
 						onChange={e => setCreatedAfter(e.target.value)}
-						className="border p-2 rounded-lg"
+						className="border border-gray-400 p-2 rounded-lg"
 					/>
 				</div>
 				<Button

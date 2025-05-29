@@ -86,7 +86,7 @@ const OrdersHistoryPage = () => {
 								value={search}
 								onChange={e => setSearch(e.target.value)}
 								placeholder="Search by order ID"
-								className="border p-2 rounded-lg"
+								className="border border-gray-400 p-2 rounded-lg"
 							/>
 						</div>
 						<div className="w-[150px] flex flex-col">
@@ -95,7 +95,7 @@ const OrdersHistoryPage = () => {
 								type="date"
 								value={createdAfter}
 								onChange={e => setCreatedAfter(e.target.value)}
-								className="border p-2 rounded-lg"
+								className="border border-gray-400 p-2 rounded-lg"
 							/>
 						</div>
 						<Button

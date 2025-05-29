@@ -71,21 +71,21 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 	}
 
 	return (
-		<Shell className="container w-full max-w-xl flex flex-col gap-6 bg-gray-50 p-8 rounded-lg ">
+		<Shell className="container flex flex-col gap-6 rounded-lg ">
 			<div className="w-full flex justify-between items-center">
 				<h2 className="text-2xl font-semibold">Edit product</h2>
 				<span className="font-medium">Category: {product.category}</span>
 			</div>
-			<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 max-w-xl mx-auto">
+			<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 w-full">
 				<div>
 					<label className="block text-sm font-medium">Title</label>
-					<input {...register('title')} className="w-full border rounded p-2" />
+					<input {...register('title')} className="w-full border border-gray-400 rounded p-2" />
 					{errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 				</div>
 
 				<div>
 					<label className="block text-sm font-medium">Description</label>
-					<input {...register('alt')} className="w-full border rounded p-2" />
+					<input {...register('alt')} className="w-full border border-gray-400 rounded p-2" />
 					{errors.alt && <p className="text-red-500 text-sm">{errors.alt.message}</p>}
 				</div>
 
@@ -95,7 +95,7 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 						type="number"
 						step="0.1"
 						{...register('rating', { valueAsNumber: true })}
-						className="w-full border rounded p-2"
+						className="w-full border border-gray-400 rounded p-2"
 					/>
 					{errors.rating && <p className="text-red-500 text-sm">{errors.rating.message}</p>}
 				</div>
@@ -103,7 +103,11 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 				<div>
 					<label className="block text-sm font-medium">Ingredients</label>
 					{product.ingridients.map((_, i) => (
-						<input key={i} {...register(`ingridients.${i}`)} className="w-full border rounded p-2 my-1" />
+						<input
+							key={i}
+							{...register(`ingridients.${i}`)}
+							className="w-full border border-gray-400 rounded p-2 my-1"
+						/>
 					))}
 				</div>
 				<div className="grid grid-cols-2 gap-2">
@@ -118,26 +122,26 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 									value={field.value ?? ''}
 									onChange={field.onChange}
 									error={fieldState.error?.message}
-									className="w-full border p-2 rounded-sm"
+									className="w-full p-2 rounded-sm"
 								/>
 							)}
 						/>
 					</div>
 					<div>
 						<label className="block text-sm font-medium">Promotion label:</label>
-						<input type="text" {...register('promotion.label')} className="border p-2 rounded" />
+						<input type="text" {...register('promotion.label')} className="w-full border border-gray-400 p-2 rounded" />
 					</div>
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Prices</label>
 					{product.price.map((_, i) => (
 						<div key={i} className="grid grid-cols-2 gap-2 my-2">
-							<input type="text" {...register(`price.${i}.size`)} className="border rounded p-2" />
+							<input type="text" {...register(`price.${i}.size`)} className="border border-gray-400 rounded p-2" />
 							<input
 								type="number"
 								step={0.01}
 								{...register(`price.${i}.price`, { valueAsNumber: true })}
-								className="border rounded p-2"
+								className="border border-gray-400 rounded p-2"
 							/>
 							{!isAdmin && (
 								<>
@@ -145,7 +149,7 @@ export function EditProductForm({ product, onSave, setIsEditing }: EditForm) {
 										type="number"
 										{...register(`price.${i}.quantity`, { valueAsNumber: true })}
 										placeholder="Qty"
-										className="border p-2 rounded"
+										className="border border-gray-400 p-2 rounded"
 									/>
 									<input type="checkbox" {...register(`price.${i}.isChecked`)} className="mt-2" />
 								</>

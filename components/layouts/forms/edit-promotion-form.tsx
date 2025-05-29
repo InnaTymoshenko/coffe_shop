@@ -51,22 +51,26 @@ export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromo
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 max-w-xl mx-auto">
 				<div>
 					<label className="block text-sm font-medium">Title</label>
-					<input {...register('title')} placeholder="Title" className="w-full border p-2 rounded" />
+					<input {...register('title')} placeholder="Title" className="w-full border border-gray-400 p-2 rounded" />
 					{errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Description</label>
-					<textarea {...register('description')} placeholder="Description" className="w-full border p-2 rounded" />
+					<textarea
+						{...register('description')}
+						placeholder="Description"
+						className="w-full border border-gray-400 p-2 rounded"
+					/>
 					{errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Start</label>
-					<input type="date" {...register('start')} className="w-full border p-2 rounded" />
+					<input type="date" {...register('start')} className="w-full border border-gray-400 p-2 rounded" />
 					{errors.start && <p className="text-red-500 text-sm">{errors.start.message}</p>}
 				</div>
 				<div>
 					<label className="block text-sm font-medium">End</label>
-					<input type="date" {...register('end')} className="w-full border p-2 rounded" />
+					<input type="date" {...register('end')} className="w-full border border-gray-400 p-2 rounded" />
 					{errors.end && <p className="text-red-500 text-sm">{errors.end.message}</p>}
 				</div>
 				<div>
@@ -80,14 +84,14 @@ export function EditPromotionForm({ promotion, onSave, setIsEditing }: EditPromo
 								value={field.value}
 								onChange={field.onChange}
 								error={fieldState.error?.message}
-								className="w-full border p-2 rounded-sm"
+								className="w-full p-2 rounded-sm"
 							/>
 						)}
 					/>
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Type</label>
-					<input {...register('type')} placeholder="Type" className="w-full border p-2 rounded" />
+					<input {...register('type')} placeholder="Type" className="w-full border border-gray-400 p-2 rounded" />
 					{errors.type && <p className="text-red-500 text-sm">{errors.type.message}</p>}
 				</div>
 				<div>

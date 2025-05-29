@@ -26,7 +26,7 @@ const ProductPage = () => {
 					<h1 className="text-2xl font-bold">Products</h1>
 					<Button
 						text="Add new product"
-						className="flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
+						className="flex items-center justify-between gap-1 border border-gray-400 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
 						onClick={() => setIsAddProduct(true)}
 					/>
 				</div>

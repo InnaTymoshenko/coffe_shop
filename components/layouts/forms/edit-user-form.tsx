@@ -63,35 +63,35 @@ export const EditUserProfileForm = ({ item, onSave, setIsEditing }: EditUserProp
 				<div className="w-full grid grid-cols-2 gap-x-2 items-center">
 					<div className="pr-2">
 						<label className="block text-sm font-medium">First Name:</label>
-						<input {...register('firstName')} className="w-full border p-2 rounded" />
+						<input {...register('firstName')} className="w-full border border-gray-400 p-2 rounded" />
 						{errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message}</p>}
 					</div>
 					<div className="pl-2">
 						<label className="block text-sm font-medium">Last Name:</label>
-						<input {...register('lastName')} className="w-full border p-2 rounded" />
+						<input {...register('lastName')} className="w-full border border-gray-400 p-2 rounded" />
 						{errors.lastName && <p className="text-red-500 text-sm">{errors.lastName.message}</p>}
 					</div>
 				</div>
 				<div className="w-full grid grid-cols-2 gap-x-2 items-center">
 					<div className="pr-2">
 						<label className="block text-sm font-medium">Email:</label>
-						<input type="email" {...register('email')} className="w-full border p-2 rounded" />
+						<input type="email" {...register('email')} className="w-full border border-gray-400 p-2 rounded" />
 						{errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 					</div>
 					<div className="pl-2">
 						<label className="block text-sm font-medium">Phone:</label>
-						<input {...register('phone')} className="w-full border p-2 rounded" />
+						<input {...register('phone')} className="w-full border border-gray-400 p-2 rounded" />
 						{errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
 					</div>
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Address:</label>
-					<input {...register('address')} className="w-full border p-2 rounded" />
+					<input {...register('address')} className="w-full border border-gray-400 p-2 rounded" />
 					{errors.address && <p className="text-red-500 text-sm">{errors.address.message}</p>}
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Birthday (dd.mm.yy):</label>
-					<input {...register('birthday')} className="w-full border p-2 rounded" />
+					<input {...register('birthday')} className="w-full border border-gray-400 p-2 rounded" />
 					{errors.birthday && <p className="text-red-500 text-sm">{errors.birthday.message}</p>}
 				</div>
 				<div className="w-full grid grid-cols-2 gap-x-2 items-center">
@@ -113,7 +113,7 @@ export const EditUserProfileForm = ({ item, onSave, setIsEditing }: EditUserProp
 					</div>
 					<div className="pl-2">
 						<label className="block text-sm font-medium">Birthday (dd.mm.yy):</label>
-						<input {...register('birthday')} className="w-full border p-2 rounded" />
+						<input {...register('birthday')} className="w-full border border-gray-400 p-2 rounded" />
 						{errors.birthday && <p className="text-red-500 text-sm">{errors.birthday.message}</p>}
 					</div>
 				</div>
@@ -153,12 +153,12 @@ export const EditUserProfileForm = ({ item, onSave, setIsEditing }: EditUserProp
 				</div>
 				<div>
 					<label className="block text-sm font-medium">Avatar:</label>
-					<input {...register('avatarUrl')} className="w-full border p-2 rounded" />
+					<input {...register('avatarUrl')} className="w-full border border-gray-400 p-2 rounded" />
 					{errors.avatarUrl && <p className="text-red-500 text-sm">{errors.avatarUrl.message}</p>}
 				</div>
 				<div>
 					<label className="font-medium">Notes</label>
-					<textarea {...register('notes')} className="w-full border p-2 rounded" />
+					<textarea {...register('notes')} className="w-full border border-gray-400 p-2 rounded" />
 				</div>
 
 				<div className="w-full flex justify-start items-center gap-6">

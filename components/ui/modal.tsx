@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 const variantClasses = {
-	default: 'bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full',
+	default: 'bg-gray-200 p-6 rounded-lg shadow-lg max-w-3xl w-full',
 	editing: 'fixed top-0 right-0 w-[600px] h-full'
 }
 

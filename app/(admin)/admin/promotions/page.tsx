@@ -34,7 +34,7 @@ const PromotionsPage = () => {
 				<h1 className="text-2xl font-bold">Promotions</h1>
 				<Button
 					text="Add promotion"
-					className="flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
+					className="flex items-center justify-between gap-1 border border-gray-400 rounded-lg px-4 py-2 text-gray-900 hover:bg-gray-100"
 					onClick={() => setIsAddPromotion(true)}
 				/>
 			</div>
@@ -43,7 +43,7 @@ const PromotionsPage = () => {
 					options={promotionStatus}
 					value={promotion}
 					onChange={setPromotion}
-					className="w-full outline-none flex items-center justify-between gap-1 border border-gray-900 rounded-lg px-4 py-2 text-gray-900 bg-gray-50 hover:bg-gray-100"
+					className="w-full outline-none flex items-center justify-between gap-1 text-gray-900 bg-gray-50 hover:bg-gray-100"
 				/>
 			</div>
 			{filteredPromotions.length === 0 ? <p>No promotions found.</p> : <PromotionTable data={filteredPromotions} />}
