@@ -23,7 +23,7 @@ const AccountFavoritePage = () => {
 		<Shell className="container flex flex-col gap-8">
 			<div className="w-full flex flex-col gap-4 justify-start items-start text-gray-200">
 				<h1 className="text-3xl font-bold my-8">My Favorites Products</h1>
-				{favoriteProducts && moskUser && (
+				{favoriteProducts.length > 0 && moskUser ? (
 					<div className="w-full flex flex-wrap gap-8 justify-center">
 						{favoriteProducts?.map(product => (
 							<div
@@ -34,6 +34,8 @@ const AccountFavoritePage = () => {
 							</div>
 						))}
 					</div>
+				) : (
+					<p className="text-gray-200 text-xl font-bold my-8">No favorite products yet.</p>
 				)}
 			</div>
 		</Shell>
