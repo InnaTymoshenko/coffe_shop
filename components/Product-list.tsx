@@ -104,12 +104,15 @@ const ProductList = ({ product }: ProductListProps) => {
 						<div className="flex flex-col gap-2">
 							<h1 className="text-3xl">{product.title}</h1>
 							<div className="p-2 flex gap-1 items-center">
-								<FaStar className="text-yellow" />
-								<span className="font-thin text-md">{product.rating}</span>
-								<span className="font-thin text-md">{`(556)`}</span>
+								{product.rating && product.ratingCount && (
+									<>
+										<FaStar className="text-yellow" />
+										<span className="font-thin text-md">{product.rating}</span>
+										<span className="font-thin text-md">{`(${product.ratingCount})`}</span>
+									</>
+								)}
 							</div>
 						</div>
-
 						<p className="my-4 ">{product.alt}</p>
 					</div>
 				</div>

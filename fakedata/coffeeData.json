@@ -32,6 +32,7 @@
 			}
 		],
 		"rating": 4.9,
+		"ratingCount": 556,
 		"totalPrice": 0
 	},
 	{
@@ -67,6 +68,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 342,
 		"totalPrice": 0
 	},
 	{
@@ -102,6 +104,7 @@
 			}
 		],
 		"rating": 5.0,
+		"ratingCount": 120,
 		"totalPrice": 0
 	},
 	{
@@ -137,6 +140,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 154,
 		"totalPrice": 0
 	},
 	{
@@ -172,6 +176,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 550,
 		"totalPrice": 0
 	},
 	{
@@ -207,6 +212,7 @@
 			}
 		],
 		"rating": 4.1,
+		"ratingCount": 542,
 		"totalPrice": 0
 	},
 	{
@@ -242,6 +248,7 @@
 			}
 		],
 		"rating": 4.2,
+		"ratingCount": 450,
 		"totalPrice": 0
 	},
 	{
@@ -277,6 +284,7 @@
 			}
 		],
 		"rating": 4.4,
+		"ratingCount": 762,
 		"totalPrice": 0
 	},
 	{
@@ -312,6 +320,7 @@
 			}
 		],
 		"rating": 4.1,
+		"ratingCount": 120,
 		"totalPrice": 0
 	},
 	{
@@ -347,6 +356,7 @@
 			}
 		],
 		"rating": 4.4,
+		"ratingCount": 234,
 		"totalPrice": 0
 	},
 	{
@@ -382,6 +392,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 453,
 		"totalPrice": 0
 	},
 	{
@@ -417,6 +428,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 563,
 		"totalPrice": 0
 	},
 	{
@@ -452,6 +464,7 @@
 			}
 		],
 		"rating": 4.8,
+		"ratingCount": 234,
 		"totalPrice": 0
 	},
 	{
@@ -487,6 +500,7 @@
 			}
 		],
 		"rating": 4.3,
+		"ratingCount": 533,
 		"totalPrice": 0
 	},
 	{
@@ -522,6 +536,7 @@
 			}
 		],
 		"rating": 4.2,
+		"ratingCount": 340,
 		"totalPrice": 0
 	},
 	{
@@ -557,6 +572,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-spring-2025",
@@ -599,6 +615,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-spring-2025",
@@ -641,6 +658,7 @@
 			}
 		],
 		"rating": 4.8,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-spring-2025",
@@ -683,6 +701,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-spring-2025",
@@ -725,6 +744,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-summer-2025",
@@ -767,6 +787,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-summer-2025",
@@ -809,6 +830,7 @@
 			}
 		],
 		"rating": 4.8,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-summer-2025",
@@ -851,6 +873,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-summer-2025",
@@ -893,6 +916,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-autumn-2025",
@@ -935,6 +959,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-autumn-2025",
@@ -977,6 +1002,7 @@
 			}
 		],
 		"rating": 4.8,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-autumn-2025",
@@ -1019,6 +1045,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-autumn-2025",
@@ -1061,6 +1088,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-winter-2025",
@@ -1103,6 +1131,7 @@
 			}
 		],
 		"rating": 4.7,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-winter-2025",
@@ -1145,6 +1174,7 @@
 			}
 		],
 		"rating": 4.8,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-winter-2025",
@@ -1187,6 +1217,7 @@
 			}
 		],
 		"rating": 4.6,
+		"ratingCount": 120,
 		"totalPrice": 0,
 		"promotion": {
 			"id": "season-winter-2025",

@@ -1,18 +1,22 @@
 'use client'
 
 import React from 'react'
+
 import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { useProductCart } from '@/store'
-import PtoductCard from '@/components/product-card'
 import { useAdminStore } from '@/store/admin-store'
+import AccountProductCard from '@/components/account-product-card'
+import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 const AccountFavoritePage = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
 	const moskUser = useAdminStore(state => state.moskUser)
+	const coffeeUpdated = useSeasonalProducts(coffeeData)
+	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 
-	const favoriteProducts: ProductData[] = [...coffeeData, ...cupcakeData].filter(product =>
-		moskUser?.favoritesProductsIds?.includes(product.id)
+	const favoriteProducts: ProductData[] = [...coffeeUpdated.allProducts, ...cupcakeUpdated.allProducts].filter(
+		product => moskUser?.favoritesProductsIds?.includes(product.id)
 	)
 
 	return (
@@ -26,7 +30,7 @@ const AccountFavoritePage = () => {
 								key={product.id}
 								className="w-[16rem] h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
-								<PtoductCard item={product} />
+								<AccountProductCard product={product} />
 							</div>
 						))}
 					</div>

@@ -26,10 +26,11 @@ export interface ProductData {
 	category: Category
 	price: IPrice[]
 	title: string
-	rating: number
+	rating?: number
+	ratingCount?: number
 	totalPrice: number
 	promotion?: {
-		id?: string // посилання на акцію (наприклад, seasonal ID)
+		id?: string
 		type?: PromotionType
 		label?: string
 		isActive?: boolean

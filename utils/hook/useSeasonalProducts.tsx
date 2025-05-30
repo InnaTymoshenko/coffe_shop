@@ -36,6 +36,14 @@ export const useSeasonalProducts = (data: ProductData[]) => {
 		})
 	}, [updatedData])
 
+	const allProducts = useMemo(() => {
+		return updatedData.filter(item => {
+			const promo = item.promotion
+			if (!promo) return true
+			return promo
+		})
+	}, [updatedData])
+
 	const getByType = (type: string) => {
 		return updatedData.filter(item => item.promotion?.type === type && item.promotion.isActive)
 	}
@@ -45,6 +53,7 @@ export const useSeasonalProducts = (data: ProductData[]) => {
 		updatedData,
 		seasonalOnly,
 		allWithPromo,
+		allProducts,
 		getByType
 	}
 }
