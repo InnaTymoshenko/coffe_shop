@@ -9,7 +9,7 @@ import { useAdminStore } from '@/store/admin-store'
 
 const AccountFavoritePage = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
-	const { moskUser } = useAdminStore()
+	const moskUser = useAdminStore(state => state.moskUser)
 
 	const favoriteProducts: ProductData[] = [...coffeeData, ...cupcakeData].filter(product =>
 		moskUser?.favoritesProductsIds?.includes(product.id)

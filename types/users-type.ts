@@ -24,7 +24,7 @@ export interface UserProfile {
 	orderCount: number
 	totalSpent: number
 	favoriteCafeId: string | null
-	favoritesProductsIds: string[] | null
+	favoritesProductsIds: string[]
 	notes?: string
 }
 

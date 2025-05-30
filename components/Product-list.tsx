@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { FaStar, FaHeart } from 'react-icons/fa'
 import { CiCoffeeCup } from 'react-icons/ci'
 import { useProductCart } from '@/store'
 import Shell from '@/components/ui/shell'
@@ -11,6 +12,7 @@ import { defaultPrice } from '@/utils/fn'
 import { ButtonLink } from '@/components/ui/button-link'
 import ProductListSize from './product-list-size'
 import AnimatedButton from './ui/animated-button'
+import { useAdminStore } from '@/store/admin-store'
 
 type ProductListProps = {
 	product: ProductData
@@ -18,11 +20,31 @@ type ProductListProps = {
 
 const ProductList = ({ product }: ProductListProps) => {
 	const [selected, setSelected] = useState<Size>('medium')
-
+	const [isFavorite, setIsFavorite] = useState<boolean>(false)
 	const { addToCart, setActiveTab } = useProductCart()
+	const { moskUser, editMoskUser } = useAdminStore()
 
 	const selectedHandler = (value: Size) => {
 		setSelected(value)
+	}
+
+	useEffect(() => {
+		if (!moskUser) return
+		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		setIsFavorite(isAlreadyFavorite)
+	}, [moskUser, product.id])
+
+	const updateFavoriteProducts = () => {
+		if (!moskUser) return
+		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		const updatedFavorites = !isAlreadyFavorite
+			? [...moskUser.favoritesProductsIds, product.id]
+			: moskUser.favoritesProductsIds.filter(id => id !== product.id)
+		editMoskUser({
+			...moskUser,
+			favoritesProductsIds: updatedFavorites
+		})
+		setIsFavorite(!isFavorite)
 	}
 
 	const addToCartHandler = (item: ProductData, size: Size) => {
@@ -69,8 +91,25 @@ const ProductList = ({ product }: ProductListProps) => {
 							{product.promotion && <div className="label ">{product.promotion?.label}</div>}
 						</div>
 					</div>
-					<div className="w-1/2  text-gray-200 flex flex-col justify-between gap-6">
-						<h1 className="text-3xl mb-8">{product.title}</h1>
+					<div className="w-1/2 text-gray-200 flex flex-col justify-between items-start gap-12">
+						<div
+							className="bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
+							onClick={updateFavoriteProducts}
+						>
+							<FaHeart
+								size={20}
+								className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
+							/>
+						</div>
+						<div className="flex flex-col gap-2">
+							<h1 className="text-3xl">{product.title}</h1>
+							<div className="p-2 flex gap-1 items-center">
+								<FaStar className="text-yellow" />
+								<span className="font-thin text-md">{product.rating}</span>
+								<span className="font-thin text-md">{`(556)`}</span>
+							</div>
+						</div>
+
 						<p className="my-4 ">{product.alt}</p>
 					</div>
 				</div>
@@ -82,18 +121,6 @@ const ProductList = ({ product }: ProductListProps) => {
 								<div className="w-full flex justify-between items-center gap-4">
 									{product.price.map((p: IPrice) => (
 										<div key={`coffe-${p.size}`} className="text-gray-200 flex flex-col items-center gap-2">
-											{/* {
-												<ProductListSize
-													item={p}
-													text={p.size === 'small' ? 'Small' : p.size === 'medium' ? 'Medium' : 'Large'}
-													ml={p.size === 'small' ? '240 ml' : p.size === 'medium' ? '355 ml' : '475 ml'}
-													flOz={p.size === 'small' ? '8 fl oz' : p.size === 'medium' ? '12 fl oz' : '16 fl oz'}
-													selected={selected}
-													selectedHandler={selectedHandler}
-												>
-													<CiCoffeeCup size={p.size === 'small' ? 26 : p.size === 'medium' ? 30 : 38} color="white" />
-												</ProductListSize>
-											} */}
 											{p.size === 'small' && (
 												<ProductListSize
 													item={p}
