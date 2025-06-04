@@ -16,6 +16,8 @@ export interface IPrice {
 	price: number
 	quantity: number
 	isChecked: boolean
+	originalPrice?: number
+	isDiscounted?: boolean
 }
 
 export interface ProductData {

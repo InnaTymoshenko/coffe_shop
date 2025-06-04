@@ -16,7 +16,7 @@ function AccountLayout({
 				<aside className="top-20 hidden h-[calc(100vh-5rem)] w-full overflow-y-auto border-r border-r-gray-800 md:sticky md:block bg-gray-900/95">
 					<NavSidebar items={dashboardConfig.accountSidebarNav} variant="user" />
 				</aside>
-				<main className="flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto bg-gray-900/80">{children}</main>
+				<main className="flex w-full flex-col max-h-[calc(100vh-5rem)] overflow-auto bg-gray-900/90">{children}</main>
 			</div>
 		</div>
 	)

@@ -50,6 +50,16 @@ export const defaultPrice = (item: ProductData, selected: Size) => {
 	return price?.price.toFixed(2)
 }
 
+export const discountPrice = (item: ProductData, selected: Size) => {
+	const selectedPrice = item.price.find(p => p.size === selected)
+
+	if (selectedPrice?.isDiscounted && selectedPrice.originalPrice !== undefined) {
+		return selectedPrice.originalPrice.toFixed(2)
+	}
+
+	return null
+}
+
 export const getCurrentYear = (): number => {
 	return new Date().getFullYear()
 }

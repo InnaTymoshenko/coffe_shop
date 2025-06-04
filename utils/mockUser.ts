@@ -1,6 +1,6 @@
 import { UserProfile } from '@/types/users-type'
 
-export const Mosk_User: UserProfile = {
+export const MockUser: UserProfile = {
 	id: '1',
 	firstName: 'Ілля',
 	lastName: 'Стець',

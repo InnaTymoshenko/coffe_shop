@@ -5,7 +5,7 @@ import { useAdminStore } from '@/store/admin-store'
 
 export const useFavoriteDiscountProduct = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
-	const moskUser = useAdminStore(state => state.moskUser)
+	const moskUser = useAdminStore(state => state.mockUser)
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
 	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 

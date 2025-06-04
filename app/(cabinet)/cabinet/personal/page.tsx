@@ -12,7 +12,7 @@ import AnimatedButton from '@/components/ui/animated-button'
 import AvatarEditor from '@/components/avatar-editor'
 
 const AccountPersonalPage = () => {
-	const { cafesData, moskUser, editMoskUser } = useAdminStore()
+	const { cafesData, mockUser, editMockUser } = useAdminStore()
 	const [isEditing, setIsEditing] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
 
@@ -22,16 +22,16 @@ const AccountPersonalPage = () => {
 	}
 
 	const handleEditAccountProfile = (item: UserProfile) => {
-		editMoskUser(item)
+		editMockUser(item)
 		setIsEditing(false)
 	}
 
 	const handleEditAvatar = (item: UserProfile) => {
-		editMoskUser(item)
+		editMockUser(item)
 		setIsOpen(false)
 	}
 
-	const favoriteCafe = cafesData.find(cafe => cafe.id === moskUser.favoriteCafeId)
+	const favoriteCafe = cafesData.find(cafe => cafe.id === mockUser.favoriteCafeId)
 
 	return (
 		<Shell className="container flex flex-col gap-8">
@@ -39,8 +39,8 @@ const AccountPersonalPage = () => {
 				<h1 className="text-3xl font-bold my-8">Personal data</h1>
 				<div className="w-full flex justify-start items-end gap-8">
 					<img
-						src={moskUser.avatarUrl}
-						alt={`${moskUser.firstName} ${moskUser.lastName}`}
+						src={mockUser.avatarUrl}
+						alt={`${mockUser.firstName} ${mockUser.lastName}`}
 						className="rounded-full border border-gray-700 w-40 h-40 object-cover object-center"
 					/>
 					<Button
@@ -55,32 +55,32 @@ const AccountPersonalPage = () => {
 						<span className="text-gray-500 font-thin">LastName</span>
 						<span className="text-gray-500 font-thin">First Name</span>
 						<span className="text-gray-500 font-thin">Second Name</span>
-						<span className="font-semibold">{moskUser.lastName}</span>
-						<span className="font-semibold">{moskUser.firstName}</span>
-						<span className="font-semibold">{moskUser.secondName}</span>
+						<span className="font-semibold">{mockUser.lastName}</span>
+						<span className="font-semibold">{mockUser.firstName}</span>
+						<span className="font-semibold">{mockUser.secondName}</span>
 					</div>
 					<div className="grid grid-cols-3 gap-2 border-b border-b-gray-800 pb-2">
 						<span className="text-gray-500 font-thin">Birthday</span>
 						<span className="text-gray-500 font-thin">Gender</span>
 						<span className="text-gray-500 font-thin">Language</span>
-						<span className="font-semibold">{moskUser.birthday}</span>
-						<span className="font-semibold">{moskUser.gender}</span>
-						<span className="font-semibold">{userLanguage(moskUser.language)}</span>
+						<span className="font-semibold">{mockUser.birthday}</span>
+						<span className="font-semibold">{mockUser.gender}</span>
+						<span className="font-semibold">{userLanguage(mockUser.language)}</span>
 					</div>
 					<div className="grid grid-cols-3 gap-2 border-b border-b-gray-800 pb-2">
 						<span className="text-gray-500 font-thin">Phone</span>
 						<span className="text-gray-500 font-thin">Email</span>
 						<span className="text-gray-500 font-thin">Address</span>
-						<span className="font-semibold">{moskUser.phone}</span>
-						<span className="font-semibold">{moskUser.email}</span>
-						<span className="font-semibold">{moskUser.address}</span>
+						<span className="font-semibold">{mockUser.phone}</span>
+						<span className="font-semibold">{mockUser.email}</span>
+						<span className="font-semibold">{mockUser.address}</span>
 					</div>
 					<div className="grid grid-cols-3 gap-2 border-b border-b-gray-800 pb-2">
 						<span className="text-gray-500 font-thin">Favorite Cafe</span>
 						<span className="text-gray-500 font-thin">Notes</span>
 						<span className="text-gray-500 font-thin"></span>
 						<span className="font-semibold">{favoriteCafe?.name}</span>
-						<span className="font-semibold">{moskUser.notes}</span>
+						<span className="font-semibold">{mockUser.notes}</span>
 						<span className="font-semibold"></span>
 					</div>
 					<Button
@@ -93,12 +93,12 @@ const AccountPersonalPage = () => {
 			</div>
 			{isOpen && (
 				<Modal isOpen={isOpen} onClose={() => setIsOpen(false)} className="justify-center items-center">
-					<AvatarEditor item={moskUser} onSave={handleEditAvatar} setIsOpen={setIsOpen} />
+					<AvatarEditor item={mockUser} onSave={handleEditAvatar} setIsOpen={setIsOpen} />
 				</Modal>
 			)}
 			{isEditing && (
 				<Modal isOpen={isEditing} onClose={() => setIsEditing(false)} className="justify-center items-center">
-					<EditAccountProfileForm item={moskUser} onSave={handleEditAccountProfile} setIsEditing={setIsEditing} />
+					<EditAccountProfileForm item={mockUser} onSave={handleEditAccountProfile} setIsEditing={setIsEditing} />
 				</Modal>
 			)}
 		</Shell>

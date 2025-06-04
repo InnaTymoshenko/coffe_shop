@@ -119,7 +119,7 @@ export function AddPromotionForm({ onAdd, setIsAddPromotion }: AddPromotionFormP
 				<div className="w-full grid grid-cols-2 gap-y-2">
 					<label className="block text-sm font-medium">Image:</label>
 					<input {...register('image')} placeholder="Image URL" className="w-full border border-gray-400 p-2 rounded" />
-					{errors.end && <p className="text-red-500 text-sm">{errors.end.message}</p>}
+					{errors.image && <p className="text-red-500 text-sm">{errors.image.message}</p>}
 				</div>
 				<div className="w-full grid grid-cols-2 gap-y-2">
 					<label className="flex items-center space-x-2">

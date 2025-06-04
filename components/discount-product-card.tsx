@@ -8,7 +8,7 @@ import { useProductCart } from '@/store'
 import { IPrice, ProductData, QuantityType, Size } from '@/types/item-type'
 import { Badge } from './ui/badge'
 import ProductCardSize from './product-card-size'
-import { defaultPrice, quantityHandler } from '@/utils/fn'
+import { defaultPrice, discountPrice, quantityHandler } from '@/utils/fn'
 import AnimatedButton from './ui/animated-button'
 
 type Props = {
@@ -35,7 +35,7 @@ const DiscountProductCard = ({ item }: Props) => {
 	return (
 		<div className="w-full text-gray-200 h-24 grid grid-cols-10 pr-2 content-normal items-center gap-2 relative z-10">
 			<img src={item.src.medium} alt={item.title} className="w-24 h-24 object-cover object-center" />
-			<div className="w-full pl-2 col-span-3 text-gray-200 flex flex-col gap-3">
+			<div className="w-full pl-2 col-span-2 text-gray-200 flex flex-col gap-3">
 				<h3
 					className="text-2xl cursor-pointer hover:text-orange-500 transition-all duration-300"
 					onClick={() => router.push(`/menu/${item.id}`)}
@@ -84,13 +84,24 @@ const DiscountProductCard = ({ item }: Props) => {
 					onClick={() => updateQuantityHandler(item, 'increment', selected)}
 				/>
 			</div>
-			<div className="flex gap-2 items-center px-2">
-				<span className="text-gray-400">Price:</span>
-				<div className="flex items-center gap-1 text-xl">
-					<strong className="text-orange-600">$</strong>
-					<strong>{item.totalPrice === 0 ? defaultPrice(item, selected) : item.totalPrice.toFixed(2)}</strong>
+			<div className="col-span-2 px-2">
+				<div className="flex justify-center items-center gap-2">
+					<span className="text-lg text-orange-600 mb-1">5% OFF: </span>
+					<div className="flex items-end line-through text-md text-gray-500">
+						<span>$</span>
+						<span>{item.totalPrice === 0 ? discountPrice(item, selected) : item.totalPrice.toFixed(2)}</span>
+					</div>
+				</div>
+				{/* <div className="px-2"></div> */}
+				<div className="flex justify-center items-center gap-2">
+					<span className="text-gray-400">Price:</span>
+					<div className="flex items-end gap-1 text-xl">
+						<strong className="text-orange-600">$</strong>
+						<strong>{item.totalPrice === 0 ? defaultPrice(item, selected) : item.totalPrice.toFixed(2)}</strong>
+					</div>
 				</div>
 			</div>
+
 			<Button
 				className="button relative overflow-hidden h-10 bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 				onClick={() => addToCartHandler(item, selected)}

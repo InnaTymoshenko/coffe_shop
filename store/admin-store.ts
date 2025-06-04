@@ -10,7 +10,7 @@ import { PromotionData } from '@/types/promotion-type'
 import { LocationData } from '@/types/location-type'
 import { UserProfile } from '@/types/users-type'
 import { OrderData } from '@/types/order-type'
-import { Mosk_User } from '@/utils/moskUser'
+import { MockUser } from '@/utils/mockUser'
 import { persist } from 'zustand/middleware'
 
 interface IAdminStore {
@@ -22,8 +22,10 @@ interface IAdminStore {
 	cafesData: LocationData[]
 	usersData: UserProfile[]
 	ordersData: OrderData[]
-	moskUser: UserProfile
-	editMoskUser: (item: UserProfile) => void
+	mockUser: UserProfile
+	discountedProduct: ProductData | null
+	setDiscountedProduct: (product: ProductData) => void
+	editMockUser: (item: UserProfile) => void
 	editOrder: (item: OrderData) => void
 	editUser: (item: UserProfile) => void
 	editCafe: (item: LocationData) => void
@@ -47,8 +49,10 @@ export const useAdminStore = create<IAdminStore>()(
 			cafesData: fakeCafesDate as LocationData[],
 			usersData: fakeUsersData as UserProfile[],
 			ordersData: fakeOrderData as OrderData[],
-			moskUser: Mosk_User,
-			editMoskUser: item => set({ moskUser: item }),
+			mockUser: MockUser,
+			discountedProduct: null,
+			setDiscountedProduct: product => set({ discountedProduct: product }),
+			editMockUser: item => set({ mockUser: item }),
 			editOrder: item => {
 				const { ordersData } = get()
 				const updatedOrder = ordersData.map(order => (order.id === item.id ? { ...order, ...item } : order))

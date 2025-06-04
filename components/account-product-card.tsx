@@ -21,22 +21,30 @@ const AccountProductCard = ({ product }: AccountProductProps) => {
 	const [selected, setSelected] = useState<Size>('medium')
 	const { updateQuantity, addToCart } = useProductCart()
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
-	const { moskUser, editMoskUser } = useAdminStore()
+	const [isDiscount, setIsDiscount] = useState<boolean>(false)
+	const { mockUser, editMockUser, discountedProduct } = useAdminStore()
 
 	useEffect(() => {
-		if (!moskUser) return
-		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		if (discountedProduct) {
+			const dayDiscount = product.id === discountedProduct.id
+			setIsDiscount(dayDiscount)
+		}
+	}, [discountedProduct, product.id])
+
+	useEffect(() => {
+		if (!mockUser) return
+		const isAlreadyFavorite = (mockUser?.favoritesProductsIds ?? []).includes(product.id)
 		setIsFavorite(isAlreadyFavorite)
-	}, [moskUser, product.id])
+	}, [mockUser, product.id])
 
 	const updateFavoriteProducts = () => {
-		if (!moskUser) return
-		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		if (!mockUser) return
+		const isAlreadyFavorite = (mockUser?.favoritesProductsIds ?? []).includes(product.id)
 		const updatedFavorites = !isAlreadyFavorite
-			? [...moskUser.favoritesProductsIds, product.id]
-			: moskUser.favoritesProductsIds.filter(id => id !== product.id)
-		editMoskUser({
-			...moskUser,
+			? [...mockUser.favoritesProductsIds, product.id]
+			: mockUser.favoritesProductsIds.filter(id => id !== product.id)
+		editMockUser({
+			...mockUser,
 			favoritesProductsIds: updatedFavorites
 		})
 		setIsFavorite(!isFavorite)
@@ -56,11 +64,16 @@ const AccountProductCard = ({ product }: AccountProductProps) => {
 
 	return (
 		<div className="w-full h-full relative">
-			<div className="w-full h-full absolute top-0 bottom-0 left-0 bg-gray-900/40 flex justify-between items-start gap-6">
+			<div className="w-full h-full absolute top-0 bottom-0 left-0 bg-gray-900/40 flex justify-between items-start gap-1">
 				<div className=" bg-gray-900/80 p-2 rounded-br-lg flex gap-1 items-center">
 					<span className="font-thin text-md">{product.rating}</span>
 					<FaStar className="text-yellow" />
 				</div>
+				{isDiscount && (
+					<span className="mt-1 bg-orange-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded-full shadow animate-pulse">
+						Special 5% Off
+					</span>
+				)}
 				<div
 					className="bg-gray-900/80 px-4 py-2 rounded-bl-lg flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
 					onClick={updateFavoriteProducts}
