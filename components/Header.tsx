@@ -59,9 +59,8 @@ const Header = () => {
 				isScrolled ? 'bg-gray-900' : 'transparent'
 			}`}
 		>
-			{openCart && <Cart openCartHandler={openCartHandler} />}
 			<Shell className=" container h-full flex md:justify-between sm:justify-center items-center">
-				<div className="md:flex sm:hidden items-center gap-4">
+				{/* <div className="md:flex sm:hidden items-center gap-4">
 					<BsTelephoneForward className={`text-xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`} />
 					<div
 						className={`flex flex-col gap-1 items-start justify-center ${
@@ -71,9 +70,9 @@ const Header = () => {
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 					</div>
-				</div>
+				</div> */}
 				<div className={`logo text-2xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}>Coffee Town</div>
-				<div className="relative p-2 md:flex sm:hidden items-center justify-between gap-4">
+				{/* <div className="relative p-2 md:flex sm:hidden items-center justify-between gap-4">
 					{cartProducts.length > 0 ? (
 						<>
 							<div
@@ -108,7 +107,7 @@ const Header = () => {
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					)}
-				</div>
+				</div> */}
 			</Shell>
 			{isOpen && (
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
@@ -128,6 +127,7 @@ const Header = () => {
 					</Shell>
 				</div>
 			)}
+			{openCart && <Cart openCartHandler={openCartHandler} />}
 		</header>
 	)
 }

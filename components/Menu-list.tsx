@@ -23,7 +23,7 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 	return (
 		<div className="w-full bg-gray-900 flex flex-col gap-8 justify-start py-8 mb-8">
 			<div className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
-				<div className="w-full flex justify-between items-center gap-8">
+				<div className="w-full flex md:flex-row sm:flex-col md:justify-between sm:justify-start md:items-center sm:items-start gap-8">
 					<h2 className="text-white text-3xl my-6">{title}</h2>
 					<div className="w-40 h-8 flex justify-between items-center border border-gray-800 rounded-lg p-1">
 						<Button
@@ -39,11 +39,11 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 					</div>
 				</div>
 				{products.length > 0 && !isShow ? (
-					<div className="w-full flex flex-wrap gap-8 justify-center">
+					<div className="w-full flex md:flex-row sm:flex-col flex-wrap gap-8 justify-center">
 						{products?.map(product => (
 							<div
 								key={product.id}
-								className="w-[16rem] h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+								className="md:w-[16rem] sm:w-full h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
 								<PtoductCard item={product} />
 							</div>

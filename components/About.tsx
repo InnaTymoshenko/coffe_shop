@@ -28,12 +28,12 @@ const About = () => {
 			<Shell className="container">
 				<div className="w-full flex flex-col items-start gap-8 py-8">
 					<h2 className="text-white text-3xl my-6">Our Features</h2>
-					<div className="w-full flex flex-wrap gap-8 justify-center">
+					<div className="w-full flex md:flex-row sm:flex-col flex-wrap gap-8 justify-center">
 						{features &&
 							features.map(feature => (
 								<div
 									key={feature.title}
-									className="relative w-[16rem] h-[16rem] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
+									className="relative md:w-[16rem] sm:w-full h-[16rem] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
 								>
 									{feature.icon === 'coffee' && (
 										<div className="absolute top-[-1.5rem] left-[40%] w-16 h-16 rounded-full bg-orange-600/70 ">
@@ -60,12 +60,12 @@ const About = () => {
 								</div>
 							))}
 					</div>
-					<div className="advantages-container w-full bg-gray-900/30 py-4 px-2 flex gap-8 justify-between items-center">
+					<div className="advantages-container w-full bg-gray-900/30 py-4 px-2 flex md:flex-row sm:flex-col gap-8 justify-between items-center">
 						{advantages &&
 							advantages.map(advantage => (
 								<div
 									key={`${advantage.description.trim()}`}
-									className="w-[25%] flex gap-4 items-center py-4 pl-2 pr-6 border-r-2 border-r-gray-200"
+									className="w-[25%] flex gap-4 items-center py-4 pl-2 pr-6 md:border-r-2 md:border-r-gray-200 md:border-b-transparent sm:border-b-2 sm:border-b-gray-200"
 								>
 									{advantage.icon === 'coffee' && (
 										<div className="w-16 h-16 rounded-full bg-gray-800/70 ">

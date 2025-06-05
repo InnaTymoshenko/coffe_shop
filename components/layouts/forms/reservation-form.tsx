@@ -82,7 +82,7 @@ const ReservationForm = () => {
 				onSubmit={handleSubmit(onSubmit)}
 				className="w-full mx-auto bg-gray-900/80 p-6 rounded-sm shadow-md flex flex-col gap-4 items-center"
 			>
-				<div className="w-full grid grid-cols-3 grid-rows-2 gap-4">
+				<div className="w-full grid md:grid-cols-3 sm:grid-cols-1 grid-rows-2 gap-4">
 					<div className="">
 						<input
 							{...register('name')}
@@ -118,7 +118,7 @@ const ReservationForm = () => {
 							name="date"
 							render={({ field }) => (
 								<>
-									<div className="custom-datepicker">
+									<div className="max-h-[300px] custom-datepicker">
 										<DatePicker
 											{...field}
 											onChange={field.onChange}

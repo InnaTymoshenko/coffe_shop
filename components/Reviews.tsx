@@ -10,18 +10,51 @@ import { IReview } from '@/types/review-type'
 const Reviews = () => {
 	const [reviews, setReviews] = useState<IReview[]>([])
 	const [currentIndex, setCurrentIndex] = useState(0)
-	const reviewsPerPage = 3
+	const [reviewsPerPage, setReviewsPerPage] = useState(3)
 	const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
+	// Load reviews
 	useEffect(() => {
 		setReviews(fakeReviews as IReview[])
 	}, [])
 
+	// Responsive: change number of reviews per page based on screen width
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 768) {
+				setReviewsPerPage(1)
+			} else {
+				setReviewsPerPage(3)
+			}
+		}
+
+		handleResize()
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	// Group reviews into pages
 	const chunkedReviews = []
 	for (let i = 0; i < reviews.length; i += reviewsPerPage) {
 		chunkedReviews.push(reviews.slice(i, i + reviewsPerPage))
 	}
 
+	// Auto-slide logic
+	useEffect(() => {
+		if (chunkedReviews.length === 0) return
+		intervalRef.current = setInterval(() => {
+			setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
+		}, 5000)
+
+		return () => {
+			if (intervalRef.current) clearInterval(intervalRef.current)
+		}
+	}, [chunkedReviews.length])
+
+	const nextSlide = () => setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
+	const prevSlide = () => setCurrentIndex(prev => (prev - 1 + chunkedReviews.length) % chunkedReviews.length)
+
+	// Stars rendering
 	const renderStars = (rating: number) => {
 		const stars = []
 		const fullStars = Math.floor(rating)
@@ -41,35 +74,26 @@ const Reviews = () => {
 		return stars
 	}
 
-	useEffect(() => {
-		intervalRef.current = setInterval(() => {
-			setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
-		}, 5000)
-
-		return () => {
-			if (intervalRef.current) clearInterval(intervalRef.current)
-		}
-	}, [chunkedReviews.length])
-
-	const nextSlide = () => setCurrentIndex(prev => (prev + 1) % chunkedReviews.length)
-	const prevSlide = () => setCurrentIndex(prev => (prev - 1 + chunkedReviews.length) % chunkedReviews.length)
-
 	return (
-		<div className="relative w-full max-w-[960px] h-[250px] mx-auto overflow-hidden">
+		<div className="relative w-full max-w-[960px] mx-auto overflow-hidden">
 			<div
 				className="flex transition-transform duration-500 ease-in-out"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
 			>
 				{chunkedReviews.map((group, index) => (
-					<div key={index} className="flex flex-shrink-0 w-full justify-center gap-8" style={{ minWidth: '100%' }}>
+					<div
+						key={index}
+						className="flex flex-shrink-0 w-full justify-center gap-4 sm:gap-8"
+						style={{ minWidth: '100%' }}
+					>
 						{group.map(review => (
 							<div
 								key={review.id}
-								className="w-[300px] h-[200px] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
+								className="w-[90%] sm:w-[300px] h-[220px] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
 							>
 								<div className="flex flex-col justify-center items-end gap-2 p-2 rounded-sm bg-gray-800">
 									<ImQuotesRight />
-									<p>{review.review}</p>
+									<p className="text-sm sm:text-base text-right">{review.review}</p>
 								</div>
 								<div className="w-full flex items-start justify-start gap-4">
 									<div className="w-[60px] h-[60px] border border-gray-200 rounded-full overflow-hidden">
@@ -88,11 +112,11 @@ const Reviews = () => {
 					</div>
 				))}
 			</div>
-			<div className="absolute bottom-0 left-[40%] w-32 flex justify-between items-center gap-2">
-				<button onClick={prevSlide} className="w-16 bg-gray-800 text-white p-2 rounded-sm z-10">
+			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 flex justify-between items-center gap-2 z-10">
+				<button onClick={prevSlide} className="w-12 bg-gray-800 text-white p-2 rounded-sm">
 					❮
 				</button>
-				<button onClick={nextSlide} className="w-16 bg-gray-800 text-white p-2 rounded-sm z-10">
+				<button onClick={nextSlide} className="w-12 bg-gray-800 text-white p-2 rounded-sm">
 					❯
 				</button>
 			</div>
