@@ -64,7 +64,7 @@ const Location = () => {
 							<MapContainer
 								center={[selectedCafe.lat, selectedCafe.lng] as [number, number]}
 								zoom={13}
-								className="w-[500px] h-[400px] rounded-lg mt-12"
+								className="lg:w-[500px] sm:w-[350px] mx-auto h-[400px] rounded-lg mt-12"
 							>
 								<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 								<Marker position={[selectedCafe.lat, selectedCafe.lng]} icon={customIcon}>

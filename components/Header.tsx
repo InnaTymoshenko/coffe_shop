@@ -29,6 +29,7 @@ const Header = () => {
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)
+		setIsMobile(false)
 	}
 
 	useEffect(() => {
@@ -140,7 +141,7 @@ const Header = () => {
 					</Shell>
 				</div>
 			)}
-			{isMobile && <MobileHeader isMobile={isMobile} setIsMobile={setIsMobile} />}
+			{isMobile && <MobileHeader openCartHandler={openCartHandler} isMobile={isMobile} setIsMobile={setIsMobile} />}
 			{openCart && <Cart openCartHandler={openCartHandler} />}
 		</header>
 	)

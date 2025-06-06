@@ -11,15 +11,18 @@ import { mainMenuConfig } from '@/root-config/main-menu'
 type MobileHeaderProps = {
 	isMobile: boolean
 	setIsMobile: (value: boolean) => void
+	openCartHandler: () => void
 }
 
-const MobileHeader = ({ isMobile, setIsMobile }: MobileHeaderProps) => {
+const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderProps) => {
 	return (
 		<div className="fixed top-0 bottom-0 w-full min-h-screen bg-gray-900/80 z-40 flex justify-start">
 			<div className="w-[80%] min-h-full bg-gray-900 border-r-2 border-r-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto">
 				<div className={`logo text-2xl text-gray-200`}>Coffee Town</div>
 				<Separator className="bg-gray-200" />
-				<p className="text-lg text-gray-200 cursor-pointer">My Cart</p>
+				<p className="text-lg text-gray-200 cursor-pointer" onClick={openCartHandler}>
+					My Cart
+				</p>
 				<p className="text-lg text-gray-200 cursor-pointer">My Cabinet</p>
 				<Separator className="bg-gray-800" />
 				<div className="flex flex-col justify-start items-start gap-6">

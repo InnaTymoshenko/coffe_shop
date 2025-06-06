@@ -60,7 +60,7 @@ const About = () => {
 								</div>
 							))}
 					</div>
-					<div className="advantages-container w-full bg-gray-900/30 py-4 px-2 flex lg:flex-row sm:flex-col gap-8 justify-between items-center">
+					<div className="advantages-container lg:w-full sm:w-[80%] mx-auto bg-gray-900/30 py-4 px-2 flex lg:flex-row sm:flex-col gap-8 justify-between items-center">
 						{advantages &&
 							advantages.map(advantage => (
 								<div
