@@ -14,7 +14,7 @@ const Footer = () => {
 	return (
 		<>
 			<Shell className="container ">
-				<div className="w-full grid grid-cols-5 gap-8">
+				<div className="w-full grid lg:grid-cols-5 sm:grid-cols-2 justify-items-start gap-8">
 					<div className="col-span-2">
 						<h5 className="logo text-lg mb-4">Coffee town</h5>
 						<p>
