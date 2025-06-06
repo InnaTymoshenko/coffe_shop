@@ -2,31 +2,30 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { BsTelephoneForward } from 'react-icons/bs'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { PiShoppingCartSimpleFill } from 'react-icons/pi'
 import { FaOpencart } from 'react-icons/fa'
 import Shell from './ui/shell'
-import Link from 'next/link'
 import { Button } from './ui/button'
 import { useProductCart } from '@/store'
 import { ProductData } from '@/types/item-type'
 import Cart from './cart'
 import { mainMenuConfig } from '@/root-config/main-menu'
 import AnimatedButton from './ui/animated-button'
+import MobileHeader from './mobile-header'
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isOpen, setIsOpen] = useState(false)
-	// const [openCart, setOpenCart] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
 	const { cartProducts, openCart, setOpenCart } = useProductCart()
 	const pathname = usePathname()
 	const segments = pathname.split('/').filter(Boolean)
 	const rootSection = segments[0]
 	const isHomePage = pathname === '/'
 	const isContact = pathname === '/contacts' || rootSection === 'cabinet'
-
-	// console.log(pathname)
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)
@@ -59,8 +58,8 @@ const Header = () => {
 				isScrolled ? 'bg-gray-900' : 'transparent'
 			}`}
 		>
-			<Shell className=" container h-full flex md:justify-between sm:justify-center items-center">
-				{/* <div className="md:flex sm:hidden items-center gap-4">
+			<Shell className="relative container h-full flex lg:justify-between sm:justify-center items-center">
+				<div className="lg:flex sm:hidden items-center gap-4">
 					<BsTelephoneForward className={`text-xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`} />
 					<div
 						className={`flex flex-col gap-1 items-start justify-center ${
@@ -70,9 +69,9 @@ const Header = () => {
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 						<a href="tel:+38055555555">+38(055) 55 55 55</a>
 					</div>
-				</div> */}
+				</div>
 				<div className={`logo text-2xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}>Coffee Town</div>
-				{/* <div className="relative p-2 md:flex sm:hidden items-center justify-between gap-4">
+				<div className="relative p-2 lg:flex sm:hidden items-center justify-between gap-4">
 					{cartProducts.length > 0 ? (
 						<>
 							<div
@@ -107,7 +106,21 @@ const Header = () => {
 							onClick={() => setIsOpen(!isOpen)}
 						/>
 					)}
-				</div> */}
+				</div>
+				<div className="lg:hidden sm:block absolute top-6 right-8 z-50">
+					{isMobile ? (
+						<RxCross1
+							className={`text-xl cursor-pointer ${!isContact && !isMobile ? 'text-black' : 'text-gray-200'}`}
+							onClick={() => setIsMobile(!isMobile)}
+						/>
+					) : (
+						<RxHamburgerMenu
+							size={24}
+							className={`text-xl cursor-pointer ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}
+							onClick={() => setIsMobile(!isMobile)}
+						/>
+					)}
+				</div>
 			</Shell>
 			{isOpen && (
 				<div className={`w-full h-16 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-gray-700/10'}`}>
@@ -127,6 +140,7 @@ const Header = () => {
 					</Shell>
 				</div>
 			)}
+			{isMobile && <MobileHeader isMobile={isMobile} setIsMobile={setIsMobile} />}
 			{openCart && <Cart openCartHandler={openCartHandler} />}
 		</header>
 	)
