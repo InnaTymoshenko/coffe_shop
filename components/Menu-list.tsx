@@ -23,9 +23,9 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 	return (
 		<div className="w-full bg-gray-900 flex flex-col gap-8 justify-start py-8 mb-8">
 			<div className="w-full flex flex-col flex-wrap gap-4 justify-center items-start">
-				<div className="w-full flex md:flex-row sm:flex-col md:justify-between sm:justify-start md:items-center sm:items-start gap-8">
+				<div className="w-full flex lg:flex-row sm:flex-col lg:justify-between sm:justify-start lg:items-center sm:items-start gap-8">
 					<h2 className="text-white text-3xl my-6">{title}</h2>
-					<div className="w-40 h-8 flex justify-between items-center border border-gray-800 rounded-lg p-1">
+					<div className="lg:w-40 sm:w-[50%] h-12 flex justify-between items-center border border-gray-800 rounded-lg p-1">
 						<Button
 							text="Card"
 							className={`toggle ${isShow ? 'bg-gray-900 text-gray-200' : 'bg-gray-200 text-gray-900'}`}
@@ -39,11 +39,11 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 					</div>
 				</div>
 				{products.length > 0 && !isShow ? (
-					<div className="w-full flex md:flex-row sm:flex-col flex-wrap gap-8 justify-center">
+					<div className="w-full flex lg:flex-row sm:flex-col flex-wrap gap-8 justify-center">
 						{products?.map(product => (
 							<div
 								key={product.id}
-								className="md:w-[16rem] sm:w-full h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+								className="lg:w-[16rem] sm:w-[90%] h-[22rem] mx-auto border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
 								<PtoductCard item={product} />
 							</div>
@@ -52,9 +52,12 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 				) : (
 					<div className="w-full flex flex-col gap-2 justify-start items-start">
 						{products.map(product => (
-							<div key={product.id} className="w-full border border-gray-800 rounded-sm relative overflow-hidden group">
+							<div
+								key={product.id}
+								className="lg:w-full sm:w-[90%] mx-auto border border-gray-800 rounded-sm relative overflow-hidden group"
+							>
 								<ProductCardList item={product} />
-								<div className="absolute inset-0 bg-gray-800/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0" />
+								<div className="absolute  inset-0 bg-gray-800/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0" />
 							</div>
 						))}
 					</div>

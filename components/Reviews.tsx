@@ -75,7 +75,7 @@ const Reviews = () => {
 	}
 
 	return (
-		<div className="relative w-full max-w-[960px] mx-auto overflow-hidden">
+		<div className="relative w-full lg:max-w-[960px] sm:max-w-[450px] h-[260px] mx-auto overflow-hidden">
 			<div
 				className="flex transition-transform duration-500 ease-in-out"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -89,7 +89,7 @@ const Reviews = () => {
 						{group.map(review => (
 							<div
 								key={review.id}
-								className="w-[90%] sm:w-[300px] h-[220px] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
+								className="lg:w-[90%] sm:w-[300px] h-[220px] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
 							>
 								<div className="flex flex-col justify-center items-end gap-2 p-2 rounded-sm bg-gray-800">
 									<ImQuotesRight />

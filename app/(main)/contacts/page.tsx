@@ -9,7 +9,7 @@ const ContactsPage = () => {
 			<div className="w-full flex flex-col gap-8 justify-start py-8 mb-8">
 				<Shell className="container bg-gray-900/90 text-gray-200 flex flex-col gap-8 justify-start items-start rounded-sm">
 					<h1 className="capitalize text-3xl my-6 ">Contact us</h1>
-					<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-8">
 						<div>
 							<h2 className="text-xl font-semibold mb-2">{`Let's Talk`}</h2>
 							<p className="mb-4">{`Have a question or just want to say hi? We'd love to hear from you!`}</p>

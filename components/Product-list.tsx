@@ -22,26 +22,26 @@ const ProductList = ({ product }: ProductListProps) => {
 	const [selected, setSelected] = useState<Size>('medium')
 	const [isFavorite, setIsFavorite] = useState<boolean>(false)
 	const { addToCart, setActiveTab } = useProductCart()
-	const { moskUser, editMoskUser } = useAdminStore()
+	const { mockUser, editMockUser } = useAdminStore()
 
 	const selectedHandler = (value: Size) => {
 		setSelected(value)
 	}
 
 	useEffect(() => {
-		if (!moskUser) return
-		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		if (!mockUser) return
+		const isAlreadyFavorite = (mockUser?.favoritesProductsIds ?? []).includes(product.id)
 		setIsFavorite(isAlreadyFavorite)
-	}, [moskUser, product.id])
+	}, [mockUser, product.id])
 
 	const updateFavoriteProducts = () => {
-		if (!moskUser) return
-		const isAlreadyFavorite = (moskUser?.favoritesProductsIds ?? []).includes(product.id)
+		if (!mockUser) return
+		const isAlreadyFavorite = (mockUser?.favoritesProductsIds ?? []).includes(product.id)
 		const updatedFavorites = !isAlreadyFavorite
-			? [...moskUser.favoritesProductsIds, product.id]
-			: moskUser.favoritesProductsIds.filter(id => id !== product.id)
-		editMoskUser({
-			...moskUser,
+			? [...mockUser.favoritesProductsIds, product.id]
+			: mockUser.favoritesProductsIds.filter(id => id !== product.id)
+		editMockUser({
+			...mockUser,
 			favoritesProductsIds: updatedFavorites
 		})
 		setIsFavorite(!isFavorite)
@@ -56,9 +56,9 @@ const ProductList = ({ product }: ProductListProps) => {
 	}
 
 	return (
-		<div className="w-full bg-gray-900">
+		<div className="w-full min-h-[50vh] bg-gray-900">
 			<Shell className="container flex flex-col gap-12 py-8">
-				<div className="relative card_product w-1/4 pb-4 mb-8 flex justify-start gap-1 text-gray-200 text-lg">
+				<div className="relative card_product lg:w-1/4 sm:w-full pb-4 mb-8 flex justify-start gap-1 text-gray-200 text-lg">
 					<div className="w-[50px]">
 						<ButtonLink href={'/'} className="text-gray-500 cursor-pointer">
 							Home
@@ -74,8 +74,8 @@ const ProductList = ({ product }: ProductListProps) => {
 					<span>/</span>
 					<strong>{product.title}</strong>
 				</div>
-				<div className="w-full flex justify-start items-center gap-12">
-					<div className="w-1/3">
+				<div className="w-full flex lg:flex-row sm:flex-col justify-start items-center gap-12">
+					<div className="lg:w-1/3 sm:w-full flex gap-8 items-start justify-between">
 						<div className="relative w-[250px] h-[300px] rounded-sm overflow-hidden border border-gray-800">
 							<img
 								src={
@@ -90,10 +90,19 @@ const ProductList = ({ product }: ProductListProps) => {
 							/>
 							{product.promotion && <div className="label ">{product.promotion?.label}</div>}
 						</div>
-					</div>
-					<div className="w-1/2 text-gray-200 flex flex-col justify-between items-start gap-12">
 						<div
-							className="bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
+							className="sm:block lg:hidden bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
+							onClick={updateFavoriteProducts}
+						>
+							<FaHeart
+								size={20}
+								className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
+							/>
+						</div>
+					</div>
+					<div className="lg:w-1/2 sm:w-full text-gray-200 flex flex-col justify-between items-start gap-12">
+						<div
+							className="lg:block sm:hidden bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
 							onClick={updateFavoriteProducts}
 						>
 							<FaHeart
@@ -116,8 +125,8 @@ const ProductList = ({ product }: ProductListProps) => {
 						<p className="my-4 ">{product.alt}</p>
 					</div>
 				</div>
-				<div className="w-full h-[18rem] flex gap-16 justify-between items-start my-4">
-					<div className="w-1/3">
+				<div className="w-full min-h-[18rem] flex lg:flex-row sm:flex-col gap-16 justify-between items-start my-4">
+					<div className="lg:w-1/3 sm:w-full">
 						{product.category === 'Coffee' && (
 							<div className="w-full flex flex-col justify-between items-center gap-2 text-gray-200 text-lg my-4">
 								<h3 className="relative card_product w-full pb-4 mb-8 text-xl">Size options</h3>
@@ -166,7 +175,7 @@ const ProductList = ({ product }: ProductListProps) => {
 							</div>
 						)}
 					</div>
-					<div className="w-1/3 flex justify-between items-center gap-2 text-gray-200 text-lg my-4">
+					<div className="lg:w-1/3 sm:w-full flex justify-between items-center gap-2 text-gray-200 text-lg my-4">
 						{product.ingridients.length !== 0 && (
 							<div className="w-full flex flex-col gap-2">
 								<h3 className="relative card_product w-full pb-4 mb-8 text-xl">{`What's included`}</h3>
@@ -178,7 +187,7 @@ const ProductList = ({ product }: ProductListProps) => {
 							</div>
 						)}
 					</div>
-					<div className="w-1/3 h-full flex flex-col justify-end items-center gap-8 ">
+					<div className="lg:w-1/3 sm:w-full h-full flex lg:flex-col sm:flex-row lg:justify-end sm:justify-between items-center gap-8 ">
 						<div className="flex gap-2 items-center px-2">
 							<span className="text-gray-400">Price:</span>
 							<div className="flex gap-2 text-xl">
@@ -188,9 +197,8 @@ const ProductList = ({ product }: ProductListProps) => {
 								</strong>
 							</div>
 						</div>
-
 						<Button
-							className="button relative overflow-hidden w-32 h-[15%] text-gray-200 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+							className="button relative overflow-hidden w-32 h-10 text-gray-200 bg-orange-600 p-2 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 							onClick={() => addToCartHandler(product, selected)}
 						>
 							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />

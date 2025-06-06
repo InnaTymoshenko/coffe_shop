@@ -15,6 +15,7 @@ type SelectProps<T> = {
 	required?: boolean
 	disabled?: boolean
 	error?: string
+	style?: string
 }
 
 function Select<T extends string | number>({
@@ -26,7 +27,8 @@ function Select<T extends string | number>({
 	id,
 	required = false,
 	disabled = false,
-	error
+	error,
+	style
 }: SelectProps<T>) {
 	return (
 		<div className="w-full flex justify-start items-end gap-4">
@@ -37,12 +39,13 @@ function Select<T extends string | number>({
 			)}
 			<select
 				id={id}
+				name={id}
 				value={value}
 				onChange={e => onChange(e.target.value as T)}
 				disabled={disabled}
 				required={required}
 				className={`p-2 border rounded-lg focus:outline-none cursor-pointer ${
-					error ? 'border-red-500' : 'border-gray-400'
+					error ? 'border-red-500' : style || 'border-gray-400'
 				} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''} ${className}`}
 			>
 				{options.map(option => (

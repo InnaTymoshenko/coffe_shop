@@ -28,12 +28,12 @@ const About = () => {
 			<Shell className="container">
 				<div className="w-full flex flex-col items-start gap-8 py-8">
 					<h2 className="text-white text-3xl my-6">Our Features</h2>
-					<div className="w-full flex md:flex-row sm:flex-col flex-wrap gap-8 justify-center">
+					<div className="w-full flex lg:flex-row sm:flex-col flex-wrap gap-8 justify-center">
 						{features &&
 							features.map(feature => (
 								<div
 									key={feature.title}
-									className="relative md:w-[16rem] sm:w-full h-[16rem] bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
+									className="relative lg:w-[16rem] sm:w-[80%] h-[16rem] mx-auto bg-gray-900/80 text-gray-200 border-transparent rounded-sm flex flex-col items-center justify-between p-4"
 								>
 									{feature.icon === 'coffee' && (
 										<div className="absolute top-[-1.5rem] left-[40%] w-16 h-16 rounded-full bg-orange-600/70 ">
@@ -56,16 +56,16 @@ const About = () => {
 										</div>
 									)}
 									<h3 className="text-2xl font-semibold mt-10">{feature.title}</h3>
-									<p>{feature.description}</p>
+									<p className="lg:w-full sm:w-[80%] mx-auto ">{feature.description}</p>
 								</div>
 							))}
 					</div>
-					<div className="advantages-container w-full bg-gray-900/30 py-4 px-2 flex md:flex-row sm:flex-col gap-8 justify-between items-center">
+					<div className="advantages-container w-full bg-gray-900/30 py-4 px-2 flex lg:flex-row sm:flex-col gap-8 justify-between items-center">
 						{advantages &&
 							advantages.map(advantage => (
 								<div
 									key={`${advantage.description.trim()}`}
-									className="w-[25%] flex gap-4 items-center py-4 pl-2 pr-6 md:border-r-2 md:border-r-gray-200 md:border-b-transparent sm:border-b-2 sm:border-b-gray-200"
+									className="lg:w-[25%] sm:w-[60%] flex gap-4 items-center py-4 pl-2 pr-6 lg:border-r-2 lg:border-r-gray-200 lg:border-b-transparent sm:border-b-2 sm:border-b-gray-200"
 								>
 									{advantage.icon === 'coffee' && (
 										<div className="w-16 h-16 rounded-full bg-gray-800/70 ">

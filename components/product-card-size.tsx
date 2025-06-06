@@ -13,7 +13,7 @@ const ProductCardSize = ({ item, text, selected, selectedHandler }: CardSize) =>
 	return (
 		<Button
 			text={text}
-			className={`button w-[4.5rem] h-10 bg-gray-900 border-2 hover:bg-gray-900 hover:border-gray-200 transition-all duration-300 ${
+			className={`button lg:w-[4.5rem] sm:w-[6rem] h-10 bg-gray-900 border-2 hover:bg-gray-900 hover:border-gray-200 transition-all duration-300 ${
 				selected === item.size ? 'border-gray-200' : 'border-gray-800'
 			}`}
 			onClick={() => selectedHandler(item.size)}

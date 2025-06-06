@@ -180,6 +180,7 @@ const ReservationForm = () => {
 										value={field.value}
 										onChange={field.onChange}
 										error={fieldState.error?.message}
+										style="border-gray-800"
 										className="w-full p-3 text-gray-200 text-md rounded-sm bg-gray-900"
 									/>
 								)}

@@ -63,7 +63,7 @@ const PtoductCard = ({ item }: Props) => {
 				<p className="my-4">{item.alt}</p>
 				<div className="w-full flex flex-col gap-2 justify-between items-center">
 					{item.category === 'Coffee' && (
-						<div className="w-full flex justify-between items-center gap-2 text-lg">
+						<div className="w-full flex lg:justify-between sm:justify-center items-center gap-2 text-lg">
 							{item.price.map((p: IPrice) => (
 								<div key={`coffe-${p.size}`}>
 									{p.size === 'small' && (

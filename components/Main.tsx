@@ -9,9 +9,9 @@ const Main = () => {
 	return (
 		<div className="relative w-full h-screen bg-black/30 flex flex-col justify-center font-[family-name:var(--font-playfair)]">
 			<Shell className="container text-white">
-				<div className="md:w-[60%] sm:w-full p-4">
-					<h1 className="md:text-6xl sm:text-3xl my-10">Coffee Town – A Taste of the City in Every Cup</h1>
-					<p className="my-10 md:text-xl sm:text-lg">
+				<div className="lg:w-[60%] sm:w-full p-4">
+					<h1 className="lg:text-6xl sm:text-3xl my-10">Coffee Town – A Taste of the City in Every Cup</h1>
+					<p className="my-10 lg:text-xl sm:text-lg">
 						Experience the perfect blend of coziness and inspiration at Coffee Town. We offer the freshest coffee
 						blends, aromatic pastries, and a warm welcome. Our café is the ideal spot for business meetings, friendly
 						gatherings, or a quiet moment with your favorite drink. Visit us and immerse yourself in the magic of

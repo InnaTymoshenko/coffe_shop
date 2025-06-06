@@ -13,12 +13,12 @@ const PromotionsList = () => {
 	const filteredPromotions = promotionsData.filter(promotion => promotion.status === 'active' && promotion.image)
 
 	return (
-		<div className="w-full grid grid-cols-2 gap-4 p-4">
+		<div className="w-full grid lg:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
 			{filteredPromotions &&
 				filteredPromotions.map(pr => (
 					<div
 						key={pr.id}
-						className="w-full h-[45rem] relative border border-gray-800 overflow-hidden rounded-sm text-gray-200 text-transparent transition-all duration-500 hover:text-gray-200"
+						className="w-full lg:h-[45rem] sm:h-[32rem] relative border border-gray-800 overflow-hidden rounded-sm text-gray-200 lg:text-transparent sm:text-gray-200 transition-all duration-500 lg:hover:text-gray-200"
 					>
 						<h2 className="text-3xl text-gray-200 font-semibold absolute top-8 left-16 z-10">{pr.title}</h2>
 						<p className=" w-[80%] text-xl text-center absolute top-56 left-8 z-10">{pr.description}</p>
@@ -35,7 +35,7 @@ const PromotionsList = () => {
 								alt={pr.title}
 								className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110 relative z-1"
 							/>
-							<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 z-2 pointer-events-none" />
+							<div className="absolute inset-0 bg-black lg:bg-opacity-0 sm:bg-opacity-30 lg:group-hover:bg-opacity-30 transition duration-300 z-2 pointer-events-none" />
 						</div>
 					</div>
 				))}
