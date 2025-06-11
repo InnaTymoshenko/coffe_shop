@@ -1,12 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { RiTwitterXLine, RiTelegram2Fill, RiMailLine } from 'react-icons/ri'
 import { SlSocialLinkedin, SlSocialInstagram, SlSocialFacebook, SlSocialDribbble } from 'react-icons/sl'
+import { MdArrowBackIosNew } from 'react-icons/md'
 import { BsTelephoneForward } from 'react-icons/bs'
 import { Separator } from './ui/separator'
 import { mainMenuConfig } from '@/root-config/main-menu'
+import { dashboardConfig } from '@/root-config/dashboard'
 
 type MobileHeaderProps = {
 	isMobile: boolean
@@ -15,6 +17,13 @@ type MobileHeaderProps = {
 }
 
 const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderProps) => {
+	const [showCabinetMenu, setShowCabinetMenu] = useState(false)
+
+	const handleCloseAccountMenu = () => {
+		setShowCabinetMenu(false)
+		setIsMobile(false)
+	}
+
 	return (
 		<div className="fixed top-0 bottom-0 w-full min-h-screen bg-gray-900/80 z-40 flex justify-start">
 			<div className="w-[80%] min-h-full bg-gray-900 border-r-2 border-r-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto">
@@ -23,7 +32,9 @@ const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderPr
 				<p className="text-lg text-gray-200 cursor-pointer" onClick={openCartHandler}>
 					My Cart
 				</p>
-				<p className="text-lg text-gray-200 cursor-pointer">My Cabinet</p>
+				<p className="text-lg text-gray-200 cursor-pointer" onClick={() => setShowCabinetMenu(true)}>
+					My Cabinet
+				</p>
 				<Separator className="bg-gray-800" />
 				<div className="flex flex-col justify-start items-start gap-6">
 					{mainMenuConfig.mainMenu.map((item, ind) => (
@@ -65,6 +76,34 @@ const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderPr
 					<RiTelegram2Fill size={24} className="cursor-pointer hover:text-gray-400" />
 				</div>
 			</div>
+			{showCabinetMenu && (
+				<div className="fixed top-24 z-60 w-[79%] min-h-full bg-gray-900 p-6 transition-all duration-300">
+					<button
+						className="mb-4 text-lg text-gray-200 font-semibold flex items-center gap-1"
+						onClick={() => setShowCabinetMenu(false)}
+					>
+						<MdArrowBackIosNew />
+						Back
+					</button>
+					<ul className="flex flex-col justify-start items-start gap-6">
+						{dashboardConfig.accountSidebarNav.map((item, ind) => (
+							<Link
+								key={`${item.title}-${ind}`}
+								href={item.href}
+								className={`text-lg text-gray-200`}
+								onClick={handleCloseAccountMenu}
+							>
+								{item.title}
+							</Link>
+						))}
+						<li>Мій профіль</li>
+						<li>Обрані товари</li>
+						<li>Мої замовлення</li>
+						<li>Налаштування</li>
+						<li>Вийти</li>
+					</ul>
+				</div>
+			)}
 		</div>
 	)
 }

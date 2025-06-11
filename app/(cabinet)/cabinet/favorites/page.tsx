@@ -21,14 +21,14 @@ const AccountFavoritePage = () => {
 
 	return (
 		<Shell className="container flex flex-col gap-8">
-			<div className="w-full flex flex-col gap-4 justify-start items-start text-gray-200">
+			<div className="w-full flex flex-col gap-4 pb-6 justify-start items-start text-gray-200">
 				<h1 className="text-3xl font-bold my-8">My Favorites Products</h1>
 				{favoriteProducts.length > 0 && mockUser ? (
 					<div className="w-full flex flex-wrap gap-8 justify-center">
 						{favoriteProducts?.map(product => (
 							<div
 								key={product.id}
-								className="w-[16rem] h-[22rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+								className="lg:w-[16rem] sm:w-[90%] mx-auto lg:h-[22rem] sm:h-[30rem] border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
 								<AccountProductCard product={product} />
 							</div>

@@ -53,10 +53,10 @@ const AccountOrderHistoryItem = ({ order }: OrderHistoryProps) => {
 						{order.items.map((item: ProductData) => (
 							<div
 								key={item.id}
-								className="flex justify-between items-center gap-2 text-gray-200 border border-gray-800 rounded p-3 bg-gray-800/50"
+								className="w-full lg:flex sm:grid sm:grid-rows-2 justify-between items-center gap-4 text-gray-200 border border-gray-800 rounded p-3 bg-gray-800/50"
 							>
-								<div className="w-1/2 h-12 flex justify-start items-center gap-4">
-									<div className="bg-gray-100 border border-gray-700 w-16 h-16 rounded overflow-hidden">
+								<div className="lg:w-1/2 sm:w-full min-h-12 flex justify-start items-center gap-4">
+									<div className="bg-gray-100 border border-gray-700 lg:w-16 sm:w-28 lg:h-16 sm:h-28 rounded overflow-hidden">
 										<img
 											src={
 												item.src.medium
@@ -71,30 +71,34 @@ const AccountOrderHistoryItem = ({ order }: OrderHistoryProps) => {
 									</div>
 									<div className="font-semibold text-lg">{item.title}</div>
 								</div>
-								{item.price.map((p, i) => (
-									<div key={i} className="w-1/4 grid grid-cols-2 items-center gap-4">
-										{item.category === 'Coffee' && (
-											<div className="grid grid-cols-3 item-center bg-gray-900/60 border border-gray-900/60 rounded-sm">
-												<span className="col-span-1 text-md font-semibold border-r border-r-gray-800 px-3 py-1">{`${
-													p.size === 'small' ? 'S' : p.size === 'medium' ? 'M' : 'L'
-												}`}</span>
-												<span className="col-span-2 items-center px-3 py-1">
-													<span className="text-orange-500 pr-1">$</span>
-													{p.price.toFixed(2)}
+								<div className="lg:w-1/2 sm:w-full flex lg:flex-row sm:flex-col gap-2 lg:items-center sm:items-end">
+									<div className="lg:w-2/3 sm:w-full flex flex-col gap-1">
+										{item.price.map((p, i) => (
+											<div key={i} className=" grid lg:grid-cols-2 sm:grid-cols-4 items-center gap-4">
+												{item.category === 'Coffee' && (
+													<div className="grid grid-cols-3 lg:col-span-1 sm:col-span-3 item-center bg-gray-900/60 border border-gray-900/60 rounded-sm">
+														<span className="col-span-1 text-md font-semibold border-r border-r-gray-800 px-3 py-1">{`${
+															p.size === 'small' ? 'S' : p.size === 'medium' ? 'M' : 'L'
+														}`}</span>
+														<span className="col-span-2 items-center px-3 py-1">
+															<span className="text-orange-500 pr-1">$</span>
+															{p.price.toFixed(2)}
+														</span>
+													</div>
+												)}
+												<span>
+													<span className="text-orange-500 pr-1">X</span>
+													{p.quantity}
 												</span>
 											</div>
-										)}
-										<span>
-											<span className="text-orange-500 pr-1">X</span>
-											{p.quantity}
-										</span>
+										))}
 									</div>
-								))}
 
-								<p className="mt-2 text-sm font-semibold">
-									{`Total: ${item.totalPrice.toFixed(2)}`}
-									<span className="text-orange-500 pl-1">$</span>
-								</p>
+									<p className="mt-2 text-sm font-semibold">
+										{`Total: ${item.totalPrice.toFixed(2)}`}
+										<span className="text-orange-500 pl-1">$</span>
+									</p>
+								</div>
 							</div>
 						))}
 					</div>

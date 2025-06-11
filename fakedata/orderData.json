@@ -310,10 +310,22 @@
 						"price": 8.56,
 						"quantity": 2,
 						"isChecked": false
+					},
+					{
+						"size": "large",
+						"price": 13.56,
+						"quantity": 1,
+						"isChecked": false
+					},
+					{
+						"size": "small",
+						"price": 5.56,
+						"quantity": 1,
+						"isChecked": false
 					}
 				],
 				"rating": 4.7,
-				"totalPrice": 17.12
+				"totalPrice": 36.24
 			},
 			{
 				"id": "3",
@@ -339,7 +351,7 @@
 				"totalPrice": 9.5
 			}
 		],
-		"totalAmount": 26.62,
+		"totalAmount": 45.74,
 		"type": "in-place",
 		"details": {
 			"placeName": "Coffee Town - Поділ",
