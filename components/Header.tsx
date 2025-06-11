@@ -53,6 +53,8 @@ const Header = () => {
 		}, 0)
 	}
 
+	const quantity: number = getTotalQuantity(cartProducts)
+
 	return (
 		<header
 			className={`w-full h-[5rem] fixed top-0 z-20 transition-colors duration-300 ${
@@ -73,12 +75,12 @@ const Header = () => {
 				</div>
 				<div className={`logo text-2xl ${!isContact && !isScrolled ? 'text-black' : 'text-gray-200'}`}>Coffee Town</div>
 				<div className="relative p-2 lg:flex sm:hidden items-center justify-between gap-4">
-					{cartProducts.length > 0 ? (
+					{quantity > 0 ? (
 						<>
 							<div
 								className={`absolute -top-1 left-3 z-[-1] px-2 py-[.15rem] bg-orange-600 text-gray-200 rounded-full flex justify-center items-center `}
 							>
-								{cartProducts.length > 0 && getTotalQuantity(cartProducts)}
+								{getTotalQuantity(cartProducts)}
 							</div>
 							<PiShoppingCartSimpleFill
 								size={28}
@@ -141,7 +143,14 @@ const Header = () => {
 					</Shell>
 				</div>
 			)}
-			{isMobile && <MobileHeader openCartHandler={openCartHandler} isMobile={isMobile} setIsMobile={setIsMobile} />}
+			{isMobile && (
+				<MobileHeader
+					quantity={quantity}
+					openCartHandler={openCartHandler}
+					isMobile={isMobile}
+					setIsMobile={setIsMobile}
+				/>
+			)}
 			{openCart && <Cart openCartHandler={openCartHandler} />}
 		</header>
 	)

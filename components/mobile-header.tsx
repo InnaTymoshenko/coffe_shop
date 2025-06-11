@@ -12,11 +12,12 @@ import { dashboardConfig } from '@/root-config/dashboard'
 
 type MobileHeaderProps = {
 	isMobile: boolean
+	quantity: number
 	setIsMobile: (value: boolean) => void
 	openCartHandler: () => void
 }
 
-const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderProps) => {
+const MobileHeader = ({ isMobile, setIsMobile, openCartHandler, quantity }: MobileHeaderProps) => {
 	const [showCabinetMenu, setShowCabinetMenu] = useState(false)
 
 	const handleCloseAccountMenu = () => {
@@ -29,9 +30,19 @@ const MobileHeader = ({ isMobile, setIsMobile, openCartHandler }: MobileHeaderPr
 			<div className="w-[80%] min-h-full bg-gray-900 border-r-2 border-r-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto">
 				<div className={`logo text-2xl text-gray-200`}>Coffee Town</div>
 				<Separator className="bg-gray-200" />
-				<p className="text-lg text-gray-200 cursor-pointer" onClick={openCartHandler}>
-					My Cart
-				</p>
+				<div className="relative">
+					<p className="text-lg text-gray-200 cursor-pointer" onClick={openCartHandler}>
+						My Cart
+					</p>
+					{quantity > 0 && (
+						<div
+							className={`absolute -top-1 left-16 z-10 px-2 py-[.15rem] bg-orange-600 text-gray-200 rounded-full flex justify-center items-center `}
+						>
+							{quantity}
+						</div>
+					)}
+				</div>
+
 				<p className="text-lg text-gray-200 cursor-pointer" onClick={() => setShowCabinetMenu(true)}>
 					My Cabinet
 				</p>

@@ -50,7 +50,7 @@ const Cart = ({ openCartHandler }: Props) => {
 					{cartProducts.map(item => (
 						<div
 							key={item.id}
-							className="w-full min-h-32 rounded-sm border border-gray-400 grid lg:grid-cols-6 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-4 content-normal items-center gap-2 overflow-hidden"
+							className="w-full min-h-32 rounded-sm border border-gray-400 grid lg:grid-cols-6 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-4 content-normal items-center gap-2 pr-2 overflow-hidden"
 						>
 							<div className="w-full lg:row-span-1 sm:row-span-2">
 								<img
