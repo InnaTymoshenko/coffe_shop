@@ -1,4 +1,4 @@
-import AdminHeader from '@/components/layouts/dashboard/Admin-header'
+import AdminHeader from '@/components/layouts/dashboard/admin-header'
 import NavSidebar from '@/components/layouts/dashboard/nav-sidebar'
 import { dashboardConfig } from '@/root-config/dashboard'
 import React from 'react'
