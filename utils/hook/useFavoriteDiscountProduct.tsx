@@ -5,11 +5,11 @@ import { useAdminStore } from '@/store/admin-store'
 
 export const useFavoriteDiscountProduct = () => {
 	const { coffeeData, cupcakeData } = useProductCart()
-	const moskUser = useAdminStore(state => state.mockUser)
+	const mockUser = useAdminStore(state => state.mockUser)
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
 	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 
-	const favorites = useMemo(() => moskUser?.favoritesProductsIds ?? [], [moskUser])
+	const favorites = useMemo(() => mockUser?.favoritesProductsIds ?? [], [mockUser])
 
 	const allProducts = useMemo(
 		() => [...coffeeUpdated.allWithPromo, ...cupcakeUpdated.allWithPromo],

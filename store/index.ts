@@ -247,6 +247,8 @@ export const useProductCart = create<ICartStore>()(set => ({
 			const updateProductData = (products: ProductData[]) =>
 				products.map(p => {
 					if (p.id === item.id) {
+						console.log(p)
+
 						if (isCoffee(p) && size) {
 							const updatedPrice = p.price.map(priceObj =>
 								priceObj.size === size

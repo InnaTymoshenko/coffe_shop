@@ -1,4 +1,5 @@
 import { API_KEY } from '@/config'
+import { PersonalDiscount } from '@/types/discount'
 import { ProductData, Size } from '@/types/item-type'
 
 export type DateRange = 'all' | 'week' | 'month' | 'year'
@@ -39,6 +40,49 @@ export async function getServerSideProps(url: string) {
 // 	const ingredientsList = category === 'Coffee' ? coffeeIngredients : cakeIngredients
 // 	return ingredientsList[Math.floor(Math.random() * ingredientsList.length)]
 // }
+
+export const getFavoriteDiscountProduct = (
+	products: ProductData[],
+	favoriteIds: string[],
+	personalDiscounts: PersonalDiscount[]
+): ProductData | null => {
+	if (!favoriteIds.length) return null
+
+	const seed = new Date().toISOString().slice(0, 10)
+	const index = seed.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) % favoriteIds.length
+	const selectedId = favoriteIds[index]
+
+	const product = products.find(p => p.id === selectedId)
+	if (!product) return null
+
+	const globalDiscount = product.promotion?.isActive ? 0.1 : 0
+	const bestDiscount = getBestDiscount(product.id, personalDiscounts, globalDiscount)
+
+	const discountedPrice = product.price.map(p => ({
+		...p,
+		originalPrice: p.price,
+		price: +(p.price * (1 - bestDiscount)).toFixed(2),
+		isDiscounted: bestDiscount > 0
+	}))
+
+	const totalPrice = discountedPrice.reduce((sum, p) => sum + p.price * p.quantity, 0)
+
+	return {
+		...product,
+		price: discountedPrice,
+		totalPrice
+	}
+}
+
+export const getBestDiscount = (
+	productId: string,
+	personalDiscounts: PersonalDiscount[] = [],
+	globalDiscount: number = 0
+): number => {
+	const matched = personalDiscounts.filter(d => d.productId === productId).map(d => d.discount)
+	matched.push(globalDiscount)
+	return Math.max(...matched, 0)
+}
 
 export const quantityHandler = (item: ProductData, selected: Size) => {
 	const qt = item.price.find(q => q.size === selected)

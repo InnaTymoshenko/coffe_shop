@@ -32,7 +32,7 @@ const DiscountProductCard = ({ item }: Props) => {
 		addToCart(item, size)
 	}
 
-	console.log(item)
+	// console.log(item)
 
 	return (
 		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-11  sm:grid-cols-3 xl:grid-rows-1 sm:grid-rows-3 xl:pl-0 sm:pl-2 pr-2 xl:py-0 sm:py-2 content-normal items-center gap-2 relative z-10">
@@ -59,7 +59,7 @@ const DiscountProductCard = ({ item }: Props) => {
 				<p className="text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className="justify-self-center">
+				<Badge variant="success" className="justify-center">
 					{item.promotion?.label}
 				</Badge>
 			) : (

@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-
 import Shell from '@/components/ui/shell'
 import { ProductData } from '@/types/item-type'
 import { useProductCart } from '@/store'

@@ -1,3 +1,4 @@
+import { PersonalDiscount } from './discount'
 import { OrderData } from './order-type'
 
 export type UserRole = 'user' | 'admin'
@@ -26,6 +27,7 @@ export interface UserProfile {
 	favoriteCafeId: string | null
 	favoritesProductsIds: string[]
 	notes?: string
+	personalDiscounts: PersonalDiscount[]
 }
 
 export interface UserWithOrder extends UserProfile {

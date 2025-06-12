@@ -22,5 +22,10 @@ export const MockUser: UserProfile = {
 	totalSpent: 1071.52,
 	favoriteCafeId: 'obolon',
 	notes: 'Prefers oat milk in coffee.',
-	favoritesProductsIds: ['1', '5', 'summer-1', 'cup-4', 'autumn-cup-1']
+	favoritesProductsIds: ['1', '5', 'summer-1', 'cup-4', 'autumn-cup-1'],
+	personalDiscounts: [
+		{ productId: 'coffee-1', reason: 'favorite', discount: 0.05 },
+		{ productId: 'coffee-1', reason: 'birthday', discount: 0.1 },
+		{ productId: 'cake-2', reason: 'loyalty', discount: 0.07 }
+	]
 }
