@@ -57,7 +57,7 @@ const Location = () => {
 								options={cafeOptions}
 								value={selectedCafe.id}
 								onChange={handleLocationChange}
-								className="p-2 border border-gray-400 rounded-sm focus:outline-none"
+								className="p-2 border border-gray-400 rounded-sm focus:outline-none w-full"
 							/>
 						)}
 						{cafes.length > 0 && (

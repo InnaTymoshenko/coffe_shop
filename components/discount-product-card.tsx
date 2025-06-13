@@ -47,7 +47,7 @@ const DiscountProductCard = ({ item }: Props) => {
 					alt={item.title}
 					className="xl:hidden sm:block w-full h-full absolute inset-0 -z-20 object-cover object-center"
 				/>
-				<div className="xl:hidden sm:block absolute inset-0 bg-black bg-opacity-60 -z-10"></div>
+				<div className="xl:hidden sm:block absolute inset-0 bg-black bg-opacity-80 -z-10"></div>
 			</div>
 			<div className="w-full pl-2 col-span-2 text-gray-200 flex flex-col gap-3">
 				<h3

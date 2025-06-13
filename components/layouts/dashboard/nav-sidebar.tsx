@@ -15,7 +15,7 @@ export default function NavSidebar({ items, variant = 'default', className, ...p
 
 	return (
 		<div className={className} {...props}>
-			<div className="flex flex-col gap-1 pb-8 pt-6 md:py-8 px-6">
+			<div className="flex flex-col gap-1 pb-8 pt-6 md:py-8 xl:px-6 sm:px-0">
 				{items.map((item, index) => (
 					<SidebarNavItem
 						key={index}

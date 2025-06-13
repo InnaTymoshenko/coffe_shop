@@ -9,6 +9,7 @@ import { BsTelephoneForward } from 'react-icons/bs'
 import { Separator } from './ui/separator'
 import { mainMenuConfig } from '@/root-config/main-menu'
 import { dashboardConfig } from '@/root-config/dashboard'
+import NavSidebar from './layouts/dashboard/nav-sidebar'
 
 type MobileHeaderProps = {
 	isMobile: boolean
@@ -20,10 +21,10 @@ type MobileHeaderProps = {
 const MobileHeader = ({ isMobile, setIsMobile, openCartHandler, quantity }: MobileHeaderProps) => {
 	const [showCabinetMenu, setShowCabinetMenu] = useState(false)
 
-	const handleCloseAccountMenu = () => {
-		setShowCabinetMenu(false)
-		setIsMobile(false)
-	}
+	// const handleCloseAccountMenu = () => {
+	// 	setShowCabinetMenu(false)
+	// 	setIsMobile(false)
+	// }
 
 	return (
 		<div className="fixed top-0 bottom-0 w-full min-h-screen bg-gray-900/80 z-40 flex justify-start">
@@ -96,23 +97,10 @@ const MobileHeader = ({ isMobile, setIsMobile, openCartHandler, quantity }: Mobi
 						<MdArrowBackIosNew />
 						Back
 					</button>
-					<ul className="flex flex-col justify-start items-start gap-6">
-						{dashboardConfig.accountSidebarNav.map((item, ind) => (
-							<Link
-								key={`${item.title}-${ind}`}
-								href={item.href}
-								className={`text-lg text-gray-200`}
-								onClick={handleCloseAccountMenu}
-							>
-								{item.title}
-							</Link>
-						))}
-						<li>Мій профіль</li>
-						<li>Обрані товари</li>
-						<li>Мої замовлення</li>
-						<li>Налаштування</li>
-						<li>Вийти</li>
-					</ul>
+					<Separator className="bg-gray-800" />
+					<NavSidebar items={dashboardConfig.accountSidebarNav} variant="user" />
+					<Separator className="bg-gray-800" />
+					<p className="mt-4 text-lg text-gray-200">Вийти</p>
 				</div>
 			)}
 		</div>

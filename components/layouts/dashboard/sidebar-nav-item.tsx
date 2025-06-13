@@ -10,6 +10,8 @@ type SidebarNavItemProps = {
 	variant: 'admin' | 'user' | 'default'
 	action?: 'openCart'
 	setOpenCart?: (value: boolean) => void
+	setIsMobile?: (value: boolean) => void
+	setShowCabinetMenu?: (value: boolean) => void
 }
 
 const variantClasses = {
@@ -18,7 +20,15 @@ const variantClasses = {
 	user: 'text-gray-200 hover:bg-gray-700'
 }
 
-export const SidebarNavItem = ({ title, href, variant, action, setOpenCart }: SidebarNavItemProps) => {
+export const SidebarNavItem = ({
+	title,
+	href,
+	variant,
+	action,
+	setOpenCart,
+	setIsMobile,
+	setShowCabinetMenu
+}: SidebarNavItemProps) => {
 	const pathname = usePathname()
 	const isActionOnly = action === 'openCart'
 	const isMain = href === '/cabinet' || href === '/admin'
@@ -29,6 +39,8 @@ export const SidebarNavItem = ({ title, href, variant, action, setOpenCart }: Si
 		if (action === 'openCart') {
 			e.preventDefault()
 			setOpenCart?.(true)
+			setShowCabinetMenu?.(false)
+			setIsMobile?.(false)
 		}
 	}
 
