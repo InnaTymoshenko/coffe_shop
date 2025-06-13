@@ -1,0 +1,2086 @@
+[
+	{
+		"id": "cup-1",
+		"alt": "Light and fluffy vanilla cupcake with creamy frosting.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-1.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["vanilla", "milk"],
+		"title": "Vanilla Dream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.36,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 324,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-2",
+		"alt": "Rich chocolate cupcake topped with ganache.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-2.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["chocolate", "cream"],
+		"title": "Chocolate Bliss",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.61,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.0,
+		"ratingCount": 456,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-3",
+		"alt": "Classic red velvet with a hint of cocoa and cream cheese frosting.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-3.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cocoa", "cream cheese"],
+		"title": "Red Velvet",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.72,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.5,
+		"ratingCount": 120,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-4",
+		"alt": "Tangy lemon cupcake with a zesty glaze.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-4.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["lemon", "glaze"],
+		"title": "Lemon Zest",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.73,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 287,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-5",
+		"alt": "Spiced carrot cake cupcake with walnut topping.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-5.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["carrot", "walnut"],
+		"title": "Carrot Cake",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.29,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 654,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-6",
+		"alt": "Fresh strawberry flavor with swirled icing.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-6.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["strawberry"],
+		"title": "Strawberry Swirl",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.44,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 234,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-7",
+		"alt": "Soft coconut cupcake topped with whipped cream.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-7.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["coconut", "cream"],
+		"title": "Coconut Cloud",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.9,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 453,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-8",
+		"alt": "Coffee-infused chocolate cupcake with mocha frosting.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-8.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["double coffee", "chocolate"],
+		"title": "Mocha Delight",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.56,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-9",
+		"alt": "Moist blueberry cupcake with fruity icing.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-9.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["blueberry", "icing"],
+		"title": "Blueberry Burst",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.51,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 567,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-10",
+		"alt": "Buttery cupcake with salted caramel core.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-10.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["caramel", "butter"],
+		"title": "Salted Caramel",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"ratingCount": 432,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-11",
+		"alt": "Decadent peanut butter cupcake with chocolate topping.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-11.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["peanut butter", "chocolate"],
+		"title": "Peanut Butter Cup",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.94,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 452,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-12",
+		"alt": "Floral raspberry cupcake with rosewater glaze.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-12.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["raspberry", "rosewater"],
+		"title": "Raspberry Rose",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.85,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 456,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-13",
+		"alt": "Banana cupcake with vanilla custard center.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-13.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["banana", "custard"],
+		"title": "Banana Cream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.6,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 539,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-14",
+		"alt": "Minty chocolate cupcake with a crisp topping.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-14.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["mint", "chocolate"],
+		"title": "Mint Chocolate",
+		"price": [
+			{
+				"size": "medium",
+				"price": 2.74,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 259,
+		"totalPrice": 0
+	},
+	{
+		"id": "cup-15",
+		"alt": "Spiced pumpkin cupcake with cinnamon frosting.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-15.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["pumpkin", "cinnamon"],
+		"title": "Pumpkin Spice",
+		"price": [
+			{
+				"size": "medium",
+				"price": 3.61,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.0,
+		"ratingCount": 154,
+		"totalPrice": 0
+	},
+	{
+		"id": "spring-cup-1",
+		"alt": "Cherry Blossom Cupcake with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-spring-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cherry", "vanilla"],
+		"title": "Cherry Blossom Cupcake",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-cup-2",
+		"alt": "Lemon Poppy Seed with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-spring-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["lemon", "poppy seed"],
+		"title": "Lemon Poppy Seed",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-cup-3",
+		"alt": "Vanilla Bloom with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-spring-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["vanilla", "flower"],
+		"title": "Vanilla Bloom",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-cup-4",
+		"alt": "Honey Lavender with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-spring-4.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["honey", "lavender"],
+		"title": "Honey Lavender",
+		"price": [
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "summer-cup-1",
+		"alt": "Mango Coconut with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-summer-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["mango", "coconut"],
+		"title": "Mango Coconut",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-cup-2",
+		"alt": "Strawberry Splash with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-summer-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["strawberry", "cream"],
+		"title": "Strawberry Splash",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-cup-3",
+		"alt": "Tropical Breeze with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-summer-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["pineapple", "vanilla"],
+		"title": "Tropical Breeze",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-cup-4",
+		"alt": "Peach Paradise with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-summer-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["peach", "whipped cream"],
+		"title": "Peach Paradise",
+		"price": [
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "autumn-cup-1",
+		"alt": "Pumpkin Cream with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-autumn-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["pumpkin", "cream"],
+		"title": "Pumpkin Cream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-cup-2",
+		"alt": "Maple Walnut with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-autumn-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["maple", "walnut"],
+		"title": "Maple Walnut",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-cup-3",
+		"alt": "Apple Crumble with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-autumn-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["apple", "cinnamon"],
+		"title": "Apple Crumble",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-cup-4",
+		"alt": "Carrot Spice with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-autumn-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["carrot", "spices"],
+		"title": "Carrot Spice",
+		"price": [
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "winter-cup-1",
+		"alt": "Ginger Snow with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-winter-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["ginger", "sugar"],
+		"title": "Ginger Snow",
+		"price": [
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-cup-2",
+		"alt": "Chocolate Mint with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-winter-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["chocolate", "mint"],
+		"title": "Chocolate Mint",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-cup-3",
+		"alt": "Cranberry Dream with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-winter-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cranberry", "cream"],
+		"title": "Cranberry Dream",
+		"price": [
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-cup-4",
+		"alt": "Spiced Cocoa with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/cupcake/cupcake-winter-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Cupcake",
+		"ingridients": ["cocoa", "spices"],
+		"title": "Spiced Cocoa",
+		"price": [
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "1",
+		"alt": "Rich and bold espresso shot.",
+		"src": {
+			"medium": "/assets/coffee/coffee-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["milk"],
+		"title": "Espresso",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.37,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.37,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.37,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.9,
+		"ratingCount": 556,
+		"totalPrice": 0
+	},
+	{
+		"id": "2",
+		"alt": "Espresso with steamed milk foam.",
+		"src": {
+			"medium": "/assets/coffee/coffee-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["milk foam", "cinnamon"],
+		"title": "Cappuccino",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.56,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.56,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.56,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 342,
+		"totalPrice": 0
+	},
+	{
+		"id": "3",
+		"alt": "Smooth blend of espresso and steamed milk.",
+		"src": {
+			"medium": "/assets/coffee/coffee-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["steamed milk"],
+		"title": "Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 5.0,
+		"ratingCount": 120,
+		"totalPrice": 0
+	},
+	{
+		"id": "4",
+		"alt": "Espresso with added hot water.",
+		"src": {
+			"medium": "/assets/coffee/coffee-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": [],
+		"title": "Americano",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.26,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.26,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.26,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 154,
+		"totalPrice": 0
+	},
+	{
+		"id": "5",
+		"alt": "Strong coffee with velvety microfoam.",
+		"src": {
+			"medium": "/assets/coffee/coffee-5-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["microfoam", "milk"],
+		"title": "Flat White",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.51,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.51,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.51,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 550,
+		"totalPrice": 0
+	},
+	{
+		"id": "6",
+		"alt": "Espresso mixed with chocolate and milk.",
+		"src": {
+			"medium": "/assets/coffee/coffee-6-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["chocolate", "milk"],
+		"title": "Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.33,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.33,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.33,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.1,
+		"ratingCount": 542,
+		"totalPrice": 0
+	},
+	{
+		"id": "7",
+		"alt": "Espresso with a dash of frothy milk.",
+		"src": {
+			"medium": "/assets/coffee/coffee-7-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["milk froth"],
+		"title": "Macchiato",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.29,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.29,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.29,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 450,
+		"totalPrice": 0
+	},
+	{
+		"id": "8",
+		"alt": "Coffee with Irish whiskey and cream.",
+		"src": {
+			"medium": "/assets/coffee/coffee-8-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["whiskey", "cream"],
+		"title": "Irish Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.73,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.73,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.73,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"ratingCount": 762,
+		"totalPrice": 0
+	},
+	{
+		"id": "9",
+		"alt": "Espresso cut with a small amount of warm milk.",
+		"src": {
+			"medium": "/assets/coffee/coffee-9-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["milk"],
+		"title": "Cortado",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.62,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.62,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.62,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.1,
+		"ratingCount": 120,
+		"totalPrice": 0
+	},
+	{
+		"id": "10",
+		"alt": "Shorter, more concentrated espresso.",
+		"src": {
+			"medium": "/assets/coffee/coffee-10-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": [],
+		"title": "Ristretto",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.78,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.78,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.78,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.4,
+		"ratingCount": 234,
+		"totalPrice": 0
+	},
+	{
+		"id": "11",
+		"alt": "Vanilla ice cream topped with hot espresso.",
+		"src": {
+			"medium": "/assets/coffee/coffee-11-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["vanilla ice cream"],
+		"title": "Affogato",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.3,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.3,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.3,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 453,
+		"totalPrice": 0
+	},
+	{
+		"id": "12",
+		"alt": "Traditional strong coffee with foam.",
+		"src": {
+			"medium": "/assets/coffee/coffee-12-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["ground coffee", "cardamom"],
+		"title": "Turkish Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.7,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.7,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.7,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 563,
+		"totalPrice": 0
+	},
+	{
+		"id": "13",
+		"alt": "Chilled coffee served over ice.",
+		"src": {
+			"medium": "/assets/coffee/coffee-13-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["ice", "coffee"],
+		"title": "Iced Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 5.49,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 8.49,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 13.49,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 234,
+		"totalPrice": 0
+	},
+	{
+		"id": "14",
+		"alt": "Smooth, cold-brewed coffee flavor.",
+		"src": {
+			"medium": "/assets/coffee/coffee-14-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["cold brew", "ice"],
+		"title": "Cold Brew",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 7.16,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 12.16,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.3,
+		"ratingCount": 533,
+		"totalPrice": 0
+	},
+	{
+		"id": "15",
+		"alt": "Cold brew infused with nitrogen for a creamy texture.",
+		"src": {
+			"medium": "/assets/coffee/coffee-15-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["nitrogen", "cold brew"],
+		"title": "Nitro Coffee",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.35,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.35,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 11.35,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.2,
+		"ratingCount": 340,
+		"totalPrice": 0
+	},
+	{
+		"id": "spring-1",
+		"alt": "Lavender Honey Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/spring-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["lavender", "honey", "milk"],
+		"title": "Lavender Honey Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-2",
+		"alt": "Mint Matcha Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/spring-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["matcha", "mint", "milk"],
+		"title": "Mint Matcha Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-3",
+		"alt": "Rose Espresso with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/spring-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["rose", "milk", "espresso"],
+		"title": "Rose Espresso",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "spring-4",
+		"alt": "Iced Vanilla Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/spring-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["vanilla", "ice", "milk"],
+		"title": "Iced Vanilla Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-spring-2025",
+			"type": "seasonal",
+			"label": "Spring Delights",
+			"isActive": false,
+			"season": "spring"
+		}
+	},
+	{
+		"id": "summer-1",
+		"alt": "Coconut Cold Brew with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/summer-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["cold brew", "coconut", "vanilla"],
+		"title": "Coconut Cold Brew",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-2",
+		"alt": "Iced Caramel Macchiato with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/summer-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["caramel", "espresso", "ice"],
+		"title": "Iced Caramel Macchiato",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-3",
+		"alt": "Espresso Tonic with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/summer-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["espresso", "tonic", "lemon"],
+		"title": "Espresso Tonic",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "summer-4",
+		"alt": "Mango Cream Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/summer-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["mango", "milk", "ice"],
+		"title": "Mango Cream Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
+	},
+	{
+		"id": "autumn-1",
+		"alt": "Pumpkin Spice Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/autumn-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["pumpkin spice", "milk", "cinnamon"],
+		"title": "Pumpkin Spice Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-2",
+		"alt": "Salted Caramel Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/autumn-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["salted caramel", "chocolate", "milk"],
+		"title": "Salted Caramel Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-3",
+		"alt": "Apple Pie Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/autumn-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["apple", "cinnamon", "milk"],
+		"title": "Apple Pie Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "autumn-4",
+		"alt": "Maple Pecan Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/autumn-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["maple", "pecan", "milk"],
+		"title": "Maple Pecan Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-autumn-2025",
+			"type": "seasonal",
+			"label": "Autumn Flavors",
+			"isActive": false,
+			"season": "autumn"
+		}
+	},
+	{
+		"id": "winter-1",
+		"alt": "Gingerbread Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/winter-1-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["gingerbread", "spices", "milk"],
+		"title": "Gingerbread Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-2",
+		"alt": "White Chocolate Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/winter-2-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["white chocolate", "espresso", "milk"],
+		"title": "White Chocolate Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 3.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 6.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.7,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-3",
+		"alt": "Peppermint Mocha with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/winter-3-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["peppermint", "chocolate", "milk"],
+		"title": "Peppermint Mocha",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 5.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.0,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.8,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	},
+	{
+		"id": "winter-4",
+		"alt": "Chocolate Snowflake Latte with seasonal ingredients.",
+		"src": {
+			"medium": "/assets/coffee/winter-4-min.jpg",
+			"portrait": "",
+			"landscape": "",
+			"tiny": ""
+		},
+		"category": "Coffee",
+		"ingridients": ["chocolate", "marshmallow", "milk"],
+		"title": "Chocolate Snowflake Latte",
+		"price": [
+			{
+				"size": "small",
+				"price": 4.5,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "medium",
+				"price": 6.0,
+				"quantity": 1,
+				"isChecked": false
+			},
+			{
+				"size": "large",
+				"price": 7.5,
+				"quantity": 1,
+				"isChecked": false
+			}
+		],
+		"rating": 4.6,
+		"ratingCount": 120,
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-winter-2025",
+			"type": "seasonal",
+			"label": "Winter Warmers",
+			"isActive": false,
+			"season": "winter"
+		}
+	}
+]

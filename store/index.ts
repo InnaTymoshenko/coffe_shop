@@ -1,17 +1,21 @@
 import { create } from 'zustand'
 import fakeCoffeeData from '@/fakedata/coffeeData.json'
 import fakeCupcakeData from '@/fakedata/cupcakeData.json'
+import fakeProductData from '@/fakedata/productData.json'
 import { ProductData, QuantityType, Size } from '@/types/item-type'
+import { PersonalDiscount } from '@/types/discount'
 
 type CartItem = ProductData
 
 interface ICartStore {
 	coffeeData: ProductData[]
 	cupcakeData: ProductData[]
+	productData: ProductData[]
 	cartProducts: CartItem[]
 	activeTab: 'coffee' | 'cupcake'
 	isShow: boolean
 	openCart: boolean
+	updatedProductData: (value: PersonalDiscount[]) => void
 	setOpenCart: (value: boolean) => void
 	setIsShow: (value: boolean) => void
 	setActiveTab: (value: 'coffee' | 'cupcake') => void
@@ -20,13 +24,17 @@ interface ICartStore {
 	updateCartQuantity: (itemId: string, size: Size, type: QuantityType) => void
 }
 
-export const useProductCart = create<ICartStore>()(set => ({
+export const useProductCart = create<ICartStore>()((set, get) => ({
 	coffeeData: fakeCoffeeData as ProductData[],
 	cupcakeData: fakeCupcakeData as ProductData[],
+	productData: fakeProductData as ProductData[],
 	cartProducts: [],
 	activeTab: 'coffee',
 	isShow: false,
 	openCart: false,
+	updatedProductData: value => {
+		const { productData } = get()
+	},
 	setOpenCart: value => set({ openCart: value }),
 	setIsShow: value => set({ isShow: value }),
 	setActiveTab: value => set({ activeTab: value }),

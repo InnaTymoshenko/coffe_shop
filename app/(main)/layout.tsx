@@ -7,7 +7,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<div className="relative grid grid-rows-[0px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-playfair)]">
+		<div className="relative flex flex-col items-center justify-between min-h-screen font-[family-name:var(--font-playfair)]">
 			<Header />
 			<main className="relative w-full min-h-screen flex flex-col row-start-2 items-center sm:items-start mb-16 pb-16">
 				{children}
