@@ -51,60 +51,60 @@ const AccountPersonalPage = () => {
 					</Button>
 				</div>
 				<div className="w-full flex flex-col justify-between items-stretch gap-6 p-8 lg:mb-2 sm:mb-6 bg-gray-900 border border-gray-800 rounded-sm">
-					<div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-3 gap-2 border-b border-b-gray-800 pb-2">
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+					<div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-2 border-b border-b-gray-800 pb-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">LastName</span>
-							<span className="font-semibold">{mockUser.lastName}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.lastName}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">First Name</span>
-							<span className="font-semibold">{mockUser.firstName}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.firstName}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Second Name</span>
-							<span className="font-semibold">{mockUser.secondName}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.secondName}</span>
 						</div>
 					</div>
 					<div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-3 gap-2 border-b border-b-gray-800 pb-2">
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Birthday</span>
-							<span className="font-semibold">{mockUser.birthday}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.birthday}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Gender</span>
-							<span className="font-semibold">{mockUser.gender}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.gender}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Language</span>
-							<span className="font-semibold">{userLanguage(mockUser.language)}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{userLanguage(mockUser.language)}</span>
 						</div>
 					</div>
 					<div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-3 gap-2 border-b border-b-gray-800 pb-2">
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Phone</span>
-							<span className="font-semibold">{mockUser.phone}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.phone}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Email</span>
-							<span className="font-semibold">{mockUser.email}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.email}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Address</span>
-							<span className="font-semibold">{mockUser.address}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.address}</span>
 						</div>
 					</div>
 					<div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-3 gap-2 border-b border-b-gray-800 pb-2">
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Favorite Cafe</span>
-							<span className="font-semibold">{favoriteCafe?.name}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{favoriteCafe?.name}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin">Notes</span>
-							<span className="font-semibold">{mockUser.notes}</span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2">{mockUser.notes}</span>
 						</div>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-2">
 							<span className="text-gray-500 font-thin"></span>
-							<span className="font-semibold"></span>
+							<span className="font-semibold lg:col-span-1 sm:col-span-2"></span>
 						</div>
 					</div>
 					<Button

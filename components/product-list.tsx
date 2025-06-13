@@ -13,6 +13,7 @@ import { ButtonLink } from '@/components/ui/button-link'
 import ProductListSize from './product-list-size'
 import AnimatedButton from './ui/animated-button'
 import { useAdminStore } from '@/store/admin-store'
+import { Badge } from './ui/badge'
 
 type ProductListProps = {
 	product: ProductData
@@ -70,7 +71,6 @@ const ProductList = ({ product }: ProductListProps) => {
 							{product.category}
 						</ButtonLink>
 					</div>
-
 					<span>/</span>
 					<strong>{product.title}</strong>
 				</div>
@@ -88,27 +88,36 @@ const ProductList = ({ product }: ProductListProps) => {
 								alt={product.title}
 								className="w-full h-full object-cover object-center"
 							/>
-							{product.promotion && <div className="label ">{product.promotion?.label}</div>}
 						</div>
-						<div
-							className="sm:block lg:hidden bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
-							onClick={updateFavoriteProducts}
-						>
-							<FaHeart
-								size={20}
-								className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
-							/>
+						<div className="sm:flex lg:hidden flex-col items-end justify-start gap-4 ">
+							<div
+								className="bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
+								onClick={updateFavoriteProducts}
+							>
+								<FaHeart
+									size={20}
+									className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
+								/>
+							</div>
+							{product.promotion && <Badge variant="success">{product.promotion?.label}</Badge>}
 						</div>
 					</div>
-					<div className="lg:w-1/2 sm:w-full text-gray-200 flex flex-col justify-between items-start gap-12">
-						<div
-							className="lg:block sm:hidden bg-gray-800/50 p-2 rounded-sm flex gap-1 items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
-							onClick={updateFavoriteProducts}
-						>
-							<FaHeart
-								size={20}
-								className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
-							/>
+					<div className="lg:w-1/3 sm:w-full text-gray-200 flex flex-col justify-between items-start gap-12">
+						<div className="w-full lg:flex sm:hidden justify-between items-center gap-4">
+							<div
+								className="bg-gray-800/50 p-2 rounded-sm flex gap-1 justify-between items-center cursor-pointer hover:bg-gray-800/80 transition-all duration-300"
+								onClick={updateFavoriteProducts}
+							>
+								<FaHeart
+									size={20}
+									className={`transition-all duration-200 ${isFavorite ? 'text-orange-600' : 'text-gray-200'}`}
+								/>
+							</div>
+							{product.promotion && (
+								<Badge variant="success" className="justify-center">
+									{product.promotion?.label}
+								</Badge>
+							)}
 						</div>
 						<div className="flex flex-col gap-2">
 							<h1 className="text-3xl">{product.title}</h1>

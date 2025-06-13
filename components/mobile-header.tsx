@@ -21,11 +21,6 @@ type MobileHeaderProps = {
 const MobileHeader = ({ isMobile, setIsMobile, openCartHandler, quantity }: MobileHeaderProps) => {
 	const [showCabinetMenu, setShowCabinetMenu] = useState(false)
 
-	// const handleCloseAccountMenu = () => {
-	// 	setShowCabinetMenu(false)
-	// 	setIsMobile(false)
-	// }
-
 	return (
 		<div className="fixed top-0 bottom-0 w-full min-h-screen bg-gray-900/80 z-40 flex justify-start">
 			<div className="w-[80%] min-h-full bg-gray-900 border-r-2 border-r-gray-700 text-gray-200 flex flex-col gap-8 justify-start p-6 overflow-y-auto">
@@ -98,7 +93,12 @@ const MobileHeader = ({ isMobile, setIsMobile, openCartHandler, quantity }: Mobi
 						Back
 					</button>
 					<Separator className="bg-gray-800" />
-					<NavSidebar items={dashboardConfig.accountSidebarNav} variant="user" />
+					<NavSidebar
+						items={dashboardConfig.accountSidebarNav}
+						variant="user"
+						setShowCabinetMenu={setShowCabinetMenu}
+						setIsMobile={setIsMobile}
+					/>
 					<Separator className="bg-gray-800" />
 					<p className="mt-4 text-lg text-gray-200">Вийти</p>
 				</div>

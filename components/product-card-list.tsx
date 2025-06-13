@@ -33,7 +33,7 @@ const ProductCardList = ({ item }: Props) => {
 	}
 
 	return (
-		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-10 sm:grid-cols-1 xl:grid-rows-1 sm:grid-rows-6 py-2 pr-2 xl:pl-0 sm:pl-2 content-normal items-center gap-2 relative z-10">
+		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-10 sm:grid-cols-1 py-2 pr-2 xl:pl-0 sm:pl-2 content-normal items-center xl:gap-2 sm:gap-6 relative z-10">
 			<img src={item.src.medium} alt={item.title} className="xl:block sm:hidden w-24 h-24 object-cover object-center" />
 			<div className="w-full pl-2 xl:col-span-3 text-gray-200 flex flex-col gap-3">
 				<h3
@@ -45,7 +45,7 @@ const ProductCardList = ({ item }: Props) => {
 				<p className="text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className="justify-self-center">
+				<Badge variant="success" className=" xl:w-full sm:w-[80%] mx-auto">
 					{item.promotion?.label}
 				</Badge>
 			) : (
@@ -91,10 +91,10 @@ const ProductCardList = ({ item }: Props) => {
 				</div>
 			</div>
 			<Button
-				className="button relative overflow-hidden w-32 h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+				className="button relative overflow-hidden xl:w-full sm:w-[80%] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 				onClick={() => addToCartHandler(item, selected)}
 			>
-				<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
+				<AnimatedButton className="w-full py-2 hover:-top-10" text={'Add to cart'} />
 			</Button>
 		</div>
 	)

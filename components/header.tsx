@@ -25,7 +25,7 @@ const Header = () => {
 	const segments = pathname.split('/').filter(Boolean)
 	const rootSection = segments[0]
 	const isHomePage = pathname === '/'
-	const isContact = pathname === '/contacts' || rootSection === 'cabinet'
+	const isContact = pathname === '/contacts' || pathname === '/traditional' || rootSection === 'cabinet'
 
 	const openCartHandler = () => {
 		setOpenCart(!openCart)

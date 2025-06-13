@@ -7,7 +7,9 @@ import MenuList from './menu-list'
 import { useSeasonalProducts } from '@/utils/hook/useSeasonalProducts'
 
 const Products = () => {
-	const { cupcakeData, coffeeData } = useProductCart()
+	const { productData } = useProductCart()
+	const coffeeData = productData.filter(p => p.category === 'Coffee')
+	const cupcakeData = productData.filter(p => p.category === 'Cupcake')
 	const coffeeUpdated = useSeasonalProducts(coffeeData)
 	const cupcakeUpdated = useSeasonalProducts(cupcakeData)
 

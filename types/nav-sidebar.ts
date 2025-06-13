@@ -9,4 +9,6 @@ export interface SidebarNavProps extends React.HTMLAttributes<HTMLDivElement> {
 	items: NavSidebarItem[]
 	variant?: 'admin' | 'user' | 'default'
 	setOpenCart?: (value: boolean) => void
+	setShowCabinetMenu?: (value: boolean) => void
+	setIsMobile?: (value: boolean) => void
 }

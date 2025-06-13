@@ -17,6 +17,9 @@ export function Badge({ className = '', variant = 'default', ...props }: BadgePr
 	const style = variantClasses[variant] || variantClasses.default
 
 	return (
-		<div className={`flex items-center rounded-full font-medium px-2 py-0.5 gap-1 ${style} ${className}`} {...props} />
+		<div
+			className={`flex items-center text-center justify-center rounded-full font-medium px-2 py-0.5 gap-1 ${style} ${className}`}
+			{...props}
+		/>
 	)
 }

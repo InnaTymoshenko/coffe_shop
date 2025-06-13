@@ -93,7 +93,14 @@
 		],
 		"rating": 4.2,
 		"ratingCount": 287,
-		"totalPrice": 0
+		"totalPrice": 0,
+		"promotion": {
+			"id": "season-summer-2025",
+			"type": "seasonal",
+			"label": "Summer Refresh",
+			"isActive": false,
+			"season": "summer"
+		}
 	},
 	{
 		"id": "cup-5",

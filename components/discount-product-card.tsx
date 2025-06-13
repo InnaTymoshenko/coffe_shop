@@ -59,7 +59,7 @@ const DiscountProductCard = ({ item }: Props) => {
 				<p className="text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className="justify-center">
+				<Badge variant="success" className="xl:col-span-1 sm:col-span-3 xl:w-full sm:w-[80%] mx-auto">
 					{item.promotion?.label}
 				</Badge>
 			) : (
@@ -115,10 +115,10 @@ const DiscountProductCard = ({ item }: Props) => {
 				</div>
 			</div>
 			<Button
-				className="xl:col-span-1 sm:col-span-3 button relative overflow-hidden w-32 h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+				className="xl:col-span-1 sm:col-span-3 button relative overflow-hidden xl:w-full sm:w-[80%] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 				onClick={() => addToCartHandler(item, selected)}
 			>
-				<AnimatedButton className="w-32 py-2 hover:-top-9" text={'Add to cart'} />
+				<AnimatedButton className="w-full py-2 hover:-top-9" text={'Add to cart'} />
 			</Button>
 		</div>
 	)

@@ -39,9 +39,9 @@ export const SidebarNavItem = ({
 		if (action === 'openCart') {
 			e.preventDefault()
 			setOpenCart?.(true)
-			setShowCabinetMenu?.(false)
-			setIsMobile?.(false)
 		}
+		setShowCabinetMenu?.(false)
+		setIsMobile?.(false)
 	}
 
 	return (

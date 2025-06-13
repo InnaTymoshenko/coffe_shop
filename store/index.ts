@@ -34,6 +34,31 @@ export const useProductCart = create<ICartStore>()((set, get) => ({
 	openCart: false,
 	updatedProductData: value => {
 		const { productData } = get()
+		if (!value?.length) return productData
+
+		const updatedProduct = productData.map(product => {
+			const discount = value.find(d => d.productId === product.id)
+			if (!discount) return product
+
+			const updatedPrices = product.price.map(p => {
+				const discountedPrice = +(p.price * (1 - discount.discount / 100)).toFixed(2)
+				return {
+					...p,
+					originalPrice: p.price,
+					price: discountedPrice,
+					isDiscounted: true
+				}
+			})
+
+			return {
+				...product,
+				price: updatedPrices
+			}
+		})
+
+		set({
+			productData: updatedProduct
+		})
 	},
 	setOpenCart: value => set({ openCart: value }),
 	setIsShow: value => set({ isShow: value }),
