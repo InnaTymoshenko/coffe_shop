@@ -47,7 +47,7 @@ const Location = () => {
 	}
 
 	return (
-		<div id="location" className="w-full  flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-4">
+		<div id="location" className="w-full flex bg-gray-900 flex-col gap-8 justify-start py-8 mb-4">
 			<Shell className="container flex flex-col gap-4 justify-between items-start">
 				<h2 className="text-2xl text-white">Choose a Location</h2>
 				<div className="w-full flex lg:flex-row sm:flex-col justify-between items-center gap-4">
@@ -61,17 +61,19 @@ const Location = () => {
 							/>
 						)}
 						{cafes.length > 0 && (
-							<MapContainer
-								center={[selectedCafe.lat, selectedCafe.lng] as [number, number]}
-								zoom={13}
-								className="lg:w-[500px] sm:w-[350px] mx-auto h-[400px] rounded-lg mt-12"
-							>
-								<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-								<Marker position={[selectedCafe.lat, selectedCafe.lng]} icon={customIcon}>
-									<Popup>{selectedCafe.name}</Popup>
-								</Marker>
-								<ChangeMapCenter lat={selectedCafe.lat} lng={selectedCafe.lng} />
-							</MapContainer>
+							<div className="lg:w-[500px] sm:w-[300px] h-[400px] rounded-lg overflow-hidden mx-auto my-12">
+								<MapContainer
+									center={[selectedCafe.lat, selectedCafe.lng] as [number, number]}
+									zoom={13}
+									className="w-full h-full"
+								>
+									<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+									<Marker position={[selectedCafe.lat, selectedCafe.lng]} icon={customIcon}>
+										<Popup>{selectedCafe.name}</Popup>
+									</Marker>
+									<ChangeMapCenter lat={selectedCafe.lat} lng={selectedCafe.lng} />
+								</MapContainer>
+							</div>
 						)}
 					</div>
 					<div className="lg:w-[45%] sm:w-full h-[600px] overflow-hidden">
