@@ -6,16 +6,22 @@ import { useAdminStore } from '@/store/admin-store'
 import { useCurrentFormattedDateTime } from '@/utils/hook/useCurrentFormattedDateTime'
 import { useFavoriteDiscountProduct } from '@/utils/hook/useFavoriteDiscountProduct'
 import DiscountProductCard from '@/components/discount-product-card'
+import { useProductCart } from '@/store'
+import { getFavoriteSeasonalDiscountProduct } from '@/utils/discount-favorite'
 
 const AccountMainPage = () => {
 	const { mockUser } = useAdminStore()
+	const { productData } = useProductCart()
 	const currentDateTime = useCurrentFormattedDateTime()
 	const discountedProduct = useFavoriteDiscountProduct()
 	const { setDiscountedProduct } = useAdminStore()
 
 	useEffect(() => {
-		if (discountedProduct) setDiscountedProduct(discountedProduct)
-	}, [discountedProduct, setDiscountedProduct])
+		if (mockUser && productData.length) {
+			const discounted = getFavoriteSeasonalDiscountProduct(productData, mockUser.favoritesProductsIds || [])
+			if (discounted) setDiscountedProduct(discounted)
+		}
+	}, [mockUser, productData, setDiscountedProduct])
 
 	return (
 		<Shell className="container flex flex-col gap-8 text-gray-200">

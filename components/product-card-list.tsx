@@ -33,7 +33,7 @@ const ProductCardList = ({ item }: Props) => {
 	}
 
 	return (
-		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-10 sm:grid-cols-1 py-2 pr-2 xl:pl-0 sm:pl-2 content-normal items-center xl:gap-2 sm:gap-6 relative z-10">
+		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-10 sm:grid-cols-1 xl:py-0 sm:py-2 pr-2 xl:pl-0 sm:pl-2 content-normal items-center xl:gap-2 sm:gap-6 relative z-10">
 			<img src={item.src.medium} alt={item.title} className="xl:block sm:hidden w-24 h-24 object-cover object-center" />
 			<div className="w-full pl-2 xl:col-span-3 text-gray-200 flex flex-col gap-3">
 				<h3
@@ -45,13 +45,13 @@ const ProductCardList = ({ item }: Props) => {
 				<p className="text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className=" xl:w-full sm:w-[80%] mx-auto">
+				<Badge variant="success" className="xl:block sm:hidden xl:w-full sm:w-[80%] mx-auto">
 					{item.promotion?.label}
 				</Badge>
 			) : (
 				<div />
 			)}
-			<div className="xl:col-span-2 ">
+			<div className="xl:col-span-2 sm:hidden xl:block ">
 				{item.category === 'Coffee' && (
 					<div className="w-full flex justify-center items-center gap-2 text-lg">
 						{item.price.map((p: IPrice) => (
@@ -70,7 +70,7 @@ const ProductCardList = ({ item }: Props) => {
 					</div>
 				)}
 			</div>
-			<div className="w-[50%] h-8 p-1 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
+			<div className="sm:hidden xl:flex w-[50%] h-8 p-1 mx-auto justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
 				<Button
 					text="-"
 					className="button w-10 h-full"
@@ -83,7 +83,7 @@ const ProductCardList = ({ item }: Props) => {
 					onClick={() => updateQuantityHandler(item, 'increment', selected)}
 				/>
 			</div>
-			<div className="flex gap-2 items-center px-2">
+			<div className="sm:hidden xl:flex gap-2 items-center px-2">
 				<span className="text-gray-400">Price:</span>
 				<div className="flex items-center gap-1 text-xl">
 					<strong className="text-orange-600">$</strong>

@@ -50,7 +50,7 @@ const Cart = ({ openCartHandler }: Props) => {
 					{cartProducts.map(item => (
 						<div
 							key={item.id}
-							className="w-full min-h-32 rounded-sm border border-gray-400 grid lg:grid-cols-6 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-4 content-normal items-center gap-2 pr-2 overflow-hidden"
+							className="w-full min-h-32 rounded-sm border border-gray-800 grid lg:grid-cols-6 sm:grid-cols-1 content-normal items-center lg:gap-2 sm:gap-4 lg:pb-0 sm:pb-2 lg:pr-2 sm:pr-0 overflow-hidden"
 						>
 							<div className="w-full lg:row-span-1 sm:row-span-2">
 								<img
@@ -109,7 +109,7 @@ const Cart = ({ openCartHandler }: Props) => {
 				</div>
 				{cartProducts.length !== 0 ? (
 					<div className="w-full h-16 flex justify-end items-center gap-6">
-						<div className="w-[20%] flex flex-col  items-center gap-1 ">
+						<div className="lg:w-[20%] sm:w-1/2 flex lg:flex-col sm:flex-row items-center gap-1 ">
 							<span className="text-gray-400">Total price</span>
 							<div className="flex gap-1 text-2xl">
 								<span className="text-orange-600">$</span>

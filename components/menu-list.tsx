@@ -43,7 +43,7 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 						{products?.map(product => (
 							<div
 								key={product.id}
-								className="lg:w-[16rem] sm:w-[90%] h-[22rem] mx-auto border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
+								className="lg:w-[16rem] sm:w-full h-[22rem] mx-auto border border-gray-800 rounded-sm overflow-hidden flex flex-col items-center justify-between group"
 							>
 								<PtoductCard item={product} />
 							</div>
@@ -54,7 +54,7 @@ const MenuList = ({ products, title, tab }: MenuProps) => {
 						{products.map(product => (
 							<div
 								key={product.id}
-								className="lg:w-full sm:w-[90%] mx-auto border border-gray-800 rounded-sm relative overflow-hidden group"
+								className="w-full mx-auto border border-gray-800 rounded-sm relative overflow-hidden group"
 							>
 								<ProductCardList item={product} />
 								<div className="absolute  inset-0 bg-gray-800/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0" />

@@ -93,7 +93,7 @@ const Reviews = () => {
 							>
 								<div className="flex flex-col justify-center items-end gap-2 p-2 rounded-sm bg-gray-800">
 									<ImQuotesRight />
-									<p className="text-sm sm:text-base text-right">{review.review}</p>
+									<p className="text-sm sm:text-md text-right">{review.review}</p>
 								</div>
 								<div className="w-full flex items-start justify-start gap-4">
 									<div className="w-[60px] h-[60px] border border-gray-200 rounded-full overflow-hidden">

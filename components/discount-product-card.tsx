@@ -35,7 +35,7 @@ const DiscountProductCard = ({ item }: Props) => {
 	// console.log(item)
 
 	return (
-		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-11  sm:grid-cols-3 xl:grid-rows-1 sm:grid-rows-3 xl:pl-0 sm:pl-2 pr-2 xl:py-0 sm:py-2 content-normal items-center gap-2 relative z-10">
+		<div className="w-full bg-gray-900 text-gray-200 xl:h-24 grid xl:grid-cols-11 sm:grid-cols-1 xl:pl-0 sm:pl-2 pr-2 xl:py-0 sm:py-2 content-normal items-center xl:gap-2 sm:gap-6 relative z-10">
 			<div>
 				<img
 					src={item.src.medium}
@@ -49,7 +49,7 @@ const DiscountProductCard = ({ item }: Props) => {
 				/>
 				<div className="xl:hidden sm:block absolute inset-0 bg-black bg-opacity-80 -z-10"></div>
 			</div>
-			<div className="w-full pl-2 col-span-2 text-gray-200 flex flex-col gap-3">
+			<div className="w-full pl-2 xl:col-span-3 sm:col-span-1 text-gray-200 flex flex-col gap-3">
 				<h3
 					className="text-2xl cursor-pointer hover:text-orange-500 transition-all duration-300"
 					onClick={() => router.push(`/menu/${item.id}`)}
@@ -59,13 +59,13 @@ const DiscountProductCard = ({ item }: Props) => {
 				<p className="text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className="xl:col-span-1 sm:col-span-3 xl:w-full sm:w-[80%] mx-auto">
+				<Badge variant="success" className="col-span-1 mx-auto">
 					{item.promotion?.label}
 				</Badge>
 			) : (
 				<div />
 			)}
-			<div className="xl:col-span-2 sm:col-span-3">
+			<div className="xl:col-span-2">
 				{item.category === 'Coffee' && (
 					<div className="w-full flex justify-center items-center gap-2 text-lg">
 						{item.price.map((p: IPrice) => (
@@ -84,7 +84,7 @@ const DiscountProductCard = ({ item }: Props) => {
 					</div>
 				)}
 			</div>
-			<div className="w-full h-8 p-1 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
+			<div className="h-8 p-1 mx-auto flex justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
 				<Button
 					text="-"
 					className="button w-10 h-full"
@@ -97,7 +97,7 @@ const DiscountProductCard = ({ item }: Props) => {
 					onClick={() => updateQuantityHandler(item, 'increment', selected)}
 				/>
 			</div>
-			<div className="col-span-2 px-2">
+			<div className="xl:col-span-2 px-2">
 				<div className="flex justify-center items-center gap-2">
 					<span className="text-lg text-orange-600 mb-1">5% OFF: </span>
 					<div className="flex items-end line-through text-md text-gray-500">
@@ -115,10 +115,10 @@ const DiscountProductCard = ({ item }: Props) => {
 				</div>
 			</div>
 			<Button
-				className="xl:col-span-1 sm:col-span-3 button relative overflow-hidden xl:w-full sm:w-[80%] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+				className="button relative overflow-hidden xl:w-full sm:w-[80%] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 				onClick={() => addToCartHandler(item, selected)}
 			>
-				<AnimatedButton className="w-full py-2 hover:-top-9" text={'Add to cart'} />
+				<AnimatedButton className="w-full py-2 hover:-top-10" text={'Add to cart'} />
 			</Button>
 		</div>
 	)

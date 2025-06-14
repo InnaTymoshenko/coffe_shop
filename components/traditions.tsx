@@ -37,7 +37,7 @@ const Traditions = () => {
 			<Shell className="container flex flex-col flex-wrap gap-4 justify-center items-start">
 				<h2 className="text-white text-3xl my-6">Our Traditions</h2>
 				<div className="w-full max-w-[960px] mx-auto flex flex-col items-center gap-8 justify-center relative">
-					<div className="relative w-full lg:h-[55vh] sm:h-[70vh] overflow-hidden">
+					<div className="relative w-full lg:h-[55vh] sm:h-[90vh] overflow-hidden">
 						{traditions &&
 							traditions.map((tradition, index) => (
 								<div
@@ -47,14 +47,14 @@ const Traditions = () => {
 									}`}
 								>
 									<div className="relative w-full h-[400px]">
-										<div className="absolute top-0 left-[2rem] z-10 lg:w-[600px] sm:w-full h-[450px] rounded-sm overflow-hidden">
+										<div className="absolute top-0 left-[2rem] z-[1] lg:w-[600px] sm:w-full h-[450px] rounded-sm overflow-hidden">
 											<img
 												src={tradition.image}
 												alt={tradition.title}
 												className="w-full h-full object-cover object-center"
 											/>
 										</div>
-										<div className="absolute lg:top-[20%] sm:top-[80%] lg:left-[55%] sm:left-0 z-20 w-[350px] h-[300px] flex justify-center items-center rounded-sm p-2 bg-gray-900 text-gray-200">
+										<div className="absolute lg:top-[20%] sm:top-[80%] lg:left-[55%] sm:left-0 z-[2] w-[350px] h-[300px] flex justify-center items-center rounded-sm p-2 bg-gray-900 text-gray-200">
 											<div className="relative w-[95%] h-[95%] p-8 border-2 border-gray-600 rounded-sm flex flex-col justify-between items-start gap-4">
 												{tradition.icon === 'coffee' && (
 													<GiCoffeeBeans size={72} className="absolute top-5 right-5 text-gray-800/40" />

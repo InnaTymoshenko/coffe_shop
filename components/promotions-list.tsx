@@ -13,7 +13,7 @@ const PromotionsList = () => {
 	const filteredPromotions = promotionsData.filter(promotion => promotion.status === 'active' && promotion.image)
 
 	return (
-		<div className="w-full grid lg:grid-cols-2 sm:grid-cols-1 gap-4 p-4">
+		<div className="w-full grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
 			{filteredPromotions &&
 				filteredPromotions.map(pr => (
 					<div
@@ -29,7 +29,7 @@ const PromotionsList = () => {
 						>
 							<AnimatedButton className="w-32 py-2 hover:-top-9" text={'View Menu'} />
 						</ButtonLink>
-						<div className="relative group w-full overflow-hidden rounded-xl">
+						<div className="relative group w-full h-full overflow-hidden rounded-xl">
 							<img
 								src={pr.image}
 								alt={pr.title}

@@ -60,12 +60,12 @@ const About = () => {
 								</div>
 							))}
 					</div>
-					<div className="advantages-container lg:w-full sm:w-[80%] mx-auto bg-gray-900/30 py-4 px-2 flex lg:flex-row sm:flex-col gap-8 justify-between items-center">
+					<div className="advantages-container lg:w-full sm:w-[90%] mx-auto bg-gray-900/30 py-4 px-2 flex lg:flex-row sm:flex-col gap-8 justify-between items-center">
 						{advantages &&
 							advantages.map(advantage => (
 								<div
 									key={`${advantage.description.trim()}`}
-									className="lg:w-[25%] sm:w-[60%] flex gap-4 items-center py-4 pl-2 pr-6 lg:border-r-2 lg:border-r-gray-200 lg:border-b-transparent sm:border-b-2 sm:border-b-gray-200"
+									className="lg:w-[25%] sm:w-[80%] flex gap-4 items-center py-4 pl-2 pr-6 lg:border-r-2 lg:border-r-gray-200 lg:border-b-transparent sm:border-b-2 sm:border-b-gray-200"
 								>
 									{advantage.icon === 'coffee' && (
 										<div className="w-16 h-16 rounded-full bg-gray-800/70 ">
