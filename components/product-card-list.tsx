@@ -33,25 +33,25 @@ const ProductCardList = ({ item }: Props) => {
 	}
 
 	return (
-		<div className="w-full text-gray-200 xl:h-24 grid xl:grid-cols-10 sm:grid-cols-1 xl:py-0 sm:py-2 pr-2 xl:pl-0 sm:pl-2 content-normal items-center xl:gap-2 sm:gap-6 relative z-10">
-			<img src={item.src.medium} alt={item.title} className="xl:block sm:hidden w-24 h-24 object-cover object-center" />
-			<div className="w-full pl-2 xl:col-span-3 text-gray-200 flex flex-col gap-3">
+		<div className="w-full text-gray-200 lg:h-24 grid xl:grid-cols-10 lg:grid-cols-9 sm:grid-cols-2 lg:py-0 sm:py-2 pr-2 lg:pl-0 sm:pl-2 content-normal items-center lg:gap-2 sm:gap-6 relative z-10">
+			<img src={item.src.medium} alt={item.title} className="lg:block sm:hidden w-24 h-24 object-cover object-center" />
+			<div className="w-full pl-2 lg:col-span-3 text-gray-200 flex flex-col gap-3">
 				<h3
 					className="text-2xl cursor-pointer hover:text-orange-500 transition-all duration-300"
 					onClick={() => router.push(`/menu/${item.id}`)}
 				>
 					{item.title}
 				</h3>
-				<p className="text-gray-400">{item.alt}</p>
+				<p className="lg:block sm:hidden text-gray-400">{item.alt}</p>
 			</div>
 			{item.promotion ? (
-				<Badge variant="success" className="xl:block sm:hidden xl:w-full sm:w-[80%] mx-auto">
+				<Badge variant="success" className="xl:block sm:hidden mx-auto">
 					{item.promotion?.label}
 				</Badge>
 			) : (
 				<div />
 			)}
-			<div className="xl:col-span-2 sm:hidden xl:block ">
+			<div className="lg:col-span-2 sm:hidden lg:block ">
 				{item.category === 'Coffee' && (
 					<div className="w-full flex justify-center items-center gap-2 text-lg">
 						{item.price.map((p: IPrice) => (
@@ -70,7 +70,7 @@ const ProductCardList = ({ item }: Props) => {
 					</div>
 				)}
 			</div>
-			<div className="sm:hidden xl:flex w-[50%] h-8 p-1 mx-auto justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
+			<div className="sm:hidden lg:flex w-[50%] h-8 p-1 mx-auto justify-between items-center gap-2 border-2 border-gray-800 rounded-sm bg-gray-900 hover:border-gray-200 transition-all duration-300">
 				<Button
 					text="-"
 					className="button w-10 h-full"
@@ -83,7 +83,7 @@ const ProductCardList = ({ item }: Props) => {
 					onClick={() => updateQuantityHandler(item, 'increment', selected)}
 				/>
 			</div>
-			<div className="sm:hidden xl:flex gap-2 items-center px-2">
+			<div className="sm:hidden lg:flex gap-2 items-center px-2">
 				<span className="text-gray-400">Price:</span>
 				<div className="flex items-center gap-1 text-xl">
 					<strong className="text-orange-600">$</strong>
@@ -91,7 +91,7 @@ const ProductCardList = ({ item }: Props) => {
 				</div>
 			</div>
 			<Button
-				className="button relative overflow-hidden xl:w-full sm:w-[80%] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
+				className="button relative overflow-hidden w-[110px] h-10 mx-auto bg-orange-600 py-2 px-4 border-2 border-orange-600 hover:border-gray-200 active:bg-orange-700 active:scale-95 transition-all duration-150"
 				onClick={() => addToCartHandler(item, selected)}
 			>
 				<AnimatedButton className="w-full py-2 hover:-top-10" text={'Add to cart'} />
